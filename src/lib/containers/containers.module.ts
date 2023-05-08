@@ -4,9 +4,9 @@ import { ActionCardComponent } from './action-card/action-card.component';
 import { SelectionGridComponent } from './selection-grid/selectable-grid.component';
 import { ImageCardComponent } from './image-card/image-card.component';
 import { ListTileComponent } from './list-tile/list-tile.component';
-import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
   ],
   imports: [
     CommonModule,
-    SharedModule,
+    ComponentsModule,
     FormsModule
   ],
   exports: [

@@ -1,7 +1,7 @@
-import { SelectableItem } from '../../../models/selectable-item';
+import { SelectableItem } from '../../models/selectable-item';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { SelectableViewType } from 'src/lib/enums/selectable-view-type';
-import { SelectableViewStyle } from 'src/lib/enums/selectable-view-style';
+import { SelectableViewType } from '../../enums/selectable-view-type';
+import { SelectableViewStyle } from '../../enums/selectable-view-style';
 
 @Component({
     selector: 'reloadly-selectable-grid',

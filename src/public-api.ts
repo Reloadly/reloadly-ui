@@ -3,7 +3,7 @@
  */
 
 import { BadgeExampleComponent } from './lib/components/badge/badge-example/badge-example.component';
-import { BadgeComponent } from './lib/components/badge/badge.component';
+import { BadgeComponent, BadgeVariant } from './lib/components/badge/badge.component';
 import { ButtonExampleComponent } from './lib/components/button/button-example/button-example.component';
 import { ButtonDirective } from './lib/components/button/directives/button.directive';
 import { CustomerServiceComponent } from './lib/components/customer-service/customer-service.component';
@@ -29,7 +29,7 @@ import { MenuComponent } from './lib/components/menu/menu.component';
 import { RootViewContainers } from './lib/components/modal/reloadly-modal';
 import { PaginationComponent } from './lib/components/pagination/pagination.component';
 import { SelectExampleComponent } from './lib/components/select/select-example/select-example.component';
-import { SelectComponent } from './lib/components/select/select.component';
+import { SelectComponent, SelectOptionItem } from './lib/components/select/select.component';
 import { SidebarExampleComponent } from './lib/components/sidebar/sidebar-example/sidebar-example.component';
 import { SidebarComponent } from './lib/components/sidebar/sidebar.component';
 import { SvgComponent } from './lib/components/svg/svg.component';
@@ -41,9 +41,15 @@ import { TagComponent } from './lib/components/tag/tag.component';
 import { TooltipDirective } from './lib/components/tooltip/directive/tooltip.directive';
 import { TooltipExampleComponent } from './lib/components/tooltip/tooltip-example/tooltip-example.component';
 import { TooltipComponent } from './lib/components/tooltip/tooltip.component';
+import { ActionCardComponent } from './lib/containers/action-card/action-card.component';
+import { ImageCardComponent } from './lib/containers/image-card/image-card.component';
+import { ListTileComponent } from './lib/containers/list-tile/list-tile.component';
+import { ProductDetailsComponent } from './lib/containers/product-details/product-details.component';
+import { SelectionGridComponent } from './lib/containers/selection-grid/selectable-grid.component';
+import { SelectableViewStyle } from './lib/enums/selectable-view-style';
+import { SelectableViewType } from './lib/enums/selectable-view-type';
+import { SelectableItem } from './lib/models/selectable-item';
 
-export * from './lib/reloadly-ui.service';
-export * from './lib/reloadly-ui.component';
 export * from './lib/reloadly-ui.module';
 
 export * from './lib/components/components.module';
@@ -64,6 +70,7 @@ export {
         SwitchComponent,
         SwitchExampleComponent,
         SelectComponent,
+        SelectOptionItem,
         SelectExampleComponent,
         TooltipExampleComponent,
         MenuExampleComponent,
@@ -79,19 +86,34 @@ export {
         DateExampleComponent
 };
 
-export * from './lib/components/modal/reloadly-modal.module';
-export * from './lib/components/modal/reloadly-modal';
-export * from './lib/components/modal/reloadly-dialog-ref';
-export { RootViewContainers };
-
 export * from './lib/components/button/button.module';
 export { ButtonDirective };
 
 export * from './lib/components/badge/badge.module';
-export { BadgeComponent };
+export { BadgeComponent, BadgeVariant };
 
 export * from './lib/components/menu/menu.module';
 export { MenuComponent, MenuDirective, MenuDividerComponent, MenuSectionComponent, MenuItemDirective };
 
 export * from './lib/components/tooltip/tooltip.module';
 export { TooltipComponent, TooltipDirective };
+
+export * from './lib/components/modal/reloadly-modal.module';
+export * from './lib/components/modal/reloadly-modal';
+export * from './lib/components/modal/reloadly-dialog-ref';
+export { RootViewContainers };
+
+export * from './lib/containers/containers.module';
+export {
+        ActionCardComponent,
+        ImageCardComponent,
+        ListTileComponent,
+        SelectionGridComponent,
+        ProductDetailsComponent
+};
+
+export {
+        SelectableItem,
+        SelectableViewStyle,
+        SelectableViewType
+};
