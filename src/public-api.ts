@@ -26,6 +26,7 @@ import { MenuDividerComponent } from './lib/components/menu/menu-divider/menu-di
 import { MenuExampleComponent } from './lib/components/menu/menu-example/menu-example.component';
 import { MenuSectionComponent } from './lib/components/menu/menu-section/menu-section.component';
 import { MenuComponent } from './lib/components/menu/menu.component';
+import { RootViewContainers } from './lib/components/modal/reloadly-modal';
 import { PaginationComponent } from './lib/components/pagination/pagination.component';
 import { SelectExampleComponent } from './lib/components/select/select-example/select-example.component';
 import { SelectComponent } from './lib/components/select/select.component';
@@ -81,6 +82,7 @@ export {
 export * from './lib/components/modal/reloadly-modal.module';
 export * from './lib/components/modal/reloadly-modal';
 export * from './lib/components/modal/reloadly-dialog-ref';
+export { RootViewContainers };
 
 export * from './lib/components/button/button.module';
 export { ButtonDirective };
