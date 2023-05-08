@@ -1,0 +1,16 @@
+@import "bulma/sass/helpers/spacing";
+@import "bulma/sass/helpers/flexbox";
+.inline-block {
+    display: inline-block;
+}
+.example-icon {
+    width: 12px;
+    height: 12px;
+    display: flex;
+}
+
+.container {
+    display: flex;
+    align-items: start;
+    flex-wrap: wrap;
+}

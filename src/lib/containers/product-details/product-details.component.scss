@@ -1,0 +1,77 @@
+@import "../../../styles/variables";
+
+@mixin uniform-margin {
+	margin: $spacing-small;
+}
+
+.product-details {
+	padding: $spacing-small;
+
+	.header {
+		@include uniform-margin;
+
+		h1 {
+			font-weight: 500;
+		}
+	}
+
+	.section {
+		@include uniform-margin;
+
+		table {
+			width: 100%;
+		}
+
+		tr {
+			display: flex;
+			padding-bottom: $spacing-small;
+
+			&:hover {
+				background-color: rgba($color: #000000, $alpha: 0.025);
+			}
+		}
+
+		th {
+			flex-basis: 50%;
+		}
+
+		td {
+			font-weight: 450;
+			flex-basis: 50%;
+		}
+
+		.currency {
+			font-weight: 500;
+		}
+	}
+
+	.footer {
+		@include uniform-margin;
+		justify-content: space-between;
+		margin-top: $spacing-big;
+
+		@media (min-width: 48em) {
+			display: flex;
+		}
+
+		.thumb {
+			filter: drop-shadow(0px 10px 20px rgba(217, 217, 217, 0.28));
+			box-shadow: inset 0 0.0625em 0.125em rgb(10 10 10 / 5%);
+			border-radius: $border-radius-md;
+
+			img {
+				width: 100%;
+				border-radius: $border-radius-md;
+			}
+		}
+
+		&-title {
+			font-size: $font-regular;
+			font-weight: 500;
+
+			@media (min-width: 48em) {
+				flex-basis: 50%;
+			}
+		}
+	}
+}

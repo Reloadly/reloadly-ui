@@ -1,0 +1,94 @@
+@import "../../../styles/variables";
+// TODO don't use these bulma modules
+@import "bulma/sass/helpers/spacing";
+@import "bulma/sass/helpers/flexbox";
+
+.action-card{
+    background-color: #f7f7f7;
+    padding: 16px;
+    border-radius: 15px;
+    min-width: 302px;
+    min-height: 144px;
+    @media screen and (max-width: 1024px) {
+        min-width: 250px;
+    }
+    @media screen and (max-width: 540px) {
+        min-width: none;
+    }
+    .card-value{
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 4px;
+    }
+    .card-title{
+        font-size: $font-regular;
+        margin-bottom: 8px;
+    }
+    .action-button{
+        background-color: #7700FF;
+        border-radius: 18px;
+        color: white;
+        font-size: $font-medium;
+        padding: 2px 24px;
+        height: 26px;
+        &.disabled{
+            background-color: #AACCFF;
+        }
+    }
+}
+.card-content{
+    margin-bottom: 18px;
+}
+
+.checkbox-tile {
+    display: block;
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: $font-medium;
+    user-select: none;
+
+    &:hover input ~ .checkmark {
+        background-color: #f7f7f7;
+    }
+
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        &:checked ~ .checkmark {
+            background-color: #6ae8ff;
+
+            &:after {
+                display: block;
+            }
+        }
+    }
+
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 16px;
+        width: 16px;
+        background-color: #ffffff;
+        border: 1px solid #6ae8ff;
+
+        &:after {
+            content: "";
+            position: absolute;
+            display: none;
+            left: 5px;
+            top: 0px;
+            width: 5px;
+            height: 12px;
+            border: solid white;
+            border-width: 0 2px 3px 0;
+            transform: rotate(45deg);
+        }
+    }
+}

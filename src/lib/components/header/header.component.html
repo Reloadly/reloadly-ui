@@ -1,0 +1,117 @@
+<header class="desktop-header">
+    <div class="top">
+        <img alt="Reloadly Logo" class="logo" src="assets/images/logo_blue.svg">
+        <button reloadly-button class="activate-button" [rounded]="true">
+            <span>Activate account</span>
+            <svg class="icon-small">
+                <use xlink:href="#arrow-right"></use>
+            </svg>
+        </button>
+        <div class="actions">
+            <div class="actions-icon">
+                <svg>
+                    <use xlink:href="#help"></use>
+                </svg>
+                <span class="align-middle">Help</span>
+            </div>
+            <div class="actions-icon">
+                <svg>
+                    <use xlink:href="#notifications"></use>
+                </svg>
+            </div>
+            <div class="actions-icon">
+                <svg>
+                    <use xlink:href="#settings"></use>
+                </svg>
+            </div>
+            <div class="actions-icon">
+                <svg>
+                    <use xlink:href="#person"></use>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <nav class="nav">
+        <div class="links">
+            <a class="link" routerLink="/dashboard" [routerLinkActiveOptions]="{exact: true}"
+                routerLinkActive="active-link">Dashboard</a>
+            <a class="link">Wallet</a>
+            <a class="link" routerLink="/topup" routerLinkActive="active-link">Top-up</a>
+            <a class="link" routerLink="/giftcards" routerLinkActive="active-link">Gift-cards</a>
+            <a class="link">Plugin</a>
+            <a class="link">Pricing</a>
+            <a class="link">Reports</a>
+            <a class="link">Services</a>
+        </div>
+        <div class="actions">
+            <a class="link">Security</a>
+            <a class="link" routerLink="/developers" routerLinkActive="active-link">Developers</a>
+            <app-environment-toggle></app-environment-toggle>
+        </div>
+    </nav>
+</header>
+
+<!-- ================================================= -->
+<!-- Mobile header -->
+<!-- ================================================= -->
+<ng-container>
+    <header class="mobile-header">
+        <div class="nav-menu" (click)="openMenu = !openMenu">
+            <div class="bar-1"></div>
+            <div class="bar-2"></div>
+            <div class="bar-3"></div>
+        </div>
+        <p class="page-title">
+            Dashboard
+        </p>
+        <div class="actions">
+            <div class="actions-icon">
+                <svg>
+                    <use xlink:href="#help"></use>
+                </svg>
+            </div>
+            <div class="actions-icon">
+                <svg>
+                    <use xlink:href="#notifications"></use>
+                </svg>
+            </div>
+            <div class="actions-icon">
+                <svg>
+                    <use xlink:href="#settings"></use>
+                </svg>
+            </div>
+            <div class="actions-icon">
+                <svg>
+                    <use xlink:href="#person"></use>
+                </svg>
+            </div>
+        </div>
+    </header>
+    <!-- Side Menu -->
+    <div class="menuToggle bg-white" [class.open-menu]="openMenu">
+        <div class="menu-list">
+            <div class="main-menu-item" routerLink="/" [routerLinkActiveOptions]="{exact: true}"
+                routerLinkActive="active-link">
+                <p>Dashboard</p>
+                <svg>
+                    <use xlink:href="#chevron-right"></use>
+                </svg>
+            </div>
+            <div class="main-menu-item" routerLink="/topup" [routerLinkActiveOptions]="{exact: true}"
+                routerLinkActive="active-link">
+                <p>Topup</p>
+                <svg>
+                    <use xlink:href="#chevron-right"></use>
+                </svg>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<!-- Test Mode  body -->
+<div class="test-mode-indicator">
+    <div class="env-switch">
+        <app-environment-toggle></app-environment-toggle>
+    </div>
+</div>

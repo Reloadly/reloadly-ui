@@ -1,0 +1,4 @@
+<div class="sidebar-menu-list" #menuList [style.--activeTop]="top+'px'">
+    <a class="sidebar-menu-item" *ngFor="let link of links" [attr.customLabel]="'sideNav-'+link.label"
+        (click)="selectItem(link)" [class.active-item]="activeItem == link">{{link.label}}</a>
+</div>
