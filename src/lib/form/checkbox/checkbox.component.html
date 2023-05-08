@@ -1,0 +1,21 @@
+<div class="checkbox">
+	<div #checkBox class="checkbox-square">
+		<div [@coloredBackground]="isPressed ? 'color' : null" class="checkbox-colored-bg">
+			<svg draggable="false">
+				<use xlink:href="#checkbox-colored"></use>
+			</svg>
+		</div>
+		<div #disc [@showHide]="isHovered ? 'visible' : 'invisible'"
+				 class="checkbox-disc" [@ripple]="isFocused ? 'extrude' : null">
+		</div>
+		<input #input type="checkbox" class="checkbox-self" [name]="name">
+		<div #view class="checkbox-view">
+			<div class="checkbox-view-object" [@squareBorderColor]="borderColoring" [@squareFillColor]="fillColoring">
+				<svg class="checkmark" *ngIf="isChecked" draggable="false">
+					<use xlink:href="#checkbox-checkmark" class="checkmark__checked"></use>
+				</svg>
+			</div>
+		</div>
+	</div>
+	<div class="checkbox-label" (click)="onLabelClick()">{{label}}</div>
+</div>

@@ -1,0 +1,9 @@
+<span  class="tag is-flex is-flex-direction-rows is-align-content-center" [ngClass]="{'is-success': type == 'success', 'is-danger': type=='failed'}">
+  <svg *ngIf="type == 'success'" 	class="svg-icon">
+    <use xlink:href="#check"></use>
+  </svg>
+  <svg *ngIf="type == 'failed'" class="svg-icon">
+    <use xlink:href="#danger"></use>
+  </svg>
+  {{text}}
+</span>

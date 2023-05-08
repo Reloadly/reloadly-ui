@@ -1,0 +1,47 @@
+@import "../../../styles/variables";
+
+.image-card{
+    display: inline-flex;
+    align-items: center;
+    flex-flow: column;
+    justify-content: center;
+    margin: 14px;
+    cursor: pointer;
+    width: 96px;
+    height: 58px;
+    &.is-lg{
+        width: 413px;
+        height: 263px;
+        border-radius: 10px;
+        img{
+            width: 413px;
+            height: 263px;
+            border-radius: 10px;
+        }
+    }
+    &.is-sm{
+        width: 96px;
+        height: 58px;
+        img{
+            width: 96px;
+            height: 58px;
+        }
+    }
+    &.is-md{
+        width: 230px;
+        height: 146px;
+        img{
+            width: 230px;
+            height: 146px;
+        }
+    }
+    img{
+        border-radius: 8px;
+        object-fit: cover;
+
+    }
+    h6{
+        font-size: $font-regular;
+        margin-top: 8px ;
+    }
+}

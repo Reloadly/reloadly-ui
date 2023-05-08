@@ -1,0 +1,15 @@
+<ngx-datatable [rows]="rows" [columnMode]="ColumnMode" [headerHeight]="30" [rowHeight]="'auto'" [columns]="columns">
+    <ngx-datatable-column *ngFor="let column of columns; let i = index;" name="{{column.name}}" prop="{{column.prop}}">
+        <ng-template let-value="value" let-row="row" *ngIf="column.prop == 'status'" ngx-datatable-cell-template>
+            <span *ngIf="value; else elseTemplate" (click)="onSelect(column)">
+                <svg class="svg-icon">
+                    <use xlink:href="#thumbs-up"></use>
+                </svg>
+                Done
+            </span>
+            <ng-template #elseTemplate>
+                Not-processed
+            </ng-template>
+        </ng-template>
+    </ngx-datatable-column>
+</ngx-datatable>

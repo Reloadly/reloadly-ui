@@ -1,0 +1,9 @@
+.row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    reloadly-switch {
+        width: 25%;
+    }
+}

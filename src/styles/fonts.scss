@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Futura";
+    font-weight: 300;
+    src: url("/assets/fonts/Futura-PT-Light.otf") format("opentype");
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: "Futura";
+    font-weight: 400;
+    src: url("/assets/fonts/futura-pt-book.otf") format("opentype");
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: "Futura";
+    font-weight: 450;
+    src: url("/assets/fonts/FuturaPTMedium.otf") format("opentype");
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: "Futura";
+    font-weight: 500;
+    src: url("/assets/fonts/Futura-PT-Demi.otf") format("opentype");
+    font-display: fallback;
+}

@@ -1,0 +1,38 @@
+@import "../../../styles/variables.scss";
+
+.sidebar-menu-list {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    border-left: 1px solid #f6f8fc;
+    padding-left: 16px;
+    position: relative;
+    &:after {
+        width: 0;
+        height: 17px;
+        content: '';
+        position: absolute;
+        top: var(--activeTop);
+        left: 0;
+        border-left: solid 1.5px $reloadly-violet;
+        transition: all ease .4s;
+    }
+    .sidebar-menu-item {
+        width: auto;
+        text-decoration: none;
+        font-weight: 400;
+        font-size: $font-regular;
+        line-height: 20px;
+        color: $reloadly-black-6;
+        &:not(:last-of-type) {
+            margin-bottom: 12px;
+        }
+        &:hover {
+            color: $reloadly-violet;
+        }
+    }
+    .active-item {
+        color: $reloadly-violet;
+        font-weight: 450;
+    }
+}

@@ -1,0 +1,10 @@
+<div class="range-slider" [class.disabled]="disabled">
+	<p class="min-max">{{min}}</p>
+	<div class="rail" #range>
+		<a class="knob" #knob></a>
+		<div class="slide"></div>
+	</div>
+	<p class="min-max">{{max}}</p>
+	<input #input type="number" [min]="min" [max]="max" class="input"
+		   (input)="inputChanged($event)" [disabled]="disabled">
+</div>
