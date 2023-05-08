@@ -2,7 +2,7 @@ import { DebugElement } from '@angular/core';
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { inputText } from 'src/lib/utils/domHelpers';
-import { AppFormModule } from '../form.module';
+import { ReloadlyFormsModule } from '../form.module';
 import { RangeSliderComponent } from '../range-slider/range-slider.component';
 
 import { FormExampleComponent } from './form-example.component';
@@ -26,7 +26,7 @@ describe('FormExampleComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [FormExampleComponent],
-      imports: [AppFormModule]
+      imports: [ReloadlyFormsModule]
     })
       .compileComponents();
 
