@@ -9,24 +9,24 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
-  declarations: [
-    ActionCardComponent,
-    ImageCardComponent,
-    ListTileComponent,
-    SelectionGridComponent,
-    ProductDetailsComponent
-  ],
-  imports: [
-    CommonModule,
-    ComponentsModule,
-    FormsModule
-  ],
-  exports: [
-    ActionCardComponent,
-    ImageCardComponent,
-    ListTileComponent,
-    SelectionGridComponent,
-    ProductDetailsComponent
-  ]
+    declarations: [
+        ActionCardComponent,
+        ImageCardComponent,
+        ListTileComponent,
+        SelectionGridComponent,
+        ProductDetailsComponent
+    ],
+    imports: [
+        CommonModule,
+        ComponentsModule,
+        FormsModule
+    ],
+    exports: [
+        ActionCardComponent,
+        ImageCardComponent,
+        ListTileComponent,
+        SelectionGridComponent,
+        ProductDetailsComponent
+    ]
 })
 export class ContainersModule { }

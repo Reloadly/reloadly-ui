@@ -9,26 +9,26 @@ import { SelectDropDownModule } from 'ngx-select-dropdown';
 import { SearchBarComponent } from './search-bar/search-bar.component'
 
 @NgModule({
-  declarations: [
-    FormExampleComponent,
-    RangeSliderComponent,
-    CheckboxComponent,
-    DropdownSelectComponent,
-    SearchBarComponent
-  ],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    FormsModule,
-    SelectDropDownModule
-  ],
-  exports: [
-    FormExampleComponent,
-    DropdownSelectComponent,
-    SearchBarComponent,
-    CheckboxComponent,
-    RangeSliderComponent
-  ]
+    declarations: [
+        FormExampleComponent,
+        RangeSliderComponent,
+        CheckboxComponent,
+        DropdownSelectComponent,
+        SearchBarComponent
+    ],
+    imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        FormsModule,
+        SelectDropDownModule
+    ],
+    exports: [
+        FormExampleComponent,
+        DropdownSelectComponent,
+        SearchBarComponent,
+        CheckboxComponent,
+        RangeSliderComponent
+    ]
 })
 export class ReloadlyFormsModule { }
 
