@@ -12,7 +12,7 @@ import {
     Renderer2,
     ViewChild
 } from '@angular/core';
-import { distinctUntilChanged, skipUntil, Subject, timer } from 'rxjs';
+import { Subject } from 'rxjs';
 import { SubSink } from 'subsink';
 
 @Component({

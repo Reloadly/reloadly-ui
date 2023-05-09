@@ -48,6 +48,11 @@ import { ProductDetailsComponent } from './lib/containers/product-details/produc
 import { SelectionGridComponent } from './lib/containers/selection-grid/selectable-grid.component';
 import { SelectableViewStyle } from './lib/enums/selectable-view-style';
 import { SelectableViewType } from './lib/enums/selectable-view-type';
+import { CheckBoxValue, CheckboxComponent } from './lib/form/checkbox/checkbox.component';
+import { DropdownSelectComponent } from './lib/form/dropdown-select/dropdown-select.component';
+import { FormExampleComponent } from './lib/form/form-example/form-example.component';
+import { RangeSliderComponent } from './lib/form/range-slider/range-slider.component';
+import { SearchBarComponent } from './lib/form/search-bar/search-bar.component';
 import { SelectableItem } from './lib/models/selectable-item';
 
 export * from './lib/reloadly-ui.module';
@@ -84,6 +89,16 @@ export {
         TableDirective,
         DateComponent,
         DateExampleComponent
+};
+
+export * from './lib/form/form.module';
+export {
+    FormExampleComponent,
+    DropdownSelectComponent,
+    SearchBarComponent,
+    CheckboxComponent,
+    CheckBoxValue,
+    RangeSliderComponent
 };
 
 export * from './lib/components/button/button.module';

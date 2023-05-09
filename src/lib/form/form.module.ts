@@ -26,8 +26,9 @@ import { SearchBarComponent } from './search-bar/search-bar.component'
     FormExampleComponent,
     DropdownSelectComponent,
     SearchBarComponent,
-    CheckboxComponent
+    CheckboxComponent,
+    RangeSliderComponent
   ]
 })
-export class AppFormModule { }
+export class ReloadlyFormsModule { }
 
