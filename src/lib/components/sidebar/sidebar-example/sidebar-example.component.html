@@ -1,4 +1,8 @@
 <div style="background: white;padding: 20px;">
     <h1 class="mb-4">Side Bar Nav</h1>
     <reloadly-sidebar [links]="links" (linkClicked)="linkClicked($event)"></reloadly-sidebar>
+    <div style="margin-top: 20px;">
+        <reloadly-sidebar [links]="altLinks" [isHorizontal]="true"
+            (linkClicked)="linkClicked($event)"></reloadly-sidebar>
+    </div>
 </div>
