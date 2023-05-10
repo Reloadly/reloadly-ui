@@ -59,36 +59,36 @@ export * from './lib/reloadly-ui.module';
 
 export * from './lib/components/components.module';
 export {
-        HeaderComponent,
-        SvgComponent,
-        FooterComponent,
-        HowToComponent,
-        EnvironmentToggleComponent,
-        TagComponent,
-        CustomerServiceComponent,
-        TableComponent,
-        PaginationComponent,
-        ButtonExampleComponent,
-        BadgeExampleComponent,
-        SidebarComponent,
-        SidebarExampleComponent,
-        SwitchComponent,
-        SwitchExampleComponent,
-        SelectComponent,
-        SelectOptionItem,
-        SelectExampleComponent,
-        TooltipExampleComponent,
-        MenuExampleComponent,
-        FormLabelComponent,
-        FormGroupExampleComponent,
-        FormGroupDirective,
-        InputDirective,
-        InputGroupDirective,
-        InputLabelComponent,
-        InputGroupExampleComponent,
-        TableDirective,
-        DateComponent,
-        DateExampleComponent
+    HeaderComponent,
+    SvgComponent,
+    FooterComponent,
+    HowToComponent,
+    EnvironmentToggleComponent,
+    TagComponent,
+    CustomerServiceComponent,
+    TableComponent,
+    PaginationComponent,
+    ButtonExampleComponent,
+    BadgeExampleComponent,
+    SidebarComponent,
+    SidebarExampleComponent,
+    SwitchComponent,
+    SwitchExampleComponent,
+    SelectComponent,
+    SelectOptionItem,
+    SelectExampleComponent,
+    TooltipExampleComponent,
+    MenuExampleComponent,
+    FormLabelComponent,
+    FormGroupExampleComponent,
+    FormGroupDirective,
+    InputDirective,
+    InputGroupDirective,
+    InputLabelComponent,
+    InputGroupExampleComponent,
+    TableDirective,
+    DateComponent,
+    DateExampleComponent
 };
 
 export * from './lib/form/form.module';
@@ -120,15 +120,15 @@ export { RootViewContainers };
 
 export * from './lib/containers/containers.module';
 export {
-        ActionCardComponent,
-        ImageCardComponent,
-        ListTileComponent,
-        SelectionGridComponent,
-        ProductDetailsComponent
+    ActionCardComponent,
+    ImageCardComponent,
+    ListTileComponent,
+    SelectionGridComponent,
+    ProductDetailsComponent
 };
 
 export {
-        SelectableItem,
-        SelectableViewStyle,
-        SelectableViewType
+    SelectableItem,
+    SelectableViewStyle,
+    SelectableViewType
 };
