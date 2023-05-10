@@ -88,7 +88,7 @@ export interface SelectOptionItem {
 
 class DropdownConfig {
     search: boolean = true;
-    searchPlaceholder: string = 'Search';
-    height: string = 'auto';
-    noResultsFound: string = 'No results found!'
+    searchPlaceholder?: string = 'Search';
+    height?: string = 'auto';
+    noResultsFound?: string = 'No results found!'
 }
