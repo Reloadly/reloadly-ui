@@ -16,12 +16,7 @@ export class PaginationComponent {
 
     showingAll: boolean = false;
 
-    constructor(private router: Router, private route: ActivatedRoute) {
-    }
-
-    ngOnInit(): void {
-        this.page = +this.route.snapshot.queryParams['page'] ? +this.route.snapshot.queryParams['page'] : this.page
-        this.size = +this.route.snapshot.queryParams['size'] ? +this.route.snapshot.queryParams['size'] : this.size
+    constructor(private router: Router) {
     }
 
     ngOnChanges(changes: SimpleChanges): void {
