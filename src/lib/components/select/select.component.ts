@@ -1,12 +1,20 @@
-import { Component, ElementRef, EventEmitter, HostListener, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Input, OnChanges, OnInit, Output, SimpleChanges, forwardRef } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { BehaviorSubject, map } from 'rxjs';
 
 @Component({
     selector: 'reloadly-select',
     templateUrl: './select.component.html',
-    styleUrls: ['./select.component.scss']
+    styleUrls: ['./select.component.scss'],
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => SelectComponent),
+            multi: true,
+        }
+    ]
 })
-export class SelectComponent implements OnInit, OnChanges {
+export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor {
     showDropdown: boolean = false;
     searchQuery: string = '';
     private list = new BehaviorSubject<Array<SelectOptionItem>>([]);
@@ -25,7 +33,28 @@ export class SelectComponent implements OnInit, OnChanges {
 
     filteredList$ = this.list.pipe(map(options => this.filterMethod(options)));
 
+    private onTouched: Function = () => { };
+    private onChanged: Function = (item: SelectOptionItem | null) => { };
+
     constructor(private eRef: ElementRef) { }
+
+    writeValue(item: SelectOptionItem | null): void {
+        this.selectedOption = item
+        this.onChanged(item);
+    }
+
+    registerOnChange(fn: any): void {
+        this.onChanged = fn;
+    }
+
+    registerOnTouched(fn: any): void {
+        this.onTouched = fn;
+    }
+
+    setDisabledState(isDisabled: boolean): void {
+        this.disabled = isDisabled;
+    }
+
 
     @HostListener('document:click', ['$event'])
     clickout(event: any) {
@@ -43,9 +72,11 @@ export class SelectComponent implements OnInit, OnChanges {
             this.list.next(changes['options']['currentValue']);
         if (changes?.['selectedIndex'])
             this.selectedOption = this.options[changes['selectedIndex']['currentValue']];
+        this.writeValue(this.selectedOption);
         if (changes?.['selectedValue']) {
             this.selectedIndex = Math.max(this.options.findIndex(option => option.value == changes['selectedValue']['currentValue']), 0);
             this.selectedOption = this.options.length > 0 ? this.options[this.selectedIndex] : null;
+            this.writeValue(this.selectedOption);
         }
     }
 
@@ -59,14 +90,16 @@ export class SelectComponent implements OnInit, OnChanges {
         this.searchQuery = '';
     }
 
-    optionChanged() {
-        this.selectedOptionChange.emit(this.selectedOption as SelectOptionItem);
+    optionChanged(event: any) {
+        this.onTouched();
+        this.writeValue(this.selectedOption);
     }
 
     selectOption(item: SelectOptionItem) {
-        this.selectedOption = item;
-        this.optionChanged();
+        this.onTouched();
         this.toggleDropdown();
+        this.writeValue(item);
+
     }
 
     private filterMethod = (values: SelectOptionItem[]): SelectOptionItem[] => {
