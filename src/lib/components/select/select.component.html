@@ -1,6 +1,7 @@
 <div class="search-container" [class.disabled]="disabled">
 
-    <div class="select-box" [ngClass]="size" [class.focused]="showDropdown" [class.error-class]="error" (click)="toggleDropdown()">
+    <div class="select-box" [ngClass]="size" [class.focused]="showDropdown" [class.error-class]="error"
+        (click)="toggleDropdown()">
         <p>{{selectedOption ? selectedOption.label : placeholder}}</p>
         <div class="icon">
             <svg>
@@ -11,19 +12,20 @@
     </div>
     <!-- For input type -->
     <ng-container *ngIf="type == 'input'">
-        <select [(ngModel)]="selectedOption" (ngModelChange)="optionChanged()">
+        <select [(ngModel)]="selectedOption" (ngModelChange)="optionChanged($event)">
             <option disabled value="">{{ placeholder}}</option>
             <option *ngFor="let item of options" [ngValue]="item">{{item.label}}</option>
         </select>
     </ng-container>
-    
+
     <!-- For Dropdown -->
     <div class="dropdown" [class.close-dropdown]="!showDropdown">
         <ng-container *ngIf="dropdownConfig.search">
             <input type="search" placeholder="Search" [(ngModel)]="searchQuery" (ngModelChange)="filterList()" />
         </ng-container>
-        
-        <ul class="list" [style.height]="dropdownConfig.height" [style.overflow]="dropdownConfig.height == 'auto' ? 'visible' : 'auto'">
+
+        <ul class="list" [style.height]="dropdownConfig.height"
+            [style.overflow]="dropdownConfig.height == 'auto' ? 'visible' : 'auto'">
             <ng-container *ngIf="(filteredList$ | async) as filteredList">
                 <li *ngFor="let item of filteredList" (click)="selectOption(item)">{{item.label}}
                 </li>
