@@ -20,7 +20,7 @@ export class PaginationComponent {
     }
 
     ngOnChanges(changes: SimpleChanges): void {
-        if (changes['total'].previousValue !== undefined && (changes['total'].previousValue !== changes['total'].currentValue)) {
+        if ((changes['total'].previousValue !== changes['total'].currentValue)) {
             this.paginate()
         }
     }
