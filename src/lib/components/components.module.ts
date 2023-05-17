@@ -39,6 +39,7 @@ import { ButtonModule } from './button/button.module';
 import { BadgeModule } from './badge/badge.module';
 import { MenuModule } from './menu/menu.module';
 import { TooltipModule } from './tooltip/tooltip.module';
+import { PreloaderComponent } from './preloader/preloader.component';
 
 @NgModule({
     declarations: [
@@ -71,6 +72,7 @@ import { TooltipModule } from './tooltip/tooltip.module';
         TableDirective,
         DateComponent,
         DateExampleComponent,
+        PreloaderComponent
     ],
     imports: [
         CommonModule,
@@ -106,6 +108,7 @@ import { TooltipModule } from './tooltip/tooltip.module';
         MenuExampleComponent,
         FormLabelComponent,
         FormGroupExampleComponent,
+        PreloaderComponent,
         FormGroupDirective,
         InputDirective,
         InputGroupDirective,

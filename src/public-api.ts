@@ -28,6 +28,7 @@ import { MenuSectionComponent } from './lib/components/menu/menu-section/menu-se
 import { MenuComponent } from './lib/components/menu/menu.component';
 import { RootViewContainers } from './lib/components/modal/reloadly-modal';
 import { PaginationComponent } from './lib/components/pagination/pagination.component';
+import { PreloaderComponent } from './lib/components/preloader/preloader.component';
 import { SelectExampleComponent } from './lib/components/select/select-example/select-example.component';
 import { SelectComponent, SelectOptionItem } from './lib/components/select/select.component';
 import { SidebarExampleComponent } from './lib/components/sidebar/sidebar-example/sidebar-example.component';
@@ -88,7 +89,8 @@ export {
     InputGroupExampleComponent,
     TableDirective,
     DateComponent,
-    DateExampleComponent
+    DateExampleComponent,
+    PreloaderComponent
 };
 
 export * from './lib/form/form.module';
