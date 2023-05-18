@@ -1,6 +1,10 @@
 {
   "name": "reloadly-ui",
   "version": "0.0.0",
+  "scripts": {
+    "build:dev": "ng build --configuration development --watch",
+    "build:prod": "ng build --configuration production"
+  },
   "private": true,
   "dependencies": {
     "tslib": "^2.3.0"
