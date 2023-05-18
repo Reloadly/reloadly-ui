@@ -4,9 +4,11 @@ import { ActionCardComponent } from './action-card/action-card.component';
 import { SelectionGridComponent } from './selection-grid/selectable-grid.component';
 import { ImageCardComponent } from './image-card/image-card.component';
 import { ListTileComponent } from './list-tile/list-tile.component';
-import { FormsModule } from '@angular/forms';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ComponentsModule } from '../components/components.module';
+import { StepperComponent } from './stepper/stepper.component';
+import { StepComponent } from './stepper/step/step.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -14,7 +16,9 @@ import { ComponentsModule } from '../components/components.module';
         ImageCardComponent,
         ListTileComponent,
         SelectionGridComponent,
-        ProductDetailsComponent
+        ProductDetailsComponent,
+        StepperComponent,
+        StepComponent
     ],
     imports: [
         CommonModule,
@@ -26,7 +30,9 @@ import { ComponentsModule } from '../components/components.module';
         ImageCardComponent,
         ListTileComponent,
         SelectionGridComponent,
-        ProductDetailsComponent
+        ProductDetailsComponent,
+        StepperComponent,
+        StepComponent
     ]
 })
-export class ContainersModule { }
+export class ReloadlyContainersModule { }

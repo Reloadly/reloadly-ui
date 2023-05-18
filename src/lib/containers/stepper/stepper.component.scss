@@ -1,0 +1,21 @@
+@import "../../../styles/variables.scss";
+
+.rld {
+    &-stepper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-bullets,
+    &-content {
+        width: 100%;
+        display: flex;
+
+        ::ng-deep {
+            reloadly-step {
+                flex-basis: 100%;
+            }
+        }
+    }
+}
