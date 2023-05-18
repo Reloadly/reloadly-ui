@@ -40,7 +40,7 @@ export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor 
 
     writeValue(item: SelectOptionItem | null): void {
         this.selectedOption = item
-        this.onChanged(item);
+        this.onChanged(item?.value);
     }
 
     registerOnChange(fn: any): void {
