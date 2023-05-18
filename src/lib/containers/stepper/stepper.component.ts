@@ -30,7 +30,7 @@ class AnimationOrb {
     styleUrls: ['./stepper.component.scss']
 })
 export class StepperComponent implements AfterContentInit, AfterViewInit, OnDestroy {
-    private _currentIndex = 6;
+    private _currentIndex = 0;
     private last = 0;
     private viewResolved = false;
     private cont!: HTMLElement;
@@ -61,10 +61,6 @@ export class StepperComponent implements AfterContentInit, AfterViewInit, OnDest
         let counter = 0;
         this.contents.forEach(c => c.index = counter++);
         this.last = --counter;
-        setTimeout(() => this.moveToNext(), 2000)
-        setTimeout(() => this.moveToNext(), 4000)
-        setTimeout(() => this.moveToPrevious(), 6000)
-        setTimeout(() => this.moveToPrevious(), 8000)
     }
 
     ngAfterViewInit(): void {
@@ -97,7 +93,6 @@ export class StepperComponent implements AfterContentInit, AfterViewInit, OnDest
 
     private slideRight(): void {
         if (this.viewResolved && this.currentIndex >= 0) {
-            console.log('right')
             // first remove next view
             const [newInsert, previousOld, rightSideOfOld] = this.contents
                 .filter(c => c.index == this.currentIndex
@@ -131,7 +126,6 @@ export class StepperComponent implements AfterContentInit, AfterViewInit, OnDest
 
     private slideLeft(): void {
         if (this.viewResolved) {
-            console.log('left')
             // first play slide animation
             this.renderer.setStyle(this.cont.firstChild, 'transform', 'translateX(-100%)');
             this.renderer.setStyle(this.cont.lastChild, 'transform', 'translateX(-100%)');

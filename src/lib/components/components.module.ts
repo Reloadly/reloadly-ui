@@ -120,7 +120,6 @@ import { TooltipModule } from './tooltip/tooltip.module';
         BadgeModule,
         MenuModule,
         TooltipModule
-    ],
-    providers: [ReloadlyModal]
+    ]
 })
 export class ComponentsModule { }

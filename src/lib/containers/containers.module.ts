@@ -9,6 +9,7 @@ import { ComponentsModule } from '../components/components.module';
 import { StepperComponent } from './stepper/stepper.component';
 import { StepComponent } from './stepper/step/step.component';
 import { FormsModule } from '@angular/forms';
+import { StepperExampleComponent } from './stepper/stepper-example/stepper-example.component';
 
 @NgModule({
     declarations: [
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
         SelectionGridComponent,
         ProductDetailsComponent,
         StepperComponent,
-        StepComponent
+        StepComponent,
+        StepperExampleComponent
     ],
     imports: [
         CommonModule,
@@ -32,7 +34,8 @@ import { FormsModule } from '@angular/forms';
         SelectionGridComponent,
         ProductDetailsComponent,
         StepperComponent,
-        StepComponent
+        StepComponent,
+        StepperExampleComponent
     ]
 })
 export class ReloadlyContainersModule { }
