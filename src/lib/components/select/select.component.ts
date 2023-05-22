@@ -29,7 +29,7 @@ export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor 
     @Input() selectedValue = '';
     @Input() error: boolean = false;
     @Input() disabled: boolean = false;
-    @Output() selectedOptionChange: EventEmitter<SelectOptionItem> = new EventEmitter();
+    @Output() selectedOptionChange: EventEmitter<SelectOptionItem | null> = new EventEmitter();
 
     filteredList$ = this.list.pipe(map(options => this.filterMethod(options)));
 
@@ -39,7 +39,7 @@ export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor 
     constructor(private eRef: ElementRef) { }
 
     writeValue(item: SelectOptionItem | null): void {
-        this.selectedOption = item
+        this.selectedOption = item;
         this.onChanged(item);
     }
 
@@ -88,16 +88,19 @@ export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor 
         if (this.type == 'input' || this.disabled) return;
         this.showDropdown = !this.showDropdown;
         this.searchQuery = '';
+        this.filterList();
     }
 
     optionChanged(event: any) {
         this.onTouched();
+        this.selectedOptionChange.emit(this.selectedOption);
         this.writeValue(this.selectedOption);
     }
 
     selectOption(item: SelectOptionItem) {
         this.onTouched();
         this.toggleDropdown();
+        this.selectedOptionChange.emit(item);
         this.writeValue(item);
 
     }
