@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EnvironmentToggleComponent } from './environment-toggle/environment-toggle.component';
 import { FooterComponent } from './footer/footer.component';
-import { HeaderComponent } from './header/header.component';
 import { HowToComponent } from './how-to/how-to.component';
 import { SvgComponent } from './svg/svg.component';
 import { TagComponent } from './tag/tag.component';
@@ -43,11 +41,9 @@ import { PreloaderComponent } from './preloader/preloader.component';
 
 @NgModule({
     declarations: [
-        HeaderComponent,
         SvgComponent,
         FooterComponent,
         HowToComponent,
-        EnvironmentToggleComponent,
         TagComponent,
         CustomerServiceComponent,
         TableComponent,
@@ -87,11 +83,9 @@ import { PreloaderComponent } from './preloader/preloader.component';
         TooltipModule
     ],
     exports: [
-        HeaderComponent,
         SvgComponent,
         FooterComponent,
         HowToComponent,
-        EnvironmentToggleComponent,
         TagComponent,
         CustomerServiceComponent,
         TableComponent,

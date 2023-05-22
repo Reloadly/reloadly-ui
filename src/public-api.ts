@@ -9,12 +9,10 @@ import { ButtonDirective } from './lib/components/button/directives/button.direc
 import { CustomerServiceComponent } from './lib/components/customer-service/customer-service.component';
 import { DateExampleComponent } from './lib/components/date/date-example/date-example.component';
 import { DateComponent } from './lib/components/date/date.component';
-import { EnvironmentToggleComponent } from './lib/components/environment-toggle/environment-toggle.component';
 import { FooterComponent } from './lib/components/footer/footer.component';
 import { FormGroupDirective } from './lib/components/form-group/directives/form-group.directive';
 import { FormGroupExampleComponent } from './lib/components/form-group/form-group-example/form-group-example.component';
 import { FormLabelComponent } from './lib/components/form-group/form-label/form-label.component';
-import { HeaderComponent } from './lib/components/header/header.component';
 import { HowToComponent } from './lib/components/how-to/how-to.component';
 import { InputGroupDirective } from './lib/components/input-group/directives/input-group.directive';
 import { InputDirective } from './lib/components/input-group/directives/input.directive';
@@ -60,11 +58,9 @@ export * from './lib/reloadly-ui.module';
 
 export * from './lib/components/components.module';
 export {
-    HeaderComponent,
     SvgComponent,
     FooterComponent,
     HowToComponent,
-    EnvironmentToggleComponent,
     TagComponent,
     CustomerServiceComponent,
     TableComponent,
