@@ -4,11 +4,20 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-
+    @media screen and (max-width:540px) {
+        flex-flow: column;
+        align-items: center;
+    }
     p {
         font-size: $font-medium;
         line-height: 20px;
         color: $reloadly-black-10;
+    }
+    .buttons {
+        flex-wrap: nowrap !important;
+        @media screen and (max-width:540px) {
+            margin-top: 20px;
+        }
     }
     button {
         &:not(:last-of-type) {
