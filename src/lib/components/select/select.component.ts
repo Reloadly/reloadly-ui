@@ -41,6 +41,7 @@ export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor 
     writeValue(item: SelectOptionItem | null): void {
         this.selectedOption = item
         this.onChanged(item);
+        if (item) this.selectedOptionChange.emit(item);
     }
 
     registerOnChange(fn: any): void {
@@ -54,7 +55,6 @@ export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor 
     setDisabledState(isDisabled: boolean): void {
         this.disabled = isDisabled;
     }
-
 
     @HostListener('document:click', ['$event'])
     clickout(event: any) {
@@ -99,7 +99,6 @@ export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor 
         this.onTouched();
         this.toggleDropdown();
         this.writeValue(item);
-
     }
 
     private filterMethod = (values: SelectOptionItem[]): SelectOptionItem[] => {

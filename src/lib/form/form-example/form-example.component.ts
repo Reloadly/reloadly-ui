@@ -58,7 +58,7 @@ export class FormExampleComponent implements OnInit {
     this.form.get('balancePercentage')?.setValue(percentage);
   }
 
-  checkBoxClicked(box: CheckBoxValue): void {
+  checkBoxClicked(box: CheckBoxValue | string): void {
     console.log(box);
   }
 }
