@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EnvironmentToggleComponent } from './environment-toggle/environment-toggle.component';
 import { FooterComponent } from './footer/footer.component';
-import { HeaderComponent } from './header/header.component';
 import { HowToComponent } from './how-to/how-to.component';
 import { SvgComponent } from './svg/svg.component';
 import { TagComponent } from './tag/tag.component';
@@ -39,14 +37,13 @@ import { ButtonModule } from './button/button.module';
 import { BadgeModule } from './badge/badge.module';
 import { MenuModule } from './menu/menu.module';
 import { TooltipModule } from './tooltip/tooltip.module';
+import { PreloaderComponent } from './preloader/preloader.component';
 
 @NgModule({
     declarations: [
-        HeaderComponent,
         SvgComponent,
         FooterComponent,
         HowToComponent,
-        EnvironmentToggleComponent,
         TagComponent,
         CustomerServiceComponent,
         TableComponent,
@@ -71,6 +68,7 @@ import { TooltipModule } from './tooltip/tooltip.module';
         TableDirective,
         DateComponent,
         DateExampleComponent,
+        PreloaderComponent
     ],
     imports: [
         CommonModule,
@@ -85,11 +83,9 @@ import { TooltipModule } from './tooltip/tooltip.module';
         TooltipModule
     ],
     exports: [
-        HeaderComponent,
         SvgComponent,
         FooterComponent,
         HowToComponent,
-        EnvironmentToggleComponent,
         TagComponent,
         CustomerServiceComponent,
         TableComponent,
@@ -106,6 +102,7 @@ import { TooltipModule } from './tooltip/tooltip.module';
         MenuExampleComponent,
         FormLabelComponent,
         FormGroupExampleComponent,
+        PreloaderComponent,
         FormGroupDirective,
         InputDirective,
         InputGroupDirective,
