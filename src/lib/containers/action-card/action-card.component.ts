@@ -1,9 +1,9 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-action-card',
-  templateUrl: './action-card.component.html',
-  styleUrls: ['./action-card.component.scss']
+    selector: 'app-action-card',
+    templateUrl: './action-card.component.html',
+    styleUrls: ['./action-card.component.scss']
 })
 export class ActionCardComponent {
     @Input() title: string = '';
@@ -17,11 +17,11 @@ export class ActionCardComponent {
     @Output() onToggleChange: EventEmitter<boolean> = new EventEmitter();
 
 
-    toggleValue = false;
+    @Input() toggleValue = false;
 
 
     toggleChange() {
-        this.toggleValue= !this.toggleValue;
+        this.toggleValue = !this.toggleValue;
         this.onToggleChange.emit(this.toggleValue);
     }
 }
