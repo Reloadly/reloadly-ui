@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, Injector, OnDestroy, Renderer2, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, ComponentRef, ElementRef, HostListener, Injector, OnDestroy, Renderer2, ViewChild, ViewContainerRef } from '@angular/core';
 import { ReloadlyDialogRef } from '../reloadly-dialog-ref';
 
 @Component({
@@ -9,7 +9,8 @@ import { ReloadlyDialogRef } from '../reloadly-dialog-ref';
 export class ReloadlyModalContainerComponent implements OnDestroy {
     @ViewChild('wrapper') wrapper!: ElementRef;
     @ViewChild('hostingComponent', { read: ViewContainerRef, static: true })
-    hostingComponent !: ViewContainerRef;
+    hostingComponentViewRef!: ViewContainerRef;
+    hostingComponentRef!: ComponentRef<any>;
     dialogRef !: ReloadlyDialogRef;
 
     constructor(private renderer: Renderer2) { }
@@ -20,8 +21,11 @@ export class ReloadlyModalContainerComponent implements OnDestroy {
     }
 
     showDialog(componentClass: any, dialogRef: ReloadlyDialogRef, injector: Injector): void {
-        if (this.hostingComponent.createComponent(componentClass, { injector }))
+        this.hostingComponentRef = this.hostingComponentViewRef.createComponent(componentClass, { injector });
+        if (this.hostingComponentRef.instance) {
+            this.hostingComponentRef.changeDetectorRef.detectChanges();
             this.dialogRef = dialogRef;
+        }
     }
 
     playDismissAnimation(): void {
@@ -31,6 +35,7 @@ export class ReloadlyModalContainerComponent implements OnDestroy {
     }
 
     ngOnDestroy(): void {
-        this.hostingComponent.clear();
+        this.hostingComponentRef.changeDetectorRef.detach();
+        this.hostingComponentViewRef.clear();
     }
 }

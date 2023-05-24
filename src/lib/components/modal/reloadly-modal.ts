@@ -93,11 +93,13 @@ export class ReloadlyModal {
             const asDomElement = (this.modalContainerRef.hostView as EmbeddedViewRef<any>).rootNodes[0];
             this.rootView.renderer.appendChild(this.document.body, asDomElement);
             this.modalContainer = this.modalContainerRef.instance;
+            this.modalContainerRef.changeDetectorRef.detectChanges();
         }
     }
 
     private destroyModalContainerFromDOMBody(): void {
         if (this.modalContainerRef) {
+            this.modalContainerRef.changeDetectorRef.detach();
             this.modalContainerRef.destroy();
         }
         this.modalContainerRef = null;
