@@ -117,7 +117,6 @@ import { PreloaderComponent } from './preloader/preloader.component';
         BadgeModule,
         MenuModule,
         TooltipModule
-    ],
-    providers: [ReloadlyModal]
+    ]
 })
 export class ComponentsModule { }

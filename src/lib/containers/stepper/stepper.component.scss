@@ -1,0 +1,46 @@
+@import "../../../styles/variables.scss";
+
+.rld {
+    &-stepper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+
+        li {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 0 $spacing-tiny;
+            background-color: $reloadly-light-blue;
+
+            &.rld-active {
+                transform: scale(1.6);
+                background-color: darken($color: $reloadly-light-blue, $amount: 5);
+            }
+        }
+    }
+
+    &-bullets {
+        width: 100%;
+        display: flex;
+        padding: $spacing-small;
+        justify-content: center;
+    }
+
+    &-content {
+        width: 100%;
+        display: flex;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+
+        ::ng-deep {
+            reloadly-step {
+                flex-basis: 100%;
+                flex-shrink: 0;
+                transition: transform 500ms ease-out;
+            }
+        }
+    }
+}
+
