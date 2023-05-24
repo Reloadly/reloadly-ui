@@ -16,11 +16,15 @@ export class ReloadlyDialogRef {
     cancel(): void {
         this.onCancel$.next();
         this.onCancel$.complete();
+        this.onClose$.next();
+        this.onClose$.complete();
     }
 
     accept(): void {
         this.onAccept$.next();
         this.onAccept$.complete();
+        this.onClose$.next();
+        this.onClose$.complete();
     }
 
 }
