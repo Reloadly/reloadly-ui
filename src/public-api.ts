@@ -45,6 +45,9 @@ import { ImageCardComponent } from './lib/containers/image-card/image-card.compo
 import { ListTileComponent } from './lib/containers/list-tile/list-tile.component';
 import { ProductDetailsComponent } from './lib/containers/product-details/product-details.component';
 import { SelectionGridComponent } from './lib/containers/selection-grid/selectable-grid.component';
+import { StepComponent } from './lib/containers/stepper/step/step.component';
+import { StepperExampleComponent } from './lib/containers/stepper/stepper-example/stepper-example.component';
+import { StepperComponent } from './lib/containers/stepper/stepper.component';
 import { SelectableViewStyle } from './lib/enums/selectable-view-style';
 import { SelectableViewType } from './lib/enums/selectable-view-type';
 import { CheckBoxValue, CheckboxComponent } from './lib/form/checkbox/checkbox.component';
@@ -122,7 +125,10 @@ export {
     ImageCardComponent,
     ListTileComponent,
     SelectionGridComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    StepperComponent,
+    StepComponent,
+    StepperExampleComponent
 };
 
 export {

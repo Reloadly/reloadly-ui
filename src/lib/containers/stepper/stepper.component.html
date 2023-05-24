@@ -1,0 +1,7 @@
+<div class="rld-stepper">
+    <ul class="rld-bullets">
+        <li *ngFor="let li of contents.toArray(); index as i"
+            [class.rld-active]="i == currentIndex"></li>
+    </ul>
+    <div #target class="rld-content"></div>
+</div>

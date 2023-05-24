@@ -82,15 +82,29 @@ type FillColoring = 'color' | 'fade' | 'transparent';
 export class CheckboxComponent implements OnInit, AfterViewInit, OnDestroy {
     @Input() name = '';
     @Input() label = '';
-    @Input() control = new FormControl;
+    @Input() control!: FormControl | null;
     @Input() set checked(value: boolean) { this.state.isChecked.next(value) };
     @Input() set disabled(value: boolean) { this.state.disabled.next(value) };
-    @Output() change: EventEmitter<CheckBoxValue> = new EventEmitter();
+    @Output() change: EventEmitter<CheckBoxValue | string> = new EventEmitter();
 
     @ViewChild('checkBox') checkBox!: ElementRef;
     @ViewChild('disc') disc!: ElementRef;
     @ViewChild('view') view!: ElementRef;
     @ViewChild('input') inputElement!: ElementRef;
+
+    public get isHovered(): boolean { return this.state.isHovered }
+    public get isFocused(): boolean { return this.state.isFocused }
+    public get isPressed(): boolean { return this.state.isPressed }
+    public get isChecked(): boolean { return this.state.isChecked.getValue() }
+    public get disabled(): boolean { return this.state.disabled.getValue() }
+
+    public get isChecked$(): BehaviorSubject<boolean> { return this.state.isChecked }
+    public get disabled$(): BehaviorSubject<boolean> { return this.state.disabled }
+
+    public set isChecked(value: boolean) {
+        this.state.isChecked.next(value);
+        this.htmlInputElement.checked = value;
+    }
 
     private state = {
         isHovered: false,
@@ -105,34 +119,32 @@ export class CheckboxComponent implements OnInit, AfterViewInit, OnDestroy {
     constructor(private renderer: Renderer2) { }
 
     ngOnInit(): void {
-        this.subs.sink = this.isChecked$
-            .pipe(tap(checked => this.control.setValue(checked)), skip(1))
-            .subscribe(checked => {
-                this.change.emit({
-                    name: this.name,
-                    isChecked: checked,
-                    label: this.label
-                })
-            });
+        if (!this.control) {
+            this.subs.sink = this.isChecked$
+                .pipe(skip(1)).subscribe(checked => {
+                    this.change.emit({
+                        name: this.name,
+                        isChecked: checked,
+                        label: this.label
+                    })
+                });
+        } else {
+            this.subs.sink = this.isChecked$
+                .pipe(
+                    tap(checked => (this.control as FormControl)
+                        .setValue(checked, { emitEvent: false })),
+                    skip(1)
+                ).subscribe(checked => {
+                    this.change.emit("Use FormControl.value or FormControl.valueChanges instead, since you supplied a FormControl in [control]")
+                });
+            this.subs.sink = this.control.valueChanges.subscribe(v => this.isChecked = v);
+        }
     }
 
     ngAfterViewInit(): void {
         this.listenForHovered();
         this.listenForFocused();
         this.listenForPressed();
-    }
-
-    public get isHovered(): boolean { return this.state.isHovered }
-    public get isFocused(): boolean { return this.state.isFocused }
-    public get isPressed(): boolean { return this.state.isPressed }
-    public get isChecked(): boolean { return this.state.isChecked.getValue() }
-    public get disabled(): boolean { return this.state.disabled.getValue() }
-
-    public get isChecked$(): BehaviorSubject<boolean> { return this.state.isChecked }
-    public get disabled$(): BehaviorSubject<boolean> { return this.state.disabled }
-
-    public set isChecked(value: boolean) {
-        this.state.isChecked.next(value);
     }
 
     public get borderColoring(): BorderColoring | null {
