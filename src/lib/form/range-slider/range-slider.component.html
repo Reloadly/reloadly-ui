@@ -1,10 +1,10 @@
 <div class="range-slider" [class.disabled]="disabled">
-	<p class="min-max">{{min}}</p>
-	<div class="rail" #range>
-		<a class="knob" #knob></a>
-		<div class="slide"></div>
-	</div>
-	<p class="min-max">{{max}}</p>
-	<input #input type="number" [min]="min" [max]="max" class="input"
-		   (input)="inputChanged($event)" [disabled]="disabled">
+    <p class="min-max">{{symbol + min}}</p>
+    <div class="rail" #range [ngStyle]="{'minHeight': baseSize + 'px'}">
+        <a class="knob" #knob [ngStyle]="{'width': baseSize + 'px', height: baseSize + 'px'}"></a>
+        <div class="slide" [ngStyle]="{'height': baseSize * .333 + 'px'}"></div>
+    </div>
+    <p class="min-max">{{symbol + max}}</p>
+    <input [ngStyle]="{'display': showInput ? 'flex': 'none'}" #input type="number" [min]="min" [max]="max"
+        class="input" (input)="inputChanged($event)" [disabled]="disabled">
 </div>
