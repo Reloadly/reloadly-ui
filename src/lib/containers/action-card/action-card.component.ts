@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { ActionCardStyle } from 'dist/reloadly-ui/lib/enums/card-style';
 
 @Component({
     selector: 'app-action-card',
@@ -12,12 +13,9 @@ export class ActionCardComponent {
     @Input() cardWidth: string = '302px';
     @Input() cardHeight: string = '153px';
     @Input() toggleValue = false;
-    @Input() disableAction: boolean = false;
-    @Input() hasDropShadow = false;
-    @Input() cardStyle: 'basic' | 'balanceCardStyle' | 'walletRechargeCardStyle' = 'basic';
+    @Input() disableAction: boolean = true;
+    @Input() cardStyle: ActionCardStyle = ActionCardStyle.basic;
     @Input() toggleTitle: String | undefined = 'Notify me';
-    @Input() actionBtnAlignment: 'full' | 'start' | 'end' | 'center' = 'start';
-    @Input() actionBtnBorderStyle: 'rounded' | 'rectangular' = 'rounded';
     @Output() onActionClicked: EventEmitter<void> = new EventEmitter();
     @Output() onToggleChange: EventEmitter<boolean> = new EventEmitter();
 

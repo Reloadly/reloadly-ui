@@ -23,9 +23,6 @@ import { SubSink } from 'subsink';
 export class RangeSliderComponent implements OnInit, AfterViewInit, OnDestroy {
     @Input() min!: number;
     @Input() max!: number;
-    @Input() symbol: string = '';
-    @Input() showInput: boolean = true;
-    @Input() baseSize: number = 30;
     @Input() disabled!: boolean;
     @Output() currentValue = new EventEmitter<number>();
     @Output() currentPercentage = new EventEmitter<number>();
