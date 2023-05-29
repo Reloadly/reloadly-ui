@@ -1,0 +1,11 @@
+
+
+<div class="toggle-container" [class.disabled]="disabled" (click)="toggleSwitch()">
+    <div class="switch-box" [ngClass]="[size,type]" [class.active-box]="toggle">
+        <span class="switch"></span>
+    </div>
+    <div class="toggle-texts" *ngIf="label != ''">
+        <label>{{label}}</label>
+        <p *ngIf="description != ''">{{description}}</p>
+    </div>
+</div>

@@ -1,0 +1,124 @@
+@import "../../../styles/variables.scss";
+
+.reloadly-tooltip {
+    background: $reloadly-white;
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.08),
+        0px 15px 35px 0px rgba(60, 66, 87, 0.12);
+    border: 1px solid #e3e8ee;
+    border-radius: 4px;
+    padding: 8px;
+    max-width: 300px;
+    font-size: $font-medium;
+    line-height: 20px;
+    letter-spacing: -0.154px;
+    color: $reloadly-black-8;
+    position: absolute;
+    z-index: 10;
+
+    &.top-left {
+        transform: translate(calc(-100% + 30px), -100%);
+        .caret {
+            width: 13px;
+            height: 13px;
+            border-right: 1px solid #e3e8ee;
+            border-bottom: 1px solid #e3e8ee;
+            background: $reloadly-white;
+            transform: rotate(45deg);
+            position: absolute;
+            bottom: -7px;
+            right: 16px;
+            z-index: 0;
+        }
+    }
+
+    &.top-center {
+        transform: translate(-50%, -100%);
+        .caret {
+            width: 13px;
+            height: 13px;
+            border-right: 1px solid #e3e8ee;
+            border-bottom: 1px solid #e3e8ee;
+            background: $reloadly-white;
+            transform: rotate(45deg);
+            position: absolute;
+            bottom: -7px;
+            left: 50%;
+            right: 50%;
+            z-index: 0;
+        }
+    }
+
+    &.top-right {
+        transform: translate(0%, -100%);
+        .caret {
+            width: 13px;
+            height: 13px;
+            border-right: 1px solid #e3e8ee;
+            border-bottom: 1px solid #e3e8ee;
+            background: $reloadly-white;
+            transform: rotate(45deg);
+            position: absolute;
+            bottom: -7px;
+            left: 16px;
+            z-index: 0;
+        }
+    }
+
+    &.bottom-left {
+        transform: translate(calc(-100% + 30px), 0%);
+        .caret {
+            width: 13px;
+            height: 13px;
+            border-left: 1px solid #e3e8ee;
+            border-top: 1px solid #e3e8ee;
+            background: $reloadly-white;
+            transform: rotate(45deg);
+            position: absolute;
+            top: -7px;
+            right: 16px;
+            z-index: 0;
+        }
+    }
+
+    &.bottom-center {
+        transform: translate(-50%, -0%);
+        .caret {
+            width: 13px;
+            height: 13px;
+            border-left: 1px solid #e3e8ee;
+            border-top: 1px solid #e3e8ee;
+            background: $reloadly-white;
+            transform: rotate(45deg);
+            position: absolute;
+            top: -7px;
+            left: 50%;
+            right: 50%;
+            z-index: 0;
+        }
+    }
+
+    &.bottom-right {
+        transform: translate(0%, 0%);
+        .caret {
+            width: 13px;
+            height: 13px;
+            border-left: 1px solid #e3e8ee;
+            border-top: 1px solid #e3e8ee;
+            background: $reloadly-white;
+            transform: rotate(45deg);
+            position: absolute;
+            top: -7px;
+            left: 16px;
+            z-index: 0;
+        }
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+}

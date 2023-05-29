@@ -1,0 +1,28 @@
+{
+    "name": "reloadly-ui",
+    "version": "1.0.0",
+    "peerDependencies": {
+        "@angular/common": "^16.0.2",
+        "@angular/core": "^16.0.2",
+        "bulma": "^0.9.4"
+    },
+    "dependencies": {},
+    "sideEffects": false,
+    "keywords": [
+        "angular",
+        "ui",
+        "components",
+        "accordion",
+        "alert",
+        "buttons",
+        "datepicker",
+        "dropdown",
+        "modal",
+        "offcanvas",
+        "pagination",
+        "progressbar",
+        "table",
+        "timepicker"
+    ],
+    "license": "MIT"
+}

@@ -1,0 +1,13 @@
+  <div class="is-flex is-flex-direction-rows is-align-content-center">
+    <figure class="image is-64x64 mr-3">
+      <img class="is-rounded" src="https://bulma.io/images/placeholders/64x64.png">
+    </figure>
+    <div class="is-flex is-flex-direction-column is-flex-grow-1">
+      <div class="is-flex is-flex-direction-row is-justify-content-space-between">
+      <h6 class="font-size-md font-size-md-line-hight-26 font-weight-450 mb-2">{{title}}</h6>
+      <app-tag [type]="'success'" [text]="tag"></app-tag>
+      </div>
+      <span class="font-size-md font-size-md-line-hight-26 mb-2">{{subTitle}}</span>
+      <span class="is-primary font-size-sm font-weight-450 brand-color">{{thirdLine}}</span>
+    </div>
+  </div>

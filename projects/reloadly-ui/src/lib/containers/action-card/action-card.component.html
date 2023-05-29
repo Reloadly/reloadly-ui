@@ -1,0 +1,13 @@
+<div class="action-card is-flex is-flex-direction-column" [ngStyle]="{width: cardWidth, height: cardHeight} ">
+ <div class="card-content">
+    <h6 class="card-title">{{title}}</h6>
+    <h6 class="card-value">{{value}}</h6>
+
+    <label class="checkbox-tile" *ngIf="toggleTitle">
+        <input type="checkbox" [checked]="toggleValue ? 'checked' : '' ">
+        <span class="checkmark"></span>
+        {{toggleTitle}}
+    </label>
+ </div>
+    <button type="button" class="button action-button" [class.disabled]="disableAction" (click)="onActionClicked.emit()">{{actionText}}</button>
+</div>

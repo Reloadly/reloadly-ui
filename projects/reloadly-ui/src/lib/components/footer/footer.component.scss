@@ -1,0 +1,179 @@
+@import "../../../styles/variables";
+
+.footer {
+    width: 100%;
+
+    .top {
+        width: 100%;
+        min-height: 300px;
+        background-color: $reloadly-violet-4;
+        padding: 32px;
+
+        .row {
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            flex-flow: row wrap;
+            gap: 0 24px;
+
+            @media screen and (max-width: 768px) {
+                width: 100%;
+            }
+
+            &:last-of-type {
+                .main-info {
+                    @media screen and (max-width: 768px) {
+                        display: none;
+                    }
+                }
+            }
+
+            section {
+                width: calc(20% - 24px);
+
+                @media screen and (max-width: 768px) {
+                    width: 48%;
+                }
+
+                @media screen and (max-width: 575px) {
+                    width: 100%;
+                }
+            }
+
+            .main-info {
+                width: 20%;
+
+                @media screen and (max-width: 768px) {
+                    width: 100%;
+                    margin-bottom: 32px;
+                }
+
+                .logo {
+                    width: 100px;
+                    margin-bottom: 16px;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                .description-text {
+                    font-weight: 400;
+                    font-size: $font-regular;
+                    line-height: 21px;
+                    color: $reloadly-white;
+                    margin-bottom: 16px;
+
+                    @media screen and (max-width: 768px) {
+                        width: 70%;
+                    }
+
+                    @media screen and (max-width: 575px) {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .link-list {
+                display: flex;
+                flex-flow: column;
+                align-items: flex-start;
+                margin-bottom: 32px;
+
+                .heading-text {
+                    font-weight: 450;
+                    font-size: 20px;
+                    line-height: 26px;
+                    padding-left: 10px;
+                    border-left: solid 1.5px $reloadly-mint;
+                    color: $reloadly-white;
+                    margin-bottom: 16px;
+                }
+
+                a {
+                    font-weight: 450;
+                    font-size: $font-regular;
+                    line-height: 21px;
+                    color: $reloadly-white;
+
+                    &:not(:last-of-type) {
+                        margin-bottom: 16px;
+                    }
+                }
+            }
+        }
+    }
+
+    .bottom {
+        width: 100%;
+        max-height: 50px;
+        display: flex;
+        justify-content: space-between;
+        padding: 16px 32px;
+        background-color: $background-color;
+
+        @media screen and (max-width: 768px) {
+            flex-flow: column;
+            align-items: center;
+            max-height: none;
+        }
+
+        .text {
+            font-weight: 400;
+            font-size: $font-regular;
+            line-height: 21px;
+            color: $reloadly-black-2;
+
+            @media screen and (max-width: 1024px) {
+                font-size: $font-medium;
+            }
+
+            @media screen and (max-width: 768px) {
+                margin-bottom: 16px;
+            }
+        }
+
+        .links {
+            @media screen and (max-width: 768px) {
+                margin-bottom: 16px;
+                text-align: center;
+            }
+
+            a {
+                font-weight: 450;
+                font-size: $font-medium;
+                line-height: 18px;
+                text-decoration: none;
+                color: $reloadly-violet;
+
+                @media screen and (max-width: 1024px) {
+                    font-size: $font-small;
+                }
+
+                &:not(:last-of-type) {
+                    margin-right: 16px;
+                }
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .action-icons {
+            display: flex;
+            align-items: center;
+
+            .action-icon {
+                width: 24px;
+                height: 24px;
+                margin-left: 16px;
+                cursor: pointer;
+
+                svg {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

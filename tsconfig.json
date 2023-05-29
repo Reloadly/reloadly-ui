@@ -11,17 +11,16 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
-    "paths": {
-      "reloadly-ui": [
-        "dist/reloadly-ui"
-      ],
-      "reloadly-ui/src/lib/models/*": ["dist/reloadly-ui/src/lib/models/*"]
-    },
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "paths": {
+      "reloadly-ui": [
+        "dist/reloadly-ui"
+      ]
+    },
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
