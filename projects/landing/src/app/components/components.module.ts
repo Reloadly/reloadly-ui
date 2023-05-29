@@ -7,7 +7,7 @@ import { InputGroupExampleComponent } from './input-group-example/input-group-ex
 import { BadgeExampleComponent } from './badge-example/badge-example.component';
 import { ButtonExampleComponent } from './button-example/button-example.component';
 import { DateExampleComponent } from './date-example/date-example.component';
-//import { SelectExampleComponent } from './select-example/select-example.component';
+import { SelectExampleComponent } from './select-example/select-example.component';
 import { SidebarExampleComponent } from './sidebar-example/sidebar-example.component';
 import { SwitchExampleComponent } from './switch-example/switch-example.component';
 import { TooltipExampleComponent } from './tooltip-example/tooltip-example.component';
@@ -18,12 +18,12 @@ import { MenuExampleComponent } from './menu-example/menu-example.component';
     imports: [
         ReloadlyUiModule,
         FormsModule,
-        CommonModule
+        CommonModule,
     ],
     declarations: [
         BadgeExampleComponent,
         ButtonExampleComponent,
-        //SelectExampleComponent,
+        SelectExampleComponent,
         DateExampleComponent,
         DateExampleComponent,
         SidebarExampleComponent,
@@ -37,7 +37,7 @@ import { MenuExampleComponent } from './menu-example/menu-example.component';
     exports: [
         BadgeExampleComponent,
         ButtonExampleComponent,
-        //SelectExampleComponent,
+        SelectExampleComponent,
         DateExampleComponent,
         DateExampleComponent,
         SidebarExampleComponent,
@@ -46,7 +46,8 @@ import { MenuExampleComponent } from './menu-example/menu-example.component';
         MenuExampleComponent,
         //StepperExampleComponent,
         FormGroupExampleComponent,
-        InputGroupExampleComponent
+        InputGroupExampleComponent,
+        FormGroupExampleComponent
     ]
 })
 export class ComponentsModule { }
