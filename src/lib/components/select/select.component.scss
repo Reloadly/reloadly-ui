@@ -1,6 +1,6 @@
 @import "../../../styles/variables.scss";
 
-.search-container {
+.select-container {
     width: 100%;
     position: relative;
     $min-width: 30px;
@@ -28,7 +28,7 @@
             p {
                 color: $reloadly-black-13;
             }
-        } 
+        }
     }
     * {
         user-select: none;
@@ -79,7 +79,7 @@
         padding: $form-box-padding-medium;
     }
     .large {
-        height: 36px;
+        height: 40px;
         padding: $form-box-padding-large;
     }
     .focused {
@@ -126,6 +126,8 @@
         ul {
             width: 100%;
             border-top: 1px solid $border-color;
+            max-height: 200px;
+            overflow-y: scroll;
             li {
                 width: 100%;
                 font-weight: 450;
@@ -156,6 +158,6 @@
         box-shadow: none;
         border: none;
     }
-    
+
 }
 
