@@ -64,9 +64,12 @@
                         ],
                         "styles": [
                             "projects/landing/src/styles.scss",
-                            "projects/reloadly-ui/src/styles/styles.scss"
+                            "projects/reloadly-ui/src/styles.scss"
                         ],
-                        "scripts": []
+                        "scripts": [],
+                        "allowedCommonJsDependencies": [
+                            "google-libphonenumber"
+                        ]
                     },
                     "configurations": {
                         "production": {
