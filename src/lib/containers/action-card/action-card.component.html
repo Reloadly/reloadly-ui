@@ -1,49 +1,36 @@
-<div class="action-card is-flex is-flex-direction-column" [ngClass]="{'has-drop-shadow': hasDropShadow, }" [ngStyle]="{width: cardWidth, height: cardHeight} "
+<div class="action-card is-flex is-flex-direction-column" [ngStyle]="{width: cardWidth, height: cardHeight} "
     [ngSwitch]="cardStyle">
-
-    <div class="card-content" *ngSwitchCase="'balanceCardStyle'"
-        [class.balanceCardStyle]="cardStyle === 'balanceCardStyle'">
+    <div class="card-content" *ngSwitchCase="'balanceCardStyle'">
         <h6 class="card-title">{{title}}</h6>
         <h6 class="card-value">{{value}}</h6>
+
         <label class="checkbox-tile" *ngIf="toggleTitle">
             <input type="checkbox" (change)="toggleChange()" [checked]="toggleValue ? 'checked' : '' ">
             <span class="checkmark"></span>
             {{toggleTitle}}
         </label>
     </div>
-
-    <div class="card-content" *ngSwitchCase="'walletRechargeCardStyle'"
-        [ngClass]="{'wallet-recharge-content':cardStyle === 'walletRechargeCardStyle'}">
-        <div class="wallet-recharge-title-row ">
-            <h6 class="card-title">{{title}}</h6>
-            <h6 class="card-value">{{value}}</h6>
-        </div>
-        <label class="checkbox-tile" *ngIf="toggleTitle">
-            <input type="checkbox" (change)="toggleChange()" [checked]="toggleValue ? 'checked' : '' ">
-            <span class="checkmark"></span>
-            {{toggleTitle}}
-        </label>
-    </div>
-
     <div class="card-content" *ngSwitchDefault>
         <h6 class="card-title">{{title}}</h6>
         <h6 class="card-value">{{value}}</h6>
+
         <label class="checkbox-tile" *ngIf="toggleTitle">
             <input type="checkbox" (change)="toggleChange()" [checked]="toggleValue ? 'checked' : '' ">
             <span class="checkmark"></span>
             {{toggleTitle}}
         </label>
     </div>
+    <div class="card-content" *ngSwitchCase="'rechargeCardStyle'">
+        <h6 class="card-title">{{title}}</h6>
+        <h6 class="card-value">{{value}}</h6>
 
+        <label class="checkbox-tile" *ngIf="toggleTitle">
+            <input type="checkbox" (change)="toggleChange()" [checked]="toggleValue ? 'checked' : '' ">
+            <span class="checkmark"></span>
+            {{toggleTitle}}
+        </label>
+    </div>
     <ng-content></ng-content>
-
-    <button type="button" class="button action-button" [class.disabled]="disableAction" (click)="onActionClicked.emit()"
-        [ngClass]="{
-            'rectangular': actionBtnBorderStyle != 'rounded',
-            'full': actionBtnAlignment == 'full',
-            'start': actionBtnAlignment == 'start',
-            'end': actionBtnAlignment == 'end',
-            'center': actionBtnAlignment == 'center'
-
-    }">{{actionText}}</button>
+    <button type="button" class="button action-button" [class.disabled]="disableAction"
+        (click)="onActionClicked.emit()">{{actionText}}</button>
 </div>
