@@ -6,11 +6,9 @@ import { BadgeComponent, BadgeVariant } from './lib/components/badge/badge.compo
 import { ButtonDirective } from './lib/components/button/directives/button.directive';
 import { CustomerServiceComponent } from './lib/components/customer-service/customer-service.component';
 import { DateComponent } from './lib/components/date/date.component';
-import { EnvironmentToggleComponent } from './lib/components/environment-toggle/environment-toggle.component';
 import { FooterComponent } from './lib/components/footer/footer.component';
 import { FormGroupDirective } from './lib/components/form-group/directives/form-group.directive';
 import { FormLabelComponent } from './lib/components/form-group/form-label/form-label.component';
-import { HeaderComponent } from './lib/components/header/header.component';
 import { HowToComponent } from './lib/components/how-to/how-to.component';
 import { InputGroupDirective } from './lib/components/input-group/directives/input-group.directive';
 import { InputDirective } from './lib/components/input-group/directives/input.directive';
@@ -37,11 +35,12 @@ import { ImageCardComponent } from './lib/containers/image-card/image-card.compo
 import { ListTileComponent } from './lib/containers/list-tile/list-tile.component';
 import { ProductDetailsComponent } from './lib/containers/product-details/product-details.component';
 import { SelectionGridComponent } from './lib/containers/selection-grid/selectable-grid.component';
+import { StepComponent } from './lib/containers/stepper/step/step.component';
+import { StepperComponent } from './lib/containers/stepper/stepper.component';
 import { SelectableViewStyle } from './lib/enums/selectable-view-style';
 import { SelectableViewType } from './lib/enums/selectable-view-type';
 import { CheckBoxValue, CheckboxComponent } from './lib/form/checkbox/checkbox.component';
 import { DropdownSelectComponent } from './lib/form/dropdown-select/dropdown-select.component';
-import { FormExampleComponent } from './lib/form/form-example/form-example.component';
 import { RangeSliderComponent } from './lib/form/range-slider/range-slider.component';
 import { SearchBarComponent } from './lib/form/search-bar/search-bar.component';
 import { SelectableItem } from './lib/models/selectable-item';
@@ -50,11 +49,9 @@ export * from './lib/reloadly-ui.module';
 
 export * from './lib/components/components.module';
 export {
-    HeaderComponent,
     SvgComponent,
     FooterComponent,
     HowToComponent,
-    EnvironmentToggleComponent,
     TagComponent,
     CustomerServiceComponent,
     TableComponent,
@@ -75,7 +72,6 @@ export {
 
 export * from './lib/form/form.module';
 export {
-    FormExampleComponent,
     DropdownSelectComponent,
     SearchBarComponent,
     CheckboxComponent,
@@ -106,7 +102,9 @@ export {
     ImageCardComponent,
     ListTileComponent,
     SelectionGridComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    StepperComponent,
+    StepComponent
 };
 
 export {

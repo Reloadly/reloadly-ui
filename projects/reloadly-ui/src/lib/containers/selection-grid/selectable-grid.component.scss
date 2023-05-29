@@ -1,15 +1,14 @@
 @import "../../../styles/variables.scss";
 
-
 .selectable-container {
     display: flex;
     align-items: center;
     flex-flow: row;
-    gap: 26px;
-    @media screen and (max-width:768px) {
-        gap: 18px;
+    gap: 16px;
+    @media screen and (max-width: 768px) {
+        gap: 16px;
     }
-    @media screen and (max-width:575px) {
+    @media screen and (max-width: 575px) {
         gap: 16px;
     }
     &.list {
@@ -37,12 +36,12 @@
         transition: all ease-in-out 300ms;
         cursor: pointer;
         box-sizing: border-box;
-        @media screen and (max-width:768px) {
+        @media screen and (max-width: 768px) {
             min-width: 85px;
             min-height: 44px;
             padding: $padding-8 $padding-16;
         }
-        @media screen and (max-width:575px) {
+        @media screen and (max-width: 575px) {
             padding: $padding-4 $padding-8;
         }
         &:hover {

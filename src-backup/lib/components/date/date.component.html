@@ -1,3 +1,0 @@
-<input type="text" class="input-container" [ngClass]="'input-'+size" inputmode="numeric" [class.error-input]="hasError"
-    [class.disabled-input]="disabled" [disabled]="disabled" maxlength="10" placeholder="YYYY/MM/DD" (keypress)="this.checkFormat($event)"
-    [ngModel]="formattedDate" (ngModelChange)="valueChanged($event)" />

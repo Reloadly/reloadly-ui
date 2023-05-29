@@ -1,7 +1,7 @@
 import { Directive, ElementRef } from '@angular/core';
 
 @Directive({
-  selector: '[reloadlyInputGroup]'
+    selector: '[reloadlyInputGroup]'
 })
 export class InputGroupDirective {
 

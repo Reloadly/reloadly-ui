@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SelectOptionItem } from '../../../../../reloadly-ui/src/lib/components/select/select.component';
 
 @Component({
     selector: 'app-select-example',
@@ -6,7 +7,7 @@ import { Component } from '@angular/core';
     styleUrls: ['./select-example.component.scss']
 })
 export class SelectExampleComponent {
-    options = [
+    options: SelectOptionItem[] = [
         { label: 'Option One', value: 'Option-1' },
         { label: 'Option Two', value: 'Option-2' },
         { label: 'Option Three', value: 'Option-3' },

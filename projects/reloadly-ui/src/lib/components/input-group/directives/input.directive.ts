@@ -26,9 +26,9 @@ export class InputDirective {
     }
 
     checkError() {
-        if(this.hasError) {
+        if (this.hasError) {
             this.el.nativeElement.classList.add('error-input');
-            
+
             return;
         }
         this.el.nativeElement.classList.remove('error-input');
@@ -36,15 +36,15 @@ export class InputDirective {
 
     checkDisabled() {
         this.el.nativeElement.disabled = this.disabled;
-        if(this.disabled) {
+        if (this.disabled) {
             this.el.nativeElement.classList.add('disabled-input');
-            
+
             return;
         }
         this.el.nativeElement.classList.remove('disabled-input');
     }
 
-    
+
 }
 
 type InputSize = 'small' | 'medium' | 'large'
