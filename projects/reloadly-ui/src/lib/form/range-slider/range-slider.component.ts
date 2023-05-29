@@ -13,7 +13,6 @@ import {
     ViewChild
 } from '@angular/core';
 import { Subject } from 'rxjs';
-//import { SubSink } from 'subsink';
 
 @Component({
     selector: 'reloadly-range-slider',
@@ -23,6 +22,9 @@ import { Subject } from 'rxjs';
 export class RangeSliderComponent implements OnInit, AfterViewInit, OnDestroy {
     @Input() min!: number;
     @Input() max!: number;
+    @Input() symbol: string = '';
+    @Input() showInput: boolean = true;
+    @Input() baseSize: number = 30;
     @Input() disabled!: boolean;
     @Output() currentValue = new EventEmitter<number>();
     @Output() currentPercentage = new EventEmitter<number>();
@@ -36,14 +38,12 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnDestroy {
     private window;
 
     private value = new Subject<[value: number, percentage: number]>();
-    //private subs = new SubSink();
 
     constructor(private renderer: Renderer2, @Inject(DOCUMENT) private document: Document) {
         this.window = document.defaultView;
     }
 
     ngOnInit(): void {
-        //this.subs.sink =
         this.value.subscribe(currentValue => {
             this.currentValue.emit(currentValue[0]);
             this.currentPercentage.emit(currentValue[1]);
@@ -66,7 +66,6 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnDestroy {
     ngOnDestroy(): void {
         this.windowListeners.forEach(eventEnder => eventEnder());
         this.knobListeners.forEach(eventEnder => eventEnder());
-        //this.subs.unsubscribe();
     }
 
     public inputChanged(event: Event): void {

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-//import { ColumnMode } from '@swimlane/ngx-datatable';
+import { ColumnMode } from '@swimlane/ngx-datatable';
 
 @Component({
     selector: 'reloadly-table',
@@ -10,7 +10,7 @@ export class TableComponent {
     @Input() rows: any[] = [];
     @Input() columns: any[] = [];
 
-    //ColumnMode: ColumnMode = ColumnMode.force;
+    ColumnMode: ColumnMode = ColumnMode.force;
 
 
     onSelect(column: any) {

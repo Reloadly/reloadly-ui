@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { ReloadlyUiModule } from 'reloadly-ui';
-import { BadgeExampleComponent } from './badge-example/badge.component';
-import { ButtonExampleComponent } from './button-example/button.component';
-import { SelectExampleComponent } from './select-example/select-example.component';
+//import { StepperExampleComponent } from './stepper-example/stepper-example.component';
+import { InputGroupExampleComponent } from './input-group-example/input-group-example.component';
+import { BadgeExampleComponent } from './badge-example/badge-example.component';
+import { ButtonExampleComponent } from './button-example/button-example.component';
 import { DateExampleComponent } from './date-example/date-example.component';
+import { SelectExampleComponent } from './select-example/select-example.component';
 import { SidebarExampleComponent } from './sidebar-example/sidebar-example.component';
 import { SwitchExampleComponent } from './switch-example/switch-example.component';
 import { TooltipExampleComponent } from './tooltip-example/tooltip-example.component';
-import { MenuExampleComponent } from './menu-example/menu-example.component';
 import { FormGroupExampleComponent } from './form-group-example/form-group-example.component';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { MenuExampleComponent } from './menu-example/menu-example.component';
 
 @NgModule({
     imports: [
@@ -28,7 +30,9 @@ import { FormsModule } from '@angular/forms';
         SwitchExampleComponent,
         TooltipExampleComponent,
         MenuExampleComponent,
-        FormGroupExampleComponent
+        //StepperExampleComponent,
+        FormGroupExampleComponent,
+        InputGroupExampleComponent
     ]
 })
 export class ComponentsModule { }
