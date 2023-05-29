@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { ComponentsComponent } from './pages/components/components.component';
-import { BadgeExampleComponent } from './components/badge-example/badge-example.component';
+import { PlaygroundComponent } from './pages/playground/playground.component';
 
 const routes: Routes = [
     {
@@ -11,7 +10,7 @@ const routes: Routes = [
     },
     {
         path: 'components',
-        component: BadgeExampleComponent
+        component: PlaygroundComponent
     },
 ];
 

@@ -7,13 +7,13 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { GettingStartedComponent } from './pages/getting-started/getting-started.component';
 import { ComponentsModule } from './components/components.module';
-import { ComponentsComponent } from './pages/components/components.component';
+import { PlaygroundComponent } from './pages/playground/playground.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        ComponentsComponent,
         HomeComponent,
+        PlaygroundComponent
     ],
     imports: [
         BrowserModule,

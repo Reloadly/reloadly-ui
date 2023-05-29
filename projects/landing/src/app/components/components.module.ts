@@ -7,7 +7,7 @@ import { InputGroupExampleComponent } from './input-group-example/input-group-ex
 import { BadgeExampleComponent } from './badge-example/badge-example.component';
 import { ButtonExampleComponent } from './button-example/button-example.component';
 import { DateExampleComponent } from './date-example/date-example.component';
-import { SelectExampleComponent } from './select-example/select-example.component';
+//import { SelectExampleComponent } from './select-example/select-example.component';
 import { SidebarExampleComponent } from './sidebar-example/sidebar-example.component';
 import { SwitchExampleComponent } from './switch-example/switch-example.component';
 import { TooltipExampleComponent } from './tooltip-example/tooltip-example.component';
@@ -23,7 +23,21 @@ import { MenuExampleComponent } from './menu-example/menu-example.component';
     declarations: [
         BadgeExampleComponent,
         ButtonExampleComponent,
-        SelectExampleComponent,
+        //SelectExampleComponent,
+        DateExampleComponent,
+        DateExampleComponent,
+        SidebarExampleComponent,
+        SwitchExampleComponent,
+        TooltipExampleComponent,
+        MenuExampleComponent,
+        //StepperExampleComponent,
+        FormGroupExampleComponent,
+        InputGroupExampleComponent
+    ],
+    exports: [
+        BadgeExampleComponent,
+        ButtonExampleComponent,
+        //SelectExampleComponent,
         DateExampleComponent,
         DateExampleComponent,
         SidebarExampleComponent,
