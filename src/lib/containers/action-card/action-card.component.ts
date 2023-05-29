@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { ActionCardStyle } from 'dist/reloadly-ui/lib/enums/card-style';
 
 @Component({
     selector: 'app-action-card',
