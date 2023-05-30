@@ -1,5 +1,5 @@
-<div class="action-card is-flex is-flex-direction-column" [ngClass]="{'has-drop-shadow': hasDropShadow, }" [ngStyle]="{width: cardWidth, height: cardHeight} "
-    [ngSwitch]="cardStyle">
+<div class="action-card is-flex is-flex-direction-column" [ngClass]="{'has-drop-shadow': hasDropShadow }"
+    [ngStyle]="{width: cardWidth, height: cardHeight} " [ngSwitch]="cardStyle">
 
     <div class="card-content" *ngSwitchCase="'balanceCardStyle'"
         [class.balanceCardStyle]="cardStyle === 'balanceCardStyle'">
