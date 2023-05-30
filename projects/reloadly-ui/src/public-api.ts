@@ -44,6 +44,7 @@ import { DropdownSelectComponent } from './lib/form/dropdown-select/dropdown-sel
 import { RangeSliderComponent } from './lib/form/range-slider/range-slider.component';
 import { SearchBarComponent } from './lib/form/search-bar/search-bar.component';
 import { SelectableItem } from './lib/models/selectable-item';
+import { CreditCardComponent } from './lib/containers/credit-card/credit-card.component';
 
 export * from './lib/reloadly-ui.module';
 
@@ -104,7 +105,8 @@ export {
     SelectionGridComponent,
     ProductDetailsComponent,
     StepperComponent,
-    StepComponent
+    StepComponent,
+    CreditCardComponent
 };
 
 export {

@@ -103,6 +103,8 @@ $padding-24: 24px;
 $padding-32: 32px;
 $padding-64: 64px;
 $padding-100: 100px;
+$gradient: linear-gradient(65.58deg, rgba(0, 66, 255, 0.5) -11.84%, rgba(235, 0, 27, 0.5) 98.75%),
+linear-gradient(0deg, #FFFFFF, #FFFFFF);
 
 @mixin disabled {
     background-color: $input-disabled-background-color;
