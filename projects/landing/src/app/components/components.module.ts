@@ -12,7 +12,7 @@ import { SwitchExampleComponent } from './switch-example/switch-example.componen
 import { TooltipExampleComponent } from './tooltip-example/tooltip-example.component';
 import { FormGroupExampleComponent } from './form-group-example/form-group-example.component';
 import { MenuExampleComponent } from './menu-example/menu-example.component';
-import { ReloadlyUiModule } from 'projects/reloadly-ui/src/public-api';
+import { ReloadlyUiModule } from 'projects/reloadly-ui/src/lib/reloadly-ui.module';
 
 @NgModule({
     imports: [

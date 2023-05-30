@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SelectOptionItem } from 'projects/reloadly-ui/src/public-api';
+import { SelectOptionItem } from 'projects/reloadly-ui/src/lib/components/select/select.component';
 
 @Component({
     selector: 'app-select-example',
