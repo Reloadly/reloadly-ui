@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { ReloadlyUiModule } from 'reloadly-ui';
 //import { StepperExampleComponent } from './stepper-example/stepper-example.component';
 import { InputGroupExampleComponent } from './input-group-example/input-group-example.component';
 import { BadgeExampleComponent } from './badge-example/badge-example.component';
@@ -13,6 +12,7 @@ import { SwitchExampleComponent } from './switch-example/switch-example.componen
 import { TooltipExampleComponent } from './tooltip-example/tooltip-example.component';
 import { FormGroupExampleComponent } from './form-group-example/form-group-example.component';
 import { MenuExampleComponent } from './menu-example/menu-example.component';
+import { ReloadlyUiModule } from 'projects/reloadly-ui/src/lib/reloadly-ui.module';
 
 @NgModule({
     imports: [
