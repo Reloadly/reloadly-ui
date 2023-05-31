@@ -10,6 +10,7 @@ import { StepperComponent } from './stepper/stepper.component';
 import { StepComponent } from './stepper/step/step.component';
 import { FormsModule } from '@angular/forms';
 import { CreditCardComponent } from './credit-card/credit-card.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
     declarations: [
@@ -20,7 +21,9 @@ import { CreditCardComponent } from './credit-card/credit-card.component';
         ProductDetailsComponent,
         StepperComponent,
         StepComponent,
-        CreditCardComponent
+        CreditCardComponent,
+
+        CardComponent
     ],
     imports: [
         CommonModule,

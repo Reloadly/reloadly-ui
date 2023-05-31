@@ -11,37 +11,70 @@
     color: $reloadly-white;
     border: 1px solid #FFFFFF;
 
-    .card-info{
+    &.minify {
+        padding: .2rem;
+        height: 52px !important;
+        width: 80px !important;
+        border-radius: 4px;
+        h6 {
+            font-size: 5px;
+            margin: 1px 0px;
+        }
+
+        .expire-date {
+            font-size: 4px;
+
+            small {
+                font-size: 2px;
+            }
+        }
+
+        svg {
+            max-height: 12px;
+            max-width: 24px;
+        }
+    }
+
+    .card-info {
         display: flex;
         align-items: start;
         justify-content: start;
         flex-direction: column;
     }
-    .card-provider{
-        margin-bottom: 48px;
+
+    .card-provider {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
+
     h6 {
         font-size: $font-size-sm;
         margin: 6px 0px;
     }
 }
+
 .expire-date {
     font-size: 13px;
     display: flex;
     align-items: center;
-    justify-content:start;
+    justify-content: start;
     margin: 6px 0px;
+
     small {
         font-size: 8px;
         text-transform: uppercase;
         margin-right: 12px;
     }
 }
-svg{
+
+svg {
     max-height: 32px;
     max-width: 64px;
     color: $reloadly-white;
-    path{ 
+    fill: white;
+
+    path {
         fill: white;
     }
 }
