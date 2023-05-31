@@ -1,4 +1,4 @@
-<div class="credit-card">
+<div class="credit-card" [ngStyle]="{height: cardHeight, width: cardWidth}" [class.minify]="minify">
     <div class="card-provider is-flex is-justify-content-space-between">
         <div></div>
         <svg  [ngSwitch]="visaProvider">
@@ -13,8 +13,8 @@
         </svg>
     </div>
     <div class="card-info">
-    <h6 class="my-2">{{ holderName }}</h6>
-    <h6 class="my-2">{{ cardNumber }}</h6>
+    <h6 class="">{{ holderName }}</h6>
+    <h6 class="">{{ cardNumber }}</h6>
     <div class="expire-date py-2">
         <small class="small">
             valid <br />

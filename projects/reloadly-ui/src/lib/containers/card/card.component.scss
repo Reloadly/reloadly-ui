@@ -1,0 +1,6 @@
+@import "../../../styles/variables";
+.card {
+    @include drop-shadow;
+    border-radius: 8px;
+    padding: 16px 32px;
+}

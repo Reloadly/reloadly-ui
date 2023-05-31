@@ -14,8 +14,7 @@ export class CreditCardComponent {
     @Input() maskCardNumber = true;
     @Input() cardWidth: string = '384px';
     @Input() cardHeight: string = '225px';
-
-
+    @Input() minify: boolean = false;
     get providerLogo(): string {
         switch (this.visaProvider) {
             case 'VISA':
