@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, ContentChild, ElementRef, Input, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'reloadly-card',

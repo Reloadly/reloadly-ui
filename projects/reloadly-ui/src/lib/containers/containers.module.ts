@@ -38,6 +38,7 @@ import { CardComponent } from './card/card.component';
         ProductDetailsComponent,
         StepperComponent,
         StepComponent,
+        CardComponent,
         CreditCardComponent
     ]
 })

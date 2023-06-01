@@ -1,6 +1,12 @@
 @import "../../../styles/variables";
+@import "bulma/sass/helpers/flexbox";
+
 .card {
     @include drop-shadow;
     border-radius: 8px;
     padding: 16px 32px;
+    h6{
+        font-size: $font-regular;
+        font-weight: 450;
+    }
 }

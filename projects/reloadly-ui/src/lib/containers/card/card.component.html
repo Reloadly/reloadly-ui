@@ -1,7 +1,7 @@
 <div class="card is-flex is-flex-direction-column">
     <div class="is-flex is-justify-content-space-between">
         <h6 class="">{{title}}</h6>
-        <reloadly-switch [label]="'On'" [size]="'small'"></reloadly-switch>
+        <ng-content select="[titleTrailing]"></ng-content>
     </div>
-    <ng-content></ng-content>
+    <ng-content select="[cardContent]"></ng-content>
 </div>
