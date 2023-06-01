@@ -1,4 +1,4 @@
-import { ApplicationRef, ComponentRef, Directive, ElementRef, EmbeddedViewRef, HostListener, Injector, Input, ViewContainerRef } from '@angular/core';
+import { ApplicationRef, ComponentRef, Directive, ElementRef, EmbeddedViewRef, HostListener, Injector, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 import { TooltipComponent } from '../tooltip.component';
 
 @Directive({
@@ -6,7 +6,7 @@ import { TooltipComponent } from '../tooltip.component';
     exportAs: "reloadly-tooltip"
 })
 export class TooltipDirective {
-    @Input('reloadly-tooltip') tooltip = '';
+    @Input('reloadly-tooltip') tooltip: string = '';
     @Input() position: Position = "top-center"
     private componentRef: ComponentRef<TooltipComponent> | null = null;
 
