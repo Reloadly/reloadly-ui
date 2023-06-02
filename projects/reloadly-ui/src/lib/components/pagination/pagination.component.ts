@@ -58,7 +58,7 @@ export class PaginationComponent {
 
 
     private paginate() {
-        if (this.page === 1 && this.total < this.size) {
+        if (this.total < this.size) {
             this.showingAll = true;
             return;
         } else {
