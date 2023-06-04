@@ -25,4 +25,7 @@
         </span>
     </div>
     </div>
+    <div class="card-mask" *ngIf="maskTheCard">
+        <ng-content [select]="[cardMaskContent]"></ng-content>
+    </div>
 </div>

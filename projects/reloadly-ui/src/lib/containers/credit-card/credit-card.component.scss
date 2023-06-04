@@ -2,7 +2,7 @@
 
 .credit-card {
     background: $gradient;
-    border-radius: 10px;
+    border-radius: 16px;
     display: flex;
     align-items: space-between;
     justify-content: start;
@@ -10,7 +10,7 @@
     padding: 2rem;
     color: $reloadly-white;
     border: 1px solid #FFFFFF;
-
+    position: relative;
     &.minify {
         padding: .2rem;
         height: 52px !important;
@@ -77,4 +77,15 @@ svg {
     path {
         fill: white;
     }
+}
+
+.card-mask{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left:0px;
+    right:0px;
+    border-radius: 16px;
+    padding: 8px;
+    background: rgba(0, 0, 0, .4);
 }
