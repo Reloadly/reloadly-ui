@@ -27,4 +27,8 @@ export class ReloadlyDialogRef {
         this.onClose$.complete();
     }
 
+    getCustomSharedData<T>(): BehaviorSubject<T> {
+        return this.customSharedData$;
+    }
+
 }
