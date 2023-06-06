@@ -1,8 +1,8 @@
 @import "../../../../styles/variables.scss";
 
 :host {
-    background: rgba(41, 41, 41, 0.4);
-    background: radial-gradient(circle, rgba(41, 41, 41, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%);
+    background: rgba(105, 95, 131, 0.8);
+    backdrop-filter: blur(4px);
     border: $card-border;
     position: fixed;
     top: 0;
