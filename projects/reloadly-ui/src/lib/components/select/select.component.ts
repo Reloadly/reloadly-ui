@@ -39,8 +39,8 @@ export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor 
     constructor(private eRef: ElementRef) { }
 
     writeValue(item: SelectOptionItem | null): void {
-        this.selectedOption = item;
-        this.onChanged(item);
+        typeof item === 'string' ? this.selectedOption = this.options.filter((option) => option.value === item)[0] : this.selectedOption = item;
+        this.onChanged(item?.value);
         if (item) this.selectedOptionChange.emit(item);
     }
 
@@ -93,14 +93,14 @@ export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor 
 
     optionChanged(event: any) {
         this.onTouched();
-        this.selectedOptionChange.emit(this.selectedOption);
+        // this.selectedOptionChange.emit(this.selectedOption);
         this.writeValue(this.selectedOption);
     }
 
     selectOption(item: SelectOptionItem) {
         this.onTouched();
         this.toggleDropdown();
-        this.selectedOptionChange.emit(item);
+        // this.selectedOptionChange.emit(item);
         this.writeValue(item);
     }
 
