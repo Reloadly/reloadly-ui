@@ -3,6 +3,8 @@
  */
 
 import { BadgeComponent, BadgeVariant } from './lib/components/badge/badge.component';
+import { BreadcrumbItemComponent } from './lib/components/breadcrumb-group/breadcrumb-item/breadcrumb-item.component';
+import { BreadcrumbsComponent } from './lib/components/breadcrumb-group/breadcrumbs/breadcrumbs.component';
 import { ButtonDirective } from './lib/components/button/directives/button.directive';
 import { CustomerServiceComponent } from './lib/components/customer-service/customer-service.component';
 import { DateComponent } from './lib/components/date/date.component';
@@ -67,7 +69,9 @@ export {
     InputLabelComponent,
     TableDirective,
     DateComponent,
-    PreloaderComponent
+    PreloaderComponent,
+    BreadcrumbsComponent,
+    BreadcrumbItemComponent
 };
 
 export * from './lib/form/form.module';
