@@ -6,6 +6,7 @@
 Initial release with the following directives:
 
 * badge
+* breadcrumbs
 * buttons
 * dropdown
 * pagination

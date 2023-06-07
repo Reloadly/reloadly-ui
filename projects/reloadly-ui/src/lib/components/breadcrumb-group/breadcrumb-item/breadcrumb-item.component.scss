@@ -1,0 +1,38 @@
+@import "../../../../styles/variables.scss";
+
+.item-class {
+    font-style: normal;
+    font-weight: 450;
+    font-size: 12px;
+    color: $reloadly-black-11;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+.active-item-class {
+    color: $reloadly-violet;
+    font-weight: 450;
+    cursor: auto;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.breadcrumb-item {
+    @extend .item-class;
+    ::ng-deep {
+        * {
+            @extend .item-class;
+        }
+    }
+}
+
+.active-item {
+    @extend .active-item-class;
+    ::ng-deep {
+        * {
+            @extend .active-item-class;
+        }
+    }
+}
