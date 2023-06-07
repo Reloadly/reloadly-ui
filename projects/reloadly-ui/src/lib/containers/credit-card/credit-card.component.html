@@ -1,0 +1,31 @@
+<div class="credit-card" [ngStyle]="{height: cardHeight, width: cardWidth}" [class.minify]="minify">
+    <div class="card-provider is-flex is-justify-content-space-between">
+        <div></div>
+        <svg  [ngSwitch]="visaProvider">
+            <use *ngSwitchCase="'VISA'" xlink:href="#visa"></use>
+            <use *ngSwitchCase="'AMEX'" xlink:href="#amercain-express"></use>
+            <use *ngSwitchCase="'MASTERCARD'" xlink:href="#master-card"></use>
+            <use *ngSwitchCase="'DISCOVER'" xlink:href="#discover"></use>
+            <use *ngSwitchCase="'CHINA_UNION_PAY'" xlink:href="#union-pay"></use>
+            <use *ngSwitchCase="'JCB'" xlink:href="#jcb"></use>
+            <use *ngSwitchCase="'DINERS'" xlink:href="#diners"></use>
+            <use *ngSwitchDefault xlink:href="#visa"></use>
+        </svg>
+    </div>
+    <div class="card-info">
+    <h6 class="">{{ holderName }}</h6>
+    <h6 class="">{{ cardNumber }}</h6>
+    <div class="expire-date py-2">
+        <small class="small">
+            valid <br />
+            thru
+        </small>
+        <span>
+            {{ expireMonth < 10 ? '0' + expireMonth : expireMonth}}/{{expireYear}}
+        </span>
+    </div>
+    </div>
+    <div class="card-mask" *ngIf="maskTheCard">
+        <ng-content [select]="[cardMaskContent]"></ng-content>
+    </div>
+</div>
