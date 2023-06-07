@@ -9,6 +9,8 @@ import { ComponentsModule } from '../components/components.module';
 import { StepperComponent } from './stepper/stepper.component';
 import { StepComponent } from './stepper/step/step.component';
 import { FormsModule } from '@angular/forms';
+import { CreditCardComponent } from './credit-card/credit-card.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
     declarations: [
@@ -19,6 +21,9 @@ import { FormsModule } from '@angular/forms';
         ProductDetailsComponent,
         StepperComponent,
         StepComponent,
+        CreditCardComponent,
+
+        CardComponent
     ],
     imports: [
         CommonModule,
@@ -33,6 +38,8 @@ import { FormsModule } from '@angular/forms';
         ProductDetailsComponent,
         StepperComponent,
         StepComponent,
+        CardComponent,
+        CreditCardComponent
     ]
 })
 export class ReloadlyContainersModule { }

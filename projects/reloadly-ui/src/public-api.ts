@@ -3,6 +3,8 @@
  */
 
 import { BadgeComponent, BadgeVariant } from './lib/components/badge/badge.component';
+import { BreadcrumbItemComponent } from './lib/components/breadcrumb-group/breadcrumb-item/breadcrumb-item.component';
+import { BreadcrumbsComponent } from './lib/components/breadcrumb-group/breadcrumbs/breadcrumbs.component';
 import { ButtonDirective } from './lib/components/button/directives/button.directive';
 import { CustomerServiceComponent } from './lib/components/customer-service/customer-service.component';
 import { DateComponent } from './lib/components/date/date.component';
@@ -44,6 +46,9 @@ import { DropdownSelectComponent } from './lib/form/dropdown-select/dropdown-sel
 import { RangeSliderComponent } from './lib/form/range-slider/range-slider.component';
 import { SearchBarComponent } from './lib/form/search-bar/search-bar.component';
 import { SelectableItem } from './lib/models/selectable-item';
+import { CreditCardComponent } from './lib/containers/credit-card/credit-card.component';
+import { CardComponent } from './lib/containers/card/card.component';
+import { OutsideClickDirective } from './lib/directives/outside-click.directive';
 
 export * from './lib/reloadly-ui.module';
 
@@ -68,7 +73,9 @@ export {
     TableDirective,
     DateComponent,
     PreloaderComponent,
-    DropdownConfig
+    DropdownConfig,
+    BreadcrumbsComponent,
+    BreadcrumbItemComponent
 };
 
 export * from './lib/form/form.module';
@@ -101,11 +108,13 @@ export * from './lib/containers/containers.module';
 export {
     ActionCardComponent,
     ImageCardComponent,
+    CardComponent,
     ListTileComponent,
     SelectionGridComponent,
     ProductDetailsComponent,
     StepperComponent,
-    StepComponent
+    StepComponent,
+    CreditCardComponent
 };
 
 export {
@@ -113,3 +122,6 @@ export {
     SelectableViewStyle,
     SelectableViewType
 };
+
+export * from './lib/directives/directives.module';
+export { OutsideClickDirective }

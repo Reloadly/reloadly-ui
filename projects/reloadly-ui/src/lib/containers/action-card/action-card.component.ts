@@ -9,8 +9,8 @@ export class ActionCardComponent {
     @Input() title: string = '';
     @Input() value: string = '';
     @Input() actionText: string = '';
-    @Input() cardWidth: string = '302px';
-    @Input() cardHeight: string = '153px';
+    @Input() cardWidth: string = '384px';
+    @Input() cardHeight: string = '225px';
     @Input() toggleValue = false;
     @Input() disableAction: boolean = false;
     @Input() hasDropShadow = false;

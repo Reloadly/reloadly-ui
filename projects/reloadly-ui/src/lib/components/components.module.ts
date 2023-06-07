@@ -27,6 +27,8 @@ import { BadgeModule } from './badge/badge.module';
 import { MenuModule } from './menu/menu.module';
 import { TooltipModule } from './tooltip/tooltip.module';
 import { PreloaderComponent } from './preloader/preloader.component';
+import { BreadcrumbsComponent } from './breadcrumb-group/breadcrumbs/breadcrumbs.component';
+import { BreadcrumbItemComponent } from './breadcrumb-group/breadcrumb-item/breadcrumb-item.component';
 
 @NgModule({
     declarations: [
@@ -48,6 +50,8 @@ import { PreloaderComponent } from './preloader/preloader.component';
         TableDirective,
         DateComponent,
         PreloaderComponent,
+        BreadcrumbsComponent,
+        BreadcrumbItemComponent
     ],
     imports: [
         CommonModule,
@@ -85,7 +89,9 @@ import { PreloaderComponent } from './preloader/preloader.component';
         ButtonModule,
         BadgeModule,
         MenuModule,
-        TooltipModule
+        TooltipModule,
+        BreadcrumbsComponent,
+        BreadcrumbItemComponent
     ]
 })
 export class ComponentsModule { }

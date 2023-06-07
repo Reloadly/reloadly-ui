@@ -17,6 +17,7 @@ import { BehaviorSubject, map } from 'rxjs';
 export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor {
     showDropdown: boolean = false;
     searchQuery: string = '';
+    initialValue: string | null = null;
     private list = new BehaviorSubject<Array<SelectOptionItem>>([]);
     @Input() selectedOption: SelectOptionItem | null = null;
 
@@ -39,9 +40,14 @@ export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor 
     constructor(private eRef: ElementRef) { }
 
     writeValue(item: SelectOptionItem | null): void {
-        typeof item === 'string' ? this.selectedOption = this.options.filter((option) => option.value === item)[0] : this.selectedOption = item;
-        this.onChanged(item?.value);
-        if (item) this.selectedOptionChange.emit(item);
+        if (typeof item === 'string') {
+            this.selectedOption = this.options.filter((option) => option.value === item)[0]
+            this.initialValue = item
+            this.onChanged(item);
+        } else {
+            this.selectedOption = item;
+            this.onChanged(item?.value);
+        }
     }
 
     registerOnChange(fn: any): void {
@@ -70,9 +76,14 @@ export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor 
     ngOnChanges(changes: SimpleChanges): void {
         if (changes?.['options'])
             this.list.next(changes['options']['currentValue']);
-        if (changes?.['selectedIndex'])
+        if (this.initialValue) {
+            this.selectedOption = this.options.filter((option) => option.value === this.initialValue)[0]
+            this.initialValue = null
+        }
+        if (changes?.['selectedIndex']) {
             this.selectedOption = this.options[changes['selectedIndex']['currentValue']];
-        this.writeValue(this.selectedOption);
+            this.writeValue(this.selectedOption);
+        }
         if (changes?.['selectedValue']) {
             this.selectedIndex = Math.max(this.options.findIndex(option => option.value == changes['selectedValue']['currentValue']), 0);
             this.selectedOption = this.options.length > 0 ? this.options[this.selectedIndex] : null;
@@ -93,14 +104,14 @@ export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor 
 
     optionChanged(event: any) {
         this.onTouched();
-        this.selectedOptionChange.emit(this.selectedOption);
+        // this.selectedOptionChange.emit(this.selectedOption);
         this.writeValue(this.selectedOption);
     }
 
     selectOption(item: SelectOptionItem) {
         this.onTouched();
         this.toggleDropdown();
-        this.selectedOptionChange.emit(item);
+        // this.selectedOptionChange.emit(item);
         this.writeValue(item);
     }
 
@@ -114,6 +125,7 @@ export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor 
         else
             return [];
     }
+
 }
 
 export interface SelectOptionItem {

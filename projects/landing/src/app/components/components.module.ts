@@ -13,6 +13,7 @@ import { TooltipExampleComponent } from './tooltip-example/tooltip-example.compo
 import { FormGroupExampleComponent } from './form-group-example/form-group-example.component';
 import { MenuExampleComponent } from './menu-example/menu-example.component';
 import { ReloadlyUiModule } from 'projects/reloadly-ui/src/lib/reloadly-ui.module';
+import { BreadcrumbsExampleComponent } from './breadcrumbs-example/breadcrumbs-example.component';
 
 @NgModule({
     imports: [
@@ -32,7 +33,8 @@ import { ReloadlyUiModule } from 'projects/reloadly-ui/src/lib/reloadly-ui.modul
         MenuExampleComponent,
         //StepperExampleComponent,
         FormGroupExampleComponent,
-        InputGroupExampleComponent
+        InputGroupExampleComponent,
+        BreadcrumbsExampleComponent
     ],
     exports: [
         BadgeExampleComponent,
@@ -47,7 +49,8 @@ import { ReloadlyUiModule } from 'projects/reloadly-ui/src/lib/reloadly-ui.modul
         //StepperExampleComponent,
         FormGroupExampleComponent,
         InputGroupExampleComponent,
-        FormGroupExampleComponent
+        FormGroupExampleComponent,
+        BreadcrumbsExampleComponent
     ]
 })
 export class ComponentsModule { }
