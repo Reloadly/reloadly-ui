@@ -7,14 +7,4 @@ import { BreadcrumbItemComponent } from '../breadcrumb-item/breadcrumb-item.comp
     styleUrls: ['./breadcrumbs.component.scss']
 })
 export class BreadcrumbsComponent {
-    showItems: boolean = false;
-    @Input() separator: string = '>';
-    @ContentChildren(BreadcrumbItemComponent) items!: QueryList<any>;
-
-    ngAfterContentInit() {
-        // console.log(this.items);
-        this.items.forEach(tabInstance => console.log(tabInstance));
-        this.showItems = true;
-        // contentChildren is set
-    }
 }
