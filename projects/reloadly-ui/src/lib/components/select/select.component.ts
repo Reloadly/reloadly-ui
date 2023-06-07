@@ -133,7 +133,7 @@ export interface SelectOptionItem {
     value: string
 }
 
-class DropdownConfig {
+export class DropdownConfig {
     search: boolean = true;
     searchPlaceholder?: string = 'Search';
     height?: string = 'auto';

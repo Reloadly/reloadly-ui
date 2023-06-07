@@ -23,7 +23,7 @@ import { MenuComponent } from './lib/components/menu/menu.component';
 import { RootViewContainers } from './lib/components/modal/reloadly-modal';
 import { PaginationComponent } from './lib/components/pagination/pagination.component';
 import { PreloaderComponent } from './lib/components/preloader/preloader.component';
-import { SelectComponent, SelectOptionItem } from './lib/components/select/select.component';
+import { DropdownConfig, SelectComponent, SelectOptionItem } from './lib/components/select/select.component';
 import { SidebarComponent } from './lib/components/sidebar/sidebar.component';
 import { SvgComponent } from './lib/components/svg/svg.component';
 import { SwitchComponent } from './lib/components/switch/switch.component';
@@ -73,6 +73,7 @@ export {
     TableDirective,
     DateComponent,
     PreloaderComponent,
+    DropdownConfig,
     BreadcrumbsComponent,
     BreadcrumbItemComponent
 };
