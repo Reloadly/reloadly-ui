@@ -46,6 +46,9 @@ import { DropdownSelectComponent } from './lib/form/dropdown-select/dropdown-sel
 import { RangeSliderComponent } from './lib/form/range-slider/range-slider.component';
 import { SearchBarComponent } from './lib/form/search-bar/search-bar.component';
 import { SelectableItem } from './lib/models/selectable-item';
+import { CreditCardComponent } from './lib/containers/credit-card/credit-card.component';
+import { CardComponent } from './lib/containers/card/card.component';
+import { OutsideClickDirective } from './lib/directives/outside-click.directive';
 
 export * from './lib/reloadly-ui.module';
 
@@ -104,11 +107,13 @@ export * from './lib/containers/containers.module';
 export {
     ActionCardComponent,
     ImageCardComponent,
+    CardComponent,
     ListTileComponent,
     SelectionGridComponent,
     ProductDetailsComponent,
     StepperComponent,
-    StepComponent
+    StepComponent,
+    CreditCardComponent
 };
 
 export {
@@ -116,3 +121,6 @@ export {
     SelectableViewStyle,
     SelectableViewType
 };
+
+export * from './lib/directives/directives.module';
+export { OutsideClickDirective }
