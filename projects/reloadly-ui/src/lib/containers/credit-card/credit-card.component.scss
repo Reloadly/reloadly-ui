@@ -11,11 +11,13 @@
     color: $reloadly-white;
     border: 1px solid #FFFFFF;
     position: relative;
+
     &.minify {
         padding: .2rem;
         height: 52px !important;
         width: 80px !important;
         border-radius: 4px;
+
         h6 {
             font-size: 5px;
             margin: 1px 0px;
@@ -79,18 +81,17 @@ svg {
     }
 }
 
-.card-mask{
+.card-mask {
     position: absolute;
     top: 0px;
     bottom: 0px;
-    left:0px;
-    right:0px;
+    left: 0px;
+    right: 0px;
     border-radius: 16px;
     padding: 8px;
     background: rgba(0, 0, 0, .4);
 }
 
-    path {
-        fill: white;
-    }
+path {
+    fill: white;
 }
