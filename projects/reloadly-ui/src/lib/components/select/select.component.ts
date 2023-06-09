@@ -43,10 +43,8 @@ export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor 
         if (typeof item === 'string') {
             this.selectedOption = this.options.filter((option) => option.value === item)[0]
             this.initialValue = item
-            this.onChanged(item);
         } else {
             this.selectedOption = item;
-            this.onChanged(item?.value);
         }
     }
 
@@ -82,12 +80,12 @@ export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor 
         }
         if (changes?.['selectedIndex']) {
             this.selectedOption = this.options[changes['selectedIndex']['currentValue']];
-            this.writeValue(this.selectedOption);
+            this.onChanged(this.selectedOption?.value);
         }
         if (changes?.['selectedValue']) {
             this.selectedIndex = Math.max(this.options.findIndex(option => option.value == changes['selectedValue']['currentValue']), 0);
             this.selectedOption = this.options.length > 0 ? this.options[this.selectedIndex] : null;
-            this.writeValue(this.selectedOption);
+            this.onChanged(this.selectedOption?.value);
         }
     }
 
@@ -105,14 +103,16 @@ export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor 
     optionChanged(event: any) {
         this.onTouched();
         // this.selectedOptionChange.emit(this.selectedOption);
-        this.writeValue(this.selectedOption);
+        this.writeValue(event)
+        this.onChanged(this.selectedOption?.value);
     }
 
     selectOption(item: SelectOptionItem) {
         this.onTouched();
         this.toggleDropdown();
         // this.selectedOptionChange.emit(item);
-        this.writeValue(item);
+        this.writeValue(item)
+        this.onChanged(item.value);
     }
 
     private filterMethod = (values: SelectOptionItem[]): SelectOptionItem[] => {
