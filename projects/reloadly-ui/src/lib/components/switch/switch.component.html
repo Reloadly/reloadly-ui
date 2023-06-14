@@ -1,10 +1,14 @@
 
 
-<div class="toggle-container" [class.disabled]="disabled" (click)="toggleSwitch()">
-    <div class="switch-box" [ngClass]="[size,type]" [class.active-box]="toggle">
+<div class="toggle-container" [class.active]="toggle" [ngClass]="[size,type]"  [class.disabled]="disabled" (click)="toggleSwitch()">
+    <div class="toggle-texts before" *ngIf="label != '' && labelPosition == 'before' ">
+        <label>{{label}}</label>
+        <p *ngIf="description != ''">{{description}}</p>
+    </div>
+    <div class="switch-box" >
         <span class="switch"></span>
     </div>
-    <div class="toggle-texts" *ngIf="label != ''">
+    <div class="toggle-texts after"  *ngIf="label != '' && labelPosition == 'after' ">
         <label>{{label}}</label>
         <p *ngIf="description != ''">{{description}}</p>
     </div>
