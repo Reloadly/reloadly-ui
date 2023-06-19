@@ -55,12 +55,12 @@
         margin: 6px 0px;
     }
 
-.expire-date {
-    font-size: 13px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 6px 0px;
+    .expire-date {
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 6px 0px;
 
         small {
             font-size: 8px;
@@ -80,17 +80,18 @@
         }
     }
 
-.card-mask {
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    border-radius: 16px;
-    padding: 8px;
-    background: rgba(0, 0, 0, .4);
-}
+    .card-mask {
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        border-radius: 16px;
+        padding: 8px;
+        background: rgba(0, 0, 0, .4);
+    }
 
-path {
-    fill: white;
+    path {
+        fill: white;
+    }
 }
