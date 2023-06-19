@@ -47,7 +47,7 @@ export class TooltipDirective {
                     break;
                 case "top-right":
                     this.componentRef.instance.top = top - 10
-                    this.componentRef.instance.left = left
+                    this.componentRef.instance.left = (right - left) / 2 + left
                     this.componentRef.instance.class += "top-right"
                     break;
                 case "bottom-left":
@@ -62,7 +62,7 @@ export class TooltipDirective {
                     break;
                 case "bottom-right":
                     this.componentRef.instance.top = bottom + 10
-                    this.componentRef.instance.left = left
+                    this.componentRef.instance.left = (right - left) / 2 + left
                     this.componentRef.instance.class += "bottom-right"
                     break;
                 default:

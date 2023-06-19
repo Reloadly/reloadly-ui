@@ -5,7 +5,7 @@
     border-radius: 16px;
     display: flex;
     align-items: space-between;
-    justify-content: start;
+    justify-content: flex-start;
     flex-direction: column;
     padding: 2rem;
     color: $reloadly-white;
@@ -39,8 +39,8 @@
 
     .card-info {
         display: flex;
-        align-items: start;
-        justify-content: start;
+        align-items: flex-start;
+        justify-content: flex-start;
         flex-direction: column;
     }
 
@@ -55,12 +55,12 @@
         margin: 6px 0px;
     }
 
-    .expire-date {
-        font-size: 13px;
-        display: flex;
-        align-items: center;
-        justify-content: start;
-        margin: 6px 0px;
+.expire-date {
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 6px 0px;
 
         small {
             font-size: 8px;
@@ -80,18 +80,17 @@
         }
     }
 
-    .card-mask {
-        position: absolute;
-        top: 0px;
-        bottom: 0px;
-        left: 0px;
-        right: 0px;
-        border-radius: 16px;
-        padding: 8px;
-        background: rgba(0, 0, 0, .4);
-    }
+.card-mask {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    border-radius: 16px;
+    padding: 8px;
+    background: rgba(0, 0, 0, .4);
+}
 
-    path {
-        fill: white;
-    }
+path {
+    fill: white;
 }

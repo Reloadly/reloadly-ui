@@ -3,25 +3,26 @@
 .toggle-container {
     display: flex;
     align-items: flex-start;
-    
+
     * {
         user-select: none;
         cursor: pointer;
     }
+
     .switch-box {
         content: "";
         border-radius: 99px;
         border: 1px solid rgba(42, 47, 69, 0.12);
         background: #e3e8ee;
         position: relative;
-        
+
         .switch {
             content: "";
             display: block;
             border-radius: 50%;
             background: #ffffff;
             border: 1px solid rgba(42, 47, 69, 0.12);
-            box-shadow: 0px 2px 5px rgba(42, 47, 69, 0.1), 0px 1px 1.5px rgba(0, 0, 0, 0.07);
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.254246), 0px 0.5px 1px rgba(0, 0, 0, 0.255831);
             position: absolute;
             top: 0;
             left: 0;
@@ -29,53 +30,72 @@
             transition: all ease 0.4s !important;
         }
     }
-    // Medium size
-    .medium {
-        width: 34px;
-        height: 20px;
-        &.active-box.default {
-            background: #d6e3ff;
-            border: solid 1px #d6e3ff;
-            .switch {
-                background: #ffffff;
-                border: 1px solid #3d4eac;
-                left: 14px;
-            }
-        }
-        &.active-box.livemode {
-            background: $reloadly-orange-1;
-            .switch {
-                background: #ffffff;
-                left: 14px;
-            }
-        }
-        .switch {
-            width: 18px;
-            height: 18px;
+
+    &.active.medium {
+        .switch-box .switch {
+            left: 14px;
         }
     }
-    // Small size
-    .small {
-        width: 26px;
-        height: 16px;
-        position: relative;
-        top: 2px;
-        &.active-box.default {
+
+    &.active.small {
+        .switch-box .switch {
+            left: 10px;
+        }
+    }
+
+    &.active {
+        .switch-box {
             background: #d6e3ff;
             border: solid 1px #d6e3ff;
+        }
+
+        &.default {
+            .switch-box {
+                background: #d6e3ff;
+                border: solid 1px #d6e3ff;
+            }
+
             .switch {
-                background: #ffffff;
                 border: 1px solid #3d4eac;
-                left: 10px;
             }
         }
-        &.active-box.livemode {
-            background: $reloadly-orange-1;
+
+        &.livemode {
+            .switch-box {
+                background: $reloadly-orange-1;
+                .switch{
+                    border: none !important;
+                }
+            }
+            .toggle-texts{
+               label{
+                color: $reloadly-orange-1 !important;
+                font-weight: 450;
+               }
+            }
+        }
+    }
+
+    &.medium {
+        .switch-box {
+            width: 34px;
+            height: 20px;
+
             .switch {
-                background: #ffffff;
-                left: 10px;
+                width: 18px;
+                height: 18px;
             }
         }
+    }
+
+    &.small {
+        .switch-box {
+            width: 26px;
+            height: 16px;
+            position: relative;
+            top: 2px;
+        }
+
         .switch {
             width: 14px;
             height: 14px;
@@ -83,8 +103,14 @@
     }
 
     .toggle-texts {
-        margin-left: 16px;
-        
+        &.before {
+            margin-right: 16px;
+        }
+
+        &.after {
+            margin-left: 16px;
+        }
+
         label {
             font-weight: 450;
             font-size: $font-medium;
@@ -93,27 +119,32 @@
             color: $reloadly-black-8;
             margin-top: 2px;
         }
+
         p {
             font-weight: 400;
             font-size: $font-medium;
             line-height: 20px;
             color: $reloadly-black-11;
-            
+
         }
     }
 }
+
 // Disabled
 .disabled {
     * {
         cursor: not-allowed;
     }
+
     .switch {
         background: #e3e8ee;
     }
+
     .toggle-texts {
         label {
             color: $reloadly-black-12;
         }
+
         p {
             color: $reloadly-black-12;
         }
