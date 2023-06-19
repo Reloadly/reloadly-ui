@@ -11,11 +11,13 @@
     color: $reloadly-white;
     border: 1px solid #FFFFFF;
     position: relative;
+
     &.minify {
         padding: .2rem;
         height: 52px !important;
         width: 80px !important;
         border-radius: 4px;
+
         h6 {
             font-size: 5px;
             margin: 1px 0px;
@@ -52,43 +54,42 @@
         font-size: $font-size-sm;
         margin: 6px 0px;
     }
-}
 
-.expire-date {
-    font-size: 13px;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    margin: 6px 0px;
+    .expire-date {
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        margin: 6px 0px;
 
-    small {
-        font-size: 8px;
-        text-transform: uppercase;
-        margin-right: 12px;
+        small {
+            font-size: 8px;
+            text-transform: uppercase;
+            margin-right: 12px;
+        }
     }
-}
 
-svg {
-    max-height: 32px;
-    max-width: 64px;
-    color: $reloadly-white;
-    fill: white;
-
-    path {
+    svg {
+        max-height: 32px;
+        max-width: 64px;
+        color: $reloadly-white;
         fill: white;
-    }
-}
 
-.card-mask{
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    left:0px;
-    right:0px;
-    border-radius: 16px;
-    padding: 8px;
-    background: rgba(0, 0, 0, .4);
-}
+        path {
+            fill: white;
+        }
+    }
+
+    .card-mask {
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        border-radius: 16px;
+        padding: 8px;
+        background: rgba(0, 0, 0, .4);
+    }
 
     path {
         fill: white;

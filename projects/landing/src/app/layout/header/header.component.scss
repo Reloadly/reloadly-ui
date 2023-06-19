@@ -1,0 +1,39 @@
+.active::before {
+    content: "";
+    width: 42px;
+    background: #f24668;
+    height: 3px;
+    border-radius: 3px;
+    left: 36px;
+    position: absolute;
+    top: 35px;
+}
+
+.navbar {
+    position: inherit;
+
+    .bg {
+        background: transparent linear-gradient(270deg, #63f6c8 0, #a56dfb 100%) 0 0 no-repeat padding-box;
+        height: 28em;
+        margin-top: -18em;
+        width: 100%;
+        position: absolute;
+
+        &.skew {
+            transform: skewY(-3deg);
+        }
+    }
+
+    .container {
+        //transform: skewY(5deg);
+        //margin-top: 4em;
+    }
+
+    .logo {
+        width: 100%;
+    }
+
+    .navbar-item img {
+        max-height: 40px !important;
+    }
+}

@@ -1,21 +1,31 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { PlaygroundComponent } from './pages/playground/playground.component';
+
+const routerOptions: ExtraOptions = {
+    scrollPositionRestoration: 'enabled',
+    anchorScrolling: 'enabled',
+    scrollOffset: [0, 64],
+};
 
 const routes: Routes = [
     {
         path: '',
-        component: HomeComponent
+        component: HomeComponent,
+        pathMatch: "full"
     },
     {
         path: 'components',
-        component: PlaygroundComponent
+        redirectTo: 'components/badge'
     },
+    {
+        path: 'components',
+        loadChildren: () => import('./pages/playground/playground.module').then(m => m.PlaygroundModuleModule)
+    }
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
+    imports: [RouterModule.forRoot(routes, routerOptions)],
     exports: [RouterModule]
 })
 export class AppRoutingModule { }

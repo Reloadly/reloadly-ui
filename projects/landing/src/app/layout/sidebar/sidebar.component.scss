@@ -1,0 +1,77 @@
+#sidebar {
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    overflow: auto;
+    border-left: 1px solid #18dcff;
+
+    .menu {
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .item {
+        overflow: hidden;
+    }
+
+    .btn {
+        display: block;
+        padding: 16px 45px;
+        color: #17c0eb;
+        position: relative;
+
+        &.active::before {
+            background: #0987a8;
+        }
+    }
+
+    .btn::before {
+        content: "";
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        background: #18dcff;
+        left: 20px;
+        bottom: 20px;
+        transform: rotate(45deg);
+    }
+
+    .btn i {
+        margin-right: 10px;
+    }
+
+    .smenu {
+        background: #333;
+        overflow: hidden;
+        transition: max-height 0.3s;
+        max-height: 0;
+    }
+
+    .smenu a {
+        display: block;
+        padding: 16px 26px;
+        color: white;
+        margin: 4px 0;
+        position: relative;
+    }
+
+    .smenu a::before {
+        content: "";
+        position: absolute;
+        width: 6px;
+        height: 100%;
+        background: #18dcff;
+        left: 0;
+        top: 0;
+        transition: .3s;
+        opacity: 0;
+    }
+
+    .smenu a:hover::before {
+        opacity: 1;
+    }
+
+    .item:target .smenu {
+        max-height: 10em;
+    }
+}

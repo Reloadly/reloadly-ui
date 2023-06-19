@@ -68,7 +68,7 @@
                         ],
                         "scripts": [],
                         "allowedCommonJsDependencies": [
-                            "google-libphonenumber"
+                            "highlight.js"
                         ]
                     },
                     "configurations": {
@@ -139,6 +139,6 @@
         }
     },
     "cli": {
-      "analytics": false
+        "analytics": false
     }
 }
