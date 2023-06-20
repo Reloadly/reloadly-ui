@@ -19,6 +19,7 @@ export class MenuDirective {
     onClick(): void {
         if (this.isContainerEmpty() && this.menu) {
             this.menuRef = this.viewContainerRef.createEmbeddedView(this.menu);
+            this.reattachMenuToRootNode(this.menuRef)
             this.document?.addEventListener('wheel', this.blockScroll, { passive: false });
             return;
         }
@@ -40,6 +41,13 @@ export class MenuDirective {
 
     blockScroll(e: any) {
         e.preventDefault();
+    }
+
+    reattachMenuToRootNode(menuRef: EmbeddedViewRef<MenuComponent> | undefined) {
+        if (menuRef?.rootNodes)
+            for (let node of menuRef?.rootNodes) {
+                document.body.appendChild(node);
+            }
     }
 
 }
