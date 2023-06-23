@@ -49,7 +49,9 @@ import { SelectableItem } from './lib/models/selectable-item';
 import { CreditCardComponent } from './lib/containers/credit-card/credit-card.component';
 import { CardComponent } from './lib/containers/card/card.component';
 import { OutsideClickDirective } from './lib/directives/outside-click.directive';
-
+import { ReloadlyQuickActionComponent } from './lib/components/quick-action/reloadly-quick-action/reloadly-quick-action.component';
+import { ReloadlyQuickActionService } from './lib/components/quick-action/relaodly-quick-action';
+import { QuickAction, QuickActionPosition, QuickActionType   } from './lib/models/quick-action';
 export * from './lib/reloadly-ui.module';
 
 export * from './lib/components/components.module';
@@ -125,3 +127,7 @@ export {
 
 export * from './lib/directives/directives.module';
 export { OutsideClickDirective }
+
+export * from './lib/components/quick-action/reloadly-quick-action.module';
+export { ReloadlyQuickActionComponent, ReloadlyQuickActionService };
+export {QuickAction, QuickActionPosition, QuickActionType };

@@ -1,0 +1,108 @@
+@import "../../../../styles/variables.scss";
+@import "bulma/sass/helpers/spacing";
+@import "bulma/sass/helpers/flexbox";
+
+.is-flex {
+    display: flex;
+}
+
+.quick-action-container {
+    min-width: 288px;
+    min-height: 60px;
+    border: 1px solid rgba(213, 219, 225, 1);
+    border-radius: 4px;
+    margin: 4px 0px;
+    padding: 16px;
+    position: relative;
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    pointer-events: all;
+    transition: translateX(-200%) 300ms ease-in-out;
+
+    &.show {
+        transition: translateX(0%) 300ms ease-in-out;
+    }
+
+    &.critical {
+        background-color: #FEF9DA !important;
+    }
+
+    &.caution {
+        background-color: #FFF5FA !important;
+    }
+
+    &.success {
+        background-color: $reloadly-mint !important;
+    }
+
+    .quick-action-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .message {
+        color: $reloadly-black-10;
+        font-size: 14px;
+        line-height: 20px;
+        max-width: 320px;
+    }
+
+    &.isMultiline {
+        .message {
+            margin-bottom: 20px !important;
+        }
+
+        .action-btn {
+            margin: 0px !important;
+        }
+    }
+
+    .close-btn {
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        top: 16px;
+        right: 16px;
+    }
+
+    h6 {
+        font-size: 14px;
+        font-weight: 450;
+        color: #30313D;
+        margin-bottom: 0;
+    }
+
+    .action-btn {
+        box-shadow: 0px 2px 5px 0px rgba(60, 66, 87, 0.08);
+        box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.12);
+        border: 1px solid rgba(224, 230, 235, 1);
+        background: linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(0deg, #E0E6EB, #E0E6EB);
+        border-radius: 4px;
+        padding: 4px 8px;
+        font-weight: 450;
+        font-size: 14px;
+        height: 28px;
+        margin: 0px 24px;
+        align-self: flex-start;
+    }
+
+    .action-icon {
+        width: 12px;
+        height: 12px;
+        margin: 4px 9px;
+        fill: #C84801 !important;
+
+        &.is-default {
+            fill: #6A7383;
+        }
+
+        &.isCaution {
+            fill: #DF1B41;
+        }
+    }
+}

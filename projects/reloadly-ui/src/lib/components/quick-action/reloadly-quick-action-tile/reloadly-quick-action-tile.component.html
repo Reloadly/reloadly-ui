@@ -1,0 +1,23 @@
+<div class="quick-action-container topLeft" [class.show]="action" [class.critical]="action?.type == 'critical'"
+    [class.caution]="action?.type == 'caution'" [class.success]="action?.type == 'success'"
+    [class.isMultiline]="action?.title">
+    <div class="quick-action-content">
+        <svg class="close-btn" (click)="service.dismissQuickAction(action!)">
+            <use xlink:href="#cancel"></use>
+        </svg>
+        <svg class="action-icon">
+            <use
+                [attr.xlink:href]="action?.type == 'caution' ?  '#warning-icon': action?.type == 'critical' ? '#info-icon-orange' :'#info-icon'">
+            </use>
+        </svg>
+        <div class="is-flex" [ngClass]="{'is-flex-direction-column': action?.title }">
+            <div class="is-flex" [ngClass]="{'is-flex-direction-column': action?.title }">
+                <h6 *ngIf="action?.title">{{action?.title }}</h6>
+                <p class="message">{{action?.message}}</p>
+            </div>
+            <button class="action-btn" *ngIf=" !!action?.onActionClick" (click)="action?.onActionClick!(action!)">
+                {{action?.actionText ? action?.actionText : 'Close' }}
+            </button>
+        </div>
+    </div>
+</div>
