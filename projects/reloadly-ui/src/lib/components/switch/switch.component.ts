@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class SwitchComponent {
     @Input() size: 'medium' | 'small' = 'medium';
     @Input() type: 'default' | 'livemode' = 'default';
+    @Input() labelPosition: 'before' | 'after' = 'before';
     @Input() disabled: boolean = false;
     @Input() label: string = '';
     @Input() description: string = '';
