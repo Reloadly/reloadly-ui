@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { ReloadlyQuickActionService } from '../relaodly-quick-action.service';
-import { QuickAction } from '../../../models/quick-action';
+import { ReloadlyQuickActionService } from './quick-action.service';
+import { QuickAction } from '../../models/quick-action';
+
 
 @Component({
     selector: 'reloadly-quick-action',
-    templateUrl: './reloadly-quick-action.component.html',
-    styleUrls: ['./reloadly-quick-action.component.scss'],
+    templateUrl: './quick-action.component.html',
+    styleUrls: ['./quick-action.component.scss'],
 })
 export class ReloadlyQuickActionComponent {
 

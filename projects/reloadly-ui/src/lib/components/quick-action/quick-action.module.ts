@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 
-import { ReloadlyQuickActionComponent } from './reloadly-quick-action/reloadly-quick-action.component';
 import { CommonModule } from '@angular/common';
 import { ReloadlyQuickActionTileComponent } from './reloadly-quick-action-tile/reloadly-quick-action-tile.component';
+import { ReloadlyQuickActionComponent } from './quick-action.component';
 
 @NgModule({
     imports: [CommonModule],

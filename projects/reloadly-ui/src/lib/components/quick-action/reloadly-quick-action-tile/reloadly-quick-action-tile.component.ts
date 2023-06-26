@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { ReloadlyQuickActionService } from '../relaodly-quick-action.service';
+import { ReloadlyQuickActionService } from '../quick-action.service';
 import { QuickAction } from '../../../models/quick-action';
 
 @Component({

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ReloadlyQuickActionComponent } from './reloadly-quick-action.component';
+import { ReloadlyQuickActionComponent } from './quick-action.component';
 
 describe('ReloadlyQuickActionComponent', () => {
   let component: ReloadlyQuickActionComponent;
