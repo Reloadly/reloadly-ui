@@ -1,5 +1,5 @@
 <div class="rld-stepper">
-    <ul class="rld-bullets">
+    <ul *ngIf="showBullets" class="rld-bullets">
         <li *ngFor="let li of contents.toArray(); index as i"
             [class.rld-active]="i == currentIndex"></li>
     </ul>
