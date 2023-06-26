@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReloadlyUiModule } from 'reloadly-ui';
-import { HIGHLIGHT_OPTIONS, HighlightModule } from 'ngx-highlightjs';
 import { PlaygroundComponent } from './playground.component';
 import { PlaygroundRoutingModule } from './playground-routing.module';
 import { SidebarComponent } from '../../layout/sidebar/sidebar.component';
-import { SharedModule } from '../../shared/shared.module';
 import { ButtonExampleComponent } from './components/button-example/button-example.component';
 import { BadgeExampleComponent } from './components/badge-example/badge-example.component';
 import { BreadcrumbsExampleComponent } from './components/breadcrumbs-example/breadcrumbs-example.component';
@@ -20,6 +18,7 @@ import { SidebarExampleComponent } from './components/sidebar-example/sidebar-ex
 import { StepperExampleComponent } from './components/stepper-example/stepper-example.component';
 import { SwitchExampleComponent } from './components/switch-example/switch-example.component';
 import { TooltipExampleComponent } from './components/tooltip-example/tooltip-example.component';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
     imports: [
@@ -27,7 +26,6 @@ import { TooltipExampleComponent } from './components/tooltip-example/tooltip-ex
         ReloadlyUiModule,
         PlaygroundRoutingModule,
         ReactiveFormsModule,
-        //HighlightModule,
         SharedModule
     ],
     declarations: [
@@ -46,18 +44,6 @@ import { TooltipExampleComponent } from './components/tooltip-example/tooltip-ex
         StepperExampleComponent,
         SwitchExampleComponent,
         TooltipExampleComponent
-    ],
-    providers: [
-        //{
-        //    provide: HIGHLIGHT_OPTIONS,
-        //    useValue: {
-        //        coreLibraryLoader: () => import('highlight.js/lib/core'),
-        //        languages: {
-        //            css: () => import('highlight.js/lib/languages/css'),
-        //            html: () => import('highlight.js/lib/languages/html')
-        //        }
-        //    }
-        //}
     ]
 })
 export class PlaygroundModuleModule { }

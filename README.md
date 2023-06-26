@@ -48,9 +48,6 @@ If you have multiple projects and you want to target a specific application, you
 npm install reloadly-ui --project myProject
 ```
 
-If you prefer not to use schematics and install everything manually, please refer to the
-[manual installation instructions](https://ui.reloadly.com/#/getting-started#installation) on our website.
-
 ## Supported browsers
 
 We support the same browsers and versions supported by Angular. See [Angular browser support](https://angular.io/guide/browser-support) for more details.

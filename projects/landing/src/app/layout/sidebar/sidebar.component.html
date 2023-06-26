@@ -3,16 +3,27 @@
         <div class="middle">
             <div class="menu">
                 <ul>
-                    <li class="item">
-                        <a class="btn" routerLinkActive="active" routerLink="/components/badge">Badge</a>
-                        <!--<div class="smenu">
-                            <a href="">Post</a>
-                            <a href="">Picture</a>
-                        </div>-->
+                    <li class="item" routerLinkActive="active">
+                        <a class="btn" routerLink="/components/badge">Badge</a>
+                        <div class="smenu">
+                            <a routerLink="/components/badge" fragment="badges-with-in-built-icon">Build-in icons</a>
+                            <a routerLink="/components/badge" fragment="badges-with-custom-icon">Custom icons</a>
+                        </div>
+                    </li>
+
+                    <li class="item" routerLinkActive="active">
+                        <a class="btn" routerLink="/components/button">Button</a>
+                        <div class="smenu">
+                            <a routerLink="/components/button" fragment="secondary-buttons">Secondary buttons</a>
+                            <a routerLink="/components/button" fragment="danger-buttons">Danger buttons</a>
+                            <a routerLink="/components/button" fragment="white-buttons">White buttons</a>
+                            <a routerLink="/components/button" fragment="small-buttons">Small buttons</a>
+                            <a routerLink="/components/button" fragment="buttons-with-an-icon">Buttons with icon</a>
+                        </div>
                     </li>
 
                     <li class="item">
-                        <a class="btn" routerLinkActive="active" routerLink="/components/button">Button</a>
+                        <a class="btn" routerLinkActive="active" routerLink="/components/breadcrumb">Breadcrumb</a>
                     </li>
 
                     <li class="item">

@@ -4,9 +4,9 @@ import { Component, Input } from '@angular/core';
     selector: 'app-tab',
     styles: [
         `
-        .pane{
-        padding: 1em;
-        }
+        /*.pane{
+            padding: 1em;
+        }*/
     `],
     template: `
         <div [hidden]="!active" class="pane">

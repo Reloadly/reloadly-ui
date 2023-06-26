@@ -6,9 +6,9 @@ import { TabComponent } from './tab.component';
     template: `
         <div class="tabs">
             <ul class="nav nav-tabs">
-            <li *ngFor="let tab of tabs" (click)="selectTab(tab)" [class.active]="tab.active">
-                <a>{{tab.title}}</a>
-            </li>
+                <li *ngFor="let tab of tabs" (click)="selectTab(tab)" [class.active]="tab.active">
+                    <a>{{tab.title}}</a>
+                </li>
             </ul>
         </div>
         <ng-content></ng-content>
@@ -16,9 +16,13 @@ import { TabComponent } from './tab.component';
     styles: [
         `
         .tab-close {
-        color: gray;
-        text-align: right;
-        cursor: pointer;
+            color: gray;
+            text-align: right;
+            cursor: pointer;
+        }
+        .tabs .active a {
+            border-bottom-color: hsl(0, 0%, 21%);
+            color: hsl(0, 0%, 21%);
         }
     `]
 })

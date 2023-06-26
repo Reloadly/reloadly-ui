@@ -8,7 +8,7 @@ import { BreadcrumbsComponent } from './lib/components/breadcrumb-group/breadcru
 import { ButtonDirective } from './lib/components/button/directives/button.directive';
 import { CustomerServiceComponent } from './lib/components/customer-service/customer-service.component';
 import { DateComponent } from './lib/components/date/date.component';
-import { FooterComponent } from './lib/components/footer/footer.component';
+//import { FooterComponent } from './lib/components/footer/footer.component';
 import { FormGroupDirective } from './lib/components/form-group/directives/form-group.directive';
 import { FormLabelComponent } from './lib/components/form-group/form-label/form-label.component';
 import { HowToComponent } from './lib/components/how-to/how-to.component';
@@ -55,7 +55,7 @@ export * from './lib/reloadly-ui.module';
 export * from './lib/components/components.module';
 export {
     SvgComponent,
-    FooterComponent,
+    //FooterComponent,
     HowToComponent,
     TagComponent,
     CustomerServiceComponent,

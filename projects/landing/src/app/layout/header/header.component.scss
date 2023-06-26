@@ -1,10 +1,9 @@
 .active::before {
     content: "";
-    width: 42px;
+    width: 60%;
     background: #f24668;
     height: 3px;
     border-radius: 3px;
-    left: 36px;
     position: absolute;
     top: 35px;
 }
@@ -24,11 +23,6 @@
         }
     }
 
-    .container {
-        //transform: skewY(5deg);
-        //margin-top: 4em;
-    }
-
     .logo {
         width: 100%;
     }
@@ -36,4 +30,9 @@
     .navbar-item img {
         max-height: 40px !important;
     }
+}
+
+.is-secondary {
+    background-color: #a56dfb;
+    color: #fff;
 }

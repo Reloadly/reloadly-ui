@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
+import { GettingStartedComponent } from './pages/getting-started/getting-started.component';
 import { HomeComponent } from './pages/home/home.component';
 
 const routerOptions: ExtraOptions = {
@@ -13,6 +14,10 @@ const routes: Routes = [
         path: '',
         component: HomeComponent,
         pathMatch: "full"
+    },
+    {
+        path: 'getting-started',
+        component: GettingStartedComponent
     },
     {
         path: 'components',

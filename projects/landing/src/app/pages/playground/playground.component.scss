@@ -5,3 +5,12 @@
     width: 82%;
     overflow: auto;
 }
+
+.tabs {
+    li.active {
+        a {
+            border-bottom-color: hsl(0, 0%, 21%);
+            color: hsl(0, 0%, 21%);
+        }
+    }
+}
