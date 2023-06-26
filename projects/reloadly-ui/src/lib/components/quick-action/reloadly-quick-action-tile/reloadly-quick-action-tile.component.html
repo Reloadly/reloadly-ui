@@ -1,6 +1,15 @@
-<div class="quick-action-container topLeft" [class.show]="action" [class.critical]="action?.type == 'critical'"
-    [class.caution]="action?.type == 'caution'" [class.success]="action?.type == 'success'"
-    [class.isMultiline]="action?.title">
+<div class="quick-action-container" [id]="action?.referenceId"
+    [ngClass]="{
+            'dismiss':action?.transitioning,
+            'topLeft': action?.position == 'topLeft' ,'bottomLeft': action?.position == 'bottomLeft',
+            'topRight': action?.position == 'topRight',
+            'bottomRight': action?.position == 'bottomRight' || !action?.position,
+            'critical':  action?.type == 'critical',
+            'caution': action?.type == 'caution',
+            'success': action?.type == 'success',
+            'isMultiline': action?.title,
+        
+    }">
     <div class="quick-action-content">
         <svg class="close-btn" (click)="service.dismissQuickAction(action!)">
             <use xlink:href="#cancel"></use>

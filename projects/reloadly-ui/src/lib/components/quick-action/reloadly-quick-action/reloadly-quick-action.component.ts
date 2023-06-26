@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ReloadlyQuickActionService } from '../relaodly-quick-action';
+import { ReloadlyQuickActionService } from '../relaodly-quick-action.service';
 import { QuickAction } from '../../../models/quick-action';
 
 @Component({
