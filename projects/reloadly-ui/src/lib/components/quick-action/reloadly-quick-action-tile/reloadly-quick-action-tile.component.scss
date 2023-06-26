@@ -1,9 +1,10 @@
 @import "../../../../styles/variables.scss";
-@import "bulma/sass/helpers/spacing";
-@import "bulma/sass/helpers/flexbox";
 
 .is-flex {
     display: flex;
+}
+.is-flex-direction-column{
+    flex-direction: column;
 }
 
 .quick-action-container {
