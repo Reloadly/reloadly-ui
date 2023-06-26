@@ -20,18 +20,14 @@ img {
     max-width: 100% !important;
 }
 
-.logo {
-    width: 45px;
-}
-
-.svg-icon {
-    display: inline !important;
-    width: 1.5rem; // 24px
-    height: 1.5rem; // 24px
+svg {
     stroke-width: 0;
-    vertical-align: middle !important;
     stroke: currentColor;
     fill: currentColor;
+}
+
+.logo {
+    width: 45px;
 }
 
 .link:hover {
