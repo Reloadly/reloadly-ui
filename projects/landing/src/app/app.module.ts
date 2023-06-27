@@ -8,6 +8,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ComponentsModule } from './components/components.module';
 import { PlaygroundComponent } from './pages/playground/playground.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReloadlyUiModule } from 'projects/reloadly-ui/src/public-api';
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         FormsModule,
         AppRoutingModule,
         CommonModule,
-        ComponentsModule
+        ComponentsModule,
+        ReloadlyUiModule
     ],
     providers: [],
     bootstrap: [AppComponent]
