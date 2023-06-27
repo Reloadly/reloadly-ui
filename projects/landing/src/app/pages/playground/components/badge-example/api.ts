@@ -4,6 +4,7 @@ export const api: apiInterface[] = [
     {
         input: 'variant',
         type: 'string',
-        values: '"neutral" | "info" | "positive" | "warning" | "negative" | "urgent"'
+        values: '"neutral" | "info" | "positive" | "warning" | "negative" | "urgent"',
+        default: 'neutral'
     }
 ]

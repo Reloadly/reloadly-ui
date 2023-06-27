@@ -20,10 +20,11 @@
             <td>
                 <span class="highlighted-secondary">{{item.input}}</span>
             </td>
-            <td>
+            <td class="description">
                 <span class="type">Type: {{item.type}}</span>
                 <span>{{item.description}}</span>
                 <span class="highlighted-secondary">{{item.values}}</span>
+                <span class="type" *ngIf="item.default !== undefined">Default: {{item.default}}</span>
             </td>
         </tr>
     </tbody>
