@@ -5,6 +5,7 @@ import {
     ContentChildren,
     ElementRef,
     EventEmitter,
+    Inject,
     Input,
     OnDestroy,
     Output,
@@ -14,6 +15,7 @@ import {
     ViewContainerRef
 } from '@angular/core';
 import { StepComponent } from './step/step.component';
+import { DOCUMENT } from '@angular/common';
 
 class AnimationOrb {
     constructor(
@@ -32,7 +34,6 @@ class AnimationOrb {
 export class StepperComponent implements AfterContentInit, AfterViewInit, OnDestroy {
     private last = 0;
     private _currentIndex = 0;
-    @Input() showBullets = true;
     private viewResolved = false;
     private cont!: HTMLElement;
     private animationQueue: Array<AnimationOrb> = new Array;
@@ -41,6 +42,8 @@ export class StepperComponent implements AfterContentInit, AfterViewInit, OnDest
     @ContentChildren(StepComponent, { read: ViewContainerRef }) contentsRef!: QueryList<ViewContainerRef>;
     @ViewChild('target') container!: ElementRef;
     @Output() finishedSteps = new EventEmitter<void>;
+    @Output() reachedLastStep = new EventEmitter<void>;
+    @Input() showBullets = true;
     @Input() set currentIndex(value: number) {
         if (this._currentIndex != value) {
             const action = this._currentIndex < value ? this.slideLeft : this.slideRight;
@@ -56,7 +59,7 @@ export class StepperComponent implements AfterContentInit, AfterViewInit, OnDest
     }
     get currentIndex() { return this._currentIndex }
 
-    constructor(private renderer: Renderer2) { }
+    constructor(private renderer: Renderer2, @Inject(DOCUMENT) private document: Document) { }
 
     ngAfterContentInit(): void {
         let counter = 0;
@@ -82,6 +85,10 @@ export class StepperComponent implements AfterContentInit, AfterViewInit, OnDest
         this.currentIndex = this.clamp(this.currentIndex - 1);
     }
 
+    finish(): void {
+        this.finishedSteps.emit();
+    }
+
     private initSteps(): void {
         if (this.viewResolved) {
             const [firstStep, nextSlide] = this.contents
@@ -101,6 +108,7 @@ export class StepperComponent implements AfterContentInit, AfterViewInit, OnDest
                     || c.index == this.currentIndex + 2)
                 .map(c => c.el.nativeElement);
             if (rightSideOfOld) this.kickOutNext(rightSideOfOld);
+            this.undoHidePrevious();
 
             // then reset previous view just in case it has transforms, and then attach it
             this.renderer.setStyle(newInsert, 'transition', 'none');
@@ -111,6 +119,9 @@ export class StepperComponent implements AfterContentInit, AfterViewInit, OnDest
             this.renderer.setStyle(newInsert, 'transform', 'translateX(-100%)');
             this.renderer.setStyle(previousOld, 'transition', 'none');
             this.renderer.setStyle(previousOld, 'transform', 'translateX(-100%)');
+
+            // unfocus any buttons or inputs
+            (this.document?.activeElement as any)?.blur();
 
             setTimeout(() => {
                 this.renderer.setStyle(previousOld, 'transition', 'transform 500ms ease-out');
@@ -131,12 +142,15 @@ export class StepperComponent implements AfterContentInit, AfterViewInit, OnDest
             this.renderer.setStyle(this.cont.firstChild, 'transform', 'translateX(-100%)');
             this.renderer.setStyle(this.cont.lastChild, 'transform', 'translateX(-100%)');
 
+            // unfocus any buttons or inputs
+            (this.document?.activeElement as any)?.blur();
+
             // then attach new view
-            setTimeout(() => {
-                const [currentSlide, nextSlide] = this.contents
-                    .filter(c => c.index == this.currentIndex || c.index == this.currentIndex + 1)
-                    .map(c => c.el.nativeElement);
-                if (nextSlide) {
+            const [currentSlide, nextSlide] = this.contents
+                .filter(c => c.index == this.currentIndex || c.index == this.currentIndex + 1)
+                .map(c => c.el.nativeElement);
+            if (nextSlide) {
+                setTimeout(() => {
                     this.kickOutPrevious();
                     this.renderer.setStyle(currentSlide, 'transition', 'none');
                     this.renderer.setStyle(currentSlide, 'transform', 'translateX(0)');
@@ -150,19 +164,29 @@ export class StepperComponent implements AfterContentInit, AfterViewInit, OnDest
                             if (nextAnimation) nextAnimation.play();
                         })
                     }, 10);
-                } else {
-                    this.finishedSteps.emit();
-                }
-            }, 500); // corresponds to transform 500ms of stepper.component.scss
+                }, 500); // corresponds to transform 500ms of stepper.component.scss
+            } else {
+                this.hidePrevious();
+                this.reachedLastStep.emit();
+            }
         }
     }
 
     private kickOutPrevious(): void {
+        this.undoHidePrevious();
         this.renderer.removeChild(this.cont, this.cont.firstChild);
     }
 
     private kickOutNext(nextChild: HTMLElement): void {
         this.renderer.removeChild(this.cont, nextChild);
+    }
+
+    private hidePrevious(): void {
+        this.renderer.setStyle(this.cont.firstChild, 'visibility', 'hidden');
+    }
+
+    private undoHidePrevious(): void {
+        this.renderer.setStyle(this.cont.firstChild, 'visibility', 'visible');
     }
 
     private clamp(number: number, min = 0, max = this.last): number {

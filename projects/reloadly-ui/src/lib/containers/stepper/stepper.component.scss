@@ -2,10 +2,14 @@
 
 .rld {
     &-stepper {
-        width: 100%;
         display: flex;
         flex-direction: column;
         overflow: hidden;
+
+        // to allow space for box shadows to show
+        width: calc(100% + $spacing-small);
+        margin-left: -$spacing-small;
+        padding-left: $spacing-small;
 
         li {
             width: 10px;
@@ -36,11 +40,15 @@
 
         ::ng-deep {
             reloadly-step {
+                width: 100%;
                 flex-basis: 100%;
                 flex-shrink: 0;
                 transition: transform 500ms ease-out;
+
+                >* {
+                    display: block;
+                }
             }
         }
     }
 }
-

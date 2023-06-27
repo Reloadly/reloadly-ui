@@ -11,7 +11,6 @@ import { DateComponent } from './lib/components/date/date.component';
 import { FooterComponent } from './lib/components/footer/footer.component';
 import { FormGroupDirective } from './lib/components/form-group/directives/form-group.directive';
 import { FormLabelComponent } from './lib/components/form-group/form-label/form-label.component';
-import { HowToComponent } from './lib/components/how-to/how-to.component';
 import { InputGroupDirective } from './lib/components/input-group/directives/input-group.directive';
 import { InputDirective } from './lib/components/input-group/directives/input.directive';
 import { InputLabelComponent } from './lib/components/input-group/input-label/input-label.component';
@@ -56,7 +55,6 @@ export * from './lib/components/components.module';
 export {
     SvgComponent,
     FooterComponent,
-    HowToComponent,
     TagComponent,
     CustomerServiceComponent,
     TableComponent,

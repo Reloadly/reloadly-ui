@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './footer/footer.component';
-import { HowToComponent } from './how-to/how-to.component';
 import { SvgComponent } from './svg/svg.component';
 import { TagComponent } from './tag/tag.component';
 import { RouterModule } from '@angular/router';
@@ -34,7 +33,6 @@ import { BreadcrumbItemComponent } from './breadcrumb-group/breadcrumb-item/brea
     declarations: [
         SvgComponent,
         FooterComponent,
-        HowToComponent,
         TagComponent,
         CustomerServiceComponent,
         TableComponent,
@@ -68,7 +66,6 @@ import { BreadcrumbItemComponent } from './breadcrumb-group/breadcrumb-item/brea
     exports: [
         SvgComponent,
         FooterComponent,
-        HowToComponent,
         TagComponent,
         CustomerServiceComponent,
         TableComponent,
