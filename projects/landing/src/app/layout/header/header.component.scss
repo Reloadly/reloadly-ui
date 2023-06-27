@@ -1,13 +1,3 @@
-.active::before {
-    content: "";
-    width: 60%;
-    background: #f24668;
-    height: 3px;
-    border-radius: 3px;
-    position: absolute;
-    top: 35px;
-}
-
 .navbar {
     position: inherit;
 
@@ -27,12 +17,35 @@
         width: 100%;
     }
 
-    .navbar-item img {
-        max-height: 40px !important;
-    }
-}
+    .navbar-menu {
 
-.is-secondary {
-    background-color: #a56dfb;
-    color: #fff;
+        .navbar-item {
+            li {
+                padding: 0.5rem 0.75rem;
+
+                a {
+                    padding: 0;
+                }
+
+                a.active::before {
+                    content: "";
+                    width: 100%;
+                    background: #f24668;
+                    height: 3px;
+                    border-radius: 3px;
+                    position: absolute;
+                    top: 30px;
+                }
+            }
+
+            img {
+                max-height: 40px !important;
+            }
+        }
+
+        .is-secondary {
+            background-color: #a56dfb;
+            color: #fff;
+        }
+    }
 }
