@@ -1,5 +1,7 @@
 @import "../../../../styles/variables.scss";
 
+$bottom-margin: 5px;
+
 .heading-text {
     display: block;
     font-size: $font-medium;
@@ -7,12 +9,14 @@
     line-height: 20px;
     letter-spacing: -0.154px;
     color: $reloadly-black-8;
+    margin-bottom: $bottom-margin;
 }
+
 .subheading-text {
     display: block;
     font-weight: 400;
     font-size: $font-small;
     line-height: 16px;
     color: $reloadly-black-8;
-    margin-bottom: 5px;
+    margin-bottom: $bottom-margin;
 }

@@ -30,8 +30,9 @@ class AnimationOrb {
     styleUrls: ['./stepper.component.scss']
 })
 export class StepperComponent implements AfterContentInit, AfterViewInit, OnDestroy {
-    private _currentIndex = 0;
     private last = 0;
+    private _currentIndex = 0;
+    @Input() showBullets = true;
     private viewResolved = false;
     private cont!: HTMLElement;
     private animationQueue: Array<AnimationOrb> = new Array;
