@@ -1,0 +1,44 @@
+
+.reloadly-quick-action-overlay {
+    height: 100vh;
+    width: 100vw;
+    z-index: 100;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    top: 0;
+}
+
+.quick-action-list {
+    position: relative;
+    display: flex;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    &.bottomRight {
+        bottom: 16px;
+        right: 16px;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+
+    &.bottomLeft {
+        bottom: 16px;
+        left: 16px;
+    }
+
+    &.topRight {
+        top: 16px;
+        right: 16px;
+    }
+
+    &.topLeft {
+        top: 16px;
+        left: 16px;
+    }
+}
