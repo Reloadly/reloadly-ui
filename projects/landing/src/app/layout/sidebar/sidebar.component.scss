@@ -1,5 +1,5 @@
 #sidebar {
-    position: fixed;
+    //position: fixed;
 
     .menu {
         overflow: hidden;
@@ -28,12 +28,13 @@
 
     .btn {
         display: block;
-        padding: 16px 45px;
+        padding: 15px 35px;
         color: #17c0eb;
         position: relative;
     }
 
-    .btn:hover {
+    .btn:hover,
+    .btn.active {
         &::before {
             content: "";
             position: absolute;

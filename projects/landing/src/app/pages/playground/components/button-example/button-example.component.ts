@@ -21,4 +21,8 @@ export class ButtonExampleComponent {
     getCodeSample(name: string): string {
         return this.buttonsCode.filter((item: { name: string, code: string }) => name === item.name)[0].code
     }
+
+    changeSource(event: any) {
+        console.log(event);
+    }
 }

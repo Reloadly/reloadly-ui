@@ -1,6 +1,10 @@
 <h2 *ngIf="title" [id]="getSectionId()">{{title}}</h2>
 
 <section class="code-box-section">
+    <div class="languages" *ngIf="codeViewOpen">
+        <span (click)="selectSource('html')" [class.active]="activeTab === 'html'">HTML</span>
+        <span (click)="selectSource('ts')" [class.active]="activeTab === 'ts'">TS</span>
+    </div>
     <div class="code-section">
         <button class="copy-button" [reloadly-tooltip]="tooltipTextCopy" *ngIf="codeViewOpen"
             #tooltipTrigger="reloadly-tooltip" reloadly-button [size]="'xs'" [color]="'white'" [rounded]="false"

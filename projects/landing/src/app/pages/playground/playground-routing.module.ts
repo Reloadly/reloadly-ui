@@ -12,6 +12,8 @@ import { SelectExampleComponent } from './components/select-example/select-examp
 import { SidebarExampleComponent } from './components/sidebar-example/sidebar-example.component';
 import { SwitchExampleComponent } from './components/switch-example/switch-example.component';
 import { TooltipExampleComponent } from './components/tooltip-example/tooltip-example.component';
+import { TableExampleComponent } from './components/table-example/table-example.component';
+import { ModalExampleComponent } from './components/modal-example/modal-example.component';
 //import { StepperExampleComponent } from '../../components/stepper-example/stepper-example.component';
 
 const routes: Routes = [{
@@ -23,7 +25,7 @@ const routes: Routes = [{
             component: BadgeExampleComponent
         },
         {
-            path: 'breadcrumbs',
+            path: 'breadcrumb',
             component: BreadcrumbsExampleComponent
         },
         {
@@ -65,6 +67,14 @@ const routes: Routes = [{
         {
             path: 'tooltip',
             component: TooltipExampleComponent
+        },
+        {
+            path: 'table',
+            component: TableExampleComponent
+        },
+        {
+            path: 'modal',
+            component: ModalExampleComponent
         }
     ]
 }];

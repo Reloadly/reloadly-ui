@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReloadlyUiModule } from 'reloadly-ui';
+import { ReactiveFormsModule } from '@angular/forms';
 import { PlaygroundComponent } from './playground.component';
 import { PlaygroundRoutingModule } from './playground-routing.module';
 import { SidebarComponent } from '../../layout/sidebar/sidebar.component';
+import { ReloadlyUiDirectivesModule, ReloadlyUiModule, RootViewContainers } from 'reloadly-ui';
 import { ButtonExampleComponent } from './components/button-example/button-example.component';
 import { BadgeExampleComponent } from './components/badge-example/badge-example.component';
 import { BreadcrumbsExampleComponent } from './components/breadcrumbs-example/breadcrumbs-example.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { DateExampleComponent } from './components/date-example/date-example.component';
 import { FormExampleComponent } from './components/form-example/form-example.component';
 import { FormGroupExampleComponent } from './components/form-group-example/form-group-example.component';
@@ -18,12 +18,16 @@ import { SidebarExampleComponent } from './components/sidebar-example/sidebar-ex
 import { StepperExampleComponent } from './components/stepper-example/stepper-example.component';
 import { SwitchExampleComponent } from './components/switch-example/switch-example.component';
 import { TooltipExampleComponent } from './components/tooltip-example/tooltip-example.component';
+import { TableExampleComponent } from './components/table-example/table-example.component';
+import { ConfirmationDialogComponent } from './components/modal-example/confirmation-dialog/confirmation-dialog.component';
+import { ModalExampleComponent } from './components/modal-example/modal-example.component';
 import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
     imports: [
         CommonModule,
         ReloadlyUiModule,
+        ReloadlyUiDirectivesModule,
         PlaygroundRoutingModule,
         ReactiveFormsModule,
         SharedModule
@@ -43,7 +47,13 @@ import { SharedModule } from '../../shared/shared.module';
         SidebarExampleComponent,
         StepperExampleComponent,
         SwitchExampleComponent,
-        TooltipExampleComponent
+        TooltipExampleComponent,
+        TableExampleComponent,
+        ModalExampleComponent,
+        ConfirmationDialogComponent
+    ],
+    providers: [
+        { provide: RootViewContainers, useValue: new RootViewContainers }
     ]
 })
 export class PlaygroundModuleModule { }

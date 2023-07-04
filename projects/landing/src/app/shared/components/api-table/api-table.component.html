@@ -21,7 +21,7 @@
                 <span class="highlighted-secondary">{{item.input}}</span>
             </td>
             <td class="description">
-                <span class="type">Type: {{item.type}}</span>
+                <span class="type">Type: <span class="highlighted">{{item.type}}</span></span>
                 <span>{{item.description}}</span>
                 <span class="highlighted-secondary">{{item.values}}</span>
                 <span class="type" *ngIf="item.default !== undefined">Default: {{item.default}}</span>

@@ -1,39 +1,40 @@
+<h1>Select</h1>
 
-<div class="examples">
-    <p style="margin-bottom: 32px;">Select</p>
-    <!-- Size -->
-    <p style="margin-bottom: 32px;">Size</p>
-    <div class="row">
-        <p>Small</p>
-        <p>Medium</p>
-        <p>Large</p>
-    </div>
-    <div class="row">
-        <reloadly-select [options]="options" size="small"></reloadly-select>
-        <reloadly-select [options]="options"></reloadly-select>
-        <reloadly-select [options]="options" size="large"></reloadly-select>
-    </div>
-    <!-- Select type -->
-    <br>
-    <p style="margin-bottom: 32px;">Type</p>
-    <div class="row">
-        <p>Input (Default)</p>
-        <p>Dropdown</p>
-    </div>
-    <div class="row">
-        <reloadly-select [options]="options" type="input"></reloadly-select>
-        <reloadly-select [options]="options" type="dropdown"></reloadly-select>
-    </div>
-    <!-- Error -->
-    <br>
-    <p style="margin-bottom: 32px;">Error</p>
-    <div class="row">
-        <reloadly-select [options]="options" [error]="true" size="large" type="dropdown"></reloadly-select>
-    </div>
-    <!-- Disabled -->
-    <br>
-    <p style="margin-bottom: 32px;">Disabled</p>
-    <div class="row">
-        <reloadly-select [options]="options" [disabled]="true" size="large" type="dropdown"></reloadly-select>
-    </div>
-</div>
+<app-tabs>
+    <app-tab tabTitle="Examples">
+
+        <app-code-box [code]="getCodeSample('small')" title="Small">
+            <reloadly-select [options]="options" size="small"></reloadly-select>
+        </app-code-box>
+
+        <app-code-box [code]="getCodeSample('medium')" title="Medium">
+            <reloadly-select [options]="options"></reloadly-select>
+        </app-code-box>
+
+        <app-code-box [code]="getCodeSample('large')" title="Large">
+            <reloadly-select [options]="options" size="large"></reloadly-select>
+        </app-code-box>
+
+        <app-code-box [code]="getCodeSample('input')" title="Input (default)">
+            <reloadly-select [options]="options" type="input"></reloadly-select>
+        </app-code-box>
+
+        <app-code-box [code]="getCodeSample('dropdown')" title="Dropdown">
+            <reloadly-select [options]="options" type="dropdown"></reloadly-select>
+        </app-code-box>
+
+        <app-code-box [code]="getCodeSample('error')" title="Error">
+            <reloadly-select [options]="options" [error]="true" size="large" type="dropdown"></reloadly-select>
+        </app-code-box>
+
+        <app-code-box [code]="getCodeSample('disabled')" title="Disabled">
+            <reloadly-select [options]="options" [disabled]="true" size="large" type="dropdown"></reloadly-select>
+        </app-code-box>
+
+
+    </app-tab>
+
+    <app-tab tabTitle="API" class="tab api">
+        <app-api-table type="component" name="reloadly-select" [data]="api"></app-api-table>
+    </app-tab>
+</app-tabs>

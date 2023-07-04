@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, TemplateRef } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, TemplateRef } from '@angular/core';
 
 @Component({
     selector: 'app-code-box',
@@ -12,8 +12,10 @@ export class CodeBoxComponent implements OnInit {
     dynamicClass: string = 'mr-4 mt-4 custom-button-class';
     tooltipTextCopy = 'Copy'
     tooltipTextCode = 'View code';
+    activeTab = 'html';
     @Input('code') code = ``;
     @Input('title') title = '';
+    @Output('sourceChange') sourceChange = new EventEmitter<string>();;
 
     constructor() {
 
@@ -57,5 +59,10 @@ export class CodeBoxComponent implements OnInit {
         this.codeViewOpen = !this.codeViewOpen;
 
         this.tooltipTextCode = (this.codeViewOpen ? 'Hide ' : 'View ') + 'code';
+    }
+
+    selectSource(input: 'ts' | 'html') {
+        this.sourceChange.emit(input);
+        this.activeTab = input;
     }
 }

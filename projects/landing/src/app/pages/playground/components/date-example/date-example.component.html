@@ -1,28 +1,29 @@
-<div style="background: white;padding: 20px;">
-    <h1 [attr.id]="'date-picker'" class="mb-4">Date Field Example</h1>
-    <br><br>
+<h1>Date picker</h1>
 
-    <div class="row">
-        <div reloadlyInputGroup>
-            <reloadly-input-label type="heading">Label</reloadly-input-label>
-            <reloadly-input-label type="subheading">Description</reloadly-input-label>
-            <reloadly-date></reloadly-date>
-        </div>
-        <div reloadlyInputGroup>
-            <reloadly-input-label type="heading">Label</reloadly-input-label>
-            <reloadly-input-label type="subheading">Description</reloadly-input-label>
-            <reloadly-date></reloadly-date>
-        </div>
-        <div reloadlyInputGroup>
-            <reloadly-input-label type="heading">Label</reloadly-input-label>
-            <reloadly-input-label type="subheading">Description</reloadly-input-label>
-            <reloadly-date [hasError]="true"></reloadly-date>
-        </div>
-        <div reloadlyInputGroup>
-            <reloadly-input-label type="heading">Label</reloadly-input-label>
-            <reloadly-input-label type="subheading">Description</reloadly-input-label>
-            <reloadly-date [disabled]="true"></reloadly-date>
-        </div>
-    </div>
-    <br>
-</div>
+<app-tabs>
+    <app-tab tabTitle="Examples">
+        <app-code-box [code]="getCodeSample()">
+            <div reloadlyInputGroup>
+                <reloadly-input-label type="heading">Date picker</reloadly-input-label>
+                <reloadly-input-label type="subheading">Description</reloadly-input-label>
+                <reloadly-date></reloadly-date>
+            </div>
+            <br />
+            <div reloadlyInputGroup>
+                <reloadly-input-label type="heading">Date error</reloadly-input-label>
+                <reloadly-input-label type="subheading">Description</reloadly-input-label>
+                <reloadly-date [hasError]="true"></reloadly-date>
+            </div>
+            <br />
+            <div reloadlyInputGroup>
+                <reloadly-input-label type="heading">Disabled input</reloadly-input-label>
+                <reloadly-input-label type="subheading">Description</reloadly-input-label>
+                <reloadly-date [disabled]="true"></reloadly-date>
+            </div>
+        </app-code-box>
+    </app-tab>
+
+    <app-tab tabTitle="API" class="tab api">
+        <app-api-table type="component" name="reloadly-date" [data]="api"></app-api-table>
+    </app-tab>
+</app-tabs>

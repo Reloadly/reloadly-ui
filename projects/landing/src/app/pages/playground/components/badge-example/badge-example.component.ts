@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { badgesCode } from './badges';
 import { apiInterface } from '../../../../shared/components/api-table/models';
 import { api } from './api';
+
 @Component({
     selector: 'app-badge-example',
     templateUrl: './badge-example.component.html',

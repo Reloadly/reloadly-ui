@@ -15,6 +15,10 @@ import { TabComponent } from './tab.component';
     `,
     styles: [
         `
+        .tabs li.active a {
+            border-bottom-color: hsl(0, 0%, 21%);
+            color: hsl(0, 0%, 21%);
+        }
         .tab-close {
             color: gray;
             text-align: right;
