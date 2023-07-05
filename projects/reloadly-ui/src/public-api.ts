@@ -8,7 +8,7 @@ import { BreadcrumbsComponent } from './lib/components/breadcrumb-group/breadcru
 import { ButtonDirective } from './lib/components/button/directives/button.directive';
 import { CustomerServiceComponent } from './lib/components/customer-service/customer-service.component';
 import { DateComponent } from './lib/components/date/date.component';
-import { FooterComponent } from './lib/components/footer/footer.component';
+//import { FooterComponent } from './lib/components/footer/footer.component';
 import { FormGroupDirective } from './lib/components/form-group/directives/form-group.directive';
 import { FormLabelComponent } from './lib/components/form-group/form-label/form-label.component';
 import { HowToComponent } from './lib/components/how-to/how-to.component';
@@ -49,13 +49,15 @@ import { SelectableItem } from './lib/models/selectable-item';
 import { CreditCardComponent } from './lib/containers/credit-card/credit-card.component';
 import { CardComponent } from './lib/containers/card/card.component';
 import { OutsideClickDirective } from './lib/directives/outside-click.directive';
-
+import { ReloadlyQuickActionComponent } from './lib/components/quick-action/quick-action.component';
+import { ReloadlyQuickActionService } from './lib/components/quick-action/quick-action.service';
+import { QuickAction, QuickActionInterface, QuickActionPosition, QuickActionType   } from './lib/models/quick-action';
 export * from './lib/reloadly-ui.module';
 
 export * from './lib/components/components.module';
 export {
     SvgComponent,
-    FooterComponent,
+    //FooterComponent,
     HowToComponent,
     TagComponent,
     CustomerServiceComponent,
@@ -125,3 +127,7 @@ export {
 
 export * from './lib/directives/directives.module';
 export { OutsideClickDirective }
+
+export * from './lib/components/quick-action/quick-action.module';
+export { ReloadlyQuickActionComponent, ReloadlyQuickActionService };
+export {QuickAction, QuickActionInterface, QuickActionPosition, QuickActionType };

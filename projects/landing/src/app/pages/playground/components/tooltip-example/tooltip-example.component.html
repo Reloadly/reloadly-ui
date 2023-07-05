@@ -1,0 +1,53 @@
+<h1>Tooltips</h1>
+
+<app-tabs>
+    <app-tab tabTitle="Examples">
+        <app-code-box [code]="getCodeSample('top')" title="Top tooltip">
+            <div class="row">
+                <button reloadly-button
+                    [reloadly-tooltip]="'A tooltip can provide additional context about the field next to it.'"
+                    [position]="'top-right'">
+                    Top Right
+                </button>
+
+                <button reloadly-button
+                    [reloadly-tooltip]="'A tooltip can provide additional context about the field next to it.'"
+                    [position]="'top-center'">
+                    Top Center
+                </button>
+
+                <button reloadly-button
+                    [reloadly-tooltip]="'A tooltip can provide additional context about the field next to it.'"
+                    [position]="'top-left'">
+                    Top left
+                </button>
+            </div>
+        </app-code-box>
+
+        <app-code-box [code]="getCodeSample('bottom')" title="Bottom tooltip">
+            <div class="row">
+                <button reloadly-button
+                    [reloadly-tooltip]="'A tooltip can provide additional context about the field next to it.'"
+                    [position]="'bottom-right'">
+                    Bottom Right
+                </button>
+
+                <button reloadly-button
+                    [reloadly-tooltip]="'A tooltip can provide additional context about the field next to it.'"
+                    [position]="'bottom-center'">
+                    Bottom Center
+                </button>
+
+                <button reloadly-button
+                    [reloadly-tooltip]="'A tooltip can provide additional context about the field next to it.'"
+                    [position]="'bottom-left'">
+                    Bottom left
+                </button>
+            </div>
+        </app-code-box>
+    </app-tab>
+
+    <app-tab tabTitle="API" class="tab api">
+        <app-api-table type="directive" name="reloadly-tooltip" [data]="api"></app-api-table>
+    </app-tab>
+</app-tabs>

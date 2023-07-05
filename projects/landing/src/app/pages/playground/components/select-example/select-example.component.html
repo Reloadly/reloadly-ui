@@ -1,0 +1,40 @@
+<h1>Select</h1>
+
+<app-tabs>
+    <app-tab tabTitle="Examples">
+
+        <app-code-box [code]="getCodeSample('small')" title="Small">
+            <reloadly-select [options]="options" size="small"></reloadly-select>
+        </app-code-box>
+
+        <app-code-box [code]="getCodeSample('medium')" title="Medium">
+            <reloadly-select [options]="options"></reloadly-select>
+        </app-code-box>
+
+        <app-code-box [code]="getCodeSample('large')" title="Large">
+            <reloadly-select [options]="options" size="large"></reloadly-select>
+        </app-code-box>
+
+        <app-code-box [code]="getCodeSample('input')" title="Input (default)">
+            <reloadly-select [options]="options" type="input"></reloadly-select>
+        </app-code-box>
+
+        <app-code-box [code]="getCodeSample('dropdown')" title="Dropdown">
+            <reloadly-select [options]="options" type="dropdown"></reloadly-select>
+        </app-code-box>
+
+        <app-code-box [code]="getCodeSample('error')" title="Error">
+            <reloadly-select [options]="options" [error]="true" size="large" type="dropdown"></reloadly-select>
+        </app-code-box>
+
+        <app-code-box [code]="getCodeSample('disabled')" title="Disabled">
+            <reloadly-select [options]="options" [disabled]="true" size="large" type="dropdown"></reloadly-select>
+        </app-code-box>
+
+
+    </app-tab>
+
+    <app-tab tabTitle="API" class="tab api">
+        <app-api-table type="component" name="reloadly-select" [data]="api"></app-api-table>
+    </app-tab>
+</app-tabs>

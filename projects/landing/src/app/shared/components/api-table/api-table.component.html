@@ -1,0 +1,31 @@
+<span class="mr-4 mt-4 inline-block">
+    <reloadly-badge [variant]="'info'" style="text-transform: capitalize;">
+        {{type}}
+    </reloadly-badge>
+    <span class="highlighted ml-5">
+        <span *ngIf="type === 'directive'">[</span>
+        <span *ngIf="type === 'component'">&lt;</span>
+        {{name}}
+        <span *ngIf="type === 'component'">&gt;</span>
+        <span *ngIf="type === 'directive'">]</span>
+    </span>
+</span>
+<table class="mt-6">
+    <thead>
+        <th>Inputs</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of data">
+            <td>
+                <span class="highlighted-secondary">{{item.input}}</span>
+            </td>
+            <td class="description">
+                <span class="type">Type: <span class="highlighted">{{item.type}}</span></span>
+                <span>{{item.description}}</span>
+                <span class="highlighted-secondary">{{item.values}}</span>
+                <span class="type" *ngIf="item.default !== undefined">Default: {{item.default}}</span>
+            </td>
+        </tr>
+    </tbody>
+</table>

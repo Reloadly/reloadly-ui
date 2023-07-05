@@ -4,6 +4,7 @@
     width: 100%;
     display: flex;
     flex-flow: row wrap;
+    margin-bottom: $spacing-small;
     ::ng-deep {
         reloadly-breadcrumb-item {
             display: flex;
@@ -15,7 +16,6 @@
                     margin-left: $margin-10;
                     color: $reloadly-black-11;
                 }
-                
             }
         }
     }
