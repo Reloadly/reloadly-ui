@@ -1,0 +1,20 @@
+<div class="dialog">
+    <header class="dialog-header">
+        <h3>Confirmation</h3>
+    </header>
+    <div class="dialog-message">
+        <svg class="svg-icon">
+            <use xlink:href="#help"></use>
+        </svg>
+        <span>Are you sure you want to take this action?</span>
+    </div>
+    <div class="dialog-buttons">
+        <button reloadly-button (click)="dialogRef.cancel()" [color]="'danger'" [rounded]="true" [variant]="'outlined'">
+            Cancel
+        </button>
+        <button reloadly-button (click)="dialogRef.accept()" [color]="'secondary'" [rounded]="true"
+            [variant]="'filled'">
+            Confirm
+        </button>
+    </div>
+</div>

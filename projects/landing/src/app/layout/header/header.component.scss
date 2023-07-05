@@ -1,0 +1,51 @@
+.navbar {
+    position: inherit;
+
+    .bg {
+        background: transparent linear-gradient(270deg, #63f6c8 0, #a56dfb 100%) 0 0 no-repeat padding-box;
+        height: 28em;
+        margin-top: -18em;
+        width: 100%;
+        position: absolute;
+
+        &.skew {
+            transform: skewY(-3deg);
+        }
+    }
+
+    .logo {
+        width: 100%;
+    }
+
+    .navbar-menu {
+
+        .navbar-item {
+            li {
+                padding: 0.5rem 0.75rem;
+
+                a {
+                    padding: 0;
+                }
+
+                a.active::before {
+                    content: "";
+                    width: 100%;
+                    background: #f24668;
+                    height: 3px;
+                    border-radius: 3px;
+                    position: absolute;
+                    top: 30px;
+                }
+            }
+
+            img {
+                max-height: 40px !important;
+            }
+        }
+
+        .is-secondary {
+            background-color: #a56dfb;
+            color: #fff;
+        }
+    }
+}

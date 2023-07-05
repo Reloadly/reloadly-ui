@@ -8,6 +8,8 @@
     },
     "private": true,
     "dependencies": {
+        "highlight.js": "^11.8.0",
+        "ngx-highlightjs": "^8.0.0",
         "tslib": "^2.3.0"
     },
     "peerDependencies": {
@@ -22,9 +24,7 @@
         "@swimlane/ngx-datatable": "^20.1.0",
         "apexcharts": "^3.37.2",
         "bulma": "^0.9.4",
-        "google-libphonenumber": "^3.2.31",
         "ng-apexcharts": "^1.7.4",
-        "ngx-intl-tel-input": "^3.2.0",
         "ngx-select-dropdown": "^3.2.0",
         "rxjs": "~7.5.0",
         "subsink": "^1.0.2",
@@ -34,6 +34,7 @@
         "@angular-devkit/build-angular": "^15.0.5",
         "@angular/cli": "~15.0.0",
         "@angular/compiler-cli": "^15.0.0",
+        "@types/highlight.js": "^10.1.0",
         "@types/jasmine": "~4.3.0",
         "jasmine-core": "~4.5.0",
         "karma": "~6.4.0",
