@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FooterComponent } from './footer/footer.component';
+//import { FooterComponent } from './footer/footer.component';
 import { HowToComponent } from './how-to/how-to.component';
 import { SvgComponent } from './svg/svg.component';
 import { TagComponent } from './tag/tag.component';
@@ -20,7 +20,7 @@ import { InputLabelComponent } from './input-group/input-label/input-label.compo
 import { FormGroupDirective } from './form-group/directives/form-group.directive';
 import { InputGroupDirective } from './input-group/directives/input-group.directive';
 import { TableDirective } from './table/directives/table.directive';
-import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+//import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { ReloadlyModalModule } from './modal/reloadly-modal.module';
 import { ButtonModule } from './button/button.module';
 import { BadgeModule } from './badge/badge.module';
@@ -33,7 +33,7 @@ import { BreadcrumbItemComponent } from './breadcrumb-group/breadcrumb-item/brea
 @NgModule({
     declarations: [
         SvgComponent,
-        FooterComponent,
+        //FooterComponent,
         HowToComponent,
         TagComponent,
         CustomerServiceComponent,
@@ -58,7 +58,7 @@ import { BreadcrumbItemComponent } from './breadcrumb-group/breadcrumb-item/brea
         RouterModule,
         FormsModule,
         NgxDatatableModule,
-        NgxIntlTelInputModule,
+        //NgxIntlTelInputModule,
         ReloadlyModalModule,
         ButtonModule,
         BadgeModule,
@@ -67,7 +67,7 @@ import { BreadcrumbItemComponent } from './breadcrumb-group/breadcrumb-item/brea
     ],
     exports: [
         SvgComponent,
-        FooterComponent,
+        //FooterComponent,
         HowToComponent,
         TagComponent,
         CustomerServiceComponent,
@@ -84,7 +84,7 @@ import { BreadcrumbItemComponent } from './breadcrumb-group/breadcrumb-item/brea
         InputLabelComponent,
         TableDirective,
         DateComponent,
-        NgxIntlTelInputModule,
+        //NgxIntlTelInputModule,
         ReloadlyModalModule,
         ButtonModule,
         BadgeModule,

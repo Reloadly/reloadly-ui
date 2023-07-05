@@ -1,0 +1,16 @@
+<h1>Menu</h1>
+
+<app-tabs>
+    <app-tab tabTitle="Examples">
+
+        <app-code-box [code]="getCodeSample('menu')" title="Menu">
+            <button reloadly-button class="mr-4 mt-4" (click)="openModal()">
+                Open modal
+            </button>
+        </app-code-box>
+    </app-tab>
+
+    <app-tab tabTitle="API" class="tab api">
+        <app-api-table type="component" name="reloadly-menu" [data]="api"></app-api-table>
+    </app-tab>
+</app-tabs>

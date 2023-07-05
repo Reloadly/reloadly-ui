@@ -54,44 +54,44 @@
         font-size: $font-size-sm;
         margin: 6px 0px;
     }
-}
 
-.expire-date {
-    font-size: 13px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 6px 0px;
+    .expire-date {
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 6px 0px;
 
-    small {
-        font-size: 8px;
-        text-transform: uppercase;
-        margin-right: 12px;
+        small {
+            font-size: 8px;
+            text-transform: uppercase;
+            margin-right: 12px;
+        }
     }
-}
 
-svg {
-    max-height: 32px;
-    max-width: 64px;
-    color: $reloadly-white;
-    fill: white;
+    svg {
+        max-height: 32px;
+        max-width: 64px;
+        color: $reloadly-white;
+        fill: white;
+
+        path {
+            fill: white;
+        }
+    }
+
+    .card-mask {
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        border-radius: 16px;
+        padding: 8px;
+        background: rgba(0, 0, 0, .4);
+    }
 
     path {
         fill: white;
     }
-}
-
-.card-mask {
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    border-radius: 16px;
-    padding: 8px;
-    background: rgba(0, 0, 0, .4);
-}
-
-path {
-    fill: white;
 }

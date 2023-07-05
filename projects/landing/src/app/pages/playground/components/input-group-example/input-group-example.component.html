@@ -1,0 +1,69 @@
+<h1>Input group</h1>
+
+<app-tabs>
+    <app-tab tabTitle="Examples">
+        <app-code-box [code]="getCodeSample('small')">
+            <div class="row">
+                <div reloadlyInputGroup>
+                    <reloadly-input-label type="heading">Label</reloadly-input-label>
+                    <reloadly-input-label type="subheading">Description</reloadly-input-label>
+                    <input reloadlyInput type="text" placeholder="Placeholder" size="small" />
+                </div>
+                <div reloadlyInputGroup>
+                    <reloadly-input-label type="heading">Label</reloadly-input-label>
+                    <reloadly-input-label type="subheading">Description</reloadly-input-label>
+                    <input reloadlyInput type="text" placeholder="Placeholder" [hasError]="true" size="small" />
+                </div>
+                <div reloadlyInputGroup>
+                    <reloadly-input-label type="heading">Label</reloadly-input-label>
+                    <reloadly-input-label type="subheading">Description</reloadly-input-label>
+                    <input reloadlyInput type="text" placeholder="Placeholder" [disabled]="true" size="small" />
+                </div>
+            </div>
+        </app-code-box>
+
+        <app-code-box [code]="getCodeSample('medium')">
+            <div class="row">
+                <div reloadlyInputGroup>
+                    <reloadly-input-label type="heading">Label</reloadly-input-label>
+                    <reloadly-input-label type="subheading">Description</reloadly-input-label>
+                    <input reloadlyInput type="text" placeholder="Placeholder" />
+                </div>
+                <div reloadlyInputGroup>
+                    <reloadly-input-label type="heading">Label</reloadly-input-label>
+                    <reloadly-input-label type="subheading">Description</reloadly-input-label>
+                    <input reloadlyInput type="text" placeholder="Placeholder" [hasError]="true" />
+                </div>
+                <div reloadlyInputGroup>
+                    <reloadly-input-label type="heading">Label</reloadly-input-label>
+                    <reloadly-input-label type="subheading">Description</reloadly-input-label>
+                    <input reloadlyInput type="text" placeholder="Placeholder" [disabled]="true" />
+                </div>
+            </div>
+        </app-code-box>
+
+        <app-code-box [code]="getCodeSample('large')">
+            <div class="row">
+                <div reloadlyInputGroup>
+                    <reloadly-input-label type="heading">Label</reloadly-input-label>
+                    <reloadly-input-label type="subheading">Description</reloadly-input-label>
+                    <input reloadlyInput type="text" placeholder="Placeholder" size="large" />
+                </div>
+                <div reloadlyInputGroup>
+                    <reloadly-input-label type="heading">Label</reloadly-input-label>
+                    <reloadly-input-label type="subheading">Description</reloadly-input-label>
+                    <input reloadlyInput type="text" placeholder="Placeholder" [hasError]="true" size="large" />
+                </div>
+                <div reloadlyInputGroup>
+                    <reloadly-input-label type="heading">Label</reloadly-input-label>
+                    <reloadly-input-label type="subheading">Description</reloadly-input-label>
+                    <input reloadlyInput type="text" placeholder="Placeholder" [disabled]="true" size="large" />
+                </div>
+            </div>
+        </app-code-box>
+    </app-tab>
+
+    <app-tab tabTitle="API" class="tab api">
+        <app-api-table type="directive" name="reloadlyInput" [data]="api"></app-api-table>
+    </app-tab>
+</app-tabs>

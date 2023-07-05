@@ -9,6 +9,7 @@ export class BadgeComponent {
     protected class: string = '';
     @Input() variant: BadgeVariant = "neutral"
     @Input() showIcon: boolean = false
+    //@TODO: needs to be refactored, remove showIcon input
 
     constructor(
     ) { }
