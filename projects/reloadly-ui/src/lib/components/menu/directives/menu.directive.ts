@@ -32,6 +32,7 @@ export class MenuDirective {
     }
 
     destroy(): void {
+        this.document?.removeEventListener('wheel', this.blockScroll);
         this.viewContainerRef.clear();
     }
 
