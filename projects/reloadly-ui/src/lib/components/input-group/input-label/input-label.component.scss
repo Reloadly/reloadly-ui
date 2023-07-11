@@ -1,5 +1,13 @@
 @import "../../../../styles/variables.scss";
 
+@mixin smaller-text {
+    display: block;
+    font-weight: 400;
+    font-size: $font-small;
+    line-height: 16px;
+    margin-bottom: 5px;
+}
+
 .heading-text {
     display: block;
     font-size: $font-medium;
@@ -8,11 +16,21 @@
     letter-spacing: -0.154px;
     color: $reloadly-black-8;
 }
+
 .subheading-text {
-    display: block;
-    font-weight: 400;
-    font-size: $font-small;
-    line-height: 16px;
+    @include smaller-text();
     color: $reloadly-black-8;
-    margin-bottom: 5px;
 }
+
+.error-text {
+    @include smaller-text();
+    color: $reloadly-danger;
+
+    svg {
+        fill: $reloadly-danger;
+        width: $font-small;
+        height: $font-small;
+        margin: 2px 2px 0 0;
+    }
+}
+
