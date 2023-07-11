@@ -1,6 +1,6 @@
 import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
 import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
-import { BehaviorSubject, skip, tap } from 'rxjs';
+import { BehaviorSubject, ReplaySubject, map, skip, takeUntil, tap } from 'rxjs';
 import { FormControl } from '@angular/forms';
 
 export interface CheckBoxValue {
@@ -82,7 +82,7 @@ export class CheckboxComponent implements OnInit, AfterViewInit, OnDestroy {
     @Input() name = '';
     @Input() label = '';
     @Input() control!: FormControl | null;
-    @Input() set checked(value: boolean) { this.state.isChecked.next(value) };
+    @Input() set checked(value: boolean) { this.state.isChecked.next({ value }) };
     @Input() set disabled(value: boolean) { this.state.disabled.next(value) };
     @Output() change: EventEmitter<CheckBoxValue | string> = new EventEmitter();
 
@@ -94,14 +94,14 @@ export class CheckboxComponent implements OnInit, AfterViewInit, OnDestroy {
     public get isHovered(): boolean { return this.state.isHovered }
     public get isFocused(): boolean { return this.state.isFocused }
     public get isPressed(): boolean { return this.state.isPressed }
-    public get isChecked(): boolean { return this.state.isChecked.getValue() }
+    public get isChecked(): boolean { return this.state.isChecked.getValue().value }
     public get disabled(): boolean { return this.state.disabled.getValue() }
 
-    public get isChecked$(): BehaviorSubject<boolean> { return this.state.isChecked }
+    public get isChecked$(): BehaviorSubject<boolean> { return this.state.isChecked.pipe(map(v => v.value)) as BehaviorSubject<boolean> }
     public get disabled$(): BehaviorSubject<boolean> { return this.state.disabled }
 
     public set isChecked(value: boolean) {
-        this.state.isChecked.next(value);
+        this.state.isChecked.next({ value });
         this.htmlInputElement.checked = value;
     }
 
@@ -109,17 +109,20 @@ export class CheckboxComponent implements OnInit, AfterViewInit, OnDestroy {
         isHovered: false,
         isFocused: false,
         isPressed: false,
-        isChecked: new BehaviorSubject(false),
+        isChecked: new BehaviorSubject<{ value: boolean, metadata?: any }>({ value: false, metadata: null }),
         disabled: new BehaviorSubject(false),
     };
+    private get _isChecked$(): BehaviorSubject<{ value: boolean, metadata?: any }> { return this.state.isChecked }
     private listeners = new Array<() => void>;
+    private subs: ReplaySubject<boolean> = new ReplaySubject(1);
 
     constructor(private renderer: Renderer2) { }
 
     ngOnInit(): void {
         if (!this.control) {
             this.isChecked$
-                .pipe(skip(1)).subscribe(checked => {
+                .pipe(skip(1), takeUntil(this.subs))
+                .subscribe(checked => {
                     this.change.emit({
                         name: this.name,
                         isChecked: checked,
@@ -127,15 +130,19 @@ export class CheckboxComponent implements OnInit, AfterViewInit, OnDestroy {
                     })
                 });
         } else {
-            this.isChecked$
+            this._isChecked$
                 .pipe(
-                    tap(checked => (this.control as FormControl)
-                        .setValue(checked, { emitEvent: false })),
-                    skip(1)
-                ).subscribe(checked => {
-                    this.change.emit("Use FormControl.value or FormControl.valueChanges instead, since you supplied a FormControl in [control]")
+                    tap(checked => {
+                        if (checked?.metadata && checked.metadata?.noEmit)
+                            (this.control as FormControl).setValue(checked.value, { emitEvent: false });
+                        else (this.control as FormControl).setValue(checked.value);
+                    }),
+                    skip(1),
+                    takeUntil(this.subs)
+                ).subscribe(() => {
+                    this.change.emit('Use FormControl.value or FormControl.valueChanges instead, since you supplied a FormControl in [control]')
                 });
-            this.control.valueChanges.subscribe(v => this.isChecked = v);
+            this.control.valueChanges.subscribe((v: boolean) => this.setIsCheckedNoEmit(v));
         }
     }
 
@@ -176,6 +183,8 @@ export class CheckboxComponent implements OnInit, AfterViewInit, OnDestroy {
 
     ngOnDestroy(): void {
         this.listeners.forEach(eventEnder => eventEnder());
+        this.subs.next(true);
+        this.subs.complete();
     }
 
     private onHovered = (): void => {
@@ -195,7 +204,7 @@ export class CheckboxComponent implements OnInit, AfterViewInit, OnDestroy {
 
     private onPressed = (): void => {
         if (!this.disabled) {
-            this.state.isChecked.next(!this.state.isChecked.getValue());
+            this.state.isChecked.next({ value: !this.state.isChecked.getValue().value });
             setTimeout(() => {
                 this.state.isFocused = false;
                 this.state.isPressed = true;
@@ -223,5 +232,10 @@ export class CheckboxComponent implements OnInit, AfterViewInit, OnDestroy {
             this.renderer.listen(this.checkBox.nativeElement, 'mouseup', this.onPressed),
             this.renderer.listen(this.checkBox.nativeElement, 'touchend', this.onPressed)
         ]);
+    }
+
+    private setIsCheckedNoEmit(value: boolean): void {
+        this.state.isChecked.next({ value, metadata: { noEmit: true } });
+        this.htmlInputElement.checked = value;
     }
 }

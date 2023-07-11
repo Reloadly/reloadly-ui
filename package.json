@@ -27,7 +27,6 @@
         "ng-apexcharts": "^1.7.4",
         "ngx-select-dropdown": "^3.2.0",
         "rxjs": "~7.5.0",
-        "subsink": "^1.0.2",
         "zone.js": "~0.12.0"
     },
     "devDependencies": {

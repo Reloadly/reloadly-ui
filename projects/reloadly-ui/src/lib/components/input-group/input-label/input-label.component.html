@@ -1,3 +1,6 @@
 <label [ngClass]="type+'-text'" [attr.for]="for">
+    <svg *ngIf="type == 'error'">
+        <use xlink:href="#input-warning"></use>
+    </svg>
     <ng-content></ng-content>
 </label>
