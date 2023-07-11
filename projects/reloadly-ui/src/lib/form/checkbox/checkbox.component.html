@@ -11,7 +11,7 @@
 		<input #input type="checkbox" class="checkbox-self" [name]="name">
 		<div #view class="checkbox-view">
 			<div class="checkbox-view-object" [@squareBorderColor]="borderColoring" [@squareFillColor]="fillColoring">
-				<svg class="checkmark" *ngIf="isChecked" draggable="false">
+				<svg class="checkmark" *ngIf="isChecked$ | async" draggable="false">
 					<use xlink:href="#checkbox-checkmark" class="checkmark__checked"></use>
 				</svg>
 			</div>
