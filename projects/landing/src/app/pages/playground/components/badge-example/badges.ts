@@ -1,7 +1,8 @@
 export const badgesCode = [
     {
         name: "badges",
-        code: `<span class="mr-4 mt-4 inline-block">
+        code: {
+            html: `<span class="mr-4 mt-4 inline-block">
     <reloadly-badge [variant]="'neutral'">
         Neutral
     </reloadly-badge>
@@ -31,10 +32,12 @@ export const badgesCode = [
         Urgent
     </reloadly-badge>
 </span>`
+        }
     },
     {
         name: 'defaultIcons',
-        code: `<span class="mr-4 mt-4 inline-block">
+        code: {
+            html: `<span class="mr-4 mt-4 inline-block">
     <reloadly-badge [variant]="'positive'" [showIcon]="true">
         Succeeded
     </reloadly-badge>
@@ -49,10 +52,12 @@ export const badgesCode = [
         Attention
     </reloadly-badge>
 </span>`
+        }
     },
     {
         name: 'customIcons',
-        code: `<!-- *****NEUTRAL WITH ICON******* -->
+        code: {
+            html: `<!-- *****NEUTRAL WITH ICON******* -->
 <span class="mr-4 mt-4 inline-block">
     <reloadly-badge [variant]="'neutral'">
         <div class="example-icon mr-1">
@@ -183,5 +188,6 @@ export const badgesCode = [
         </div>
     </reloadly-badge>
 </span>`
+        }
     }
 ]

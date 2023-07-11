@@ -1,7 +1,8 @@
 export const buttonsCode = [
     {
         name: "buttons",
-        code: `<button reloadly-button (click)="disabled=!disabled" class="mr-4 mt-4" [rounded]="true"
+        code: {
+            html: `<button reloadly-button (click)="disabled=!disabled" class="mr-4 mt-4" [rounded]="true"
     [variant]="'filled'">
     Toggle Disable
 </button>
@@ -34,10 +35,12 @@ export const buttonsCode = [
     [rounded]="false" [variant]="'filled'" [disabled]="disabled">
     Rectangular Xl
 </button>`
+        }
     },
     {
         name: 'secondaryButtons',
-        code: `<button reloadly-button class="mr-4 mt-4 custom-button-class-xl" [size]="'xl'" [color]="'secondary'"
+        code: {
+            html: `<button reloadly-button class="mr-4 mt-4 custom-button-class-xl" [size]="'xl'" [color]="'secondary'"
     [rounded]="false" [variant]="'filled'" [disabled]="disabled">
     Rectangular Xl
 </button>
@@ -66,10 +69,12 @@ export const buttonsCode = [
     [variant]="'tonal'" [disabled]="disabled">
     Tonal
 </button>`
+        }
     },
     {
         name: 'dangerButtons',
-        code: `<button reloadly-button class="mr-4 mt-4 custom-button-class-xl" [size]="'xl'" [color]="'danger'"
+        code: {
+            html: `<button reloadly-button class="mr-4 mt-4 custom-button-class-xl" [size]="'xl'" [color]="'danger'"
     [rounded]="false" [variant]="'filled'" [disabled]="disabled">
     Rectangular Xl
 </button>
@@ -98,10 +103,12 @@ export const buttonsCode = [
     [variant]="'tonal'" [disabled]="disabled">
     Tonal
 </button>`
+        }
     },
     {
         name: 'whiteButtons',
-        code: `<button reloadly-button class="mr-4 mt-4 custom-button-class-xl" [size]="'xl'" [color]="'white'"
+        code: {
+            html: `<button reloadly-button class="mr-4 mt-4 custom-button-class-xl" [size]="'xl'" [color]="'white'"
     [rounded]="false" [variant]="'filled'" [disabled]="disabled">
     Rectangular Xl
 </button>
@@ -130,10 +137,12 @@ export const buttonsCode = [
     [variant]="'tonal'" [disabled]="disabled">
     Tonal
 </button>`
+        }
     },
     {
         name: 'smallButtons',
-        code: `<button reloadly-button class="mr-4 mt-4" [size]="'xs'" [color]="'primary'" [rounded]="false"
+        code: {
+            html: `<button reloadly-button class="mr-4 mt-4" [size]="'xs'" [color]="'primary'" [rounded]="false"
     [variant]="'filled'" [disabled]="disabled">
     Button
 </button>
@@ -152,10 +161,12 @@ export const buttonsCode = [
     [variant]="'outlined'" [disabled]="disabled">
     Button
 </button>`
+        }
     },
     {
         name: 'iconButtons',
-        code: `<button reloadly-button class="mr-4 mt-4 custom-button-class" [rounded]="true" [variant]="'filled'"
+        code: {
+            html: `<button reloadly-button class="mr-4 mt-4 custom-button-class" [rounded]="true" [variant]="'filled'"
     [disabled]="disabled">
     <div class="example-icon">
         <svg>
@@ -226,5 +237,6 @@ export const buttonsCode = [
         </svg>
     </div>
 </button>`
+        }
     }
 ]

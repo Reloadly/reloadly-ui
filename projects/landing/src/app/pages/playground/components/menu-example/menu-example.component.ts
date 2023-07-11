@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { menuCode } from './menu';
 import { apiInterface } from '../../../../shared/components/api-table/models';
+import { codeBoxModel, codeModel } from '../../../../shared/components/code-box/models';
 import { api } from './api';
 
 @Component({
@@ -16,8 +17,8 @@ export class MenuExampleComponent {
 
     }
 
-    getCodeSample(name: string): string {
-        return this.menuCode.filter((item: { name: string, code: string }) => name === item.name)[0].code
+    getCodeSample(name: string): codeModel {
+        return this.menuCode.filter((item: codeBoxModel) => name === item.name)[0].code
     }
 
     action() {

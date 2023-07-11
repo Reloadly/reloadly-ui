@@ -1,7 +1,8 @@
 export const tooltipCode = [
     {
         name: 'top',
-        code: `<button reloadly-button
+        code: {
+            html: `<button reloadly-button
     [reloadly-tooltip]="'A tooltip can provide additional context about the field next to it.'"
     [position]="'top-right'">
     Top Right
@@ -18,10 +19,12 @@ export const tooltipCode = [
     [position]="'top-left'">
     Top left
 </button>`
+        }
     },
     {
         name: 'bottom',
-        code: `<button reloadly-button
+        code: {
+            html: `<button reloadly-button
     [reloadly-tooltip]="'A tooltip can provide additional context about the field next to it.'"
     [position]="'bottom-right'">
     Bottom Right
@@ -38,5 +41,6 @@ export const tooltipCode = [
     [position]="'bottom-left'">
     Bottom left
 </button>`
+        }
     }
 ]

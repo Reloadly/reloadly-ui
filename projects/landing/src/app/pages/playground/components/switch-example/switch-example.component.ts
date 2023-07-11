@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { apiInterface } from '../../../../shared/components/api-table/models';
+import { codeBoxModel, codeModel } from '../../../../shared/components/code-box/models';
 import { switchCode } from './switch';
 import { api } from './api';
 
@@ -16,7 +17,7 @@ export class SwitchExampleComponent {
     constructor() {
     }
 
-    getCodeSample(name: string): string {
-        return this.switchCode.filter((item: { name: string, code: string }) => name === item.name)[0].code
+    getCodeSample(name: string): codeModel {
+        return this.switchCode.filter((item: codeBoxModel) => name === item.name)[0].code
     }
 }

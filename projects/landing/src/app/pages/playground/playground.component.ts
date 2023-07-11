@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2, ViewContainerRef } from '@angular/core';
+import { RootViewContainers } from 'reloadly-ui';
 
 @Component({
     selector: 'app-playground',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
     styleUrls: ['./playground.component.scss']
 })
 export class PlaygroundComponent {
+    constructor(
+        private rootView: RootViewContainers,
+        private viewContainerRef: ViewContainerRef,
+        private renderer: Renderer2
+    ) {
+
+        rootView.renderer = this.renderer;
+        rootView.viewContainerRef = this.viewContainerRef;
+
+    }
 
 }

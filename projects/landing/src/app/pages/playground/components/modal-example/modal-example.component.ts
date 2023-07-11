@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { apiInterface } from '../../../../shared/components/api-table/models';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
+import { codeBoxModel, codeModel } from '../../../../shared/components/code-box/models';
 import { ReloadlyModal } from 'reloadly-ui';
 import { menuCode } from './modal';
 import { api } from './api';
@@ -20,8 +21,8 @@ export class ModalExampleComponent {
 
     }
 
-    getCodeSample(name: string): string {
-        return this.menuCode.filter((item: { name: string, code: string }) => name === item.name)[0].code
+    getCodeSample(name: string): codeModel {
+        return this.menuCode.filter((item: codeBoxModel) => name === item.name)[0].code
     }
 
     action() {

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { apiInterface } from '../../../../shared/components/api-table/models';
+import { codeModel } from '../../../../shared/components/code-box/models';
 import { datePickerCode } from './date-picker';
 import { api } from './api';
 
@@ -17,7 +18,7 @@ export class DateExampleComponent {
 
     }
 
-    getCodeSample(): string {
+    getCodeSample(): codeModel {
         return this.datePickerCode[0].code
     }
 }
