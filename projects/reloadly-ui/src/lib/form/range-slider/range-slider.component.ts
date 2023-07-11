@@ -12,7 +12,7 @@ import {
     Renderer2,
     ViewChild
 } from '@angular/core';
-import { Subject } from 'rxjs';
+import { ReplaySubject, Subject, takeUntil } from 'rxjs';
 
 @Component({
     selector: 'reloadly-range-slider',
@@ -38,16 +38,18 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnDestroy {
     private window;
 
     private value = new Subject<[value: number, percentage: number]>();
+    private subs: ReplaySubject<boolean> = new ReplaySubject(1);
 
     constructor(private renderer: Renderer2, @Inject(DOCUMENT) private document: Document) {
         this.window = document.defaultView;
     }
 
     ngOnInit(): void {
-        this.value.subscribe(currentValue => {
-            this.currentValue.emit(currentValue[0]);
-            this.currentPercentage.emit(currentValue[1]);
-        });
+        this.value.pipe(takeUntil(this.subs))
+            .subscribe(currentValue => {
+                this.currentValue.emit(currentValue[0]);
+                this.currentPercentage.emit(currentValue[1]);
+            });
     }
 
     ngAfterViewInit(): void {
@@ -66,6 +68,8 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnDestroy {
     ngOnDestroy(): void {
         this.windowListeners.forEach(eventEnder => eventEnder());
         this.knobListeners.forEach(eventEnder => eventEnder());
+        this.subs.next(true);
+        this.subs.complete();
     }
 
     public inputChanged(event: Event): void {
