@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output, TemplateRef } from '@angular/core';
+import { codeModel } from './models';
 
 @Component({
     selector: 'app-code-box',
@@ -12,23 +13,26 @@ export class CodeBoxComponent implements OnInit {
     dynamicClass: string = 'mr-4 mt-4 custom-button-class';
     tooltipTextCopy = 'Copy'
     tooltipTextCode = 'View code';
-    activeTab = 'html';
-    @Input('code') code = ``;
+    activeTab: string = 'html';
+    @Input('code') code: codeModel = { html: '', ts: '' };
     @Input('title') title = '';
-    @Output('sourceChange') sourceChange = new EventEmitter<string>();;
+    selectedCodeSource: string = '';
+    //@Output('sourceChange') sourceChange = new EventEmitter<string>();
 
     constructor() {
 
     }
 
-    ngOnInit() { }
+    ngOnInit() {
+        this.selectSource('html');
+    }
 
     getSectionId() {
         return this.title.replaceAll(" ", "-").toLowerCase();
     }
 
     copyCode(trigger: any) {
-        this.copyToClipboard(this.code);
+        this.copyToClipboard(this.selectedCodeSource);
         this.tooltipTextCopy = 'Copied';
 
         setTimeout(() => {
@@ -62,7 +66,8 @@ export class CodeBoxComponent implements OnInit {
     }
 
     selectSource(input: 'ts' | 'html') {
-        this.sourceChange.emit(input);
+        //this.sourceChange.emit(input);
         this.activeTab = input;
+        this.selectedCodeSource = this.code[input] || '';
     }
 }

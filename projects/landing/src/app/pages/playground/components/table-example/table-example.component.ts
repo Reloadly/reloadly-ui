@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { apiInterface } from '../../../../shared/components/api-table/models';
+import { codeBoxModel, codeModel } from '../../../../shared/components/code-box/models';
 import { tooltipCode } from './table';
 import { api } from './api';
 
@@ -17,7 +18,7 @@ export class TableExampleComponent {
 
     }
 
-    getCodeSample(name: string): string {
-        return this.tooltipCode.filter((item: { name: string, code: string }) => name === item.name)[0].code
+    getCodeSample(name: string): codeModel {
+        return this.tooltipCode.filter((item: codeBoxModel) => name === item.name)[0].code
     }
 }

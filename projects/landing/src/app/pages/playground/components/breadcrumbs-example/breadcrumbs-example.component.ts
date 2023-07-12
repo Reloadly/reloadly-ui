@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { breadcrumbsCode } from './breadcrumbs';
 import { apiInterface } from '../../../../shared/components/api-table/models';
 import { api } from './api';
+import { codeModel } from '../../../../shared/components/code-box/models';
 
 @Component({
     selector: 'app-breadcrumbs-example',
@@ -16,7 +17,7 @@ export class BreadcrumbsExampleComponent {
 
     }
 
-    getCodeSample(): string {
+    getCodeSample(): codeModel {
         return this.badgesCode[0].code
     }
 
