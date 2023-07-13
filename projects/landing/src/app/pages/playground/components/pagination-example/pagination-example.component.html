@@ -1,0 +1,90 @@
+<h1>Menu</h1>
+
+<app-tabs>
+    <app-tab tabTitle="Examples">
+
+        <app-code-box [code]="getCodeSample('menu')" title="Menu">
+            <button class="mr-4 mt-4" reloadly-button #menuTrigger [reloadly-menu]="menu">
+                Menu
+            </button>
+
+            <ng-template #menu>
+                <reloadly-menu [trigger]="menuTrigger">
+                    <button (click)="action()" reloadly-menu-item>Edit</button>
+                </reloadly-menu>
+            </ng-template>
+        </app-code-box>
+
+
+        <app-code-box [code]="getCodeSample('dividerMenu')" title="Menu with divider">
+            <!-- MENU WITH DIVIDER -->
+            <button class="mr-4 mt-4" reloadly-button #dividerMenuTrigger [reloadly-menu]="dividerMenu">
+                Menu with divider
+            </button>
+            <ng-template #dividerMenu>
+                <reloadly-menu [trigger]="dividerMenuTrigger">
+                    <button reloadly-menu-item>
+                        Available Item 1
+                    </button>
+                    <button reloadly-menu-item>
+                        Available Item 2
+                    </button>
+                    <button reloadly-menu-item>
+                        Available Item 3
+                    </button>
+                    <reloadly-menu-divider></reloadly-menu-divider>
+                    <button reloadly-menu-item>
+                        Available Item 3
+                    </button>
+                    <button reloadly-menu-item>
+                        Available Item 4
+                    </button>
+                    <button reloadly-menu-item>
+                        Available Item 6
+                    </button>
+                </reloadly-menu>
+            </ng-template>
+        </app-code-box>
+
+        <app-code-box [code]="getCodeSample('sectionMenu')" title="Menu with section">
+            <!-- MENU WITH SECTION -->
+            <button class="mr-4 mt-4" reloadly-button #sectionMenuTrigger [reloadly-menu]="sectionMenu">
+                Menu with section
+            </button>
+            <ng-template #sectionMenu>
+                <reloadly-menu [trigger]="sectionMenuTrigger">
+                    <reloadly-menu-section>
+                        Section 1
+                    </reloadly-menu-section>
+                    <button reloadly-menu-item>
+                        Available action 1
+                    </button>
+                    <button reloadly-menu-item>
+                        Available action 2
+                    </button>
+                    <button reloadly-menu-item>
+                        Available action 3
+                    </button>
+                    <reloadly-menu-divider></reloadly-menu-divider>
+                    <reloadly-menu-section>
+                        Section 2
+                    </reloadly-menu-section>
+                    <button reloadly-menu-item>
+                        Available action 5
+                    </button>
+                    <button reloadly-menu-item>
+                        Available action 6
+                    </button>
+                    <button reloadly-menu-item>
+                        Available action 7
+                    </button>
+                </reloadly-menu>
+            </ng-template>
+
+        </app-code-box>
+    </app-tab>
+
+    <app-tab tabTitle="API" class="tab api">
+        <app-api-table type="component" name="reloadly-menu" [data]="api"></app-api-table>
+    </app-tab>
+</app-tabs>
