@@ -48,7 +48,6 @@ export class QuickAction implements QuickActionInterface {
      */
     toggleTransition() {
         this.transitioning = !this.transitioning;
-        console.log('xxxxx', this);
     }
 
     /**
