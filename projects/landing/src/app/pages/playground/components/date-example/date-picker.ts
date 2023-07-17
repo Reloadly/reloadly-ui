@@ -1,6 +1,7 @@
 export const datePickerCode = [
     {
-        code: `<div reloadlyInputGroup>
+        code: {
+            html: `<div reloadlyInputGroup>
     <reloadly-input-label type="heading">Label</reloadly-input-label>
     <reloadly-input-label type="subheading">Description</reloadly-input-label>
     <reloadly-date></reloadly-date>
@@ -15,5 +16,6 @@ export const datePickerCode = [
     <reloadly-input-label type="subheading">Description</reloadly-input-label>
     <reloadly-date [disabled]="true"></reloadly-date>
 </div>`
+        }
     }
 ]

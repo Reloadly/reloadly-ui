@@ -21,6 +21,7 @@ import { TooltipExampleComponent } from './components/tooltip-example/tooltip-ex
 import { TableExampleComponent } from './components/table-example/table-example.component';
 import { ConfirmationDialogComponent } from './components/modal-example/confirmation-dialog/confirmation-dialog.component';
 import { ModalExampleComponent } from './components/modal-example/modal-example.component';
+import { PaginationExampleComponent } from './components/pagination-example/pagination-example.component';
 import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
@@ -50,7 +51,8 @@ import { SharedModule } from '../../shared/shared.module';
         TooltipExampleComponent,
         TableExampleComponent,
         ModalExampleComponent,
-        ConfirmationDialogComponent
+        ConfirmationDialogComponent,
+        PaginationExampleComponent
     ],
     providers: [
         { provide: RootViewContainers, useValue: new RootViewContainers }
