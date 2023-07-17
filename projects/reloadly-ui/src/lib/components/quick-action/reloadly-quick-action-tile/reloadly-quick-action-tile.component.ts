@@ -1,7 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { trigger, state, style, transition, animate } from '@angular/animations';
-import { ReloadlyQuickActionService } from '../quick-action.service';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { QuickAction } from '../../../models/quick-action';
+import { ReloadlyQuickActionService } from '../quick-action.service';
 
 @Component({
     selector: 'reloadly-quick-action-tile',
@@ -10,6 +9,6 @@ import { QuickAction } from '../../../models/quick-action';
 })
 export class ReloadlyQuickActionTileComponent {
     @Input() action?: QuickAction;
-
-    constructor(public service: ReloadlyQuickActionService) { }
+    @Output() dismiss: EventEmitter<QuickAction> = new EventEmitter<QuickAction>();
+    constructor() { }
 }
