@@ -4,6 +4,7 @@ import { RELOADLY_DIALOG_DATA, ReloadlyDialogRef } from 'reloadly-ui';
 @Component({
     selector: 'reloadly-confirmation-dialog',
     templateUrl: './confirmation-dialog.component.html',
+    styleUrls: ['./confirmation-dialog.component.scss']
 })
 export class ConfirmationDialogComponent implements OnInit {
     constructor(
@@ -12,10 +13,10 @@ export class ConfirmationDialogComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        this.dialogRef.customSharedData$.next({ word: "'Custom shared data'" });
+        this.dialogRef.customSharedData$.next({ response: "'You choose confirm'" });
         this.dialogRef.onCancel$.subscribe(() => {
             this.dialogRef.closeDialog();
-            setTimeout(() => alert(`You chose cancel, and your input data was: ${this.inputData?.text}`), 1000);
+            alert(`You chose cancel`);
         });
     }
 }
