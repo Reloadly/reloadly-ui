@@ -32,12 +32,6 @@ export class ReloadlyQuickActionComponent {
         return actions.filter(action => action.position === 'bottomLeft');
     }
 
-    /**
-     * Shows a quick action
-     * @param {QuickActionInterface} data
-     * @return {*}  {QuickAction}
-     * @memberof ReloadlyQuickActionService
-     */
     showQuickAction(data: QuickActionInterface): QuickAction {
 
         const action: QuickAction = new QuickAction({ ...data });
@@ -51,11 +45,6 @@ export class ReloadlyQuickActionComponent {
         return action;
     }
 
-    /**
-     * Dismisses a quick action
-     * @param {QuickAction} action
-     * @memberof ReloadlyQuickActionService
-     */
     dismissQuickAction(action: QuickAction) {
         const indexOf = this.quickActionEvents$.value.findIndex((a) => a.referenceId === action.referenceId);
         if (indexOf > -1) {
