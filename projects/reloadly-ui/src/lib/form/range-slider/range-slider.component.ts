@@ -26,6 +26,7 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnDestroy {
     @Input() showInput: boolean = true;
     @Input() baseSize: number = 30;
     @Input() disabled!: boolean;
+    @Input() fontSize: string = '16px';
     @Output() currentValue = new EventEmitter<number>();
     @Output() currentPercentage = new EventEmitter<number>();
 

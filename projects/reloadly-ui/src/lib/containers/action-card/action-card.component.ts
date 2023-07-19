@@ -15,7 +15,7 @@ export class ActionCardComponent {
     @Input() disableAction: boolean = false;
     @Input() hasDropShadow = false;
     @Input() cardStyle: 'basic' | 'balanceCardStyle' | 'walletRechargeCardStyle' = 'basic';
-    @Input() toggleTitle: String | undefined = 'Notify me';
+    @Input() toggleTitle: string | undefined = '';
     @Input() actionBtnAlignment: 'full' | 'start' | 'end' | 'center' = 'start';
     @Input() actionBtnBorderStyle: 'rounded' | 'rectangular' = 'rounded';
     @Output() onActionClicked: EventEmitter<void> = new EventEmitter();

@@ -2,14 +2,14 @@
 
 .credit-card {
     background: $gradient;
-    border-radius: 16px;
+    border-radius: 8px;
     display: flex;
     align-items: space-between;
     justify-content: flex-start;
     flex-direction: column;
     padding: 2rem;
     color: $reloadly-white;
-    border: 1px solid #FFFFFF;
+    border: 0px solid #FFFFFF;
     position: relative;
 
     &.minify {
@@ -21,6 +21,7 @@
         h6 {
             font-size: 5px;
             margin: 1px 0px;
+            font-weight: 400px
         }
 
         .expire-date {
@@ -35,6 +36,9 @@
             max-height: 12px;
             max-width: 24px;
         }
+        .card-info {
+            margin-top: 4px;
+        }
     }
 
     .card-info {
@@ -42,6 +46,7 @@
         align-items: flex-start;
         justify-content: flex-start;
         flex-direction: column;
+        margin-top: 20px;
     }
 
     .card-provider {
@@ -52,7 +57,7 @@
 
     h6 {
         font-size: $font-size-sm;
-        margin: 6px 0px;
+        margin: 0px 0px;
     }
 
     .expire-date {
@@ -60,7 +65,7 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        margin: 6px 0px;
+        margin: 0px 0px;
 
         small {
             font-size: 8px;
@@ -86,8 +91,8 @@
         bottom: 0px;
         left: 0px;
         right: 0px;
-        border-radius: 16px;
-        padding: 8px;
+        border-radius: 8px;
+        padding: 0px;
         background: rgba(0, 0, 0, .4);
     }
 
