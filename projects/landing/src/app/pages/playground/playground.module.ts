@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PlaygroundComponent } from './playground.component';
 import { PlaygroundRoutingModule } from './playground-routing.module';
 import { SidebarComponent } from '../../layout/sidebar/sidebar.component';
-import { ReloadlyUiDirectivesModule, ReloadlyUiModule, RootViewContainers } from 'reloadly-ui';
+import { ReloadlyUiDirectivesModule, ReloadlyUiModule } from 'reloadly-ui';
 import { ButtonExampleComponent } from './components/button-example/button-example.component';
 import { BadgeExampleComponent } from './components/badge-example/badge-example.component';
 import { BreadcrumbsExampleComponent } from './components/breadcrumbs-example/breadcrumbs-example.component';
@@ -54,8 +54,6 @@ import { SharedModule } from '../../shared/shared.module';
         ConfirmationDialogComponent,
         PaginationExampleComponent
     ],
-    providers: [
-        { provide: RootViewContainers, useValue: new RootViewContainers }
-    ]
+    providers: []
 })
 export class PlaygroundModuleModule { }

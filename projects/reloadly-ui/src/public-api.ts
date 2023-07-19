@@ -19,7 +19,6 @@ import { MenuDirective } from './lib/components/menu/directives/menu.directive';
 import { MenuDividerComponent } from './lib/components/menu/menu-divider/menu-divider.component';
 import { MenuSectionComponent } from './lib/components/menu/menu-section/menu-section.component';
 import { MenuComponent } from './lib/components/menu/menu.component';
-import { RootViewContainers } from './lib/components/modal/reloadly-modal';
 import { PaginationComponent } from './lib/components/pagination/pagination.component';
 import { PreloaderComponent } from './lib/components/preloader/preloader.component';
 import { DropdownConfig, SelectComponent, SelectOptionItem } from './lib/components/select/select.component';
@@ -102,7 +101,6 @@ export { TooltipComponent, TooltipDirective };
 export * from './lib/components/modal/reloadly-modal.module';
 export * from './lib/components/modal/reloadly-modal';
 export * from './lib/components/modal/reloadly-dialog-ref';
-export { RootViewContainers };
 
 export * from './lib/containers/containers.module';
 export {
