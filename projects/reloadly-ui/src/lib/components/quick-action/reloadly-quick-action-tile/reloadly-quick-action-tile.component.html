@@ -11,7 +11,7 @@
         
     }">
     <div class="quick-action-content">
-        <svg class="close-btn" (click)="service.dismissQuickAction(action!)">
+        <svg class="close-btn" (click)="dismiss.emit(action!)">
             <use xlink:href="#cancel"></use>
         </svg>
         <svg class="action-icon">

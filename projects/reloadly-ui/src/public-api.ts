@@ -49,7 +49,7 @@ import { CardComponent } from './lib/containers/card/card.component';
 import { OutsideClickDirective } from './lib/directives/outside-click.directive';
 import { ReloadlyQuickActionComponent } from './lib/components/quick-action/quick-action.component';
 import { ReloadlyQuickActionService } from './lib/components/quick-action/quick-action.service';
-import { QuickAction, QuickActionInterface, QuickActionPosition, QuickActionType   } from './lib/models/quick-action';
+import { QuickAction, QuickActionInterface, QuickActionPosition, QuickActionType } from './lib/models/quick-action';
 export * from './lib/reloadly-ui.module';
 
 export * from './lib/components/components.module';

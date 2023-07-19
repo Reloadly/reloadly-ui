@@ -1,24 +1,24 @@
-<div class="reloadly-quick-action-overlay" *ngIf="service.showQuickAction$ | async as showQuickAction">
-    <div *ngIf="service.quickActionEvents$ | async as quickActions">
+<div class="reloadly-quick-action-overlay" *ngIf="showQuickAction$ | async as showQuickAction" #reloadlyQuickActionOverlay>
+    <div *ngIf="quickActionEvents$ | async as quickActions">
         <!-- top Right-->
         <div *ngIf="topRight(quickActions).length > 0" class="topRight quick-action-list">
             <reloadly-quick-action-tile *ngFor="let action of topRight(quickActions)"
-                [action]="action"></reloadly-quick-action-tile>
+                [action]="action" (dismiss)="dismissQuickAction(action)"></reloadly-quick-action-tile>
         </div>
         <!-- top left -->
         <div *ngIf="topLeft(quickActions).length > 0" class="topLeft quick-action-list">
             <reloadly-quick-action-tile *ngFor="let action of topLeft(quickActions)"
-                [action]="action"></reloadly-quick-action-tile>
+                [action]="action" (dismiss)="dismissQuickAction(action)"></reloadly-quick-action-tile>
         </div>
         <!-- bottom left -->
         <div *ngIf="bottomLeft(quickActions).length > 0" class="bottomLeft quick-action-list">
             <reloadly-quick-action-tile *ngFor="let action of bottomLeft(quickActions)"
-                [action]="action"></reloadly-quick-action-tile>
+                [action]="action" (dismiss)="dismissQuickAction(action)"></reloadly-quick-action-tile>
         </div>
         <!-- bottom Right -->
         <div *ngIf="bottomRight(quickActions).length > 0" class="bottomRight quick-action-list">
             <reloadly-quick-action-tile *ngFor="let action of bottomRight(quickActions)"
-                [action]="action"></reloadly-quick-action-tile>
+                [action]="action" (dismiss)="dismissQuickAction(action)"></reloadly-quick-action-tile>
         </div>
     </div>
 
