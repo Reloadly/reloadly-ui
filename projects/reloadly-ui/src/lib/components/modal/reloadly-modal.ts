@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { ComponentRef, EmbeddedViewRef, Inject, Injectable, InjectionToken, Injector, Renderer2, ViewContainerRef } from '@angular/core';
+import { ApplicationRef, ComponentRef, EmbeddedViewRef, Inject, Injectable, InjectionToken, Injector, Renderer2, RendererFactory2, ViewContainerRef } from '@angular/core';
 import { ReloadlyModalContainerComponent } from './reloadly-modal-container/reloadly-modal-container.component';
 import { ReloadlyDialogRef } from './reloadly-dialog-ref';
 import { takeLast } from 'rxjs';
@@ -7,21 +7,22 @@ import { takeLast } from 'rxjs';
 export const RELOADLY_DIALOG_DATA = new InjectionToken<Object>('Data passed to dialog');
 
 @Injectable()
-export class RootViewContainers {
-    public viewContainerRef: ViewContainerRef | null = null;
-    public renderer: Renderer2 | null = null
-}
-
-@Injectable()
 export class ReloadlyModal {
     private modalContainerRef: ComponentRef<ReloadlyModalContainerComponent> | null = null;
     private modalContainer: ReloadlyModalContainerComponent | null = null;
+    private viewContainerRef: ViewContainerRef;
+    private renderer: Renderer2;
 
     constructor(
         private injector: Injector,
-        private rootView: RootViewContainers,
+        private applicationRef: ApplicationRef,
+        private rendererFactory: RendererFactory2,
         @Inject(DOCUMENT) private document: Document
-    ) { }
+    ) {
+        this.renderer = this.rendererFactory.createRenderer(null, null);
+        this.viewContainerRef = this.applicationRef.components[0]?.instance.viewContainerRef;
+        if (!this.renderer || !this.viewContainerRef) console.error('Error creating modal');
+    }
 
     public openDialog(componentClass: any, data: any = null): ReloadlyDialogRef {
         this.instantiateModalContainerToDOMBody();
@@ -43,7 +44,7 @@ export class ReloadlyModal {
     }
 
     private showDynamicComponent(componentClass: any, dialogRef: ReloadlyDialogRef, injector: Injector): void {
-        if (!this.modalContainer) return console.error("Error showing modal");
+        if (!this.modalContainer) return console.error('Error showing modal');
         this.modalContainer.showDialog(componentClass, dialogRef, injector);
     }
 
@@ -87,11 +88,11 @@ export class ReloadlyModal {
 
     private instantiateModalContainerToDOMBody(): void {
         this.destroyModalContainerFromDOMBody();
-        if (this.rootView.renderer && this.rootView.viewContainerRef) {
-            this.modalContainerRef = this.rootView.viewContainerRef
+        if (this.renderer && this.viewContainerRef) {
+            this.modalContainerRef = this.viewContainerRef
                 .createComponent(ReloadlyModalContainerComponent, { injector: this.injector });
             const asDomElement = (this.modalContainerRef.hostView as EmbeddedViewRef<any>).rootNodes[0];
-            this.rootView.renderer.appendChild(this.document.body, asDomElement);
+            this.renderer.appendChild(this.document.body, asDomElement);
             this.modalContainer = this.modalContainerRef.instance;
             this.modalContainerRef.changeDetectorRef.detectChanges();
         }
