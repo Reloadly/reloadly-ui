@@ -1,17 +1,15 @@
-import { Injectable, ApplicationRef, createComponent, ComponentRef, Inject, EmbeddedViewRef, RendererFactory2, Renderer2 } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
-import { ReloadlyQuickActionComponent } from './quick-action.component';
-import { BehaviorSubject } from 'rxjs';
+import { Injectable, ApplicationRef, createComponent, ComponentRef, Inject, EmbeddedViewRef, Renderer2 } from '@angular/core';
 import { QuickAction, QuickActionInterface } from '../../models/quick-action';
+// import { ReloadlyQuickActionComponent } from './quick-action.component';
+import { DOCUMENT } from '@angular/common';
 
 @Injectable({
     providedIn: 'root'
 })
 export class ReloadlyQuickActionService {
-    componentRef!: ComponentRef<ReloadlyQuickActionComponent>;
-    componentInstance?: ReloadlyQuickActionComponent | null;
+    componentRef!: any; // ComponentRef<ReloadlyQuickActionComponent>; // @TODO fix circular dependency
+    componentInstance?: any; // ReloadlyQuickActionComponent | null; // @TODO fix circular dependency
     renderer!: Renderer2;
-
 
     get isInitialized(): boolean {
         return !!this.componentRef;
@@ -20,29 +18,23 @@ export class ReloadlyQuickActionService {
     constructor(
         private appRef: ApplicationRef,
         @Inject(DOCUMENT) private document: Document
-    ) {
-        this.initializeOverlay();
-    }
-
+    ) { this.initializeOverlay(); }
 
     initializeOverlay() {
-        if(this.componentRef) {
+        if (this.componentRef) {
             return;
         }
-        this.componentRef = createComponent(ReloadlyQuickActionComponent, {
-            environmentInjector: this.appRef.injector,
-        });
+        // @TODO fix circular dependency
+        // this.componentRef = createComponent(ReloadlyQuickActionComponent, {
+        //     environmentInjector: this.appRef.injector,
+        // });
         this.appRef.attachView(this.componentRef.hostView); // and detach later
         const asDomElement = (this.componentRef.hostView as EmbeddedViewRef<any>).rootNodes[0];
         this.componentInstance = this.componentRef.instance;
         this.renderer = this.componentRef.instance.renderer;
         this.renderer.appendChild(this.document.body, asDomElement);
         this.componentRef.hostView.detectChanges();
-
-        console.log('this.componentRef', this.componentRef);
     }
-
-
 
     /**
      * Shows a quick action
