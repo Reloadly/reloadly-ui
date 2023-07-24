@@ -4,21 +4,34 @@ import {
     HostListener,
     Output,
     ElementRef,
-  } from '@angular/core';
+    Input,
+} from '@angular/core';
 
-  @Directive({
+@Directive({
     selector: '[outsideClick]',
-  })
-  export class OutsideClickDirective {
+})
+export class OutsideClickDirective {
+    @Input()
+    identifier?: string;
     @Output()
-    outsideClick: EventEmitter<MouseEvent> = new EventEmitter();
+    outsideClick: EventEmitter<String> = new EventEmitter<String>();
 
-    @HostListener('document:mousedown', ['$event'])
-    onClick(event: MouseEvent): void {
-      if (!this.elementRef.nativeElement.contains(event.target)) {
-        this.outsideClick.emit(event);
-      }
+    @HostListener('document:mousedown', ['$event', '$event.target'])
+    public onClick(event: MouseEvent, targetElement: HTMLElement): void {
+        let clickedComponent = targetElement;
+        let inside = false;
+        do {
+            if (clickedComponent === this.elementRef.nativeElement) {
+                inside = true;
+                break;
+            } else {
+                clickedComponent = clickedComponent?.parentNode as HTMLElement;
+            }
+        } while (clickedComponent);
+        if (!inside && this.elementRef.nativeElement.id == this.identifier) {
+            this.outsideClick.emit(this.identifier);
+        }
     }
 
-    constructor(private elementRef: ElementRef) {}
-  }
+    constructor(private elementRef: ElementRef) { }
+}
