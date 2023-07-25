@@ -47,6 +47,13 @@ export class SidebarComponent {
     }
 
     ngAfterViewInit(): void {
+        if (this.activeItem != this.links[0] && this.activeItem.link != '') {
+            setTimeout(() => {
+                this.selectItem(this.activeItem);
+            }, 0);
+            return;
+        }
+        
         let checkItem = this.menuList.get(0)?.nativeElement;
         this.isHorizontal ? this.indicatorWidth = checkItem.offsetWidth : null;
         this.cdRef.detectChanges()
