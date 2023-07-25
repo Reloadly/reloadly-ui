@@ -13,6 +13,8 @@ import {
 export class OutsideClickDirective {
     @Input()
     identifier?: string;
+    @Input()
+    excludeIdentifier?: string[];
     @Output()
     outsideClick: EventEmitter<String> = new EventEmitter<String>();
 
@@ -21,6 +23,9 @@ export class OutsideClickDirective {
         let clickedComponent = targetElement;
         let inside = false;
         do {
+            if(this.excludeIdentifier && this.excludeIdentifier?.length && (this.excludeIdentifier.includes(clickedComponent.id))) {
+                return;
+            }
             if (clickedComponent === this.elementRef.nativeElement) {
                 inside = true;
                 break;
@@ -28,6 +33,7 @@ export class OutsideClickDirective {
                 clickedComponent = clickedComponent?.parentNode as HTMLElement;
             }
         } while (clickedComponent);
+
         if (!inside && this.elementRef.nativeElement.id == this.identifier) {
             this.outsideClick.emit(this.identifier);
         }
