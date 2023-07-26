@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { QuickAction } from '../../../models/quick-action';
-import { ReloadlyQuickActionService } from '../quick-action.service';
 
 @Component({
     selector: 'reloadly-quick-action-tile',
