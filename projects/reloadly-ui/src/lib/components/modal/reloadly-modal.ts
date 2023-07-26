@@ -5,11 +5,13 @@ import { ReloadlyDialogRef } from './reloadly-dialog-ref';
 import { takeLast } from 'rxjs';
 
 export const RELOADLY_DIALOG_DATA = new InjectionToken<Object>('Data passed to dialog');
+type Component = any;
 
 @Injectable()
 export class ReloadlyModal {
     private modalContainerRef: ComponentRef<ReloadlyModalContainerComponent> | null = null;
     private modalContainer: ReloadlyModalContainerComponent | null = null;
+    private activityQueue = new Map<ReloadlyDialogRef, [Component, Injector]>;
     private static viewContainerRef: ViewContainerRef;
     private renderer: Renderer2;
 
@@ -22,22 +24,32 @@ export class ReloadlyModal {
         if (!this.renderer) console.error('Error creating modal');
     }
 
-    public openDialog(componentClass: any, data: any = null): ReloadlyDialogRef {
-        this.instantiateModalContainerToDOMBody();
+    public openDialog(componentClass: Component, data: any = null): ReloadlyDialogRef {
         const [dialogRef, personalInjector] = this.instantiateDialog(data);
         const injector = this.cloneRealInjector(personalInjector);
-        this.showDynamicComponent(componentClass, dialogRef, injector);
-        this.registerDialogForClose(dialogRef);
-
+        this.activityQueue.set(dialogRef, [componentClass, injector]);
+        if (this.activityQueue.size == 1) this.openDialogActivity(dialogRef);
         return dialogRef;
     }
 
-    private registerDialogForClose(dialog: ReloadlyDialogRef): void {
-        dialog.onClose$.pipe(takeLast(1)).subscribe(() => {
+    private openDialogActivity(dialogRef: ReloadlyDialogRef) {
+        const [componentClass, injector] = this.activityQueue.get(dialogRef)!;
+        this.instantiateModalContainerToDOMBody();
+        this.showDynamicComponent(componentClass, dialogRef, injector);
+        this.registerDialogForClose(dialogRef);
+    }
+
+    private registerDialogForClose(dialogRef: ReloadlyDialogRef): void {
+        dialogRef.onClose$.pipe(takeLast(1)).subscribe(() => {
             if (this.modalContainer) this.modalContainer.playDismissAnimation();
-            // timeout 301 corresponds to the duration in reloadly-modal-container.component.scss + 1
-            setTimeout(() => this.destroyModalContainerFromDOMBody(), 301);
-            (dialog as any) = null;
+            setTimeout(() => {
+                this.activityQueue.delete(dialogRef);
+                this.destroyModalContainerFromDOMBody();
+                if (this.activityQueue.size > 0) {
+                    const nextDialog = [...this.activityQueue.keys()][0];
+                    this.openDialogActivity(nextDialog);
+                }
+            }, 301); // timeout 301 corresponds to the duration in reloadly-modal-container.component.scss + 1
         });
     }
 
@@ -46,13 +58,12 @@ export class ReloadlyModal {
         if (!ReloadlyModal.viewContainerRef) console.error('Error creating modal');
     }
 
-    private showDynamicComponent(componentClass: any, dialogRef: ReloadlyDialogRef, injector: Injector): void {
+    private showDynamicComponent(componentClass: Component, dialogRef: ReloadlyDialogRef, injector: Injector): void {
         if (!this.modalContainer) return console.error('Error showing modal');
         this.modalContainer.showDialog(componentClass, dialogRef, injector);
     }
 
     private instantiateDialog(componentData: any): [ReloadlyDialogRef, Injector] {
-        if (!this.modalContainer) this.instantiateModalContainerToDOMBody();
         const personalDialogRef = this.createPersonalDialogRefForComponent();
         const personalInjector = this.createPersonalInjectorForComponent(componentData, personalDialogRef);
 

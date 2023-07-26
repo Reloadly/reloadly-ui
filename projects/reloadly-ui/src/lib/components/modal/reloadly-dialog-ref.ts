@@ -1,30 +1,42 @@
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 export class ReloadlyDialogRef {
-    onClose$ = new Subject<void>;
-    onCancel$ = new Subject<void>;
-    onAccept$ = new Subject<void>;
+    private _onClose$ = new Subject<void>;
+    private _onCancel$ = new Subject<void>;
+    private _onAccept$ = new Subject<void>;
     customSharedData$ = new BehaviorSubject<any>(null);
 
     constructor() { }
 
+    get onAccept$(): Observable<void> {
+        return this._onAccept$.asObservable();
+    }
+
+    get onClose$(): Observable<void> {
+        return this._onClose$.asObservable();
+    }
+
+    get onCancel$(): Observable<void> {
+        return this._onCancel$.asObservable();
+    }
+
     closeDialog(): void {
-        this.onClose$.next();
-        this.onClose$.complete();
+        this._onClose$.next();
+        this._onClose$.complete();
     }
 
     cancel(): void {
-        this.onCancel$.next();
-        this.onCancel$.complete();
-        this.onClose$.next();
-        this.onClose$.complete();
+        this._onCancel$.next();
+        this._onCancel$.complete();
+        this._onClose$.next();
+        this._onClose$.complete();
     }
 
     accept(): void {
-        this.onAccept$.next();
-        this.onAccept$.complete();
-        this.onClose$.next();
-        this.onClose$.complete();
+        this._onAccept$.next();
+        this._onAccept$.complete();
+        this._onClose$.next();
+        this._onClose$.complete();
     }
 
     getCustomSharedData<T>(): BehaviorSubject<T> {
