@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PlaygroundComponent } from './playground.component';
 import { PlaygroundRoutingModule } from './playground-routing.module';
 import { SidebarComponent } from '../../layout/sidebar/sidebar.component';
-import { ReloadlyUiDirectivesModule, ReloadlyUiModule, RootViewContainers } from 'reloadly-ui';
+import { ReloadlyContainersModule, ReloadlyFormsModule, ReloadlyUiDirectivesModule, ReloadlyUiModule, RootViewContainers } from 'reloadly-ui';
 import { ButtonExampleComponent } from './components/button-example/button-example.component';
 import { BadgeExampleComponent } from './components/badge-example/badge-example.component';
 import { BreadcrumbsExampleComponent } from './components/breadcrumbs-example/breadcrumbs-example.component';
@@ -31,7 +31,9 @@ import { SharedModule } from '../../shared/shared.module';
         ReloadlyUiDirectivesModule,
         PlaygroundRoutingModule,
         ReactiveFormsModule,
-        SharedModule
+        SharedModule,
+        ReloadlyFormsModule,
+        ReloadlyContainersModule, //@TODO: avoid importing other modules besides ReloadlyUIModule or document the required dependecies
     ],
     declarations: [
         PlaygroundComponent,

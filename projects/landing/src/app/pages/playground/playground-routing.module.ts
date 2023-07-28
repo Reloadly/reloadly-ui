@@ -5,7 +5,7 @@ import { ButtonExampleComponent } from './components/button-example/button-examp
 import { BadgeExampleComponent } from './components/badge-example/badge-example.component';
 import { BreadcrumbsExampleComponent } from './components/breadcrumbs-example/breadcrumbs-example.component';
 import { DateExampleComponent } from './components/date-example/date-example.component';
-//import { FormExampleComponent } from './components/form-example/form-example.component';
+import { FormExampleComponent } from './components/form-example/form-example.component';
 import { InputGroupExampleComponent } from './components/input-group-example/input-group-example.component';
 import { MenuExampleComponent } from './components/menu-example/menu-example.component';
 import { SelectExampleComponent } from './components/select-example/select-example.component';
@@ -14,7 +14,7 @@ import { SwitchExampleComponent } from './components/switch-example/switch-examp
 import { TooltipExampleComponent } from './components/tooltip-example/tooltip-example.component';
 import { TableExampleComponent } from './components/table-example/table-example.component';
 import { ModalExampleComponent } from './components/modal-example/modal-example.component';
-//import { StepperExampleComponent } from '../../components/stepper-example/stepper-example.component';
+import { StepperExampleComponent } from './components/stepper-example/stepper-example.component';
 
 const routes: Routes = [{
     path: '',
@@ -36,10 +36,10 @@ const routes: Routes = [{
             path: 'date-picker',
             component: DateExampleComponent
         },
-        //{
-        //    path: 'form',
-        //    component: FormExampleComponent
-        //},
+        {
+            path: 'form',
+            component: FormExampleComponent
+        },
         {
             path: 'input-group',
             component: InputGroupExampleComponent
@@ -56,10 +56,10 @@ const routes: Routes = [{
             path: 'sidebar',
             component: SidebarExampleComponent
         },
-        //{
-        //    path: 'stepper',
-        //    component: StepperExampleComponent
-        //},
+        {
+            path: 'stepper',
+            component: StepperExampleComponent
+        },
         {
             path: 'switch',
             component: SwitchExampleComponent
