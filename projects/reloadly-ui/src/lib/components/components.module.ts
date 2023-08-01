@@ -27,6 +27,7 @@ import { TooltipModule } from './tooltip/tooltip.module';
 import { ButtonModule } from './button/button.module';
 import { BadgeModule } from './badge/badge.module';
 import { MenuModule } from './menu/menu.module';
+import { EmptyStateComponent } from './empty-state/empty-state.component'
 
 @NgModule({
     declarations: [
@@ -47,7 +48,8 @@ import { MenuModule } from './menu/menu.module';
         DateComponent,
         PreloaderComponent,
         BreadcrumbsComponent,
-        BreadcrumbItemComponent
+        BreadcrumbItemComponent,
+        EmptyStateComponent
     ],
     imports: [
         CommonModule,
@@ -84,7 +86,8 @@ import { MenuModule } from './menu/menu.module';
         TooltipModule,
         BreadcrumbsComponent,
         BreadcrumbItemComponent,
-        ReloadlyModalOutletComponent
+        ReloadlyModalOutletComponent,
+        EmptyStateComponent
     ]
 })
 export class ComponentsModule { }
