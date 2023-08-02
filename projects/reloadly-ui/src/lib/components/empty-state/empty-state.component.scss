@@ -1,0 +1,20 @@
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin: 16px 0;
+
+    &-title {
+        margin-top: 8px;
+        color: #30313d;
+        font-weight: 450;
+        font-size: 24px;
+    }
+    &-description {
+        margin-top: 8px;
+        color: #5b626f;
+        font-weight: 400;
+        font-size: 16px;
+    }
+}

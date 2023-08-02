@@ -10,8 +10,8 @@
     background-color: $reloadly-white;
     }
 
-    padding: 16px;
-    border-radius: 15px;
+    padding: 32px;
+    border-radius: 8px;
     min-width: 302px;
     min-height: 144px;
     display: flex;
@@ -38,12 +38,11 @@
     }
 
     .action-button {
-        background-color: $reloadly-violet;
-        color: white;
         font-size: $font-medium;
-        padding: 2px 24px;
-        height: 26px;
-
+        padding: 4px 24px;
+        height: 32px;
+        font-size: 16px;
+        line-height: 24px;
         &.disabled {
             background-color: #AACCFF;
         }
@@ -100,8 +99,8 @@
     display: flex;
     align-items: center;
     position: relative;
-    padding-left: 18px;
-    margin-bottom: 6px;
+    padding-left: 24px;
+    margin-bottom: 30px;
     cursor: pointer;
     font-size: $font-small;
     user-select: none;

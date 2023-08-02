@@ -11,6 +11,7 @@ import { StepComponent } from './stepper/step/step.component';
 import { FormsModule } from '@angular/forms';
 import { CreditCardComponent } from './credit-card/credit-card.component';
 import { CardComponent } from './card/card.component';
+import { ReloadlyFormsModule } from '../form/form.module';
 
 @NgModule({
     declarations: [
@@ -22,13 +23,13 @@ import { CardComponent } from './card/card.component';
         StepperComponent,
         StepComponent,
         CreditCardComponent,
-
         CardComponent
     ],
     imports: [
         CommonModule,
         ComponentsModule,
-        FormsModule
+        FormsModule,
+        ReloadlyFormsModule
     ],
     exports: [
         ActionCardComponent,

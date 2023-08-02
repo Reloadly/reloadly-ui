@@ -79,8 +79,8 @@ type FillColoring = 'color' | 'fade' | 'transparent';
     ]
 })
 export class CheckboxComponent implements OnInit, AfterViewInit, OnDestroy {
-    @Input() name = '';
-    @Input() label = '';
+    @Input() name: string= '';
+    @Input() label: string = '';
     @Input() control!: FormControl | null;
     @Input() set checked(value: boolean) { this.state.isChecked.next({ value }) };
     @Input() set disabled(value: boolean) { this.state.disabled.next(value) };

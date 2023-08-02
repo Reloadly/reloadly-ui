@@ -1,15 +1,40 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Injectable, ApplicationRef, createComponent, ComponentRef, Inject, EmbeddedViewRef, Renderer2 } from '@angular/core';
 import { QuickAction, QuickActionInterface } from '../../models/quick-action';
-
+// import { ReloadlyQuickActionComponent } from './quick-action.component';
+import { DOCUMENT } from '@angular/common';
 
 @Injectable({
-    providedIn: 'root',
+    providedIn: 'root'
 })
 export class ReloadlyQuickActionService {
-    quickActionEvents$: BehaviorSubject<QuickAction[]> = new BehaviorSubject<QuickAction[]>([]);
-    showQuickAction$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-    constructor() { }
+    componentRef!: any; // ComponentRef<ReloadlyQuickActionComponent>; // @TODO fix circular dependency
+    componentInstance?: any; // ReloadlyQuickActionComponent | null; // @TODO fix circular dependency
+    renderer!: Renderer2;
+
+    get isInitialized(): boolean {
+        return !!this.componentRef;
+    }
+
+    constructor(
+        private appRef: ApplicationRef,
+        @Inject(DOCUMENT) private document: Document
+    ) { this.initializeOverlay(); }
+
+    initializeOverlay() {
+        if (this.componentRef) {
+            return;
+        }
+        // @TODO fix circular dependency
+        // this.componentRef = createComponent(ReloadlyQuickActionComponent, {
+        //     environmentInjector: this.appRef.injector,
+        // });
+        this.appRef.attachView(this.componentRef.hostView); // and detach later
+        const asDomElement = (this.componentRef.hostView as EmbeddedViewRef<any>).rootNodes[0];
+        this.componentInstance = this.componentRef.instance;
+        this.renderer = this.componentRef.instance.renderer;
+        this.renderer.appendChild(this.document.body, asDomElement);
+        this.componentRef.hostView.detectChanges();
+    }
 
     /**
      * Shows a quick action
@@ -18,15 +43,7 @@ export class ReloadlyQuickActionService {
      * @memberof ReloadlyQuickActionService
      */
     showQuickAction(data: QuickActionInterface): QuickAction {
-        const action: QuickAction = new QuickAction({ ...data });
-        this.quickActionEvents$.next([action, ...this.quickActionEvents$.value]);
-        this.showQuickAction$.next(true);
-        if (data.autoDismiss) {
-            setTimeout(() => {
-                this.dismissQuickAction(action);
-            }, data.autoDismissTimeout ?? 5000);
-        }
-        return action;
+        return this.componentInstance!.showQuickAction(data);
     }
 
     /**
@@ -35,15 +52,7 @@ export class ReloadlyQuickActionService {
      * @memberof ReloadlyQuickActionService
      */
     dismissQuickAction(action: QuickAction) {
-        const indexOf = this.quickActionEvents$.value.findIndex((a) => a.referenceId === action.referenceId);
-        if (indexOf > -1) {
-            let actions = [...this.quickActionEvents$.value];
-            actions[indexOf].toggleTransition();
-            this.quickActionEvents$.next(actions);
-        }
-        setTimeout(() => {
-            this.quickActionEvents$.next(this.quickActionEvents$.value.filter((a) => a.referenceId !== action.referenceId));
-            this.quickActionEvents$.value.length === 0 ? this.showQuickAction$.next(false) : this.showQuickAction$.next(true);
-        }, 500)
+        return this.componentInstance!.dismissQuickAction(action);
     }
 }
+

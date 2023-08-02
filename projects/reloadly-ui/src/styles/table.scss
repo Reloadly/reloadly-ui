@@ -1,7 +1,11 @@
 @import "./variables.scss";
 
 .reloadly-table {
-    min-width: 1024px;
+    min-width: 640px;
+    width: 100%;
+    @media (min-width: 48em) {
+        min-width: 1024px;
+    }
     thead {
         tr {
             th {
