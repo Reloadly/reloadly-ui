@@ -1,4 +1,4 @@
-export const tooltipCode = [
+export const tableCode = [
     {
         name: 'table',
         code: {
@@ -21,9 +21,7 @@ export const tooltipCode = [
                 Time
             </th>
             <th>
-
             </th>
-
         </tr>
     </thead>
     <tbody>

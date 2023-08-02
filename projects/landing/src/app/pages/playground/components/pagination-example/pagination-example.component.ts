@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { menuCode } from './pagination';
+import { Component, OnInit } from '@angular/core';
 import { apiInterface } from '../../../../shared/components/api-table/models';
-import { codeBoxModel, codeModel } from '../../../../shared/components/code-box/models';
+import { codeModel } from '../../../../shared/components/code-box/models';
+import { paginationCode } from './pagination';
 import { api } from './api';
 
 @Component({
@@ -9,19 +9,30 @@ import { api } from './api';
     templateUrl: './pagination-example.component.html',
     styleUrls: ['./pagination-example.component.scss']
 })
-export class PaginationExampleComponent {
-    menuCode = menuCode;
+export class PaginationExampleComponent implements OnInit {
+    paginationCode = paginationCode;
     api: apiInterface[] = api;
+    paginatedData: any;
+
+    page: number = 1;
+    size: number = 3;
+    total: number = 11;
+    data = Array.from(Array(11).keys());
 
     constructor() {
-
     }
 
-    getCodeSample(name: string): codeModel {
-        return this.menuCode.filter((item: codeBoxModel) => name === item.name)[0].code
+    ngOnInit() {
+        this.paginatedData = this.data.slice(0, this.size);
     }
 
-    action() {
+    getCodeSample(): codeModel {
+        return this.paginationCode[0].code
+    }
 
+
+    changePage(event: any) {
+        this.page = event.page;
+        this.paginatedData = this.data.slice((this.page - 1) * this.size, this.page * this.size);
     }
 }

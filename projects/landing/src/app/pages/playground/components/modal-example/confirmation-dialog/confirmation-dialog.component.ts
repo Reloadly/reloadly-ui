@@ -13,6 +13,7 @@ export class ConfirmationDialogComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
+        console.log(this.inputData);
         this.dialogRef.customSharedData$.next({ response: "'You choose confirm'" });
         this.dialogRef.onCancel$.subscribe(() => {
             this.dialogRef.closeDialog();

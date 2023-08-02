@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { apiInterface } from '../../../../shared/components/api-table/models';
-import { codeBoxModel, codeModel } from '../../../../shared/components/code-box/models';
-import { tooltipCode } from './table';
+import { codeModel } from '../../../../shared/components/code-box/models';
+import { apiInterface } from 'projects/landing/src/app/shared/components/api-table/models';
+import { tableCode } from './table';
 import { api } from './api';
+
 
 @Component({
     selector: 'app-table-example',
@@ -10,15 +11,15 @@ import { api } from './api';
     styleUrls: ['./table-example.component.scss']
 })
 export class TableExampleComponent {
-    tooltipCode = tooltipCode;
+    tableCode = tableCode;
     date = new Date();
-    api: apiInterface[] = api;
+    api: apiInterface[] = api
 
     constructor() {
 
     }
 
-    getCodeSample(name: string): codeModel {
-        return this.tooltipCode.filter((item: codeBoxModel) => name === item.name)[0].code
+    getCodeSample(): codeModel {
+        return this.tableCode[0].code
     }
 }

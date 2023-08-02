@@ -14,7 +14,7 @@ export class ApiTableComponent {
     dynamicClass: string = 'mr-4 mt-4 custom-button-class';
     tooltipTextCopy = 'Copy'
     tooltipTextCode = 'View code';
-    @Input('type') type: 'component' | 'directive' | '' = '';
+    @Input('type') type: 'component' | 'directive' | 'injectable' | '' = '';
     @Input('name') name = '';
     @Input('data') data!: apiInterface[];
 
