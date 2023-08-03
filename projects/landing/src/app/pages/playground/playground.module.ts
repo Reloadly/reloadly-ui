@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PlaygroundComponent } from './playground.component';
 import { PlaygroundRoutingModule } from './playground-routing.module';
 import { SidebarComponent } from '../../layout/sidebar/sidebar.component';
-import { ReloadlyUiDirectivesModule, ReloadlyUiModule } from 'reloadly-ui';
+import { ReloadlyContainersModule, ReloadlyFormsModule, ReloadlyUiDirectivesModule, ReloadlyUiModule } from 'reloadly-ui';
 import { ButtonExampleComponent } from './components/button-example/button-example.component';
 import { BadgeExampleComponent } from './components/badge-example/badge-example.component';
 import { BreadcrumbsExampleComponent } from './components/breadcrumbs-example/breadcrumbs-example.component';
@@ -27,11 +27,13 @@ import { SharedModule } from '../../shared/shared.module';
 @NgModule({
     imports: [
         CommonModule,
-        ReloadlyUiModule,
-        ReloadlyUiDirectivesModule,
         PlaygroundRoutingModule,
         ReactiveFormsModule,
-        SharedModule
+        SharedModule,
+        ReloadlyUiModule,
+        ReloadlyUiDirectivesModule, //@TODO: these needs to be available from ReloadlyUiModule
+        ReloadlyFormsModule,
+        ReloadlyContainersModule
     ],
     declarations: [
         PlaygroundComponent,

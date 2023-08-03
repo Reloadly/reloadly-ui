@@ -10,6 +10,7 @@ export class PaginationComponent {
     @Input() page: number = 1;
     @Input() total: number = 0;
     @Input() size: number = 10;
+    //@TODO: add previous/next Label input, (pageChanged) event
 
     @Output() changePage = new EventEmitter();
     pages: number[] = [];
@@ -109,5 +110,3 @@ export class PaginationComponent {
     }
 
 }
-
-

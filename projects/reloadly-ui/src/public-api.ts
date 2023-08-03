@@ -2,6 +2,7 @@
  * Public API Surface of reloadly-ui
  */
 
+//@TODO: please review this file, seems to me that some components are exported multi times. Ex: export * from component.module and then individual components also. Ideally, we would export from modules, component, containers, form..
 import { SelectableItem } from './lib/models/selectable-item';
 import { CardComponent } from './lib/containers/card/card.component';
 import { DateComponent } from './lib/components/date/date.component';

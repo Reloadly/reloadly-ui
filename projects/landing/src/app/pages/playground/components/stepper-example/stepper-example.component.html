@@ -1,26 +1,69 @@
-<!--<reloadly-stepper #stepper (finishedSteps)="printDone()">
-    <reloadly-step>
-        <app-form-group-example></app-form-group-example>
-    </reloadly-step>
-    <reloadly-step>
-        <reloadly-action-card [title]="'Step 1'" [value]="'888,50  EUR'" [actionText]="'Step 1'"></reloadly-action-card>
-    </reloadly-step>
-    <reloadly-step>
-        <reloadly-action-card [title]="'Step 2'" [value]="'888,50  EUR'" [actionText]="'Step 2'"></reloadly-action-card>
-    </reloadly-step>
-    <reloadly-step>
-        <app-date-example></app-date-example>
-    </reloadly-step>
-    <reloadly-step>
-        <reloadly-action-card [title]="'Step 3'" [value]="'888,50  EUR'" [actionText]="'Step 3'"></reloadly-action-card>
-    </reloadly-step>
-    <reloadly-step>
-        <app-badge-example></app-badge-example>
-    </reloadly-step>
-    <reloadly-step>
-        <reloadly-action-card [title]="'Step 4'" [value]="'888,50  EUR'" [actionText]="'Step 4'"></reloadly-action-card>
-    </reloadly-step>
-    <reloadly-step>
-        <app-switch-example></app-switch-example>
-    </reloadly-step>
-</reloadly-stepper>-->
+<h1 [attr.id]="'button'">Stepper</h1>
+<p class="mb-6">Stepper component that allows you to create rich interactive experiences with your content.</p>
+
+<app-tabs>
+    <app-tab tabTitle="Examples">
+        <app-code-box [code]="getCodeSample()">
+            <reloadly-stepper #stepper (finishedSteps)="printDone()">
+                <reloadly-step>
+                    <div class="row">
+                        <h3 class="mb-4">Buttons</h3>
+                        <button reloadly-button class="mr-4 mt-4" [rounded]="true" [variant]="'filled'">
+                            Toggle Disable
+                        </button>
+
+                        <button reloadly-button class="mr-4 mt-4 custom-button-class" [rounded]="true"
+                            [variant]="'filled'">
+                            Filled
+                        </button>
+
+                        <button reloadly-button class="mr-4 mt-4 custom-button-class" [rounded]="true"
+                            [variant]="'outlined'">
+                            Outlined
+                        </button>
+                    </div>
+                </reloadly-step>
+                <reloadly-step>
+                    <div class="row">
+                        <h3 class="mb-4">Switch</h3>
+                        <reloadly-switch size="small" type="default" label="Label" description="Description"
+                            [toggle]="true"></reloadly-switch>
+
+                        <reloadly-switch size="small" type="default" label="Label" description="Description"
+                            [disabled]="true"></reloadly-switch>
+
+                        <reloadly-switch size="small" type="livemode" label="Label" description="Description"
+                            [toggle]="true"></reloadly-switch>
+                    </div>
+                </reloadly-step>
+                <reloadly-step>
+                    <div class="row">
+                        <h3 class="mb-4">Badges</h3>
+                        <span class="mr-4 mt-4 inline-block">
+                            <reloadly-badge [variant]="'positive'" [showIcon]="true">
+                                Succeeded
+                            </reloadly-badge>
+                        </span>
+                        <span class="mr-4 mt-4 inline-block">
+                            <reloadly-badge [variant]="'negative'" [showIcon]="true">
+                                Failed
+                            </reloadly-badge>
+                        </span>
+                        <span class="mr-4 mt-4 inline-block">
+                            <reloadly-badge [variant]="'warning'" [showIcon]="true">
+                                Attention
+                            </reloadly-badge>
+                        </span>
+                    </div>
+                </reloadly-step>
+            </reloadly-stepper>
+
+            <button reloadly-button [color]="'secondary'" class="ml-4 mt-4" (click)="prev()">Previous</button>
+            <button reloadly-button color="secondary" class="mr-4 mt-4" style="float:right"
+                (click)="next()">Next</button>
+        </app-code-box>
+    </app-tab>
+    <app-tab tabTitle="API" class="tab api">
+        <app-api-table type="component" name="reloadly-stepper" [data]="apiStepper"></app-api-table>
+    </app-tab>
+</app-tabs>
