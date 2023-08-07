@@ -3,7 +3,7 @@
 
 <app-tabs>
     <app-tab tabTitle="Examples">
-        <app-code-box [code]="getCodeSample('buttons')" (sourceChange)="changeSource($event)">
+        <app-code-box [code]="getCodeSample('buttons')">
             <button reloadly-button (click)="disabled=!disabled" class="mr-4 mt-4" [rounded]="true"
                 [variant]="'filled'">
                 Toggle Disable

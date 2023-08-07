@@ -10,6 +10,7 @@ export const api: apiInterface[] = [
     {
         input: 'reloadly-tooltip',
         type: 'string',
-        description: 'Tooltip content'
+        description: 'Tooltip content',
+        required: true
     }
 ]

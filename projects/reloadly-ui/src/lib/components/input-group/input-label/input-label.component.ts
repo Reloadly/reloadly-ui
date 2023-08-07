@@ -10,4 +10,4 @@ export class InputLabelComponent {
     @Input() for = '';
 }
 
-type FormLabelType = 'heading' | 'subheading'
+type FormLabelType = 'heading' | 'subheading' | 'error';

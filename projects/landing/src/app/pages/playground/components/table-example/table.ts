@@ -1,7 +1,8 @@
-export const tooltipCode = [
+export const tableCode = [
     {
         name: 'table',
-        code: `<table reloadly-table>
+        code: {
+            html: `<table reloadly-table>
     <thead>
         <tr class="border-b border-gray-200">
             <th>
@@ -20,9 +21,7 @@ export const tooltipCode = [
                 Time
             </th>
             <th>
-
             </th>
-
         </tr>
     </thead>
     <tbody>
@@ -60,5 +59,6 @@ export const tooltipCode = [
         </tr>
     </tbody>
 </table>`
+        }
     }
 ]

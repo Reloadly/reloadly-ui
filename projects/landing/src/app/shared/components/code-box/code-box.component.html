@@ -3,7 +3,7 @@
 <section class="code-box-section">
     <div class="languages" *ngIf="codeViewOpen">
         <span (click)="selectSource('html')" [class.active]="activeTab === 'html'">HTML</span>
-        <span (click)="selectSource('ts')" [class.active]="activeTab === 'ts'">TS</span>
+        <span (click)="selectSource('ts')" *ngIf="code.ts" [class.active]="activeTab === 'ts'">TS</span>
     </div>
     <div class="code-section">
         <button class="copy-button" [reloadly-tooltip]="tooltipTextCopy" *ngIf="codeViewOpen"
@@ -28,7 +28,7 @@
         </div>
 
         <pre class="code-box" [class.open]="codeViewOpen">
-            <code *ngIf="codeViewOpen" [highlight]="code" [lineNumbers]="false"></code>
+            <code *ngIf="codeViewOpen" [highlight]="selectedCodeSource" [lineNumbers]="false"></code>
         </pre>
     </div>
 

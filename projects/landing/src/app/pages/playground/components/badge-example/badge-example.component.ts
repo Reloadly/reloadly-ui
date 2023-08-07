@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { badgesCode } from './badges';
 import { apiInterface } from '../../../../shared/components/api-table/models';
+import { codeBoxModel, codeModel } from '../../../../shared/components/code-box/models';
 import { api } from './api';
 
 @Component({
@@ -16,8 +17,8 @@ export class BadgeExampleComponent {
 
     }
 
-    getCodeSample(name: string): string {
-        return this.badgesCode.filter((item: { name: string, code: string }) => name === item.name)[0].code
+    getCodeSample(name: string): codeModel {
+        return this.badgesCode.filter((item: codeBoxModel) => name === item.name)[0].code
     }
 
 }

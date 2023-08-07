@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HowToComponent } from './how-to.component';
+import { EmptyStateComponent } from './empty-state.component';
 
-describe('HowToComponent', () => {
-  let component: HowToComponent;
-  let fixture: ComponentFixture<HowToComponent>;
+describe('EmptyStateComponent', () => {
+  let component: EmptyStateComponent;
+  let fixture: ComponentFixture<EmptyStateComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HowToComponent ]
+      declarations: [ EmptyStateComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HowToComponent);
+    fixture = TestBed.createComponent(EmptyStateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,7 +1,8 @@
 export const menuCode = [
     {
         name: "menu",
-        code: `<button class="mr-4 mt-4" reloadly-button #menuTrigger [reloadly-menu]="menu">
+        code: {
+            html: `<button class="mr-4 mt-4" reloadly-button #menuTrigger [reloadly-menu]="menu">
     Menu
 </button>
 
@@ -10,10 +11,12 @@ export const menuCode = [
         <button (click)="action()" reloadly-menu-item>Edit</button>
     </reloadly-menu>
 </ng-template>`
+        }
     },
     {
         name: 'dividerMenu',
-        code: `<button class="mr-4 mt-4" reloadly-button #dividerMenuTrigger [reloadly-menu]="dividerMenu">
+        code: {
+            html: `<button class="mr-4 mt-4" reloadly-button #dividerMenuTrigger [reloadly-menu]="dividerMenu">
     Menu with divider
 </button>
 <ng-template #dividerMenu>
@@ -39,10 +42,12 @@ export const menuCode = [
         </button>
     </reloadly-menu>
 </ng-template>`
+        }
     },
     {
         name: 'sectionMenu',
-        code: `<button class="mr-4 mt-4" reloadly-button #sectionMenuTrigger [reloadly-menu]="sectionMenu">
+        code: {
+            html: `<button class="mr-4 mt-4" reloadly-button #sectionMenuTrigger [reloadly-menu]="sectionMenu">
     Menu with section
 </button>
 <ng-template #sectionMenu>
@@ -74,5 +79,6 @@ export const menuCode = [
         </button>
     </reloadly-menu>
 </ng-template>`
+        }
     }
 ]

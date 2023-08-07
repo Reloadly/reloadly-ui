@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { SelectOptionItem } from 'reloadly-ui';
-import { selectCode } from './select';
+import { codeBoxModel, codeModel } from '../../../../shared/components/code-box/models';
 import { apiInterface } from '../../../../shared/components/api-table/models';
+import { selectCode } from './select';
 import { api } from './api';
 
 
@@ -25,8 +26,8 @@ export class SelectExampleComponent {
 
     }
 
-    getCodeSample(name: string): string {
-        return this.selectCode.filter((item: { name: string, code: string }) => name === item.name)[0].code
+    getCodeSample(name: string): codeModel {
+        return this.selectCode.filter((item: codeBoxModel) => name === item.name)[0].code
     }
 
 }

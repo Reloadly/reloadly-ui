@@ -1,6 +1,7 @@
 export const breadcrumbsCode = [
     {
-        code: `<reloadly-breadcrumbs>
+        code: {
+            html: `<reloadly-breadcrumbs>
     <reloadly-breadcrumb-item [isActive]="true">
         <a>Step 1</a>
     </reloadly-breadcrumb-item>
@@ -11,5 +12,6 @@ export const breadcrumbsCode = [
     <reloadly-breadcrumb-item>Step 4</reloadly-breadcrumb-item>
     <reloadly-breadcrumb-item>Step 5</reloadly-breadcrumb-item>
 </reloadly-breadcrumbs>`
+        }
     }
 ]

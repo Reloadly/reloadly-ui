@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { buttonsCode } from './buttons';
 import { apiInterface } from '../../../../shared/components/api-table/models';
+import { codeBoxModel, codeModel } from '../../../../shared/components/code-box/models';
 import { api } from './api';
 
 @Component({
@@ -18,11 +19,8 @@ export class ButtonExampleComponent {
 
     }
 
-    getCodeSample(name: string): string {
-        return this.buttonsCode.filter((item: { name: string, code: string }) => name === item.name)[0].code
+    getCodeSample(name: string): codeModel {
+        return this.buttonsCode.filter((item: codeBoxModel) => name === item.name)[0].code
     }
 
-    changeSource(event: any) {
-        console.log(event);
-    }
 }

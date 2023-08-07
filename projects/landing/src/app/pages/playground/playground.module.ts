@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PlaygroundComponent } from './playground.component';
 import { PlaygroundRoutingModule } from './playground-routing.module';
 import { SidebarComponent } from '../../layout/sidebar/sidebar.component';
-import { ReloadlyUiDirectivesModule, ReloadlyUiModule, RootViewContainers } from 'reloadly-ui';
+import { ReloadlyContainersModule, ReloadlyFormsModule, ReloadlyUiDirectivesModule, ReloadlyUiModule } from 'reloadly-ui';
 import { ButtonExampleComponent } from './components/button-example/button-example.component';
 import { BadgeExampleComponent } from './components/badge-example/badge-example.component';
 import { BreadcrumbsExampleComponent } from './components/breadcrumbs-example/breadcrumbs-example.component';
@@ -21,16 +21,19 @@ import { TooltipExampleComponent } from './components/tooltip-example/tooltip-ex
 import { TableExampleComponent } from './components/table-example/table-example.component';
 import { ConfirmationDialogComponent } from './components/modal-example/confirmation-dialog/confirmation-dialog.component';
 import { ModalExampleComponent } from './components/modal-example/modal-example.component';
+import { PaginationExampleComponent } from './components/pagination-example/pagination-example.component';
 import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
     imports: [
         CommonModule,
-        ReloadlyUiModule,
-        ReloadlyUiDirectivesModule,
         PlaygroundRoutingModule,
         ReactiveFormsModule,
-        SharedModule
+        SharedModule,
+        ReloadlyUiModule,
+        ReloadlyUiDirectivesModule, //@TODO: these needs to be available from ReloadlyUiModule
+        ReloadlyFormsModule,
+        ReloadlyContainersModule
     ],
     declarations: [
         PlaygroundComponent,
@@ -50,10 +53,9 @@ import { SharedModule } from '../../shared/shared.module';
         TooltipExampleComponent,
         TableExampleComponent,
         ModalExampleComponent,
-        ConfirmationDialogComponent
+        ConfirmationDialogComponent,
+        PaginationExampleComponent
     ],
-    providers: [
-        { provide: RootViewContainers, useValue: new RootViewContainers }
-    ]
+    providers: []
 })
 export class PlaygroundModuleModule { }

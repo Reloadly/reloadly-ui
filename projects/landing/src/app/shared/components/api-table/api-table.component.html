@@ -24,7 +24,10 @@
                 <span class="type">Type: <span class="highlighted">{{item.type}}</span></span>
                 <span>{{item.description}}</span>
                 <span class="highlighted-secondary">{{item.values}}</span>
-                <span class="type" *ngIf="item.default !== undefined">Default: {{item.default}}</span>
+                <span class="type" *ngIf="item.default !== undefined">Default: <span
+                        class="highlighted">{{item.default}}</span></span>
+                <span class="type" *ngIf="item.required">Required: <span
+                        class="highlighted">{{item.required}}</span></span>
             </td>
         </tr>
     </tbody>

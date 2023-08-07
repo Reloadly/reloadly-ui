@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { apiInterface } from '../../../../shared/components/api-table/models';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
+import { codeBoxModel, codeModel } from '../../../../shared/components/code-box/models';
 import { ReloadlyModal } from 'reloadly-ui';
 import { menuCode } from './modal';
 import { api } from './api';
 
 @Component({
     selector: 'app-modal-example',
-    templateUrl: './modal-example.component.html',
-    styleUrls: ['./modal-example.component.scss']
+    templateUrl: './modal-example.component.html'
 })
 export class ModalExampleComponent {
     menuCode = menuCode;
@@ -20,8 +20,8 @@ export class ModalExampleComponent {
 
     }
 
-    getCodeSample(name: string): string {
-        return this.menuCode.filter((item: { name: string, code: string }) => name === item.name)[0].code
+    getCodeSample(name: string): codeModel {
+        return this.menuCode.filter((item: codeBoxModel) => name === item.name)[0].code
     }
 
     action() {
@@ -32,6 +32,7 @@ export class ModalExampleComponent {
         const dialog = this.modal.openDialog(ConfirmationDialogComponent, {
             data: 'Hello from my modal'
         });
+
         dialog.onAccept$.subscribe(() => {
             const resp = dialog.getCustomSharedData<{ resp: string }>().getValue();
             console.log(resp);
