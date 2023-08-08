@@ -5,7 +5,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
     templateUrl: './date.component.html',
     styleUrls: ['./date.component.scss']
 })
-export class DateComponent {
+export class DateComponent { //@TODO: is this component being used?
     formattedDate: string = '';
     @Input() disabled: boolean = false;
     @Input() hasError: boolean = false;
@@ -23,8 +23,8 @@ export class DateComponent {
 
     formatDate() {
         const yyyy = this.date.getFullYear();
-        let mm:any = this.date.getMonth() + 1;
-        let dd:any = this.date.getDate();
+        let mm: any = this.date.getMonth() + 1;
+        let dd: any = this.date.getDate();
 
         if (dd < 10) dd = '0' + dd;
         if (mm < 10) mm = '0' + mm;

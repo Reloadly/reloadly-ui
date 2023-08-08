@@ -22,6 +22,7 @@ import { TableExampleComponent } from './components/table-example/table-example.
 import { ConfirmationDialogComponent } from './components/modal-example/confirmation-dialog/confirmation-dialog.component';
 import { ModalExampleComponent } from './components/modal-example/modal-example.component';
 import { PaginationExampleComponent } from './components/pagination-example/pagination-example.component';
+import { PreloaderExampleComponent } from './components/preloader-example/preloader-example.component';
 import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
@@ -54,7 +55,8 @@ import { SharedModule } from '../../shared/shared.module';
         TableExampleComponent,
         ModalExampleComponent,
         ConfirmationDialogComponent,
-        PaginationExampleComponent
+        PaginationExampleComponent,
+        PreloaderExampleComponent
     ],
     providers: []
 })

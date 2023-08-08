@@ -6,6 +6,7 @@ import { ButtonExampleComponent } from './components/button-example/button-examp
 import { BreadcrumbsExampleComponent } from './components/breadcrumbs-example/breadcrumbs-example.component';
 import { InputGroupExampleComponent } from './components/input-group-example/input-group-example.component';
 import { PaginationExampleComponent } from './components/pagination-example/pagination-example.component';
+import { PreloaderExampleComponent } from './components/preloader-example/preloader-example.component';
 import { SidebarExampleComponent } from './components/sidebar-example/sidebar-example.component';
 import { TooltipExampleComponent } from './components/tooltip-example/tooltip-example.component';
 import { StepperExampleComponent } from './components/stepper-example/stepper-example.component';
@@ -80,6 +81,10 @@ const routes: Routes = [{
         {
             path: 'pagination',
             component: PaginationExampleComponent
+        },
+        {
+            path: 'preloader',
+            component: PreloaderExampleComponent
         }
     ]
 }];

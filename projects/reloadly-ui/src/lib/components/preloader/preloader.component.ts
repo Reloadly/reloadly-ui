@@ -6,8 +6,7 @@ import { Component, Input } from '@angular/core';
     styleUrls: ['./preloader.component.scss']
 })
 export class PreloaderComponent {
-    @Input('v2') v2: any;
-    @Input('v3') v3: any;
-    @Input('v4') v4: any;
+    @Input('variant') variant: "" | "v2" | "v3" | "v4" = ""; //@TODO: please update in the dashboard accordingly.
+
     constructor() { }
 }
