@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-    selector: 'app-action-card',
+    selector: 'app-action-card', //@TODO: is this being used? the selector name should start with reloadly-
     templateUrl: './action-card.component.html',
     styleUrls: ['./action-card.component.scss']
 })
