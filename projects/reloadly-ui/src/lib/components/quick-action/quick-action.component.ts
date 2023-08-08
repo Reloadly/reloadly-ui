@@ -1,10 +1,10 @@
-import { Component, ComponentRef, Renderer2} from '@angular/core';
+import { Component, ComponentRef, Renderer2 } from '@angular/core';
 import { QuickAction, QuickActionInterface } from '../../models/quick-action';
 import { BehaviorSubject } from 'rxjs';
 
 
 @Component({
-    selector: 'reloadly-quick-action',
+    selector: 'reloadly-quick-action', //@TODO:is this being used anywhere?
     templateUrl: './quick-action.component.html',
     styleUrls: ['./quick-action.component.scss'],
 })
@@ -14,7 +14,7 @@ export class ReloadlyQuickActionComponent {
     showQuickAction$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
     reloadlyQuickActionRef!: ComponentRef<any>;
 
-    constructor(public renderer: Renderer2) {}
+    constructor(public renderer: Renderer2) { }
 
     topRight(actions: QuickAction[]): QuickAction[] {
         return actions.filter(action => action.position === 'topRight');

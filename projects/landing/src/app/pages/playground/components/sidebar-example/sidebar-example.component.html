@@ -1,8 +1,22 @@
-<div style="background: white;padding: 20px;">
-    <h1 class="mb-4">Side Bar Nav</h1>
-    <reloadly-sidebar [links]="links" (linkClicked)="linkClicked($event)"></reloadly-sidebar>
-    <div style="margin-top: 20px;">
-        <reloadly-sidebar [links]="altLinks" [isHorizontal]="true"
-            (linkClicked)="linkClicked($event)"></reloadly-sidebar>
-    </div>
-</div>
+<h1>Navigation menu</h1>
+
+<app-tabs>
+    <app-tab tabTitle="Examples">
+        <app-code-box [code]="getCodeSample('vertical')" title="Vertical navigation">
+            <div class="row">
+                <reloadly-sidebar [links]="links" (linkClicked)="linkClicked($event)"></reloadly-sidebar>
+            </div>
+        </app-code-box>
+
+        <app-code-box [code]="getCodeSample('horizontal')" title="Horizontal navigation">
+            <div class="row">
+                <reloadly-sidebar [links]="altLinks" [isHorizontal]="true" (linkClicked)="linkClicked($event)"
+                    [activeItem]="altLinks[1]"></reloadly-sidebar>
+            </div>
+        </app-code-box>
+    </app-tab>
+
+    <app-tab tabTitle="API" class="tab api">
+        <app-api-table type="component" name="reloadly-sidebar" [data]="api"></app-api-table>
+    </app-tab>
+</app-tabs>
