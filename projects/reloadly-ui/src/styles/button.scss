@@ -1,5 +1,3 @@
-@import "./variables.scss";
-
 .reloadly-btn {
     display: inline-flex;
     align-items: center;
@@ -13,6 +11,7 @@
     &.primary {
         background: $reloadly-violet;
         color: $reloadly-white;
+
         &.filled {
             background: $reloadly-violet;
             color: $reloadly-white;
@@ -44,6 +43,7 @@
         //*******ROUNDED STYLE***********
         &.rounded {
             border-radius: 100px;
+
             //*******VARIANT STYLE***********
             &.filled {
                 &:focus {
@@ -51,6 +51,7 @@
                     box-shadow: none;
                     outline: none;
                 }
+
                 &:active {
                     background: $reloadly-filled-pressed;
                     box-shadow: none;
@@ -62,6 +63,7 @@
             color: $reloadly-violet;
             background: transparent;
             border: 1px solid $reloadly-violet;
+
             &:hover {
                 border: 1px solid #3e008e;
                 background: rgba(103, 80, 164, 0.08);
@@ -89,6 +91,7 @@
         &.text {
             color: $reloadly-violet;
             background: $reloadly-white;
+
             &:hover {
                 color: $reloadly-violet;
                 border: none;
@@ -111,50 +114,43 @@
                 opacity: 0.38;
             }
         }
+
         &.elevated {
             color: $reloadly-violet;
-            box-shadow: 0px 1px 3px 1px rgb(0 0 0 / 15%),
-                0px 1px 2px 0px rgb(0 0 0 / 30%);
-            background: linear-gradient(
-                    0deg,
+            box-shadow: 0px 1px 3px 1px RGB(0 0 0 / 15%),
+                0px 1px 2px 0px RGB(0 0 0 / 30%);
+            background: linear-gradient(0deg,
                     rgba(103, 80, 164, 0.05),
-                    rgba(103, 80, 164, 0.05)
-                ),
+                    rgba(103, 80, 164, 0.05)),
                 #fffbfe;
 
             &:hover {
                 color: $reloadly-violet;
-                background: linear-gradient(
-                        0deg,
+                background: linear-gradient(0deg,
                         rgba(103, 80, 164, 0.05),
-                        rgba(103, 80, 164, 0.05)
-                    ),
+                        rgba(103, 80, 164, 0.05)),
                     #fffbfe;
             }
 
             &:focus {
                 color: $reloadly-violet;
-                background: linear-gradient(
-                        0deg,
+                background: linear-gradient(0deg,
                         rgba(103, 80, 164, 0.05),
-                        rgba(103, 80, 164, 0.05)
-                    ),
+                        rgba(103, 80, 164, 0.05)),
                     #fffbfe;
             }
 
             &:active {
                 color: $reloadly-violet;
-                background: linear-gradient(
-                        0deg,
+                background: linear-gradient(0deg,
                         rgba(103, 80, 164, 0.05),
-                        rgba(103, 80, 164, 0.05)
-                    ),
+                        rgba(103, 80, 164, 0.05)),
                     #fffbfe;
                 box-shadow: none;
             }
 
             &:disabled {
-                color: rgb(16, 17, 19, 0.38);
+                color: RGB(16, 17, 19, 0.38);
                 background: rgba(28, 27, 31, 0.12);
                 box-shadow: none;
             }
@@ -163,12 +159,13 @@
         &.tonal {
             color: $reloadly-black-1;
             background: $reloadly-tonal;
+
             &:hover {
                 color: $reloadly-black-1;
                 background: rgba(29, 25, 43, 0.08);
                 background: #e8def8;
-                box-shadow: 0px 1px 3px 1px rgb(0 0 0 / 15%),
-                    0px 1px 2px 0px rgb(0 0 0 / 30%);
+                box-shadow: 0px 1px 3px 1px RGB(0 0 0 / 15%),
+                    0px 1px 2px 0px RGB(0 0 0 / 30%);
             }
 
             &:focus {
@@ -184,7 +181,7 @@
             }
 
             &:disabled {
-                color: rgb(16, 17, 19, 0.38);
+                color: RGB(16, 17, 19, 0.38);
                 background: rgba(28, 27, 31, 0.12);
                 box-shadow: none;
             }
@@ -220,6 +217,7 @@
         //*******ROUNDED STYLE***********
         &.rounded {
             border-radius: 100px;
+
             //*******VARIANT STYLE***********
             &.filled {
                 &:focus {
@@ -227,6 +225,7 @@
                     box-shadow: none;
                     outline: none;
                 }
+
                 &:active {
                     background: #53b9cc;
                     box-shadow: none;
@@ -250,6 +249,7 @@
         &.text {
             color: $reloadly-secondary-btn;
             background: $reloadly-white;
+
             &:hover {
                 color: $reloadly-secondary-btn;
             }
@@ -269,10 +269,11 @@
                 opacity: 0.38;
             }
         }
+
         &.elevated {
             color: $reloadly-secondary-btn;
-            box-shadow: 0px 1px 3px 1px rgb(0 0 0 / 15%),
-                0px 1px 2px 0px rgb(0 0 0 / 30%);
+            box-shadow: 0px 1px 3px 1px RBG(0 0 0 / 15%),
+                0px 1px 2px 0px RGB(0 0 0 / 30%);
 
             &:hover {
                 color: $reloadly-secondary-btn;
@@ -289,7 +290,7 @@
             }
 
             &:disabled {
-                color: rgb(16, 17, 19, 0.38);
+                color: RGB(16, 17, 19, 0.38);
                 background: rgba(28, 27, 31, 0.12);
                 box-shadow: none;
             }
@@ -297,10 +298,11 @@
 
         &.tonal {
             color: $reloadly-black-1;
+
             &:hover {
                 color: $reloadly-black-1;
-                box-shadow: 0px 1px 3px 1px rgb(0 0 0 / 15%),
-                    0px 1px 2px 0px rgb(0 0 0 / 30%);
+                box-shadow: 0px 1px 3px 1px RGB(0 0 0 / 15%),
+                    0px 1px 2px 0px RGB(0 0 0 / 30%);
             }
 
             &:focus {
@@ -314,7 +316,7 @@
             }
 
             &:disabled {
-                color: rgb(16, 17, 19, 0.38);
+                color: RGB(16, 17, 19, 0.38);
                 background: rgba(28, 27, 31, 0.12);
                 box-shadow: none;
             }
@@ -325,6 +327,7 @@
 
     &.white {
         border: 1px solid #e0e6eb;
+
         &.filled {
             background: $reloadly-white;
             color: $reloadly-black-1;
@@ -343,6 +346,7 @@
                 opacity: 0.5;
             }
         }
+
         &.outlined {
             color: $reloadly-black-1;
             background: transparent;
@@ -360,6 +364,7 @@
             border: none;
             color: $reloadly-black-1;
             background: $reloadly-white;
+
             &:hover {
                 color: $reloadly-black-1;
             }
@@ -379,10 +384,11 @@
                 opacity: 0.38;
             }
         }
+
         &.elevated {
             color: $reloadly-black-1;
-            box-shadow: 0px 1px 3px 1px rgb(0 0 0 / 15%),
-                0px 1px 2px 0px rgb(0 0 0 / 30%);
+            box-shadow: 0px 1px 3px 1px RGB(0 0 0 / 15%),
+                0px 1px 2px 0px RGB(0 0 0 / 30%);
 
             &:hover {
                 color: $reloadly-black-1;
@@ -398,7 +404,7 @@
             }
 
             &:disabled {
-                color: rgb(16, 17, 19, 0.38);
+                color: RGB(16, 17, 19, 0.38);
                 background: rgba(28, 27, 31, 0.12);
                 box-shadow: none;
             }
@@ -406,10 +412,11 @@
 
         &.tonal {
             color: $reloadly-black-1;
+
             &:hover {
                 color: $reloadly-black-1;
-                box-shadow: 0px 1px 3px 1px rgb(0 0 0 / 15%),
-                    0px 1px 2px 0px rgb(0 0 0 / 30%);
+                box-shadow: 0px 1px 3px 1px RGB(0 0 0 / 15%),
+                    0px 1px 2px 0px RGB(0 0 0 / 30%);
             }
 
             &:focus {
@@ -423,7 +430,7 @@
             }
 
             &:disabled {
-                color: rgb(16, 17, 19, 0.38);
+                color: RGB(16, 17, 19, 0.38);
                 background: rgba(28, 27, 31, 0.12);
                 box-shadow: none;
             }
@@ -450,6 +457,7 @@
                 opacity: 0.5;
             }
         }
+
         &.outlined {
             color: $reloadly-danger;
             background: transparent;
@@ -470,6 +478,7 @@
         &.text {
             color: $reloadly-danger;
             background: $reloadly-white;
+
             &:hover {
                 color: $reloadly-danger;
             }
@@ -488,10 +497,11 @@
                 opacity: 0.38;
             }
         }
+
         &.elevated {
             color: $reloadly-danger;
-            box-shadow: 0px 1px 3px 1px rgb(0 0 0 / 15%),
-                0px 1px 2px 0px rgb(0 0 0 / 30%);
+            box-shadow: 0px 1px 3px 1px RGB(0 0 0 / 15%),
+                0px 1px 2px 0px RGB(0 0 0 / 30%);
 
             &:hover {
                 color: $reloadly-danger;
@@ -507,7 +517,7 @@
             }
 
             &:disabled {
-                color: rgb(16, 17, 19, 0.38);
+                color: RGB(16, 17, 19, 0.38);
                 background: rgba(28, 27, 31, 0.12);
                 box-shadow: none;
             }
@@ -515,10 +525,11 @@
 
         &.tonal {
             color: $reloadly-danger;
+
             &:hover {
                 color: $reloadly-danger;
-                box-shadow: 0px 1px 3px 1px rgb(0 0 0 / 15%),
-                    0px 1px 2px 0px rgb(0 0 0 / 30%);
+                box-shadow: 0px 1px 3px 1px RGB(0 0 0 / 15%),
+                    0px 1px 2px 0px RGB(0 0 0 / 30%);
             }
 
             &:focus {
@@ -532,7 +543,7 @@
             }
 
             &:disabled {
-                color: rgb(16, 17, 19, 0.38);
+                color: RGB(16, 17, 19, 0.38);
                 background: rgba(28, 27, 31, 0.12);
                 box-shadow: none;
             }
@@ -554,6 +565,7 @@
     &.xs {
         padding: 4px 8px;
         border-radius: 4px;
+
         &.filled {
             &:focus {
                 outline: 4px solid #0196ed5c;
@@ -585,6 +597,7 @@
     padding: 6px 8px;
     margin: 0;
     cursor: pointer;
+
     &:hover {
         background: rgba(103, 80, 164, 0.08);
     }

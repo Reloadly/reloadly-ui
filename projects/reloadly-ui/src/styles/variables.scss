@@ -40,10 +40,11 @@ $reloadly-orange-1: #ed6704;
 $reloadly-form-disabled: #f6f8fa;
 
 // bulma initial variables must be imported and overwritten first...
-@import "bulma/sass/utilities/initial-variables";
+//@import "bulma/sass/utilities/initial-variables";
+
 $primary: $reloadly-blue;
 $link: $reloadly-violet;
-$background-color: $white;
+$background-color: #ffffff;
 $text: #50565b;
 $input-radius: 4px;
 $border-color: #d5dbe1;
@@ -53,7 +54,7 @@ $input-disabled-background-color: $reloadly-disabled-color;
 $family-sans-serif: "Futura", "Century Gothic", "Corbel", "Helvetica Neue",
     "Helvetica", "Arial", sans-serif;
 // ... then derived variables are imported and overwritten
-@import "bulma/sass/utilities/derived-variables";
+//@import "bulma/sass/utilities/derived-variables";
 
 // other variables
 $input-bg-color: #d5d9e0;
@@ -105,7 +106,7 @@ $padding-32: 32px;
 $padding-64: 64px;
 $padding-100: 100px;
 $gradient: linear-gradient(65.58deg, rgba(0, 66, 255, 0.5) -11.84%, rgba(235, 0, 27, 0.5) 98.75%),
-linear-gradient(0deg, #FFFFFF, #FFFFFF);
+    linear-gradient(0deg, #FFFFFF, #FFFFFF);
 
 @mixin disabled {
     background-color: $input-disabled-background-color;

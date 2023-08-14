@@ -29,9 +29,9 @@ Please check all components we have in action at https://ui.reloadly.com
 The only dependencies are [Angular](https://angular.io), [Bulma](https://bulma.io).
 The supported versions are:
 
-| reloadly-ui  | Angular | Bulma |
-| ------------ | ------- | ----- |
-| 1.0.0        | 16.0.0  | 0.9.4 |
+| reloadly-ui  | Angular |
+| ------------ | ------- |
+| 1.0.0        | 16.1.8  |
 
 ## Installation
 

@@ -2,38 +2,3 @@
 @import "styles/fonts";
 @import "styles/forms";
 @import "styles/button";
-@import "styles/table";
-@import "styles/phone-input";
-// import only the core basics
-@import "bulma/sass/utilities/_all";
-@import "bulma/sass/base/_all";
-@import "bulma/sass/grid/_all";
-@import "bulma/sass/elements/_all";
-
-html,
-body {
-    // min-width: fit-content;
-    scroll-behavior: smooth;
-}
-
-img {
-    max-width: 100% !important;
-}
-
-svg {
-    stroke-width: 0;
-    stroke: currentColor;
-    fill: currentColor;
-}
-
-.logo {
-    width: 45px;
-}
-
-.link:hover {
-    svg {
-        fill: hsl(0deg, 0%, 21%) !important;
-    }
-}
-
-@import "styles/generic-components.scss";

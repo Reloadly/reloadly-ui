@@ -3,7 +3,8 @@
 .is-flex {
     display: flex;
 }
-.is-flex-direction-column{
+
+.is-flex-direction-column {
     flex-direction: column;
 }
 
@@ -15,7 +16,7 @@
     margin: 4px 0px;
     padding: 16px;
     position: relative;
-    background-color: $white;
+    background-color: #fff;
     display: flex;
     align-items: center;
     pointer-events: all;

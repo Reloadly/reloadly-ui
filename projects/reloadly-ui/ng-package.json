@@ -3,9 +3,5 @@
     "dest": "../../dist/reloadly-ui",
     "lib": {
         "entryFile": "src/public-api.ts"
-    },
-    "assets": [
-        "./../../../styles.scss",
-        "./../../../styles/variables.scss"
-    ]
+    }
 }

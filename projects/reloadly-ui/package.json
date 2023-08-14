@@ -1,11 +1,14 @@
 {
     "name": "reloadly-ui",
-    "version": "1.0.0",
+    "version": "0.0.1-beta.5",
+    "description": "Angular UI library",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Reloadly/reloadly-ui.git"
+    },
     "peerDependencies": {
-        "@angular/common": "^15.0.0",
-        "@angular/core": "^15.0.0",
-        "bulma": "^0.9.4",
-        "@swimlane/ngx-datatable": "^20.1.0"
+        "@angular/common": "^16.1.8",
+        "@angular/core": "^16.1.8"
     },
     "sideEffects": false,
     "keywords": [
@@ -24,5 +27,10 @@
         "table",
         "timepicker"
     ],
-    "license": "MIT"
+    "license": "MIT",
+    "author": "Reloadly",
+    "bugs": {
+        "url": "https://github.com/Reloadly/reloadly-ui/issues"
+    },
+    "homepage": "https://github.com/Reloadly/reloadly-ui#readme"
 }

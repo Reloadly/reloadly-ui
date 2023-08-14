@@ -13,7 +13,6 @@ import { ButtonDirective } from './lib/components/button/directives/button.direc
 import { RangeSliderComponent } from './lib/form/range-slider/range-slider.component';
 import { BadgeComponent, BadgeVariant } from './lib/components/badge/badge.component';
 import { MenuItemDirective } from './lib/components/menu/directives/menu-item.directive';
-import { CreditCardComponent } from './lib/containers/credit-card/credit-card.component';
 import { InputDirective } from './lib/components/input-group/directives/input.directive';
 import { CheckBoxValue, CheckboxComponent } from './lib/form/checkbox/checkbox.component';
 import { DropdownSelectComponent } from './lib/form/dropdown-select/dropdown-select.component';
@@ -29,24 +28,20 @@ import { ReloadlyModalOutletComponent } from './lib/components/modal/reloadly-mo
 import { BreadcrumbItemComponent } from './lib/components/breadcrumb-group/breadcrumb-item/breadcrumb-item.component';
 import { DropdownConfig, SelectComponent, SelectOptionItem } from './lib/components/select/select.component';
 import { InputLabelComponent } from './lib/components/input-group/input-label/input-label.component';
-import { ProductDetailsComponent } from './lib/containers/product-details/product-details.component';
 import { SelectionGridComponent } from './lib/containers/selection-grid/selectable-grid.component';
 import { MenuDividerComponent } from './lib/components/menu/menu-divider/menu-divider.component';
 import { MenuSectionComponent } from './lib/components/menu/menu-section/menu-section.component';
-import { ActionCardComponent } from './lib/containers/action-card/action-card.component';
 import { TooltipDirective } from './lib/components/tooltip/directive/tooltip.directive';
 import { PaginationComponent } from './lib/components/pagination/pagination.component';
-import { ImageCardComponent } from './lib/containers/image-card/image-card.component';
 import { PreloaderComponent } from './lib/components/preloader/preloader.component';
 import { TableDirective } from './lib/components/table/directives/table.directive';
-import { ListTileComponent } from './lib/containers/list-tile/list-tile.component';
 import { SidebarComponent } from './lib/components/sidebar/sidebar.component';
 import { TooltipComponent } from './lib/components/tooltip/tooltip.component';
 import { StepperComponent } from './lib/containers/stepper/stepper.component';
 import { StepComponent } from './lib/containers/stepper/step/step.component';
 import { SwitchComponent } from './lib/components/switch/switch.component';
 import { SelectableViewStyle } from './lib/enums/selectable-view-style';
-import { TableComponent } from './lib/components/table/table.component';
+//import { TableComponent } from './lib/components/table/table.component';
 import { SelectableViewType } from './lib/enums/selectable-view-type';
 import { MenuComponent } from './lib/components/menu/menu.component';
 import { TagComponent } from './lib/components/tag/tag.component';
@@ -59,7 +54,7 @@ export {
     SvgComponent,
     TagComponent,
     CustomerServiceComponent,
-    TableComponent,
+    //TableComponent,
     PaginationComponent,
     SidebarComponent,
     SwitchComponent,
@@ -107,15 +102,10 @@ export { ReloadlyModalOutletComponent };
 
 export * from './lib/containers/containers.module';
 export {
-    ActionCardComponent,
-    ImageCardComponent,
     CardComponent,
-    ListTileComponent,
     SelectionGridComponent,
-    ProductDetailsComponent,
     StepperComponent,
     StepComponent,
-    CreditCardComponent
 };
 
 export {

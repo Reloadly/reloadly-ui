@@ -5,10 +5,9 @@ import { CommonModule } from '@angular/common';
 import { SvgComponent } from './svg/svg.component';
 import { TagComponent } from './tag/tag.component';
 import { DateComponent } from './date/date.component';
-import { TableComponent } from './table/table.component';
+//import { TableComponent } from './table/table.component';
 import { SelectComponent } from './select/select.component';
 import { SwitchComponent } from './switch/switch.component';
-import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { BreadcrumbItemComponent } from './breadcrumb-group/breadcrumb-item/breadcrumb-item.component';
@@ -20,6 +19,7 @@ import { InputGroupDirective } from './input-group/directives/input-group.direct
 import { FormGroupDirective } from './form-group/directives/form-group.directive';
 import { FormLabelComponent } from './form-group/form-label/form-label.component';
 import { InputDirective } from './input-group/directives/input.directive';
+import { EmptyStateComponent } from './empty-state/empty-state.component'
 import { PreloaderComponent } from './preloader/preloader.component';
 import { TableDirective } from './table/directives/table.directive';
 import { ReloadlyModalModule } from './modal/reloadly-modal.module';
@@ -27,14 +27,13 @@ import { TooltipModule } from './tooltip/tooltip.module';
 import { ButtonModule } from './button/button.module';
 import { BadgeModule } from './badge/badge.module';
 import { MenuModule } from './menu/menu.module';
-import { EmptyStateComponent } from './empty-state/empty-state.component'
 
 @NgModule({
     declarations: [
         SvgComponent,
         TagComponent,
         CustomerServiceComponent,
-        TableComponent,
+        //TableComponent,
         PaginationComponent,
         SidebarComponent,
         SwitchComponent,
@@ -55,7 +54,6 @@ import { EmptyStateComponent } from './empty-state/empty-state.component'
         CommonModule,
         RouterModule,
         FormsModule,
-        NgxDatatableModule,
         ReloadlyModalModule,
         ButtonModule,
         BadgeModule,
@@ -66,7 +64,7 @@ import { EmptyStateComponent } from './empty-state/empty-state.component'
         SvgComponent,
         TagComponent,
         CustomerServiceComponent,
-        TableComponent,
+        //TableComponent,
         PaginationComponent,
         SidebarComponent,
         SwitchComponent,

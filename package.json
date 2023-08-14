@@ -1,46 +1,39 @@
 {
     "name": "reloadly-ui",
-    "version": "1.0.0",
+    "version": "0.0.1-beta.5",
     "scripts": {
-        "build:dev": "ng build reloadly-ui --configuration=development --watch",
-        "build:prod": "ng build reloadly-ui --configuration=production",
+        "build:scss": "node-sass --include-path scss projects/reloadly-ui/src/styles.scss dist/reloadly-ui/styles/styles.css",
+        "build:prod": "ng build reloadly-ui --configuration=production && npm run build:scss",
         "start": "ng serve"
     },
-    "private": true,
+    "private": false,
     "dependencies": {
-        "highlight.js": "^11.8.0",
-        "ngx-highlightjs": "^8.0.0",
-        "tslib": "^2.3.0"
+        "tslib": "^2.6.1"
     },
     "peerDependencies": {
-        "@angular/animations": "^15.0.0",
-        "@angular/common": "^15.0.0",
-        "@angular/compiler": "^15.0.0",
-        "@angular/core": "^15.0.0",
-        "@angular/forms": "^15.0.0",
-        "@angular/platform-browser": "^15.0.0",
-        "@angular/platform-browser-dynamic": "^15.0.0",
-        "@angular/router": "^15.0.0",
-        "@swimlane/ngx-datatable": "^20.1.0",
-        "apexcharts": "^3.37.2",
-        "bulma": "^0.9.4",
-        "ng-apexcharts": "^1.7.4",
-        "ngx-select-dropdown": "^3.2.0",
-        "rxjs": "~7.5.0",
-        "zone.js": "~0.12.0"
+        "@angular/animations": "^16.1.8",
+        "@angular/common": "^16.1.8",
+        "@angular/compiler": "^16.1.8",
+        "@angular/core": "^16.1.8",
+        "@angular/forms": "^16.1.8",
+        "@angular/platform-browser": "^16.1.8",
+        "@angular/platform-browser-dynamic": "^16.1.8",
+        "@angular/router": "^16.1.8",
+        "zone.js": "~0.13.1"
     },
     "devDependencies": {
-        "@angular-devkit/build-angular": "^15.0.5",
-        "@angular/cli": "~15.0.0",
-        "@angular/compiler-cli": "^15.0.0",
-        "@types/highlight.js": "^10.1.0",
-        "@types/jasmine": "~4.3.0",
-        "jasmine-core": "~4.5.0",
-        "karma": "~6.4.0",
-        "karma-coverage": "~2.2.0",
+        "@angular-devkit/build-angular": "^16.1.8",
+        "@angular/cli": "~16.1.8",
+        "@angular/compiler-cli": "^16.1.8",
+        "@types/jasmine": "~4.3.5",
+        "jasmine-core": "~5.1.0",
+        "karma": "~6.4.2",
+        "karma-coverage": "~2.2.1",
         "karma-jasmine": "~5.1.0",
-        "karma-jasmine-html-reporter": "~2.0.0",
-        "ng-packagr": "^15.0.0",
-        "typescript": "~4.8.2"
+        "karma-jasmine-html-reporter": "~2.1.0",
+        "ng-packagr": "^16.1.0",
+        "node-sass": "^9.0.0",
+        "nodemon": "^3.0.1",
+        "typescript": "~5.1.6"
     }
 }
