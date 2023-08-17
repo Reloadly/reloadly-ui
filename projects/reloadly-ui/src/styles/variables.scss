@@ -39,8 +39,6 @@ $reloadly-danger: #df1b41;
 $reloadly-orange-1: #ed6704;
 $reloadly-form-disabled: #f6f8fa;
 
-// bulma initial variables must be imported and overwritten first...
-@import "bulma/sass/utilities/initial-variables";
 $primary: $reloadly-blue;
 $link: $reloadly-violet;
 $background-color: #ffffff;
