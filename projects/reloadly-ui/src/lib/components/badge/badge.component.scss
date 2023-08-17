@@ -1,0 +1,79 @@
+@import "./../../../../src/styles/variables";
+
+.reloadly-badge {
+    padding: 2px 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: $font-small;
+    font-weight: 500;
+
+    &.topRight {
+        position: absolute;
+        top: -6px;
+        right: -12px;
+    }
+
+    &.topLeft {
+        position: absolute;
+        top: -6px;
+        right: -12px;
+    }
+
+    &.neutral {
+        background-color: #ebeef1;
+        color: $reloadly-black-10;
+    }
+
+    &.info {
+        background-color: #cff5f6;
+        color: #0055bc;
+    }
+
+    &.positive {
+        background-color: #d7f7c2;
+        color: #006908;
+    }
+
+    &.warning {
+        background-color: #fcedb9;
+        color: #a82c00;
+    }
+
+    &.negative {
+        background-color: #ffe7f2;
+        color: #b3093c;
+    }
+
+    &.urgent {
+        background-color: #df1b41;
+        color: $reloadly-white;
+    }
+
+    &.notification {
+        background-color: red; //@TODO: add the exact color
+        color: $reloadly-white;
+        font-size: 10px;
+        border: 3px solid #F6F8FA;
+    }
+
+    &.rectangular {
+        border-radius: 4px;
+    }
+
+    &.rounded {
+        border-radius: 8px;
+    }
+
+    &.circular {
+        border-radius: 50%;
+    }
+}
+
+.badge-icon {
+    width: 12px;
+    height: 12px;
+    color: currentColor;
+    margin-left: 5px;
+}
