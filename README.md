@@ -26,7 +26,7 @@ Please check all components we have in action at https://ui.reloadly.com
 
 ## Dependencies
 
-The only dependencies are [Angular](https://angular.io), [Bulma](https://bulma.io).
+The only dependency is [Angular](https://angular.io).
 The supported versions are:
 
 | reloadly-ui  | Angular |
