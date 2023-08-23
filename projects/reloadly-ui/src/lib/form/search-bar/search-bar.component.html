@@ -1,4 +1,4 @@
-<div class="search-bar">
+<div class="search-bar" [ngClass]="size">
     <input type="search" [placeholder]="placeholder" [(ngModel)]="query" (ngModelChange)="queryChange.emit(query)" />
     <div class="icon">
         <svg>

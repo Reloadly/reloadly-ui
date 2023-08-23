@@ -7,6 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class SearchBarComponent {
     @Input() placeholder:string = 'Search';
+    @Input() size: 'small' | 'medium' | 'large' = 'medium';
     @Input() query: string = '';
     @Output() queryChange: EventEmitter<string> = new EventEmitter();
     constructor() {}

@@ -13,18 +13,17 @@ export class BadgeComponent {
     @Input() position: BadgePosition = 'inline';
     //@TODO: needs to be refactored, remove showIcon input
 
-    constructor(
-    ) { }
+    constructor() { }
 
-    ngOnInit() {
-        this.setColor()
+    ngOnInit() {}
 
+    ngOnChanges() {
+        this.setColor();
     }
 
     setColor() {
-        this.class += ` ${this.variant} ${this.shape} ${this.position}`
+        this.class = ` ${this.variant} ${this.shape} ${this.position}`;
     }
-
 }
 
 export type BadgeVariant = "neutral" | "info" | "positive" | "warning" | "negative" | "urgent" | "notification";
