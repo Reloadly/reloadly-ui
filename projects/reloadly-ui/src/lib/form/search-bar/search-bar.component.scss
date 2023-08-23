@@ -3,13 +3,11 @@
 .search-bar {
     width: 100%;
     min-width: 230px;
-    height: 28px;
     border: 1px solid $border-color;
     box-shadow: $box-shadow;
     border-radius: 4px;
     display: flex;
     align-items: center;
-    padding: 8px;
     &:focus-within {
         border: 1px solid $reloadly-violet;
         box-shadow: none;
@@ -38,4 +36,17 @@
             line-height: 1;
         }
     }
+}
+
+.small {
+    height: 24px;
+    padding: $form-box-padding-small;
+}
+.medium {
+    height: 28px;
+    padding: $form-box-padding-medium;
+}
+.large {
+    height: 40px;
+    padding: $form-box-padding-large;
 }
