@@ -1,10 +1,10 @@
 {
     "name": "reloadly-ui",
-    "version": "0.0.1-beta.8",
+    "version": "0.0.1-beta.9",
     "description": "Angular UI library",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Reloadly/reloadly-ui.git"
+        "url": "https://github.com/Reloadly/reloadly-ui.git"
     },
     "peerDependencies": {
         "@angular/common": "^16.1.8",

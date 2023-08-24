@@ -21,7 +21,6 @@ import { FormLabelComponent } from './lib/components/form-group/form-label/form-
 import { FormGroupDirective } from './lib/components/form-group/directives/form-group.directive';
 import { InputGroupDirective } from './lib/components/input-group/directives/input-group.directive';
 import { ReloadlyQuickActionComponent } from './lib/components/quick-action/quick-action.component';
-import { CustomerServiceComponent } from './lib/components/customer-service/customer-service.component';
 import { BreadcrumbsComponent } from './lib/components/breadcrumb-group/breadcrumbs/breadcrumbs.component';
 import { QuickAction, QuickActionInterface, QuickActionPosition, QuickActionType } from './lib/models/quick-action';
 import { ReloadlyModalOutletComponent } from './lib/components/modal/reloadly-modal-outlet/reloadly-modal-outlet.component';
@@ -31,30 +30,27 @@ import { InputLabelComponent } from './lib/components/input-group/input-label/in
 import { SelectionGridComponent } from './lib/containers/selection-grid/selectable-grid.component';
 import { MenuDividerComponent } from './lib/components/menu/menu-divider/menu-divider.component';
 import { MenuSectionComponent } from './lib/components/menu/menu-section/menu-section.component';
+import { EmptyStateComponent } from './lib/components/empty-state/empty-state.component';
 import { TooltipDirective } from './lib/components/tooltip/directive/tooltip.directive';
 import { PaginationComponent } from './lib/components/pagination/pagination.component';
 import { PreloaderComponent } from './lib/components/preloader/preloader.component';
-import { TableDirective } from './lib/components/table/directives/table.directive';
 import { SidebarComponent } from './lib/components/sidebar/sidebar.component';
 import { TooltipComponent } from './lib/components/tooltip/tooltip.component';
 import { StepperComponent } from './lib/containers/stepper/stepper.component';
 import { StepComponent } from './lib/containers/stepper/step/step.component';
 import { SwitchComponent } from './lib/components/switch/switch.component';
 import { SelectableViewStyle } from './lib/enums/selectable-view-style';
-//import { TableComponent } from './lib/components/table/table.component';
 import { SelectableViewType } from './lib/enums/selectable-view-type';
 import { MenuComponent } from './lib/components/menu/menu.component';
 import { TagComponent } from './lib/components/tag/tag.component';
 import { SvgComponent } from './lib/components/svg/svg.component';
-import { EmptyStateComponent } from './lib/components/empty-state/empty-state.component';
+import { TableDirective } from './lib/directives/table.directive';
 export * from './lib/reloadly-ui.module';
 
 export * from './lib/components/components.module';
 export {
     SvgComponent,
     TagComponent,
-    CustomerServiceComponent,
-    //TableComponent,
     PaginationComponent,
     SidebarComponent,
     SwitchComponent,
