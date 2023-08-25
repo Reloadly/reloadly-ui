@@ -1,15 +1,23 @@
 {
     "name": "reloadly-ui",
-    "version": "0.0.1-beta.12",
+    "version": "0.0.1-beta.13",
+    "description": "Angular UI library",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Reloadly/reloadly-ui.git"
+    },
     "scripts": {
         "build:dev": "ng build reloadly-ui --configuration=development --watch",
-        "build:scss": "node-sass --include-path scss projects/reloadly-ui/src/styles/styles.scss dist/reloadly-ui/styles/styles.css",
+        "build:scss": "node-sass --include-path scss src/styles/styles.scss dist/reloadly-ui/styles/styles.css",
         "build:prod": "ng build reloadly-ui --configuration=production && npm run build:scss",
         "npm:publish:beta": "cd dist/reloadly-ui && npm publish --tag beta",
         "npm:publish:latest": "cd dist/reloadly-ui && npm publish --tag latest"
     },
-    "private": false,
     "peerDependencies": {
+        "@angular/common": "^16.1.8",
+        "@angular/core": "^16.1.8"
+    },
+    "devDependencies": {
         "@angular/animations": "^16.1.8",
         "@angular/common": "^16.1.8",
         "@angular/compiler": "^16.1.8",
@@ -18,9 +26,7 @@
         "@angular/platform-browser": "^16.1.8",
         "@angular/platform-browser-dynamic": "^16.1.8",
         "@angular/router": "^16.1.8",
-        "zone.js": "~0.13.1"
-    },
-    "devDependencies": {
+        "zone.js": "~0.13.1",
         "@angular-devkit/build-angular": "^16.2.0",
         "@angular/cli": "~16.2.0",
         "@angular/compiler-cli": "^16.2.1",
@@ -35,5 +41,29 @@
         "nodemon": "^3.0.1",
         "tslib": "^2.6.1",
         "typescript": "~5.1.6"
-    }
+    },
+    "keywords": [
+        "angular",
+        "ui",
+        "components",
+        "accordion",
+        "alert",
+        "buttons",
+        "datepicker",
+        "dropdown",
+        "modal",
+        "offcanvas",
+        "pagination",
+        "progressbar",
+        "table",
+        "timepicker"
+    ],
+    "private": false,
+    "sideEffects": false,
+    "license": "MIT",
+    "author": "Reloadly",
+    "bugs": {
+        "url": "https://github.com/Reloadly/reloadly-ui/issues"
+    },
+    "homepage": "https://github.com/Reloadly/reloadly-ui#readme"
 }
