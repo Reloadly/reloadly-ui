@@ -15,4 +15,4 @@ import { CommonModule } from '@angular/common';
     ],
     providers: [],
 })
-export class ReloadlyUiDirectivesModule { }
+export class DirectivesModule { }
