@@ -1,17 +1,24 @@
 @import "../../../styles/variables";
 
-.card {
-    @include drop-shadow;
-    border-radius: 8px;
-    padding: 16px 32px;
+.rld {
+    &-card {
+        @include drop-shadow;
+        border-radius: 8px;
+        padding: 16px 32px;
+        display: flex;
+        flex-direction: column;
 
-    .title {
-        font-size: $font-regular;
-        font-weight: 450;
-        margin-bottom: 4px;
+        header {
+            display: flex;
+            justify-content: space-between;
+            line-height: 1;
+
+            .title {
+                font-size: $font-regular;
+                font-weight: 450;
+                margin-bottom: 4px;
+            }
+        }
     }
-}
 
-.is-flex {
-    display: flex;
 }

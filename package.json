@@ -1,6 +1,6 @@
 {
     "name": "reloadly-ui",
-    "version": "0.0.1-beta.8",
+    "version": "0.0.1-beta.8-incremental-improv",
     "scripts": {
         "build:dev": "ng build reloadly-ui --configuration=development --watch",
         "build:scss": "node-sass --include-path scss projects/reloadly-ui/src/styles/styles.scss dist/reloadly-ui/styles/styles.css",

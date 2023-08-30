@@ -47,6 +47,14 @@ $height: 30px;
 		align-self: center;
 		padding: 5px;
 		font-weight: 450;
+
+        &.min {
+            padding-left: 0;
+        }
+
+        &.max {
+            padding-right: 0;
+        }
 	}
 
 	&.disabled {

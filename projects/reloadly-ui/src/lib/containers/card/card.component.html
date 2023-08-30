@@ -1,7 +1,7 @@
-<div class="card is-flex is-flex-direction-column">
-    <div class="is-flex is-justify-content-space-between">
+<div class="rld-card">
+    <header class="is-flex">
         <h6 class="title">{{title}}</h6>
         <ng-content select="[titleTrailing]"></ng-content>
-    </div>
+    </header>
     <ng-content select="[cardContent]"></ng-content>
 </div>
