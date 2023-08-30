@@ -4,7 +4,7 @@
     @include drop-shadow;
     border-radius: 8px;
     padding: 16px 32px;
-
+    
     .title {
         font-size: $font-regular;
         font-weight: 450;
@@ -14,4 +14,8 @@
 
 .is-flex {
     display: flex;
+}
+
+.is-flex-direction-column {
+    flex-flow: column;
 }
