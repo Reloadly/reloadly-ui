@@ -6,7 +6,7 @@ import { BreadcrumbItemComponent } from '../breadcrumb-item/breadcrumb-item.comp
     templateUrl: './breadcrumbs.component.html',
     styleUrls: ['./breadcrumbs.component.scss']
 })
-export class BreadcrumbsComponent implements AfterContentInit, OnDestroy {
+export class ReloadlyBreadcrumbsComponent implements AfterContentInit, OnDestroy {
     @ContentChildren(BreadcrumbItemComponent) contents!: QueryList<BreadcrumbItemComponent>;
     @ContentChildren(BreadcrumbItemComponent, { read: ViewContainerRef }) contentsRef!: QueryList<ViewContainerRef>;
     private isContentInit = false;

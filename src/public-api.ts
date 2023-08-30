@@ -5,7 +5,6 @@
 //@TODO: please review this file, seems to me that some components are exported multi times. Ex: export * from component.module and then individual components also. Ideally, we would export from modules, component, containers, form..
 import { SelectableItem } from './lib/models/selectable-item';
 import { CardComponent } from './lib/containers/card/card.component';
-import { DateComponent } from './lib/components/date/date.component';
 import { SearchBarComponent } from './lib/form/search-bar/search-bar.component';
 import { MenuDirective } from './lib/components/menu/directives/menu.directive';
 import { OutsideClickDirective } from './lib/directives/outside-click.directive';
@@ -21,7 +20,7 @@ import { FormLabelComponent } from './lib/components/form-group/form-label/form-
 import { FormGroupDirective } from './lib/components/form-group/directives/form-group.directive';
 import { InputGroupDirective } from './lib/components/input-group/directives/input-group.directive';
 import { ReloadlyQuickActionComponent } from './lib/components/quick-action/quick-action.component';
-import { BreadcrumbsComponent } from './lib/components/breadcrumb-group/breadcrumbs/breadcrumbs.component';
+import { ReloadlyBreadcrumbsComponent } from './lib/components/breadcrumb-group/breadcrumbs/breadcrumbs.component';
 import { QuickAction, QuickActionInterface, QuickActionPosition, QuickActionType } from './lib/models/quick-action';
 import { ReloadlyModalOutletComponent } from './lib/components/modal/reloadly-modal-outlet/reloadly-modal-outlet.component';
 import { BreadcrumbItemComponent } from './lib/components/breadcrumb-group/breadcrumb-item/breadcrumb-item.component';
@@ -30,13 +29,12 @@ import { InputLabelComponent } from './lib/components/input-group/input-label/in
 import { SelectionGridComponent } from './lib/containers/selection-grid/selectable-grid.component';
 import { MenuDividerComponent } from './lib/components/menu/menu-divider/menu-divider.component';
 import { MenuSectionComponent } from './lib/components/menu/menu-section/menu-section.component';
-import { EmptyStateComponent } from './lib/components/empty-state/empty-state.component';
 import { TooltipDirective } from './lib/components/tooltip/directive/tooltip.directive';
 import { PaginationComponent } from './lib/components/pagination/pagination.component';
 import { PreloaderComponent } from './lib/components/preloader/preloader.component';
 import { SidebarComponent } from './lib/components/sidebar/sidebar.component';
 import { TooltipComponent } from './lib/components/tooltip/tooltip.component';
-import { StepperComponent } from './lib/containers/stepper/stepper.component';
+import { ReloadlyStepperComponent } from './lib/containers/stepper/stepper.component';
 import { StepComponent } from './lib/containers/stepper/step/step.component';
 import { SwitchComponent } from './lib/components/switch/switch.component';
 import { SelectableViewStyle } from './lib/enums/selectable-view-style';
@@ -62,12 +60,10 @@ export {
     InputGroupDirective,
     InputLabelComponent,
     TableDirective,
-    DateComponent,
     PreloaderComponent,
     DropdownConfig,
-    BreadcrumbsComponent,
-    BreadcrumbItemComponent,
-    EmptyStateComponent
+    ReloadlyBreadcrumbsComponent,
+    BreadcrumbItemComponent
 };
 
 export * from './lib/form/form.module';
@@ -100,7 +96,7 @@ export * from './lib/containers/containers.module';
 export {
     CardComponent,
     SelectionGridComponent,
-    StepperComponent,
+    ReloadlyStepperComponent,
     StepComponent,
 };
 

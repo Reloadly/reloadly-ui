@@ -31,7 +31,7 @@ class AnimationOrb {
     templateUrl: './stepper.component.html',
     styleUrls: ['./stepper.component.scss']
 })
-export class StepperComponent implements AfterContentInit, AfterViewInit, OnDestroy {
+export class ReloadlyStepperComponent implements AfterContentInit, AfterViewInit, OnDestroy {
     private last = 0;
     private _currentIndex = 0;
     private viewResolved = false;
