@@ -28,6 +28,16 @@ $input-shadow: inset 0 0.0625em 0.125em RBG(10 10 10 / .05);
     border-color: darken($color: $input-border-color, $amount: 10);
 }
 
+@mixin disabled-input {
+    background: $reloadly-form-disabled;
+    border: 1px solid $border-color;
+    cursor: not-allowed;
+
+    * {
+        cursor: not-allowed !important;
+    }
+}
+
 form {
     width: 100%;
     padding: $spacing-smaller 0;
@@ -77,13 +87,13 @@ form {
             }
 
             &.disabled {
-                @include disabled;
+                @include disabled_legacy;
 
                 select {
                     background-color: $input-disabled-background-color;
 
                     &:disabled {
-                        @include disabled;
+                        @include disabled_legacy;
                     }
                 }
             }
@@ -144,7 +154,7 @@ form {
     }
 
     &:disabled {
-        @include disabled;
+        @include disabled_legacy();
     }
 
     &:read-only {
@@ -236,6 +246,10 @@ form {
         border: 1px solid $border-color;
         box-shadow: 0px 0px 0px 3px rgba(58, 151, 212, 0.36);
     }
+
+    &:disabled, &[disabled] {
+        @include disabled-input();
+    }
 }
 
 .input-large {
@@ -251,19 +265,13 @@ form {
 }
 
 .disabled-input {
-    background: $reloadly-form-disabled;
-    border: 1px solid $border-color;
+    @include disabled-input();
     border-radius: 4px;
-    cursor: not-allowed;
 
     &:focus {
         border: 1px solid $border-color;
         border-radius: 4px;
         box-shadow: none;
-    }
-
-    * {
-        cursor: not-allowed !important;
     }
 }
 
