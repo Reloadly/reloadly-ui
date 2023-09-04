@@ -102,7 +102,6 @@ export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor 
 
     optionChanged(event: any) {
         this.onTouched();
-        // this.selectedOptionChange.emit(this.selectedOption);
         this.writeValue(event)
         this.onChanged(this.selectedOption?.value);
     }
@@ -110,7 +109,6 @@ export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor 
     selectOption(item: SelectOptionItem) {
         this.onTouched();
         this.toggleDropdown();
-        // this.selectedOptionChange.emit(item);
         this.writeValue(item)
         this.onChanged(item.value);
     }

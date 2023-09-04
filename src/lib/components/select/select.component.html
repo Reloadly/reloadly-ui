@@ -24,8 +24,7 @@
             <input type="search" placeholder="Search" [(ngModel)]="searchQuery" (ngModelChange)="filterList()" />
         </ng-container>
 
-        <ul class="list" [style.height]="dropdownConfig.height"
-            [style.overflow]="dropdownConfig.height == 'auto' ? 'visible' : 'auto'">
+        <ul class="list" [style.height]="dropdownConfig.height">
             <ng-container *ngIf="(filteredList$ | async) as filteredList">
                 <li *ngFor="let item of filteredList" (click)="selectOption(item)">{{item.label}}
                 </li>
