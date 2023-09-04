@@ -1,0 +1,38 @@
+<div class="select-container" [class.disabled]="disabled">
+
+    <div class="select-box" [ngClass]="size" [class.focused]="showDropdown" [class.error-class]="error"
+        (click)="toggleDropdown()">
+        <p>{{selectedOption ? selectedOption.label : placeholder}}</p>
+        <div class="icon">
+            <svg>
+                <use *ngIf="!disabled" xlink:href="#arrow-up-down"></use>
+                <use *ngIf="disabled" xlink:href="#arrow-up-down-disabled"></use>
+            </svg>
+        </div>
+    </div>
+
+    <!-- For input type -->
+    <ng-container *ngIf="type == 'input'">
+        <select [(ngModel)]="selectedOption" (ngModelChange)="optionChanged($event)">
+            <option disabled value="">{{ placeholder}}</option>
+            <option *ngFor="let item of options" [ngValue]="item">{{item.label}}</option>
+        </select>
+    </ng-container>
+
+    <!-- For Dropdown -->
+    <div class="dropdown" *ngIf="type != 'input'" [class.close-dropdown]="!showDropdown">
+        <ng-container *ngIf="dropdownConfig.search">
+            <input type="search" placeholder="Search" [(ngModel)]="searchQuery" (ngModelChange)="filterList()" />
+        </ng-container>
+
+        <ul class="list" [style.height]="dropdownConfig.height">
+            <ng-container *ngIf="(filteredList$ | async) as filteredList">
+                <li *ngFor="let item of filteredList" (click)="selectOption(item)">{{item.label}}
+                </li>
+                <ng-container *ngIf="filteredList.length == 0">
+                    <p class="no-results">{{dropdownConfig.noResultsFound}}</p>
+                </ng-container>
+            </ng-container>
+        </ul>
+    </div>
+</div>
