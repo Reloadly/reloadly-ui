@@ -1,6 +1,6 @@
 @import "../../../styles/variables";
 
-.card {
+.rld-card {
     @include drop-shadow;
     border-radius: 8px;
     padding: 16px 32px;
@@ -10,12 +10,8 @@
         font-weight: 450;
         margin-bottom: 4px;
     }
-}
 
-.is-flex {
-    display: flex;
-}
-
-.is-flex-direction-column {
-    flex-flow: column;
+    .is-flex {
+        display: flex;
+    }
 }
