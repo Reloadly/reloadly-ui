@@ -18,9 +18,7 @@ export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor 
     showDropdown: boolean = false;
     searchQuery: string = '';
     initialValue: string | null = null;
-    private list = new BehaviorSubject<Array<SelectOptionItem>>([]);
     @Input() selectedOption: SelectOptionItem | null = null;
-
     @Input() size: 'small' | 'medium' | 'large' = 'medium';
     @Input() type: 'input' | 'dropdown' = 'input';
     @Input() placeholder: string = 'Choose one';
@@ -32,12 +30,16 @@ export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor 
     @Input() disabled: boolean = false;
     @Output() selectedOptionChange: EventEmitter<SelectOptionItem | null> = new EventEmitter();
 
-    filteredList$ = this.list.pipe(map(options => this.filterMethod(options)));
-
+    public nativeElement: HTMLElement;
     private onTouched: Function = () => { };
     private onChanged: Function = (item: SelectOptionItem | null) => { };
+    private list = new BehaviorSubject<Array<SelectOptionItem>>([]);
 
-    constructor(private eRef: ElementRef) { }
+    filteredList$ = this.list.pipe(map(options => this.filterMethod(options)));
+
+    constructor(private el: ElementRef) {
+        this.nativeElement = el.nativeElement;
+    }
 
     writeValue(item: SelectOptionItem | null): void {
         if (typeof item === 'string') {
@@ -56,13 +58,9 @@ export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor 
         this.onTouched = fn;
     }
 
-    setDisabledState(isDisabled: boolean): void {
-        this.disabled = isDisabled;
-    }
-
     @HostListener('document:click', ['$event'])
     clickout(event: any) {
-        if (!this.eRef.nativeElement.contains(event.target)) {
+        if (!this.el.nativeElement.contains(event.target)) {
             this.showDropdown = false;
         }
     }
@@ -93,11 +91,12 @@ export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor 
         this.list.next(this.options);
     }
 
-    toggleDropdown() {
-        if (this.type == 'input' || this.disabled) return;
-        this.showDropdown = !this.showDropdown;
-        this.searchQuery = '';
-        this.filterList();
+    toggleDropdown(): void {
+        if (this.type != 'input' && !this.disabled) {
+            this.showDropdown = !this.showDropdown;
+            this.searchQuery = '';
+            this.filterList();
+        }
     }
 
     optionChanged(event: any) {
@@ -111,6 +110,10 @@ export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor 
         this.toggleDropdown();
         this.writeValue(item)
         this.onChanged(item.value);
+    }
+
+    clear(): void {
+        this.selectedOption = null;
     }
 
     private filterMethod = (values: SelectOptionItem[]): SelectOptionItem[] => {
