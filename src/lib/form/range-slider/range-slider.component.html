@@ -1,7 +1,14 @@
 <div class="range-slider" [class.disabled]="disabled">
     <p class="min-max" [ngStyle]="{'font-size': fontSize}">{{symbol + min}}</p>
     <div class="rail" #range [ngStyle]="{'minHeight': baseSize + 'px'}">
-        <a class="knob" #knob [ngStyle]="{'width': baseSize + 'px', height: baseSize + 'px'}"></a>
+        <ng-container *ngIf="showLabel">
+            <a class="knob" #knob [ngStyle]="{'width': baseSize + 'px', height: baseSize + 'px'}"
+                [reloadly-tooltip]="formattedValue" [position]="'top-center'"
+                reloadly-tooltip-color="rgb(40,40,40)"></a>
+        </ng-container>
+        <ng-container *ngIf="!showLabel">
+            <a class="knob" #knob [ngStyle]="{'width': baseSize + 'px', height: baseSize + 'px'}"></a>
+        </ng-container>
         <div class="slide" [ngStyle]="{'height': baseSize * .4 + 'px'}"></div>
     </div>
     <p class="min-max" [ngStyle]="{'font-size': fontSize}">{{symbol + max}}</p>
