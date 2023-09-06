@@ -141,7 +141,7 @@ export class TooltipDirective {
     
     private customizeToolTip(element: HTMLElement) {
         // Switch to center position for small items
-        if (element.offsetWidth <= 30) {
+        if (this.elementRef.nativeElement.offsetWidth <= 30) {
             this.position = this.position.includes('top') ? 'top-center' : 'bottom-center';
             this.resetPosition();
         }
