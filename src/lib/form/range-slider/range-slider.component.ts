@@ -27,6 +27,7 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnDestroy {
     @Input() baseSize: number = 30;
     @Input() disabled!: boolean;
     @Input() fontSize: string = '16px';
+    @Input() showLabel: boolean = false;
     @Output() currentValue = new EventEmitter<number>();
     @Output() currentPercentage = new EventEmitter<number>();
 
@@ -38,6 +39,7 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnDestroy {
     private windowListeners = new Array<() => void>;
     private window;
 
+    rawValue: number = 0;
     private value = new Subject<[value: number, percentage: number]>();
     private subs: ReplaySubject<boolean> = new ReplaySubject(1);
 
@@ -66,6 +68,10 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnDestroy {
         ];
     }
 
+    get formattedValue():string {
+        return (this.symbol ? (this.symbol + ' ') : '') + (this.rawValue ?? '');
+    }
+
     ngOnDestroy(): void {
         this.windowListeners.forEach(eventEnder => eventEnder());
         this.knobListeners.forEach(eventEnder => eventEnder());
@@ -85,6 +91,7 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnDestroy {
         const value = Math.round((percentage / 100) * this.max);
         this.value.next([value, percentage]);
         this.renderer.setProperty(this.input.nativeElement, 'value', value);
+        this.rawValue = value;
     }
 
     private enableSlide(event: Event): void {
@@ -112,7 +119,6 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnDestroy {
                 xLength = event.touches[0].pageX - slider.getBoundingClientRect().left; // TODO test on touchscreen devices
             }
 
-            event.preventDefault();
             let percentage = this.clip(Math.round((xLength / slider.offsetWidth) * 100));
 
             this.window?.requestAnimationFrame(() => {
