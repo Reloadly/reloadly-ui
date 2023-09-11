@@ -4,10 +4,17 @@ import { Directive, ElementRef, HostBinding, Input } from '@angular/core';
     selector: '[reloadlyInput]'
 })
 export class InputDirective {
-    @Input() disabled: boolean = false;
     @Input() hasError: boolean = false;
     @Input() size: InputSize = 'medium';
+    @Input() disabled: boolean = false; // @TODO throws a warning when used with Reactive forms
+    @Input() set isDisabled(value: boolean) { // @TODO quick fix
+        this.disabled = value;
+        this.ngOnChanges();
+    };
+    public nativeElement: HTMLInputElement;
+
     constructor(private el: ElementRef) {
+        this.nativeElement = el.nativeElement;
         this.setMainClass();
     }
 
@@ -38,7 +45,6 @@ export class InputDirective {
         this.el.nativeElement.disabled = this.disabled;
         if (this.disabled) {
             this.el.nativeElement.classList.add('disabled-input');
-
             return;
         }
         this.el.nativeElement.classList.remove('disabled-input');
