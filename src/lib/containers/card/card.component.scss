@@ -3,7 +3,11 @@
 .rld-card {
     @include drop-shadow;
     border-radius: 8px;
-    padding: 16px 32px;
+    padding: $spacing-tiny $spacing-smallest;
+
+    @media (min-width: 48em) {
+        padding: $spacing-smallest $spacing-big;
+    }
 
     .title {
         font-size: $font-regular;

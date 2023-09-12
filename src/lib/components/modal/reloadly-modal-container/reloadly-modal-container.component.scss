@@ -20,6 +20,7 @@
         border: 0;
         padding: 0;
         border-radius: $border-radius-l;
+        overflow-x: hidden;
 
         // @TODO test animation on low-end phones
         &-in {
