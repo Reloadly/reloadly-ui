@@ -45,10 +45,6 @@
                 flex-basis: 100%;
                 flex-shrink: 0;
                 transition: transform 500ms ease-out;
-
-                >* {
-                    display: block;
-                }
             }
         }
     }
