@@ -7,7 +7,6 @@ import { SelectableItem } from './lib/models/selectable-item';
 import { CardComponent } from './lib/containers/card/card.component';
 import { SearchBarComponent } from './lib/form/search-bar/search-bar.component';
 import { MenuDirective } from './lib/components/menu/directives/menu.directive';
-import { OutsideClickDirective } from './lib/directives/outside-click.directive';
 import { ButtonDirective } from './lib/components/button/directives/button.directive';
 import { RangeSliderComponent } from './lib/form/range-slider/range-slider.component';
 import { BadgeComponent, BadgeVariant } from './lib/components/badge/badge.component';
@@ -107,7 +106,6 @@ export {
 };
 
 export * from './lib/directives/directives.module';
-export { OutsideClickDirective }
 
 export * from './lib/components/quick-action/quick-action.module';
 export { ReloadlyQuickActionComponent, ReloadlyQuickActionService };
