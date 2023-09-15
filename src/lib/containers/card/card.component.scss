@@ -4,7 +4,7 @@
     @include drop-shadow;
     border-radius: 8px;
     padding: $spacing-tiny $spacing-smallest;
-
+    height: 100%;
     @media (min-width: 48em) {
         padding: $spacing-smallest $spacing-big;
     }

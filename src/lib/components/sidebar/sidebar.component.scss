@@ -64,6 +64,7 @@
     color: $reloadly-black-6;
     padding: 0px $padding-10;
     padding-bottom: $padding-4;
+    white-space: nowrap;
     &:not(:last-of-type) {
       margin-right: 12px;
     }
