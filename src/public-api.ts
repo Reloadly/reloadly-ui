@@ -28,6 +28,7 @@ import { InputLabelComponent } from './lib/components/input-group/input-label/in
 import { SelectionGridComponent } from './lib/containers/selection-grid/selectable-grid.component';
 import { MenuDividerComponent } from './lib/components/menu/menu-divider/menu-divider.component';
 import { MenuSectionComponent } from './lib/components/menu/menu-section/menu-section.component';
+import { ReloadlyAccordionComponent } from './lib/components/accordion/accordion.component';
 import { TooltipDirective } from './lib/components/tooltip/directive/tooltip.directive';
 import { PaginationComponent } from './lib/components/pagination/pagination.component';
 import { PreloaderComponent } from './lib/components/preloader/preloader.component';
@@ -110,3 +111,6 @@ export * from './lib/directives/directives.module';
 export * from './lib/components/quick-action/quick-action.module';
 export { ReloadlyQuickActionComponent, ReloadlyQuickActionService };
 export { QuickAction, QuickActionInterface, QuickActionPosition, QuickActionType };
+
+export * from './lib/components/accordion/accordion.module';
+export { ReloadlyAccordionComponent };
