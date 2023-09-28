@@ -22,9 +22,9 @@ jobs:
               run: npm install
 
             - name: Build
-              run: npm run build:prod
+              run: npm run build:prod && cd dist/reloadly-ui
             
             - name: Publish to npm
-              run: cd dist/reloadly-ui && npm publish --tag beta
+              run: npm publish --tag beta
               env:
                 NODE_AUTH_TOKEN: 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 
