@@ -1,0 +1,30 @@
+name: Build and Publish NPM Package - Beta
+
+on:
+    push:
+        branches:
+            - feature/ci-cd-implementation
+
+jobs:
+    build-and-publish:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v3
+              with:
+                node-version: 16
+                registry-url: https://registry.npmjs.org/
+
+            - name: Install dependencies
+              run: npm install
+
+            - name: Build
+              run: npm run build:prod
+            
+            - name: Publish to npm
+              run: cd dist/reloadly-ui && npm publish --tag beta
+              env:
+                NODE_AUTH_TOKEN: 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 
