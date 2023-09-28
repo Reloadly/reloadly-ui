@@ -3,7 +3,7 @@ name: Build and Publish NPM Package - Beta
 on:
     push:
         branches:
-            - feature/ci-cd-implementation
+            - develop
 
 jobs:
     build-and-publish:
