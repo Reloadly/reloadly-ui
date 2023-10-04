@@ -1,4 +1,4 @@
-name: Build and Publish NPM Package - Beta
+name: Build and Publish NPM Package
 
 on:
     push:
@@ -15,16 +15,16 @@ jobs:
             - name: Set up Node.js
               uses: actions/setup-node@v3
               with:
-                node-version: 16
-                registry-url: https://registry.npmjs.org/
+                  node-version: 16
+                  registry-url: https://registry.npmjs.org/
 
             - name: Install dependencies
               run: npm install
 
             - name: Build
-              run: npm ci && npm run build:prod && cd dist/reloadly-ui
-            
-            - name: Publish to npm
-              run: npm publish --tag beta
+              run: npm ci && npm run build:prod
+
+            - name: Publish to npm (beta version)
+              run: npm run npm:publish:beta
               env:
-                NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+                  NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
