@@ -3,7 +3,7 @@
     <div class="buttons">
         <button [disabled]="page===1" (click)="prev()" reloadly-button class="mr-4" size="xs" color="white"
             [rounded]="false" variant="filled">
-            Previous
+            {{prevLabel}}
         </button>
 
         <ng-container *ngFor="let pg of getPageList(pages.length, page, 7)" class="mr-2 ml-2">
@@ -14,7 +14,7 @@
 
         <button [disabled]="page===pages.length" (click)="next()" reloadly-button class="mr-4" size="xs" color="white"
             [rounded]="false" variant="filled">
-            Next
+            {{nextLabel}}
         </button>
     </div>
 </div>
