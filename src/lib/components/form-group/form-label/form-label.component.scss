@@ -4,19 +4,19 @@ $bottom-margin: 5px;
 
 .heading-text {
     display: block;
-    font-size: $font-medium;
+    font-size: $font-size-s;
     font-weight: 450;
     line-height: 20px;
     letter-spacing: -0.154px;
-    color: $reloadly-black-8;
+    color: $reloadly-black-1;
     margin-bottom: $bottom-margin;
 }
 
 .subheading-text {
     display: block;
     font-weight: 400;
-    font-size: $font-small;
+    font-size: $font-size-xs;
     line-height: 16px;
-    color: $reloadly-black-8;
+    color: $reloadly-black-1;
     margin-bottom: $bottom-margin;
 }

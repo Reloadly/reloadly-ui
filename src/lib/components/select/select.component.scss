@@ -12,7 +12,7 @@
     }
     &.disabled {
         .select-box {
-            background: #F6F8FA;
+            background: $reloadly-ash;
             cursor: not-allowed;
             &:after {
                 width: 100%;
@@ -26,7 +26,7 @@
                 background: transparent;
             }
             p {
-                color: $reloadly-black-13;
+                color: $reloadly-grey;
             }
         }
     }
@@ -49,10 +49,10 @@
         p {
             min-width: 0;
             flex-grow: 1;
-            font-size: $font-medium;
+            font-size: $font-size-s;
             line-height: 20px;
             letter-spacing: -0.154px;
-            color: $reloadly-black-8;
+            color: $reloadly-black-1;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -119,7 +119,7 @@
             padding: 8px;
             outline: none;
             font-weight: 400;
-            font-size: $font-medium;
+            font-size: $font-size-s;
             line-height: 20px;
             margin-bottom: 16px;
         }
@@ -131,7 +131,7 @@
             li {
                 width: 100%;
                 font-weight: 450;
-                font-size: $font-medium;
+                font-size: $font-size-s;
                 line-height: 20px;
                 padding: 8px 0;
                 border-bottom: 1px solid $border-color;
@@ -146,7 +146,7 @@
                 text-align: center;
                 padding: 8px;
                 font-weight: 450;
-                font-size: $font-medium;
+                font-size: $font-size-s;
                 line-height: 20px;
             }
         }

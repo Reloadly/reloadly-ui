@@ -9,9 +9,9 @@
         align-items: center;
     }
     p {
-        font-size: $font-medium;
+        font-size: $font-size-s;
         line-height: 20px;
-        color: $reloadly-black-10;
+        color: $reloadly-black-2;
     }
     .buttons {
         flex-wrap: nowrap !important;
@@ -27,5 +27,5 @@
 }
 .active {
     background-color: $reloadly-violet !important;
-    color: #fff !important;
+    color: $reloadly-white !important;
 }
