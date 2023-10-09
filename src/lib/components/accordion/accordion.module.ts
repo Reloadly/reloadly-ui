@@ -8,4 +8,4 @@ import { ReloadlyAccordionComponent } from './accordion.component';
     declarations: [ReloadlyAccordionComponent],
     providers: [],
 })
-export class AccordionModule { }
+export class ReloadlyAccordionModule { }
