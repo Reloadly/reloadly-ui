@@ -3,6 +3,10 @@
     padding: 4px;
     overflow-y: hidden;
 
+    .toggler:not(:empty) + .chevron {
+        display: none;
+    }
+
     &.disabled {
         pointer-events: none;
 
