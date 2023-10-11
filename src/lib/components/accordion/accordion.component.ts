@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ReloadlyAccordionComponent {
     @Input() title?: string;
     @Input() disabled: boolean = false;
+    @Input() width: string = '176px'
     @Output() onToggle: EventEmitter<boolean> = new EventEmitter();
 
 
