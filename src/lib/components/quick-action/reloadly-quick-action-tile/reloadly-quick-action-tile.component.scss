@@ -13,10 +13,10 @@
     min-height: 60px;
     border: 1px solid rgba(213, 219, 225, 1);
     border-radius: 4px;
-    margin: 4px 0px;
+    margin: $spacing-4 0px;
     padding: 16px;
     position: relative;
-    background-color: #fff;
+    background-color: $reloadly-white;
     display: flex;
     align-items: center;
     pointer-events: all;
@@ -59,7 +59,7 @@
     }
 
     .message {
-        color: $reloadly-black-10;
+        color: $reloadly-black-2;
         font-size: 14px;
         line-height: 20px;
         max-width: 320px;
@@ -86,7 +86,7 @@
     h6 {
         font-size: 14px;
         font-weight: 450;
-        color: #30313D;
+        color: $text-color-2;
         margin-bottom: 0;
     }
 
@@ -100,7 +100,7 @@
         font-weight: 450;
         font-size: 14px;
         height: 28px;
-        margin: 0px 24px;
+        margin: 0px $spacing-24;
         align-self: flex-start;
     }
 

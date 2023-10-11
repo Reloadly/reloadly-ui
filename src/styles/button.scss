@@ -552,13 +552,13 @@
 
     &.lg {
         padding: 10px 20px;
-        font-size: $font-regular;
+        font-size: $font-size-rg;
         font-weight: 450;
     }
 
     &.xl {
         padding: 12px 24px;
-        font-size: $font-regular;
+        font-size: $font-size-rg;
         font-weight: 450;
     }
 
@@ -586,7 +586,7 @@
 
 .menu-item {
     color: #393c40;
-    font-size: $font-medium;
+    font-size: $font-size-s;
     font-weight: 450;
     line-height: 20px;
     display: flex;
