@@ -26,22 +26,22 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: white;
+        background-color: $reloadly-white;
         border: 2px solid $reloadly-black;
         border-radius: 4px;
         font-weight: 450;
         font-size: 16px;
-        color: #50565b;
+        color: $reloadly-black-3;
         transition: all ease-in-out 300ms;
         cursor: pointer;
         box-sizing: border-box;
         @media screen and (max-width: 768px) {
             min-width: 85px;
             min-height: 44px;
-            padding: $padding-8 $padding-16;
+            padding: $spacing-8 $spacing-16;
         }
         @media screen and (max-width: 575px) {
-            padding: $padding-4 $padding-8;
+            padding: $spacing-4 $spacing-8;
         }
         &:hover {
             background-color: $reloadly-violet-5;
@@ -49,7 +49,7 @@
         }
         &.selected {
             background-color: $reloadly-black;
-            color: #ffffff;
+            color: $reloadly-white;
             transition: all ease-in-out 300ms;
         }
     }

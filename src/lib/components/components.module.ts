@@ -16,6 +16,7 @@ import { InputGroupDirective } from './input-group/directives/input-group.direct
 import { FormGroupDirective } from './form-group/directives/form-group.directive';
 import { FormLabelComponent } from './form-group/form-label/form-label.component';
 import { InputDirective } from './input-group/directives/input.directive';
+import { ReloadlyAccordionModule } from './accordion/accordion.module';
 import { PreloaderComponent } from './preloader/preloader.component';
 import { ReloadlyModalModule } from './modal/reloadly-modal.module';
 import { TooltipModule } from './tooltip/tooltip.module';
@@ -45,6 +46,7 @@ import { MenuModule } from './menu/menu.module';
         RouterModule,
         FormsModule,
         ReloadlyModalModule,
+        ReloadlyAccordionModule,
         ButtonModule,
         BadgeModule,
         MenuModule,
@@ -69,6 +71,7 @@ import { MenuModule } from './menu/menu.module';
         MenuModule,
         TooltipModule,
         ReloadlyBreadcrumbsComponent,
+        ReloadlyAccordionModule,
         BreadcrumbItemComponent,
         ReloadlyModalOutletComponent
     ]

@@ -38,7 +38,7 @@ $height: 30px;
         max-width: 120px;
         flex-basis: 20%;
         flex-shrink: 1;
-        margin-left: $spacing-smallest;
+        margin-left: $spacing-8;
     }
 
     .min-max {
@@ -68,7 +68,7 @@ $height: 30px;
         }
 
         .input {
-            background-color: $input-disabled-background-color;
+            background-color: $reloadly-disabled-color;
             border: 0;
             box-shadow: none;
             cursor: not-allowed;
