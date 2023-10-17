@@ -17,11 +17,11 @@
         background: transparent;
         flex-grow: 1;
         font-weight: 450;
-        font-size: $font-medium;
-        color: $reloadly-black-8;
+        font-size: $font-size-s;
+        color: $reloadly-black-1;
         outline: none;
         &::placeholder {
-            color: $reloadly-black-8;
+            color: $reloadly-black-1;
         }
     }
     .icon {

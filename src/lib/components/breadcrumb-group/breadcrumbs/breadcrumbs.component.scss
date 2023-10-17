@@ -4,17 +4,17 @@
     width: 100%;
     display: flex;
     flex-flow: row wrap;
-    margin-bottom: $spacing-small;
+    margin-bottom: $spacing-16;
     ::ng-deep {
         reloadly-breadcrumb-item {
             display: flex;
             align-items: center;
             &:not(:last-of-type) {
-                margin-right: $margin-10;
+                margin-right: $spacing-10;
                 &:after {
                     content: '>';
-                    margin-left: $margin-10;
-                    color: $reloadly-black-11;
+                    margin-left: $spacing-10;
+                    color: $reloadly-black-2;
                 }
             }
         }

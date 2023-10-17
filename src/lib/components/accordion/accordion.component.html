@@ -1,11 +1,21 @@
-<div class="accordion" [class.open]="isOpen" [class.disabled]="disabled">
+<div class="accordion" [class.open]="isOpen" [class.disabled]="disabled" [style]="{width: width}">
     <div class="accordion-header" (click)="toggle()">
         <h6>{{title}}</h6>
-        <svg *ngIf="type == 'error'">
-            <use xlink:href="#chevron-down"></use>
-        </svg>
+        <div class="toggler-wrapper">
+            <div class="toggler">
+                <ng-content select="[toggler]"></ng-content>
+            </div>
+            <div class="toggle-icon">
+                <span class="chevron">
+
+                </span>
+            </div>
+        </div>
+
     </div>
     <div class="accordion-body">
-        <ng-content></ng-content>
+        <div class="content">
+            <ng-content></ng-content>
+        </div>
     </div>
 </div>
