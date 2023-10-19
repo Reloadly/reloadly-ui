@@ -120,7 +120,7 @@ export class CheckboxComponent implements OnInit, AfterViewInit, OnDestroy {
     ngOnInit(): void {
         if (!this.control) {
             this.state.isChecked
-                .pipe(skip(1), takeUntil(this.subs))
+                .pipe(takeUntil(this.subs))
                 .subscribe(status => {
                     if (!(status?.metadata && status.metadata?.noEmit)) {
                         this.change.emit({
@@ -138,7 +138,6 @@ export class CheckboxComponent implements OnInit, AfterViewInit, OnDestroy {
                             (this.control as FormControl).setValue(checked.value, { emitEvent: false });
                         else (this.control as FormControl).setValue(checked.value);
                     }),
-                    skip(1),
                     takeUntil(this.subs)
                 ).subscribe(() => {
                     this.change.emit('Use FormControl.value or FormControl.valueChanges instead, since you supplied a FormControl in [control]')
