@@ -83,7 +83,7 @@ export class CheckboxComponent implements OnInit, AfterViewInit, OnDestroy {
     @Input() label: string = '';
     @Input() control!: FormControl | null;
     @Input() set disabled(value: boolean) { this.state.disabled.next(value) };
-    @Input() set checked(value: boolean) { this.state.isChecked.next({ value }) };
+    @Input() set checked(value: boolean) { this.setIsCheckedNoEmit(value) };
     @Output() change: EventEmitter<CheckBoxValue | string> = new EventEmitter();
 
     @ViewChild('checkBox') checkBox!: ElementRef;
@@ -112,7 +112,6 @@ export class CheckboxComponent implements OnInit, AfterViewInit, OnDestroy {
         isChecked: new BehaviorSubject<{ value: boolean, metadata?: any }>({ value: false, metadata: null }),
         disabled: new BehaviorSubject(false),
     };
-    private get _isChecked$(): BehaviorSubject<{ value: boolean, metadata?: any }> { return this.state.isChecked }
     private listeners = new Array<() => void>;
     private subs: ReplaySubject<boolean> = new ReplaySubject(1);
 
@@ -120,17 +119,19 @@ export class CheckboxComponent implements OnInit, AfterViewInit, OnDestroy {
 
     ngOnInit(): void {
         if (!this.control) {
-            this.isChecked$
+            this.state.isChecked
                 .pipe(skip(1), takeUntil(this.subs))
-                .subscribe(checked => {
-                    this.change.emit({
-                        name: this.name,
-                        isChecked: checked,
-                        label: this.label
-                    })
+                .subscribe(status => {
+                    if (!(status?.metadata && status.metadata?.noEmit)) {
+                        this.change.emit({
+                            name: this.name,
+                            isChecked: status.value,
+                            label: this.label
+                        })
+                    }
                 });
         } else {
-            this._isChecked$
+            this.state.isChecked
                 .pipe(
                     tap(checked => {
                         if (checked?.metadata && checked.metadata?.noEmit)
