@@ -80,9 +80,10 @@
 				stroke-width: 3;
 				stroke: $reloadly-white;
 				stroke-miterlimit: 10;
-				transform: scale(1.6);
+                color: transparent;
 
 				&__checked {
+                    fill: none;
 					transform-origin: 50% 50%;
 					stroke-dasharray: 48;
 					stroke-dashoffset: 48;

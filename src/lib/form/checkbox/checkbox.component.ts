@@ -82,8 +82,8 @@ export class CheckboxComponent implements OnInit, AfterViewInit, OnDestroy {
     @Input() name: string = '';
     @Input() label: string = '';
     @Input() control!: FormControl | null;
-    @Input() set checked(value: boolean) { this.state.isChecked.next({ value }) };
     @Input() set disabled(value: boolean) { this.state.disabled.next(value) };
+    @Input() set checked(value: boolean) { this.state.isChecked.next({ value }) };
     @Output() change: EventEmitter<CheckBoxValue | string> = new EventEmitter();
 
     @ViewChild('checkBox') checkBox!: ElementRef;
@@ -221,17 +221,13 @@ export class CheckboxComponent implements OnInit, AfterViewInit, OnDestroy {
 
     private listenForFocused(): void {
         this.listeners.concat([
-            // @TODO test on mobile devices
-            this.renderer.listen(this.checkBox.nativeElement, 'mousedown', this.onFocused),
-            this.renderer.listen(this.checkBox.nativeElement, 'touchstart', this.onFocused)
+            this.renderer.listen(this.checkBox.nativeElement, 'mousedown', this.onFocused)
         ]);
     }
 
     private listenForPressed(): void {
         this.listeners.concat([
-            this.renderer.listen(this.checkBox.nativeElement, 'mouseup', this.onPressed),
-            // @TODO test on mobile devices
-            // this.renderer.listen(this.checkBox.nativeElement, 'touchend', this.onPressed
+            this.renderer.listen(this.checkBox.nativeElement, 'mouseup', this.onPressed)
         ]);
     }
 
