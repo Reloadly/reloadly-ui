@@ -1,6 +1,6 @@
 import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
 import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
-import { BehaviorSubject, ReplaySubject, map, skip, takeUntil, tap } from 'rxjs';
+import { BehaviorSubject, ReplaySubject, map, filter, takeUntil, tap, take, skip } from 'rxjs';
 import { FormControl } from '@angular/forms';
 
 export interface CheckBoxValue {
@@ -79,12 +79,15 @@ type FillColoring = 'color' | 'fade' | 'transparent';
     ]
 })
 export class CheckboxComponent implements OnInit, AfterViewInit, OnDestroy {
+    @Output() change: EventEmitter<CheckBoxValue | string> = new EventEmitter();
     @Input() name: string = '';
     @Input() label: string = '';
     @Input() control!: FormControl | null;
     @Input() set disabled(value: boolean) { this.state.disabled.next(value) };
-    @Input() set checked(value: boolean) { this.setIsCheckedNoEmit(value) };
-    @Output() change: EventEmitter<CheckBoxValue | string> = new EventEmitter();
+    @Input() set checked(value: boolean) {
+        if (this.hasViewInit.getValue()) this.setIsCheckedNoEmit(value);
+        else this.hasViewInit.pipe(filter(v => v == true), take(1)).subscribe(() => this.setIsCheckedNoEmit(value));
+    };
 
     @ViewChild('checkBox') checkBox!: ElementRef;
     @ViewChild('disc') disc!: ElementRef;
@@ -114,13 +117,14 @@ export class CheckboxComponent implements OnInit, AfterViewInit, OnDestroy {
     };
     private listeners = new Array<() => void>;
     private subs: ReplaySubject<boolean> = new ReplaySubject(1);
+    private hasViewInit: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
     constructor(private renderer: Renderer2) { }
 
     ngOnInit(): void {
         if (!this.control) {
             this.state.isChecked
-                .pipe(takeUntil(this.subs))
+                .pipe(skip(1), takeUntil(this.subs))
                 .subscribe(status => {
                     if (!(status?.metadata && status.metadata?.noEmit)) {
                         this.change.emit({
@@ -138,6 +142,7 @@ export class CheckboxComponent implements OnInit, AfterViewInit, OnDestroy {
                             (this.control as FormControl).setValue(checked.value, { emitEvent: false });
                         else (this.control as FormControl).setValue(checked.value);
                     }),
+                    skip(1),
                     takeUntil(this.subs)
                 ).subscribe(() => {
                     this.change.emit('Use FormControl.value or FormControl.valueChanges instead, since you supplied a FormControl in [control]')
@@ -150,6 +155,7 @@ export class CheckboxComponent implements OnInit, AfterViewInit, OnDestroy {
         this.listenForHovered();
         this.listenForFocused();
         this.listenForPressed();
+        this.hasViewInit.next(true);
     }
 
     public get borderColoring(): BorderColoring | null {
