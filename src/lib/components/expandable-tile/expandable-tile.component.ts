@@ -10,8 +10,6 @@ export class ReloadlyExpandableTileComponent {
     @Input() disabled: boolean = false;
     @Input() width: string = '176px'
     @Output() onToggle: EventEmitter<boolean> = new EventEmitter();
-
-
     isOpen: boolean = false;
 
     toggle() {

@@ -1,16 +1,15 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReloadlyExpandableTileComponent } from './expandable-tile.component';
 
-import { ExpandableTileComponent } from './expandable-tile.component';
-
-describe('ExpandableTileComponent', () => {
-  let component: ExpandableTileComponent;
-  let fixture: ComponentFixture<ExpandableTileComponent>;
+describe('ReloadlyExpandableTileComponent', () => {
+  let component: ReloadlyExpandableTileComponent;
+  let fixture: ComponentFixture<ReloadlyExpandableTileComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ExpandableTileComponent]
+      declarations: [ReloadlyExpandableTileComponent]
     });
-    fixture = TestBed.createComponent(ExpandableTileComponent);
+    fixture = TestBed.createComponent(ReloadlyExpandableTileComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

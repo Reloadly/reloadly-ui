@@ -49,8 +49,6 @@
             left: 4px;
             top: 2px
         }
-
-
     }
 
     &.open {
@@ -58,7 +56,6 @@
             transform: rotate(180deg);
             transform-origin: center center;
             transition: 300ms all ease-in-out;
-
         }
 
         .expandable-tile-body {
@@ -80,7 +77,6 @@
 
     .expandable-tile-header {
         display: flex;
-
         padding: 4px;
         justify-content: space-between;
         align-items: center;
