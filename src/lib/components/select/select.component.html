@@ -3,10 +3,9 @@
     <div class="select-box" [ngClass]="size" [class.focused]="showDropdown" [class.error-class]="error"
         (click)="toggleDropdown()">
         <p>{{selectedOption ? selectedOption.label : placeholder}}</p>
-        <div class="icon">
-            <svg>
+        <div class="select-box_icon">
+            <svg [class.icon-disabled]="disabled">
                 <use *ngIf="!disabled" xlink:href="#arrow-up-down"></use>
-                <use *ngIf="disabled" xlink:href="#arrow-up-down-disabled"></use>
             </svg>
         </div>
     </div>

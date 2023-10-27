@@ -1,6 +1,6 @@
 import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
 import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
-import { BehaviorSubject, ReplaySubject, map, skip, takeUntil, tap } from 'rxjs';
+import { BehaviorSubject, ReplaySubject, map, filter, takeUntil, tap, take, skip } from 'rxjs';
 import { FormControl } from '@angular/forms';
 
 export interface CheckBoxValue {
@@ -79,12 +79,15 @@ type FillColoring = 'color' | 'fade' | 'transparent';
     ]
 })
 export class CheckboxComponent implements OnInit, AfterViewInit, OnDestroy {
+    @Output() change: EventEmitter<CheckBoxValue | string> = new EventEmitter();
     @Input() name: string = '';
     @Input() label: string = '';
     @Input() control!: FormControl | null;
-    @Input() set checked(value: boolean) { this.state.isChecked.next({ value }) };
     @Input() set disabled(value: boolean) { this.state.disabled.next(value) };
-    @Output() change: EventEmitter<CheckBoxValue | string> = new EventEmitter();
+    @Input() set checked(value: boolean) {
+        if (this.hasViewInit.getValue()) this.setIsCheckedNoEmit(value);
+        else this.hasViewInit.pipe(filter(v => v == true), take(1)).subscribe(() => this.setIsCheckedNoEmit(value));
+    };
 
     @ViewChild('checkBox') checkBox!: ElementRef;
     @ViewChild('disc') disc!: ElementRef;
@@ -112,25 +115,27 @@ export class CheckboxComponent implements OnInit, AfterViewInit, OnDestroy {
         isChecked: new BehaviorSubject<{ value: boolean, metadata?: any }>({ value: false, metadata: null }),
         disabled: new BehaviorSubject(false),
     };
-    private get _isChecked$(): BehaviorSubject<{ value: boolean, metadata?: any }> { return this.state.isChecked }
     private listeners = new Array<() => void>;
     private subs: ReplaySubject<boolean> = new ReplaySubject(1);
+    private hasViewInit: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
     constructor(private renderer: Renderer2) { }
 
     ngOnInit(): void {
         if (!this.control) {
-            this.isChecked$
+            this.state.isChecked
                 .pipe(skip(1), takeUntil(this.subs))
-                .subscribe(checked => {
-                    this.change.emit({
-                        name: this.name,
-                        isChecked: checked,
-                        label: this.label
-                    })
+                .subscribe(status => {
+                    if (!(status?.metadata && status.metadata?.noEmit)) {
+                        this.change.emit({
+                            name: this.name,
+                            isChecked: status.value,
+                            label: this.label
+                        })
+                    }
                 });
         } else {
-            this._isChecked$
+            this.state.isChecked
                 .pipe(
                     tap(checked => {
                         if (checked?.metadata && checked.metadata?.noEmit)
@@ -150,6 +155,7 @@ export class CheckboxComponent implements OnInit, AfterViewInit, OnDestroy {
         this.listenForHovered();
         this.listenForFocused();
         this.listenForPressed();
+        this.hasViewInit.next(true);
     }
 
     public get borderColoring(): BorderColoring | null {
@@ -221,17 +227,13 @@ export class CheckboxComponent implements OnInit, AfterViewInit, OnDestroy {
 
     private listenForFocused(): void {
         this.listeners.concat([
-            // @TODO test on mobile devices
-            this.renderer.listen(this.checkBox.nativeElement, 'mousedown', this.onFocused),
-            this.renderer.listen(this.checkBox.nativeElement, 'touchstart', this.onFocused)
+            this.renderer.listen(this.checkBox.nativeElement, 'mousedown', this.onFocused)
         ]);
     }
 
     private listenForPressed(): void {
         this.listeners.concat([
-            this.renderer.listen(this.checkBox.nativeElement, 'mouseup', this.onPressed),
-            // @TODO test on mobile devices
-            // this.renderer.listen(this.checkBox.nativeElement, 'touchend', this.onPressed
+            this.renderer.listen(this.checkBox.nativeElement, 'mouseup', this.onPressed)
         ]);
     }
 
