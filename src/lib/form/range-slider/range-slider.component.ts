@@ -28,7 +28,8 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnDestroy {
     @Input() disabled!: boolean;
     @Input() fontSize: string = '16px';
     @Input() showLabel: boolean = false;
-    @Output() currentValue = new EventEmitter<number>();
+    @Input() set currentValue(value: number) { this.setCurrentValue(value) };
+    @Output() currentValueChange = new EventEmitter<number>();
     @Output() currentPercentage = new EventEmitter<number>();
 
     @ViewChild('range') range!: ElementRef;
@@ -50,7 +51,7 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnDestroy {
     ngOnInit(): void {
         this.value.pipe(takeUntil(this.subs))
             .subscribe(currentValue => {
-                this.currentValue.emit(currentValue[0]);
+                this.currentValueChange.emit(currentValue[0]);
                 this.currentPercentage.emit(currentValue[1]);
             });
     }
@@ -68,7 +69,7 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnDestroy {
         ];
     }
 
-    get formattedValue():string {
+    get formattedValue(): string {
         return (this.symbol ? (this.symbol + ' ') : '') + (this.rawValue ?? '');
     }
 
@@ -80,7 +81,10 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     public inputChanged(event: Event): void {
-        const value = parseInt((event.target as HTMLInputElement).value) || 0;
+        this.setCurrentValue(parseInt((event.target as HTMLInputElement).value) || 0);
+    }
+
+    private setCurrentValue(value: number): void {
         const difference = this.max - this.min;
         const percentage = Math.round((value / difference) * 100);
         this.value.next([value, percentage]);
