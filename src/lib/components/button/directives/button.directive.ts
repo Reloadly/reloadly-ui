@@ -44,6 +44,6 @@ export class ButtonDirective {
 
 type ButtonVariant = "filled" | "outlined" | "text" | "elevated" | "tonal"
 type ButtonColor = "primary" | "secondary" | "white" | "danger"
-type ButtonSize = "xs" | "sm" | "lg" | "xl"
+type ButtonSize = "xs" | "sm" | "md" | "lg" | "xl"
 
 

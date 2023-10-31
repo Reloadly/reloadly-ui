@@ -35,6 +35,7 @@
                 border: 1px solid $reloadly-table-border-color;
                 color: $reloadly-table-body-color;
                 vertical-align: middle !important;
+                text-wrap: nowrap;
             }
         }
     }
