@@ -1,5 +1,5 @@
 <div class="range-slider" [class.disabled]="disabled">
-    <p class="min-max min" [ngStyle]="{'font-size': fontSize}">{{symbol + min}}</p>
+    <p class="min-max min" [ngStyle]="{'font-size': fontSize}">{{formattedMin}}</p>
     <div class="rail" #range [ngStyle]="{'minHeight': baseSize + 'px'}">
         <ng-container *ngIf="showLabel">
             <a class="knob" #knob [ngStyle]="{'width': baseSize + 'px', height: baseSize + 'px'}"
@@ -11,7 +11,7 @@
         </ng-container>
         <div class="slide" [ngStyle]="{'height': baseSize * .4 + 'px'}"></div>
     </div>
-    <p class="min-max max" [ngStyle]="{'font-size': fontSize}">{{symbol + max}}</p>
+    <p class="min-max max" [ngStyle]="{'font-size': fontSize}">{{formattedMax}}</p>
     <input [ngStyle]="{'display': showInput ? 'flex': 'none'}" #input type="number" [min]="min" [max]="max"
         class="input" (input)="inputChanged($event)" [disabled]="disabled">
 </div>
