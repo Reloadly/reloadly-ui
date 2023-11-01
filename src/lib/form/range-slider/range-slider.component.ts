@@ -75,6 +75,7 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnChanges, O
 
         this.knobListeners = [
             this.renderer.listen(this.knob.nativeElement, 'mousedown', event => this.enableSlide(event)),
+            // @TODO
             // this.renderer.listen(this.knob.nativeElement, 'touchstart', event => this.enableSlide(event)),
         ];
     }
@@ -137,6 +138,7 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnChanges, O
             // we want the user to be able to slide, even if his finger is outside the slider
             // and that's why we used window
             this.renderer.listen(this.window, 'mousemove', event => this.adjustSlider(event)),
+            // @TODO
             // this.renderer.listen(this.window, 'touchmove', event => this.adjustSlider(event))
         ]
     }
