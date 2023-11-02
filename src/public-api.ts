@@ -22,8 +22,11 @@ import { ReloadlyQuickActionComponent } from './lib/components/quick-action/quic
 import { ReloadlyBreadcrumbsComponent } from './lib/components/breadcrumb-group/breadcrumbs/breadcrumbs.component';
 import { QuickAction, QuickActionInterface, QuickActionPosition, QuickActionType } from './lib/models/quick-action';
 import { ReloadlyModalOutletComponent } from './lib/components/modal/reloadly-modal-outlet/reloadly-modal-outlet.component';
+import { ReloadlyAccordionItemContent } from './lib/components/accordion/directives/accordion-item-content.directive';
 import { BreadcrumbItemComponent } from './lib/components/breadcrumb-group/breadcrumb-item/breadcrumb-item.component';
+import { ReloadlyExpandableTileComponent } from './lib/components/expandable-tile/expandable-tile.component';
 import { DropdownConfig, SelectComponent, SelectOptionItem } from './lib/components/select/select.component';
+import { ReloadlyAccordionItem } from './lib/components/accordion/directives/accordion-item.directive';
 import { InputLabelComponent } from './lib/components/input-group/input-label/input-label.component';
 import { SelectionGridComponent } from './lib/containers/selection-grid/selectable-grid.component';
 import { MenuDividerComponent } from './lib/components/menu/menu-divider/menu-divider.component';
@@ -113,4 +116,13 @@ export { ReloadlyQuickActionComponent, ReloadlyQuickActionService };
 export { QuickAction, QuickActionInterface, QuickActionPosition, QuickActionType };
 
 export * from './lib/components/accordion/accordion.module';
-export { ReloadlyAccordionComponent };
+export {
+    ReloadlyAccordionComponent,
+    ReloadlyAccordionItem,
+    ReloadlyAccordionItemContent
+};
+
+export * from './lib/components/expandable-tile/expandable-tile.module'
+export {
+    ReloadlyExpandableTileComponent
+}

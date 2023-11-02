@@ -1,61 +1,4 @@
-.toggle-icon {
-    transition: 300ms all ease-in-out;
-    transform-origin: center center;
-    height: 24px;
-    width: 24px;
-
-    .chevron {
-        box-sizing: border-box;
-        position: relative;
-        display: block;
-        transform: scale(var(--ggs, 1));
-        width: 22px;
-        height: 22px;
-        border: 2px solid transparent;
-        border-radius: 100px
-    }
-
-    .chevron::after {
-        content: "";
-        display: block;
-        box-sizing: border-box;
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-bottom: 2px solid;
-        border-right: 2px solid;
-        transform: rotate(45deg);
-        left: 4px;
-        top: 2px
-    }
-
-}
-
-.accordion-header {
-    display: flex;
-
-    padding: 4px;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 4px;
-    cursor: pointer;
-
-    h6 {
-        margin: 4px 0px;
-    }
-
-    &:hover {
-        background: var(--palette-neutral-neutral-90, #E0E3E8);
-    }
-
-    h6 {
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 450;
-    }
-}
-
-.accordion-item {
+.expandable-tile {
     display: block;
     padding: 4px;
     overflow-y: hidden;
@@ -71,7 +14,7 @@
     &.disabled {
         pointer-events: none;
 
-        .accordion-header {
+        .expandable-tile-header {
             background: none !important;
         }
     }
@@ -106,8 +49,6 @@
             left: 4px;
             top: 2px
         }
-
-
     }
 
     &.open {
@@ -115,12 +56,18 @@
             transform: rotate(180deg);
             transform-origin: center center;
             transition: 300ms all ease-in-out;
-
         }
 
-        .accordion-content {
-            padding: 4px;
+        .expandable-tile-body {
+            padding: 4px 0px;
+            margin: 1px 0px;
+            opacity: 1;
+            height: auto !important;
             font-size: 14px;
+            transition: font-size .25s,
+                margin .25s,
+                padding .25s,
+                opacity .5s .25s;
 
             .content {
                 padding: 4px;
@@ -128,9 +75,8 @@
         }
     }
 
-    .accordion-header {
+    .expandable-tile-header {
         display: flex;
-
         padding: 4px;
         justify-content: space-between;
         align-items: center;
@@ -152,4 +98,15 @@
         }
     }
 
+    .expandable-tile-body {
+        width: inherit;
+        font-size: 0;
+        margin: 0;
+        opacity: 0;
+        padding: 0;
+        transition: opacity .25s,
+            font-size .5s .25s,
+            margin .5s .25s,
+            padding .5s .25s;
+    }
 }
