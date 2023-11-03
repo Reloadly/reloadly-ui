@@ -10,7 +10,8 @@ import { CommonModule } from '@angular/common';
 @NgModule({
     imports: [
         CommonModule,
-        BrowserAnimationsModule],
+        BrowserAnimationsModule
+    ],
     exports: [
         ReloadlyAccordionComponent,
         ReloadlyAccordionItem,
