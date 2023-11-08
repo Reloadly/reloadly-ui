@@ -1,4 +1,4 @@
-import { Component, ContentChildren, EventEmitter, Input, Output, QueryList } from '@angular/core';
+import { Component, ContentChildren, Input, QueryList } from '@angular/core';
 import { ReloadlyAccordionItem } from './directives/accordion-item.directive';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 
@@ -18,8 +18,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 export class ReloadlyAccordionComponent {
     expanded = new Set<number>();
     @Input() collapsing = true;
-    @Input() width: string = '176px';
-    @ContentChildren(ReloadlyAccordionItem) items: QueryList<ReloadlyAccordionItem> = new QueryList();
+    @ContentChildren(ReloadlyAccordionItem) items!: QueryList<ReloadlyAccordionItem>;
 
     getToggleState = (index: number) => {
         return this.toggleState.bind(this, index);

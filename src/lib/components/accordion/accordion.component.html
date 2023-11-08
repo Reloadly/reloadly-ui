@@ -1,6 +1,6 @@
 <section class="accordion">
-    <div *ngFor="let item of items; index as i" class="accordion-item" [style]="{width: width}"
-        [class.disabled]="item.disabled" [class.active]="expanded.has(i)" [class.open]="expanded.has(i)">
+    <div *ngFor="let item of items; index as i" class="accordion-item" [class.disabled]="item.disabled"
+        [class.active]="expanded.has(i)" [class.open]="expanded.has(i)">
         <ng-container>
             <div class="accordion-header" (click)="item.disabled ? {} :toggleState(i)">
                 <p class="accordion-title">{{item?.title}}</p>
