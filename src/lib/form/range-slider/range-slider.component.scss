@@ -1,21 +1,36 @@
+@use "sass:math";
 @import "../../../styles/variables";
 
-$height: 30px;
+$thickness: 22px;
 
 .range-slider {
     display: flex;
+
     * {
         user-select: none;
     }
+
     .rail {
         width: 100%;
         position: relative;
-        min-height: $height;
+        min-height: $thickness;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        flex-basis: 72%;
-        flex-grow: 1;
+        margin: 0;
+        padding: 0;
+
+        &-container {
+            position: relative;
+            display: flex;
+            flex-basis: 72%;
+            flex-grow: 1;
+            min-height: $thickness;
+            overflow-x: hidden;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 math.div($thickness, 4);
+        }
     }
 
     .slide {
@@ -30,8 +45,8 @@ $height: 30px;
         display: block;
         position: absolute;
         left: 0px;
-        width: $height;
-        height: $height;
+        width: $thickness;
+        height: $thickness;
         border-radius: 50%;
         background-color: darken($color: $reloadly-light-blue, $amount: 15);
     }

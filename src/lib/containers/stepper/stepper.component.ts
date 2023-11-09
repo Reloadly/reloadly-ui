@@ -149,8 +149,8 @@ export class ReloadlyStepperComponent implements AfterContentInit, AfterViewInit
             const [currentSlide, nextSlide] = this.contents
                 .filter(c => c.index == this.currentIndex || c.index == this.currentIndex + 1)
                 .map(c => c.el.nativeElement);
-            if (nextSlide) {
-                setTimeout(() => {
+            setTimeout(() => {
+                if (nextSlide) {
                     this.kickOutPrevious();
                     this.renderer.setStyle(currentSlide, 'transition', 'none');
                     this.renderer.setStyle(currentSlide, 'transform', 'translateX(0)');
@@ -159,16 +159,18 @@ export class ReloadlyStepperComponent implements AfterContentInit, AfterViewInit
                     // reset
                     setTimeout(() => {
                         this.renderer.setStyle(currentSlide, 'transition', 'transform 500ms ease-out');
+                        this.renderer.setStyle(nextSlide, 'transition', 'transform 500ms ease-out');
                         this.renderer.listen(currentSlide, 'transitionend', () => {
                             const nextAnimation = this.animationQueue.pop();
                             if (nextAnimation) nextAnimation.play();
                         })
                     }, 10);
-                }, 500); // corresponds to transform 500ms of stepper.component.scss
-            } else {
-                this.hidePrevious();
-                this.reachedLastStep.emit();
-            }
+
+                } else {
+                    this.hidePrevious();
+                    this.reachedLastStep.emit();
+                }
+            }, 500); // corresponds to transform 500ms of stepper.component.scss
         }
     }
 

@@ -26,11 +26,10 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnChanges, O
     @Input() set max(value: number) { this._max = Math.max(this.min, value) };
     @Input() symbol: string = '';
     @Input() showInput: boolean = true;
-    @Input() baseSize: number = 30;
     @Input() disabled!: boolean;
     @Input() fontSize: string = '16px';
     @Input() showLabel: boolean = false;
-    @Input() set currentValue(value: number) { this.setCurrentValue(value) };
+    @Input() set currentValue(value: number) { this.setCurrentValue(value, false) };
     @Output() currentValueChange = new EventEmitter<number>();
     @Output() currentPercentage = new EventEmitter<number>();
 
@@ -58,10 +57,11 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnChanges, O
     ngOnInit(): void {
         this.values.pipe(takeUntil(this.subs))
             .subscribe(currentValue => {
-                const emitEvent = currentValue[2];
+                const [value, percentage, emitEvent] = currentValue;
+                this.value = value;
                 if (emitEvent) {
-                    this.currentValueChange.emit(currentValue[0]);
-                    this.currentPercentage.emit(currentValue[1]);
+                    this.currentValueChange.emit(value);
+                    this.currentPercentage.emit(percentage);
                 }
             });
     }
@@ -75,14 +75,16 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnChanges, O
 
         this.knobListeners = [
             this.renderer.listen(this.knob.nativeElement, 'mousedown', event => this.enableSlide(event)),
-            // @TODO
-            // this.renderer.listen(this.knob.nativeElement, 'touchstart', event => this.enableSlide(event)),
+            this.renderer.listen(this.knob.nativeElement, 'touchstart', event => this.enableSlide(event)),
         ];
     }
 
     ngOnChanges(changes: SimpleChanges): void {
-        if ((changes?.['currentValue']?.['currentValue'] && this.max) || (changes?.['max']?.['currentValue'] && this.value)) {
-            this.setCurrentValues(changes['currentValue']['currentValue'], false);
+        if (changes?.['currentValue']?.['currentValue'] && this.max) {
+            this.setCurrentValue(changes['currentValue']['currentValue'], false);
+        } else if ((changes?.['min']?.['currentValue'] || changes?.['max']?.['currentValue']) && this.value) {
+            this.setCurrentValue(this.value, false);
+            this.ensureKnobPositionFallback(this.value);
         }
     }
 
@@ -94,7 +96,7 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnChanges, O
     }
 
     public inputChanged(event: Event): void {
-        this.setCurrentValues(parseInt((event.target as HTMLInputElement).value) || 0);
+        this.setCurrentValue(parseInt((event.target as HTMLInputElement).value) || 0);
     }
 
     get formattedValue(): string {
@@ -109,37 +111,32 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnChanges, O
         return (this.symbol ?? '') + (+this.max);
     }
 
-    private setCurrentValue(value: number): void {
-        this.value = value;
-    }
-
-    private setCurrentValues(value: number, emitEvent = true) {
+    private setCurrentValue(value: number, emitEvent = true) {
         const difference = this.max - this.min;
-        let mappedValue = Math.max(value, this.min) - this.min;
+        const mappedValue = Math.max(value, this.min) - this.min;
         const percentage = Math.round((mappedValue / difference) * 100);
         this.values.next([value, percentage, emitEvent]);
-        this.value = value;
+        if (this.input?.nativeElement) this.renderer.setProperty(this.input.nativeElement, 'value', value);
         this.moveSlider(percentage);
     }
 
-    private changeValue(percentage: number, emitEvent = true): void {
+    private setCurrentPercentage(percentage: number, emitEvent = true): void {
         const difference = this.max - this.min;
         const value = Math.round((percentage / 100) * difference) + this.min;
         this.values.next([value, percentage, emitEvent]);
-        this.renderer.setProperty(this.input.nativeElement, 'value', value);
-        this.value = value;
+        if (this.input?.nativeElement) this.renderer.setProperty(this.input.nativeElement, 'value', value);
+        this.moveSlider(percentage);
     }
 
     private enableSlide(event: Event): void {
         this.windowListeners.forEach(eventEnder => eventEnder());
         this.windowListeners = [
             this.renderer.listen(this.window, 'mouseup', event => this.disableSlide(event)),
-            // this.renderer.listen(this.window, 'touchend', event => this.disableSlide(event)),
+            this.renderer.listen(this.window, 'touchend', event => this.disableSlide(event)),
             // we want the user to be able to slide, even if his finger is outside the slider
             // and that's why we used window
             this.renderer.listen(this.window, 'mousemove', event => this.adjustSlider(event)),
-            // @TODO
-            // this.renderer.listen(this.window, 'touchmove', event => this.adjustSlider(event))
+            this.renderer.listen(this.window, 'touchmove', event => this.adjustSlider(event))
         ]
     }
 
@@ -156,26 +153,32 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnChanges, O
                 xLength = event.touches[0].pageX - slider.getBoundingClientRect().left; // TODO test on touchscreen devices
             }
 
-            let percentage = this.clamp(Math.round((xLength / slider.offsetWidth) * 100));
-            this.window?.requestAnimationFrame(() => {
-                this.moveSlider(percentage);
-            });
-            this.changeValue(percentage);
+            let percentage = this.clamp(Math.round((xLength / slider.clientWidth) * 100));
+            this.setCurrentPercentage(percentage);
         }
+    }
+
+    private moveSlider(percentage: number): void {
+        percentage = this.clamp(percentage);
+        this.window?.requestAnimationFrame(() => {
+            // @TODO sometimes, the browser calculates wrong client/offset-Width for range.nativeElement
+            // which is different from the value visible and calculated in dev tools inspect, even after a long time has elapsed
+            // this could be because of flex grow. This can cause the knob to go beyond the slider when the page is first loaded.
+            // don't forget to update slider.clientWidth on line 156 to offsetWidth if you'll be using offsetWidth
+            const sliderWidth = this.range?.nativeElement.clientWidth - this.knob?.nativeElement.clientWidth;
+            let x = Math.round((percentage / 100) * sliderWidth);
+            x = this.clamp(x, 0, sliderWidth);
+            if (this.knob?.nativeElement) this.knob.nativeElement.style.left = x + 'px';
+        });
     }
 
     private clamp(number: number, min = 0, max = 100): number {
         if (number < min) return min;
         if (number > max) return max;
-        return number;
+        return number || 0;
     }
 
-    private moveSlider(percentage: number): void {
-        percentage = this.clamp(percentage);
-        const sliderWidth = this.range?.nativeElement.offsetWidth - this.knob?.nativeElement.offsetWidth;
-        let x = Math.round((percentage / 100) * sliderWidth);
-        x = this.clamp(x, 0, sliderWidth);
-        if (this.knob?.nativeElement) this.knob.nativeElement.style.left = x + "px";
+    private ensureKnobPositionFallback(value: number): void {
+        setTimeout(() => this.setCurrentValue(value, false), 400);
     }
-
 }
