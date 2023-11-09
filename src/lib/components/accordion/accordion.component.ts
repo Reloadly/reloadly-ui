@@ -1,22 +1,38 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, ContentChildren, Input, QueryList } from '@angular/core';
+import { ReloadlyAccordionItem } from './directives/accordion-item.directive';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
     selector: 'reloadly-accordion',
     templateUrl: './accordion.component.html',
-    styleUrls: ['./accordion.component.scss']
+    styleUrls: ['./accordion.component.scss'],
+    animations: [
+        trigger('contentExpansion', [
+            state('expanded', style({ height: '*', opacity: 1, visibility: 'visible' })),
+            state('collapsed', style({ height: '0px', opacity: 0, visibility: 'hidden' })),
+            transition('expanded <=> collapsed',
+                animate('200ms cubic-bezier(.37,1.04,.68,.98)')),
+        ])
+    ]
 })
 export class ReloadlyAccordionComponent {
-    @Input() title?: string;
-    @Input() disabled: boolean = false;
-    @Input() width: string = '176px'
-    @Output() onToggle: EventEmitter<boolean> = new EventEmitter();
+    expanded = new Set<number>();
+    @Input() collapsing = true;
+    @ContentChildren(ReloadlyAccordionItem) items!: QueryList<ReloadlyAccordionItem>;
 
+    getToggleState = (index: number) => {
+        return this.toggleState.bind(this, index);
+    };
 
-    isOpen: boolean = false;
-
-    toggle() {
-        if (this.disabled) return;
-        this.isOpen = !this.isOpen;
-        this.onToggle.emit(this.isOpen);
-    }
+    toggleState = (index: number) => {
+        if (this.expanded.has(index)) {
+            this.expanded.delete(index);
+        } else {
+            if (this.collapsing) {
+                this.expanded.clear();
+            }
+            this.expanded.add(index);
+        }
+    };
 }
+

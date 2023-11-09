@@ -175,7 +175,7 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnChanges, O
         const sliderWidth = this.range?.nativeElement.offsetWidth - this.knob?.nativeElement.offsetWidth;
         let x = Math.round((percentage / 100) * sliderWidth);
         x = this.clamp(x, 0, sliderWidth);
-        if (this.knob.nativeElement) this.knob.nativeElement.style.left = x + "px";
+        if (this.knob?.nativeElement) this.knob.nativeElement.style.left = x + "px";
     }
 
 }

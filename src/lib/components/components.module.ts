@@ -11,6 +11,7 @@ import { PaginationComponent } from './pagination/pagination.component';
 import { BreadcrumbItemComponent } from './breadcrumb-group/breadcrumb-item/breadcrumb-item.component';
 import { ReloadlyModalOutletComponent } from './modal/reloadly-modal-outlet/reloadly-modal-outlet.component';
 import { ReloadlyBreadcrumbsComponent } from './breadcrumb-group/breadcrumbs/breadcrumbs.component';
+import { ReloadlyExpandableTileModule } from './expandable-tile/expandable-tile.module';
 import { InputLabelComponent } from './input-group/input-label/input-label.component';
 import { InputGroupDirective } from './input-group/directives/input-group.directive';
 import { FormGroupDirective } from './form-group/directives/form-group.directive';
@@ -39,7 +40,7 @@ import { MenuModule } from './menu/menu.module';
         InputLabelComponent,
         PreloaderComponent,
         ReloadlyBreadcrumbsComponent,
-        BreadcrumbItemComponent
+        BreadcrumbItemComponent,
     ],
     imports: [
         CommonModule,
@@ -72,6 +73,7 @@ import { MenuModule } from './menu/menu.module';
         TooltipModule,
         ReloadlyBreadcrumbsComponent,
         ReloadlyAccordionModule,
+        ReloadlyExpandableTileModule,
         BreadcrumbItemComponent,
         ReloadlyModalOutletComponent
     ]

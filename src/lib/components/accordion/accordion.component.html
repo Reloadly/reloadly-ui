@@ -1,21 +1,26 @@
-<div class="accordion" [class.open]="isOpen" [class.disabled]="disabled" [style]="{width: width}">
-    <div class="accordion-header" (click)="toggle()">
-        <h6>{{title}}</h6>
-        <div class="toggler-wrapper">
-            <div class="toggler">
-                <ng-content select="[toggler]"></ng-content>
+<section class="accordion">
+    <div *ngFor="let item of items; index as i" class="accordion-item" [class.disabled]="item.disabled"
+        [class.active]="expanded.has(i)" [class.open]="expanded.has(i)">
+        <ng-container>
+            <div class="accordion-header" (click)="item.disabled ? {} :toggleState(i)">
+                <p class="accordion-title">{{item?.title}}</p>
+                <div class="toggler-wrapper">
+                    <div class="toggler">
+                        <ng-content select="[toggler]"></ng-content>
+                    </div>
+                    <div class="toggle-icon">
+                        <span class="chevron">
+                        </span>
+                    </div>
+                </div>
             </div>
-            <div class="toggle-icon">
-                <span class="chevron">
-
-                </span>
+            <div class="accordion-content" [class.expanded]="expanded.has(i)">
+                <div class="content">
+                    <div [@contentExpansion]="expanded.has(i) ? 'expanded':'collapsed'">
+                        <ng-container *ngTemplateOutlet="item!.content!.templateRef"></ng-container>
+                    </div>
+                </div>
             </div>
-        </div>
-
+        </ng-container>
     </div>
-    <div class="accordion-body">
-        <div class="content">
-            <ng-content></ng-content>
-        </div>
-    </div>
-</div>
+</section>

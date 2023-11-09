@@ -4,7 +4,9 @@ $height: 30px;
 
 .range-slider {
     display: flex;
-
+    * {
+        user-select: none;
+    }
     .rail {
         width: 100%;
         position: relative;
