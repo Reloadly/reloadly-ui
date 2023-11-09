@@ -1,8 +1,8 @@
-import { ContentChild, Directive, Input } from "@angular/core";
+import { ContentChild, Directive, ElementRef, Input } from "@angular/core";
 import { ReloadlyAccordionItemContent } from "./accordion-item-content.directive";
 
 @Directive({
-    selector: "reloadly-accordion-item"
+    selector: "[reloadly-accordion-item]"
 })
 export class ReloadlyAccordionItem {
     @Input() title = "";
@@ -10,6 +10,6 @@ export class ReloadlyAccordionItem {
     @Input() expanded = false;
     @ContentChild(ReloadlyAccordionItemContent) content?: ReloadlyAccordionItemContent;
 
-    constructor() {}
+    constructor() { }
 
 }
