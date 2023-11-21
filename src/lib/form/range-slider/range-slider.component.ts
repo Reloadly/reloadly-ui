@@ -160,12 +160,14 @@ export class RangeSliderComponent implements OnInit, AfterViewInit, OnChanges, O
 
     private moveSlider(percentage: number): void {
         percentage = this.clamp(percentage);
+        void this.range?.nativeElement.offsetWidth; // important for DOM reflow recalculation
         this.window?.requestAnimationFrame(() => {
             // @TODO sometimes, the browser calculates wrong client/offset-Width for range.nativeElement
             // which is different from the value visible and calculated in dev tools inspect, even after a long time has elapsed
             // this could be because of flex grow. This can cause the knob to go beyond the slider when the page is first loaded.
             // don't forget to update slider.clientWidth on line 156 to offsetWidth if you'll be using offsetWidth
             const sliderWidth = this.range?.nativeElement.clientWidth - this.knob?.nativeElement.clientWidth;
+            // @TODO check if void this.range?.nativeElement.offsetWidth; above fixes the issue
             let x = Math.round((percentage / 100) * sliderWidth);
             x = this.clamp(x, 0, sliderWidth);
             if (this.knob?.nativeElement) this.knob.nativeElement.style.left = x + 'px';
