@@ -43,7 +43,6 @@ import { SwitchComponent } from './lib/components/switch/switch.component';
 import { SelectableViewStyle } from './lib/enums/selectable-view-style';
 import { SelectableViewType } from './lib/enums/selectable-view-type';
 import { MenuComponent } from './lib/components/menu/menu.component';
-import { TagComponent } from './lib/components/tag/tag.component';
 import { SvgComponent } from './lib/components/svg/svg.component';
 import { TableDirective } from './lib/directives/table.directive';
 export * from './lib/reloadly-ui.module';
@@ -51,7 +50,6 @@ export * from './lib/reloadly-ui.module';
 export * from './lib/components/components.module';
 export {
     SvgComponent,
-    TagComponent,
     PaginationComponent,
     SidebarComponent,
     SwitchComponent,
