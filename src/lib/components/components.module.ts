@@ -3,7 +3,6 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { SvgComponent } from './svg/svg.component';
-import { TagComponent } from './tag/tag.component';
 import { SelectComponent } from './select/select.component';
 import { SwitchComponent } from './switch/switch.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -28,7 +27,6 @@ import { MenuModule } from './menu/menu.module';
 @NgModule({
     declarations: [
         SvgComponent,
-        TagComponent,
         PaginationComponent,
         SidebarComponent,
         SwitchComponent,
@@ -55,7 +53,6 @@ import { MenuModule } from './menu/menu.module';
     ],
     exports: [
         SvgComponent,
-        TagComponent,
         PaginationComponent,
         SidebarComponent,
         SwitchComponent,
