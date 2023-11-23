@@ -28,5 +28,4 @@ Initial release with the following directives:
 * stepper
 * selection-grid
 * table
-* tag
 * tooltip
