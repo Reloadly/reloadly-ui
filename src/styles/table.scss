@@ -37,6 +37,9 @@
                 vertical-align: middle !important;
                 text-wrap: nowrap;
             }
+            &:hover {
+                background: rgb(250, 250, 250);
+            }
         }
     }
 }
