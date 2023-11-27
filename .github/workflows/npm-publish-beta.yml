@@ -6,7 +6,7 @@ on:
             - develop
 
 jobs:
-    build-and-publish:
+    build:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout code
@@ -23,8 +23,21 @@ jobs:
 
             - name: Build
               run: npm ci && npm run build:prod
-
+    deploy-beta:
+        runs-on: ubuntu-latest
+        needs: build
+        if: github.ref == 'refs/heads/develop'
+        steps:
             - name: Publish to npm (beta version)
               run: npm run npm:publish:beta
+              env:
+                  NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+    deploy-release:
+        runs-on: ubuntu-latest
+        needs: build
+        if: github.ref == 'refs/heads/master'
+        steps:
+            - name: Publish to npm (release version)
+              run: npm run npm:publish:latest
               env:
                   NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
