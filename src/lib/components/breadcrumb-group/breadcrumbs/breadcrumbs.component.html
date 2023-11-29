@@ -1,3 +1,8 @@
 <div class="breadcrumbs">
-    <ng-content></ng-content>
+    <ng-container *ngFor="let content of contents; index as i">
+        <ng-container *ngTemplateOutlet="content.template"></ng-container>
+        <svg *ngIf="i !== maxIndex" class="breadcrumbs-arrow">
+            <use xlink:href="#chevron-right"></use>
+        </svg>
+    </ng-container>
 </div>

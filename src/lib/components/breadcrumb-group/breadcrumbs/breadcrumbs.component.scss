@@ -3,20 +3,24 @@
 .breadcrumbs {
     width: 100%;
     display: flex;
+    align-items: center;
     flex-flow: row wrap;
     margin-bottom: $spacing-16;
+    font-size: $font-size-xs;
+
+    &-arrow {
+        margin: 0 $spacing-8;
+        color: $reloadly-black-2;
+        fill: none;
+        stroke: currentColor;
+        width: 0.7em;
+        height: 0.91em;
+    }
+
     ::ng-deep {
         reloadly-breadcrumb-item {
             display: flex;
             align-items: center;
-            &:not(:last-of-type) {
-                margin-right: $spacing-10;
-                &:after {
-                    content: '>';
-                    margin-left: $spacing-10;
-                    color: $reloadly-black-2;
-                }
-            }
         }
     }
 }
