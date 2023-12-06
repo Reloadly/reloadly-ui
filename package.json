@@ -1,6 +1,6 @@
 {
     "name": "reloadly-ui",
-    "version": "0.0.1-beta.51",
+    "version": "0.0.1-beta.52",
     "description": "Angular UI library",
     "repository": {
         "type": "git",
@@ -36,7 +36,7 @@
         "karma-coverage": "~2.2.1",
         "karma-jasmine": "~5.1.0",
         "karma-jasmine-html-reporter": "~2.1.0",
-        "ng-packagr": "^17.0.2",
+        "ng-packagr": "^16.2.0",
         "node-sass": "^9.0.0",
         "nodemon": "^3.0.2",
         "tslib": "^2.6.2",
