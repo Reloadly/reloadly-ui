@@ -1,6 +1,6 @@
 {
     "name": "reloadly-ui",
-    "version": "0.0.1-beta.50",
+    "version": "0.0.1-beta.51",
     "description": "Angular UI library",
     "repository": {
         "type": "git",
@@ -26,21 +26,21 @@
         "@angular/platform-browser": "^16.1.8",
         "@angular/platform-browser-dynamic": "^16.1.8",
         "@angular/router": "^16.1.8",
-        "zone.js": "~0.13.1",
+        "zone.js": "~0.14.2",
         "@angular-devkit/build-angular": "^16.2.0",
         "@angular/cli": "~16.2.0",
         "@angular/compiler-cli": "^16.2.1",
         "@types/jasmine": "~4.3.5",
-        "jasmine-core": "~5.1.0",
+        "jasmine-core": "~5.1.1",
         "karma": "~6.4.2",
         "karma-coverage": "~2.2.1",
         "karma-jasmine": "~5.1.0",
         "karma-jasmine-html-reporter": "~2.1.0",
-        "ng-packagr": "^16.2.0",
+        "ng-packagr": "^17.0.2",
         "node-sass": "^9.0.0",
-        "nodemon": "^3.0.1",
-        "tslib": "^2.6.1",
-        "typescript": "~5.1.6"
+        "nodemon": "^3.0.2",
+        "tslib": "^2.6.2",
+        "typescript": "~5.3.2"
     },
     "keywords": [
         "angular",
@@ -56,7 +56,15 @@
         "pagination",
         "progressbar",
         "table",
-        "timepicker"
+        "timepicker",
+        "badge",
+        "breadcrumb",
+        "preloader",
+        "select",
+        "svg-icons",
+        "switch",
+        "tooltip",
+        "stepper"
     ],
     "private": false,
     "sideEffects": false,
