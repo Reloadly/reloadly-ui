@@ -1,6 +1,6 @@
 {
     "name": "reloadly-ui",
-    "version": "0.0.1-beta.52",
+    "version": "0.0.1-beta.53",
     "description": "Angular UI library",
     "repository": {
         "type": "git",
@@ -26,7 +26,7 @@
         "@angular/platform-browser": "^16.1.8",
         "@angular/platform-browser-dynamic": "^16.1.8",
         "@angular/router": "^16.1.8",
-        "zone.js": "~0.14.2",
+        "zone.js": "~0.13.1",
         "@angular-devkit/build-angular": "^16.2.0",
         "@angular/cli": "~16.2.0",
         "@angular/compiler-cli": "^16.2.1",
@@ -40,7 +40,7 @@
         "node-sass": "^9.0.0",
         "nodemon": "^3.0.2",
         "tslib": "^2.6.2",
-        "typescript": "~5.3.2"
+        "typescript": "~5.1.6"
     },
     "keywords": [
         "angular",
