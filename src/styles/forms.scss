@@ -42,7 +42,7 @@ form {
     font-size: $font-size-s;
     line-height: 20px;
     transition: all ease 0.4s;
-    box-shadow: 0px 0px 0px 3px transparent;
+    box-shadow: 0px 0px 0px $box-halo-width transparent;
     align-items: center;
 
     &::placeholder {
@@ -51,7 +51,7 @@ form {
 
     &:focus {
         border: 1px solid $border-color;
-        box-shadow: 0px 0px 0px 3px rgba(58, 151, 212, 0.36);
+        box-shadow: 0px 0px 0px $box-halo-width rgba(58, 151, 212, 0.36);
     }
 
     &:disabled, &[disabled] {
