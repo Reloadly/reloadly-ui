@@ -5,31 +5,36 @@
     position: relative;
     $min-width: 30px;
     $min-dropdown-width: 130px;
+
     &:focus-within {
         .select-box {
             box-shadow: 0px 0px 0px 2px $reloadly-violet inset;
         }
     }
+
     &.disabled {
         .select-box {
-            background: #F6F8FA;
+            background: $reloadly-ash;
             cursor: not-allowed;
+
             &:after {
                 width: 100%;
                 min-width: $min-width;
                 height: 100%;
-                content: '';
+                content: "";
                 position: absolute;
                 top: 0;
                 left: 0;
                 z-index: 3;
                 background: transparent;
             }
+
             p {
-                color: $reloadly-black-13;
+                color: $reloadly-grey;
             }
         }
     }
+
     * {
         user-select: none;
     }
@@ -46,49 +51,60 @@
         background: white;
         overflow: hidden;
         cursor: pointer;
+
         p {
             min-width: 0;
             flex-grow: 1;
-            font-size: $font-medium;
+            font-size: $font-size-s;
             line-height: 20px;
             letter-spacing: -0.154px;
-            color: $reloadly-black-8;
+            color: $reloadly-black-1;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            margin: 0;
         }
-        .icon {
+
+        &_icon {
             width: 12px;
             height: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-left: 10px;
+
             svg {
-                width: 12px;
+                width: 100%;
+                height: 100%;
                 line-height: 1;
             }
         }
     }
+
     .small {
         height: 24px;
         padding: $form-box-padding-small;
     }
+
     .medium {
         height: 28px;
         padding: $form-box-padding-medium;
     }
+
     .large {
         height: 40px;
         padding: $form-box-padding-large;
     }
+
     .focused {
         box-shadow: 0px 0px 0px 2px $reloadly-violet inset;
     }
+
     .error-class {
-        border: 1px solid #DF1B41;
+        border: 1px solid #df1b41;
         box-shadow: none;
     }
+
     select {
         width: 100%;
         min-width: $min-width;
@@ -97,7 +113,10 @@
         top: 0;
         opacity: 0;
     }
-    .dropdown {
+
+    .reloadly-dropdown {
+        display: flex;
+        flex-direction: column;
         width: 100%;
         height: auto;
         min-width: $min-dropdown-width;
@@ -110,6 +129,7 @@
         background: white;
         padding: 12px 10px;
         z-index: 9;
+
         input {
             width: 100%;
             height: 36px;
@@ -119,38 +139,43 @@
             padding: 8px;
             outline: none;
             font-weight: 400;
-            font-size: $font-medium;
+            font-size: $font-size-s;
             line-height: 20px;
             margin-bottom: 16px;
         }
+
         ul {
             width: 100%;
             border-top: 1px solid $border-color;
             max-height: 200px;
-            overflow-y: scroll;
+            overflow-y: auto;
+
             li {
                 width: 100%;
                 font-weight: 450;
-                font-size: $font-medium;
+                font-size: $font-size-s;
                 line-height: 20px;
                 padding: 8px 0;
                 border-bottom: 1px solid $border-color;
                 background: transparent;
                 cursor: pointer;
+
                 &:hover {
                     background: rgb(250, 250, 250);
                 }
             }
+
             .no-results {
                 width: 100%;
                 text-align: center;
                 padding: 8px;
                 font-weight: 450;
-                font-size: $font-medium;
+                font-size: $font-size-s;
                 line-height: 20px;
             }
         }
     }
+
     .close-dropdown {
         height: 0;
         padding: 0;
@@ -159,5 +184,7 @@
         border: none;
     }
 
+    .icon-disabled {
+        color: $reloadly-ash;
+    }
 }
-

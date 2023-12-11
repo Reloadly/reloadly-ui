@@ -6,19 +6,20 @@ import { BreadcrumbItemComponent } from '../breadcrumb-item/breadcrumb-item.comp
     templateUrl: './breadcrumbs.component.html',
     styleUrls: ['./breadcrumbs.component.scss']
 })
-export class BreadcrumbsComponent implements AfterContentInit, OnDestroy {
-    @ContentChildren(BreadcrumbItemComponent) contents!: QueryList<BreadcrumbItemComponent>;
-    @ContentChildren(BreadcrumbItemComponent, { read: ViewContainerRef }) contentsRef!: QueryList<ViewContainerRef>;
+export class ReloadlyBreadcrumbsComponent implements AfterContentInit, OnDestroy {
+    @ContentChildren(BreadcrumbItemComponent) private _contents!: QueryList<BreadcrumbItemComponent>;
+    @ContentChildren(BreadcrumbItemComponent, { read: ViewContainerRef }) private contentsRef!: QueryList<ViewContainerRef>;
     private isContentInit = false;
-    private setIndexOnInit: number | null = null;
+    private activeIndex = 0;
+    maxIndex = 0;
+    contents!: Array<BreadcrumbItemComponent>;
 
     constructor() { }
 
     ngAfterContentInit(): void {
         this.isContentInit = true;
-        if (typeof this.setIndexOnInit == 'number') {
-            this.setActiveIndex(this.setIndexOnInit);
-        }
+        this.setActiveIndex(this.activeIndex);
+        this.contents = this._contents.toArray();
     }
 
     ngOnDestroy(): void {
@@ -27,10 +28,14 @@ export class BreadcrumbsComponent implements AfterContentInit, OnDestroy {
 
     setActiveIndex(index: number): void {
         if (!this.isContentInit) {
-            this.setIndexOnInit = index;
+            this.activeIndex = index;
         } else {
-            this.contents.forEach(c => c.isActive = false);
-            this.contents.toArray()[index].isActive = true;
+            this._contents.forEach((c, index) => {
+                c.isActive = false;
+                c.index = index;
+                this.maxIndex = index;
+            });
+            this._contents.toArray()[index].isActive = true;
         }
     }
 }

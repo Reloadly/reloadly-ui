@@ -1,11 +1,9 @@
 .reloadly-table {
     min-width: 640px;
     width: 100%;
-
     @media (min-width: 48em) {
         min-width: 1024px;
     }
-
     thead {
         tr {
             th {
@@ -15,25 +13,32 @@
                 text-transform: uppercase;
                 font-style: normal;
                 color: $reloadly-table-head-color !important;
+                padding: $spacing-8;
                 padding-bottom: 5px;
                 padding-top: 10px;
                 border-width: 0 0 1px !important;
                 border-color: $reloadly-table-border-color;
+                border: 1px solid $reloadly-table-border-color;
+                vertical-align: middle !important;
             }
         }
     }
-
     tbody {
         tr {
             td {
                 font-size: 14px;
                 line-height: 20px;
                 font-style: normal;
-                padding-bottom: 5px;
-                padding-top: 24px;
+                padding: $spacing-8;
                 border-width: 0 0 1px !important;
                 border-color: $reloadly-table-border-color;
+                border: 1px solid $reloadly-table-border-color;
                 color: $reloadly-table-body-color;
+                vertical-align: middle !important;
+                text-wrap: nowrap;
+            }
+            &:hover {
+                background: rgb(250, 250, 250);
             }
         }
     }

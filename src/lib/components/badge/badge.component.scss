@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: $font-small;
+    font-size: $font-size-xs;
     font-weight: 500;
 
     &.topRight {
@@ -22,8 +22,8 @@
     }
 
     &.neutral {
-        background-color: #ebeef1;
-        color: $reloadly-black-10;
+        background-color: $reloadly-ash;
+        color: $reloadly-black-2;
     }
 
     &.info {

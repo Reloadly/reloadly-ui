@@ -119,32 +119,40 @@
             color: $reloadly-violet;
             box-shadow: 0px 1px 3px 1px RGB(0 0 0 / 15%),
                 0px 1px 2px 0px RGB(0 0 0 / 30%);
-            background: linear-gradient(0deg,
+            background: linear-gradient(
+                    0deg,
                     rgba(103, 80, 164, 0.05),
-                    rgba(103, 80, 164, 0.05)),
+                    rgba(103, 80, 164, 0.05)
+                ),
                 #fffbfe;
 
             &:hover {
                 color: $reloadly-violet;
-                background: linear-gradient(0deg,
+                background: linear-gradient(
+                        0deg,
                         rgba(103, 80, 164, 0.05),
-                        rgba(103, 80, 164, 0.05)),
+                        rgba(103, 80, 164, 0.05)
+                    ),
                     #fffbfe;
             }
 
             &:focus {
                 color: $reloadly-violet;
-                background: linear-gradient(0deg,
+                background: linear-gradient(
+                        0deg,
                         rgba(103, 80, 164, 0.05),
-                        rgba(103, 80, 164, 0.05)),
+                        rgba(103, 80, 164, 0.05)
+                    ),
                     #fffbfe;
             }
 
             &:active {
                 color: $reloadly-violet;
-                background: linear-gradient(0deg,
+                background: linear-gradient(
+                        0deg,
                         rgba(103, 80, 164, 0.05),
-                        rgba(103, 80, 164, 0.05)),
+                        rgba(103, 80, 164, 0.05)
+                    ),
                     #fffbfe;
                 box-shadow: none;
             }
@@ -552,19 +560,32 @@
 
     &.lg {
         padding: 10px 20px;
-        font-size: $font-regular;
+        font-size: $font-size-rg;
         font-weight: 450;
     }
 
     &.xl {
         padding: 12px 24px;
-        font-size: $font-regular;
+        font-size: $font-size-rg;
+        font-weight: 450;
+    }
+
+    &.md {
+        padding: 8px 12px;
+        font-size: $font-size-rg;
+        font-weight: 450;
+    }
+
+    &.sm {
+        padding: 6px 10px;
+        font-size: $font-size-rg;
         font-weight: 450;
     }
 
     &.xs {
         padding: 4px 8px;
         border-radius: 4px;
+        font-size: $font-size-s;
 
         &.filled {
             &:focus {
@@ -586,7 +607,7 @@
 
 .menu-item {
     color: #393c40;
-    font-size: $font-medium;
+    font-size: $font-size-s;
     font-weight: 450;
     line-height: 20px;
     display: flex;

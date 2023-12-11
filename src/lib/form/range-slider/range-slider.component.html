@@ -1,10 +1,19 @@
-<div class="range-slider" [class.disabled]="disabled">
-    <p class="min-max" [ngStyle]="{'font-size': fontSize}">{{symbol + min}}</p>
-    <div class="rail" #range [ngStyle]="{'minHeight': baseSize + 'px'}">
-        <a class="knob" #knob [ngStyle]="{'width': baseSize + 'px', height: baseSize + 'px'}"></a>
-        <div class="slide" [ngStyle]="{'height': baseSize * .4 + 'px'}"></div>
+<div class="rld-range-slider" [class.rld-disabled]="disabled">
+    <p class="rld-min-max rld-min" [ngStyle]="{'font-size': fontSize}">{{formattedMin}}</p>
+    <div class="rld-rail-container">
+        <input reloadlyInput #input type="number" [min]="min" [max]="max" class="rld-range-input"
+               (input)="inputChanged($event)" size="small"
+               [ngStyle]="{'display': showInput ? 'flex' : 'none'}" [disabled]="disabled">
+        <div class="rld-rail" #range>
+            <ng-container *ngIf="showLabel">
+                <a class="rld-knob" #knob [reloadly-tooltip]="formattedValue"
+                   [position]="'top-center'" reloadly-tooltip-color="rgb(40,40,40)"></a>
+            </ng-container>
+            <ng-container *ngIf="!showLabel">
+                <a class="rld-knob" #knob></a>
+            </ng-container>
+            <div class="rld-slide"></div>
+        </div>
     </div>
-    <p class="min-max" [ngStyle]="{'font-size': fontSize}">{{symbol + max}}</p>
-    <input [ngStyle]="{'display': showInput ? 'flex': 'none'}" #input type="number" [min]="min" [max]="max"
-        class="input" (input)="inputChanged($event)" [disabled]="disabled">
+    <p class="rld-min-max rld-max" [ngStyle]="{'font-size': fontSize}">{{formattedMax}}</p>
 </div>

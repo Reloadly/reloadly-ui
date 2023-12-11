@@ -3,8 +3,8 @@
 .item-class {
     font-style: normal;
     font-weight: 450;
-    font-size: 12px;
-    color: $reloadly-black-11;
+    font-size: inherit;
+    color: $reloadly-black-2;
     cursor: pointer;
     &:hover {
         text-decoration: underline;

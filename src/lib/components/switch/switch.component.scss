@@ -20,7 +20,7 @@
             content: "";
             display: block;
             border-radius: 50%;
-            background: #ffffff;
+            background: $reloadly-white;
             border: 1px solid rgba(42, 47, 69, 0.12);
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.254246), 0px 0.5px 1px rgba(0, 0, 0, 0.255831);
             position: absolute;
@@ -62,14 +62,14 @@
 
         &.livemode {
             .switch-box {
-                background: $reloadly-orange-1;
+                background: $reloadly-orange;
                 .switch{
                     border: none !important;
                 }
             }
             .toggle-texts{
                label{
-                color: $reloadly-orange-1 !important;
+                color: $reloadly-orange !important;
                 font-weight: 450;
                }
             }
@@ -113,18 +113,18 @@
 
         label {
             font-weight: 450;
-            font-size: $font-medium;
+            font-size: $font-size-s;
             line-height: 20px;
             letter-spacing: -0.154px;
-            color: $reloadly-black-8;
+            color: $reloadly-black-1;
             margin-top: 2px;
         }
 
         p {
             font-weight: 400;
-            font-size: $font-medium;
+            font-size: $font-size-s;
             line-height: 20px;
-            color: $reloadly-black-11;
+            color: $reloadly-black-2;
 
         }
     }
@@ -142,11 +142,11 @@
 
     .toggle-texts {
         label {
-            color: $reloadly-black-12;
+            color: $reloadly-grey;
         }
 
         p {
-            color: $reloadly-black-12;
+            color: $reloadly-grey;
         }
     }
 }

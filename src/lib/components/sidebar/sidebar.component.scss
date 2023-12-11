@@ -21,9 +21,9 @@
     width: auto;
     text-decoration: none;
     font-weight: 400;
-    font-size: $font-regular;
+    font-size: $font-size-rg;
     line-height: 20px;
-    color: $reloadly-black-6;
+    color: $reloadly-black-3;
     &:not(:last-of-type) {
       margin-bottom: 12px;
     }
@@ -59,11 +59,12 @@
     width: auto;
     text-decoration: none;
     font-weight: 400;
-    font-size: $font-regular;
+    font-size: $font-size-rg;
     line-height: 20px;
-    color: $reloadly-black-6;
-    padding: 0px $padding-10;
-    padding-bottom: $padding-4;
+    color: $reloadly-black-3;
+    padding: 0px $spacing-10;
+    padding-bottom: $spacing-4;
+    white-space: nowrap;
     &:not(:last-of-type) {
       margin-right: 12px;
     }

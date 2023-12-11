@@ -3,23 +3,23 @@
 @mixin smaller-text {
     display: block;
     font-weight: 400;
-    font-size: $font-small;
+    font-size: $font-size-xs;
     line-height: 16px;
     margin-bottom: 5px;
 }
 
 .heading-text {
     display: block;
-    font-size: $font-medium;
+    font-size: $font-size-s;
     font-weight: 450;
     line-height: 20px;
     letter-spacing: -0.154px;
-    color: $reloadly-black-8;
+    color: $reloadly-black-1;
 }
 
 .subheading-text {
     @include smaller-text();
-    color: $reloadly-black-8;
+    color: $reloadly-black-1;
 }
 
 .error-text {
@@ -28,8 +28,8 @@
 
     svg {
         fill: $reloadly-danger;
-        width: $font-small;
-        height: $font-small;
+        width: $font-size-xs;
+        height: $font-size-xs;
         margin: 3px 2px 0 0;
     }
 }
