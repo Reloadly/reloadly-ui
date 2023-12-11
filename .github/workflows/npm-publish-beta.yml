@@ -4,6 +4,7 @@ on:
     push:
         branches:
             - develop
+            - main
 
 jobs:
     deploy-beta:
@@ -31,7 +32,7 @@ jobs:
                   NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
     deploy-release:
         runs-on: ubuntu-latest
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/main'
         steps:
             - name: Checkout code
               uses: actions/checkout@v3
