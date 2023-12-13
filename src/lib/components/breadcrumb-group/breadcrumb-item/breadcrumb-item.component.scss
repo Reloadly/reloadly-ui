@@ -3,7 +3,7 @@
 .item-class {
     font-style: normal;
     font-weight: 450;
-    font-size: 12px;
+    font-size: inherit;
     color: $reloadly-black-2;
     cursor: pointer;
     &:hover {
