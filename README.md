@@ -29,7 +29,7 @@ The supported versions are:
 
 | reloadly-ui  | Angular |
 | ------------ | ------- |
-| 1.0.0        | 16.1.8  |
+| 1.0.1        | 16.1.8  |
 
 ## Installation
 

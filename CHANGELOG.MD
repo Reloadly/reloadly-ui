@@ -1,5 +1,5 @@
 <a name="1.0.0"></a>
-# [1.0.0](https://github.com/reloadly-ui/reloadly-ui/compare/9f8f37b...1.0.0-alpha.0) (2023-09-26)
+# [1.0.0](https://github.com/Reloadly/reloadly-ui/compare/main...release/1.0.0) (2023-12-11)
 
 ### Features
 
@@ -29,3 +29,11 @@ Initial release with the following directives:
 * selection-grid
 * table
 * tooltip
+
+
+<a name="1.0.1"></a>
+# [1.0.1](https://github.com/Reloadly/reloadly-ui/compare/main...release/1.0.1) (2023-12-15)
+
+### Features
+
+Small fix for success badge icon.
