@@ -10,7 +10,7 @@
 
     &-arrow {
         margin: 0 $spacing-8;
-        color: $reloadly-black-2;
+        color: var(--rld-black-2);
         fill: none;
         stroke: currentColor;
         width: 0.7em;

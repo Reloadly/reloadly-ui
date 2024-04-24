@@ -1,7 +1,7 @@
 @import "../../../styles/variables.scss";
 
 .reloadly-menu {
-    background: $reloadly-white;
+    background: var(--rld-shade);
     box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.08),
         0px 15px 35px 0px rgba(60, 66, 87, 0.12);
     border: 1px solid #e3e8ee;
@@ -12,7 +12,7 @@
     font-size: $font-size-s;
     font-weight: 450;
     line-height: 20px;
-    color: $reloadly-black-1;
+    color: var(--rld-black-1);
     position: absolute;
     z-index: 130;
     display: flex;

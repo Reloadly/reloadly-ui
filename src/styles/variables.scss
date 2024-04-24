@@ -1,14 +1,15 @@
 $reloadly-blue: #6ae8ff;
 $reloadly-light-blue: #d4e5ff;
 $reloadly-mint: #53ff98;
+$reloadly-indigo: #635bff;
 $reloadly-violet: #7700ff;
 $reloadly-violet-2: #852af9;
-$reloadly-indigo: #635bff;
 $reloadly-violet-3: #c49ffd;
 $reloadly-violet-4: #00163a;
 $reloadly-violet-5: #f6edff;
 $reloadly-ash: #f6f8fc;
 $reloadly-grey: #b9bfc7;
+$reloadly-grey-2: #f5f6f7;
 $reloadly-white: #ffffff;
 $reloadly-black: #000000;
 $reloadly-black-1: #334054;
@@ -34,28 +35,27 @@ $reloadly-filled-disabled: #f1efff;
 $reloadly-secondary-btn: #479cab;
 $reloadly-form-disabled: #f6f8fa;
 
-$primary: $reloadly-blue;
-$link: $reloadly-violet;
+$bg-color: $reloadly-white;
 $text-color: #50565b;
 $text-color-2: #232d3d;
 $text-color-grey: #697077;
-$input-radius: 4px;
+$text-color-header: #414552;
 $border-color: #d5dbe1;
 $input-border-color: $reloadly-light-blue;
-$family-sans-serif: "Futura", "Century Gothic", "Corbel", "Helvetica Neue",
-    "Helvetica", "Arial", sans-serif;
-
-// other variables
 $input-bg-color: #d5d9e0;
 $container-bg-color: #f3ebff;
+$box-bg-color: #f2f4f8;
+
+$input-radius: 4px;
 $border-width: 1px;
 $border-radius-l: 16px;
 $border-radius-md: 10px;
-$box-bg-color: #f2f4f8;
-$box-shadow: 0px 2px 5px rgba(60, 66, 87, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.08);
+$box-shadow: 0px 2px 5px var(--box-shadow-contrast-1_2), 0px 1px 1px var(--box-shadow-contrast-0_8);
+$card-btn-box-shadow: 0px 1px 1px var(--card-btn-box-shadow--contrast-1_2), 0px 2px 5px var(--card-btn-box-shadow--contrast-0_8);
+$card-border: 1px solid var(--card-border-color);
+$card-btn-border: 1px solid var(var(--card-btn-border-color));
+$header-height: 38px;
 $box-halo-width: 3px;
-$brand-color: $reloadly-violet;
-$card-border: 1px solid #d5d9e0;
 $header-height: 38px;
 
 $spacing-4: 4px;
@@ -69,10 +69,6 @@ $spacing-32: 32px;
 $spacing-64: 64px;
 $spacing-100: 100px;
 
-$form-box-padding-small: 2px 8px;
-$form-box-padding-medium: 4px 8px;
-$form-box-padding-large: 8px;
-
 $font-size-xs: 12px;
 $font-size-s: 14px;
 $font-size-rg: 16px;
@@ -80,9 +76,10 @@ $font-size-l: 18px;
 $font-size-xl: 20px;
 $font-size-xxl: 24px;
 
-$gradient: linear-gradient(65.58deg, rgba(0, 66, 255, 0.5) -11.84%, rgba(235, 0, 27, 0.5) 98.75%),
-    linear-gradient(0deg, #FFFFFF, #FFFFFF);
+$form-box-padding-small: 2px 8px;
+$form-box-padding-medium: 4px 8px;
+$form-box-padding-large: 8px;
 
 @mixin drop-shadow {
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 1px 2px var(--shadow-contrast-3), 0px 2px 6px 2px var(--shadow-contrast-1_5);
 }

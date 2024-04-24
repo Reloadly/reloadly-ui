@@ -33,14 +33,14 @@
 
 	&-disc {
 		@include disc();
-		background-color: $reloadly-grey;
+		background-color: var(--rld-grey);
 		opacity: 0;
 		z-index: 0;
 	}
 
 	&-colored-bg {
 		@include disc();
-		background-color: lighten($color: $reloadly-grey, $amount: 15);
+		background-color: var(--rld-grey-contrast-15);
 		overflow: hidden;
 		z-index: -1;
 		opacity: 0;
@@ -66,7 +66,7 @@
 		&-object {
 			margin: auto;
 			display: block;
-			border: 2px solid lighten($color: $text-color, $amount: 10);
+			border: 2px solid var(--rld-text-color-contrast-10);
 			border-radius: 2px;
 			height: 20px;
 			width: 20px;

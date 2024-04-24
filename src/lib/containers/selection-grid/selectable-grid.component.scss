@@ -26,12 +26,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: $reloadly-white;
-        border: 2px solid $reloadly-black;
+        background-color: var(--rld-shade);
+        border: 2px solid var(--rld-shadest);
         border-radius: 4px;
         font-weight: 450;
         font-size: 16px;
-        color: $reloadly-black-3;
+        color: var(--rld-black-3);
         transition: all ease-in-out 300ms;
         cursor: pointer;
         box-sizing: border-box;
@@ -44,11 +44,11 @@
             padding: $spacing-4 $spacing-8;
         }
         &:hover {
-            background-color: $reloadly-violet-5;
+            background-color: var(--rld-violet-5);
             transition: all ease-in-out 300ms;
         }
         &.selected {
-            background-color: $reloadly-black;
+            background-color: var(--rld-shadest);
             color: $reloadly-white;
             transition: all ease-in-out 300ms;
         }

@@ -12,13 +12,13 @@
                 line-height: 20px;
                 text-transform: uppercase;
                 font-style: normal;
-                color: $reloadly-table-head-color !important;
+                color: var(--rld-table-head-color) !important;
                 padding: $spacing-8;
                 padding-bottom: 5px;
                 padding-top: 10px;
                 border-width: 0 0 1px !important;
-                border-color: $reloadly-table-border-color;
-                border: 1px solid $reloadly-table-border-color;
+                border-color: var(--rld-table-border-color);
+                border: 1px solid var(--rld-table-border-color);
                 vertical-align: middle !important;
             }
         }
@@ -31,9 +31,9 @@
                 font-style: normal;
                 padding: $spacing-8;
                 border-width: 0 0 1px !important;
-                border-color: $reloadly-table-border-color;
-                border: 1px solid $reloadly-table-border-color;
-                color: $reloadly-table-body-color;
+                border-color: var(--rld-table-border-color);
+                border: 1px solid var(--rld-table-border-color);
+                color: var(--rld-table-body-color);
                 vertical-align: middle !important;
                 text-wrap: nowrap;
             }

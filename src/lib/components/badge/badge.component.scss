@@ -22,8 +22,8 @@
     }
 
     &.neutral {
-        background-color: $reloadly-ash;
-        color: $reloadly-black-2;
+        background-color: var(--rld-ash);
+        color: var(--rld-black-2);
     }
 
     &.info {

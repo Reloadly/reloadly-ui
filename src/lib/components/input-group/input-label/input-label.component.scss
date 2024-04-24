@@ -14,12 +14,12 @@
     font-weight: 450;
     line-height: 20px;
     letter-spacing: -0.154px;
-    color: $reloadly-black-1;
+    color: var(--rld-black-1);
 }
 
 .subheading-text {
     @include smaller-text();
-    color: $reloadly-black-1;
+    color: var(--rld-black-1);
 }
 
 .error-text {

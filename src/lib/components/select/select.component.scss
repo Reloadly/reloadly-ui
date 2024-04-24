@@ -8,13 +8,13 @@
 
     &:focus-within {
         .select-box {
-            box-shadow: 0px 0px 0px 2px $reloadly-violet inset;
+            box-shadow: 0px 0px 0px 2px var(--rld-violet) inset;
         }
     }
 
     &.disabled {
         .select-box {
-            background: $reloadly-ash;
+            background: var(--rld-ash);
             cursor: not-allowed;
 
             &:after {
@@ -30,7 +30,7 @@
             }
 
             p {
-                color: $reloadly-grey;
+                color: var(--rld-grey);
             }
         }
     }
@@ -45,7 +45,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        border: 1px solid $border-color;
+        border: 1px solid var(--rld-border-color);
         box-shadow: $box-shadow;
         border-radius: 4px;
         background: white;
@@ -58,7 +58,7 @@
             font-size: $font-size-s;
             line-height: 20px;
             letter-spacing: -0.154px;
-            color: $reloadly-black-1;
+            color: var(--rld-black-1);
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -97,7 +97,7 @@
     }
 
     .focused {
-        box-shadow: 0px 0px 0px 2px $reloadly-violet inset;
+        box-shadow: 0px 0px 0px 2px var(--rld-violet) inset;
     }
 
     .error-class {
@@ -123,7 +123,7 @@
         position: absolute;
         margin-top: 3px;
         content: "";
-        border: 1px solid $border-color;
+        border: 1px solid var(--rld-border-color);
         box-shadow: $box-shadow;
         border-radius: 4px;
         background: white;
@@ -133,7 +133,7 @@
         input {
             width: 100%;
             height: 36px;
-            border: 1px solid $border-color;
+            border: 1px solid var(--rld-border-color);
             border-radius: 4px;
             background: transparent;
             padding: 8px;
@@ -146,7 +146,7 @@
 
         ul {
             width: 100%;
-            border-top: 1px solid $border-color;
+            border-top: 1px solid var(--rld-border-color);
             max-height: 200px;
             overflow-y: auto;
 
@@ -156,7 +156,7 @@
                 font-size: $font-size-s;
                 line-height: 20px;
                 padding: 8px 0;
-                border-bottom: 1px solid $border-color;
+                border-bottom: 1px solid var(--rld-border-color);
                 background: transparent;
                 cursor: pointer;
 
@@ -185,6 +185,6 @@
     }
 
     .icon-disabled {
-        color: $reloadly-ash;
+        color: var(--rld-ash);
     }
 }

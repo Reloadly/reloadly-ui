@@ -14,7 +14,7 @@
     position: absolute;
     top: var(--activeTop);
     left: 0;
-    border-left: solid 1.5px $reloadly-violet;
+    border-left: solid 1.5px var(--rld-violet);
     transition: all ease 0.4s;
   }
   .sidebar-menu-item {
@@ -23,16 +23,16 @@
     font-weight: 400;
     font-size: $font-size-rg;
     line-height: 20px;
-    color: $reloadly-black-3;
+    color: var(--rld-black-3);
     &:not(:last-of-type) {
       margin-bottom: 12px;
     }
     &:hover {
-      color: $reloadly-violet;
+      color: var(--rld-violet);
     }
   }
   .active-item {
-    color: $reloadly-violet;
+    color: var(--rld-violet);
     font-weight: 450;
   }
 }
@@ -52,7 +52,7 @@
     position: absolute;
     left: var(--activeLeft);
     bottom: 0;
-    border-bottom: solid 1.5px $reloadly-violet;
+    border-bottom: solid 1.5px var(--rld-violet);
     transition: all ease 0.4s;
   }
   .sidebar-menu-item {
@@ -61,7 +61,7 @@
     font-weight: 400;
     font-size: $font-size-rg;
     line-height: 20px;
-    color: $reloadly-black-3;
+    color: var(--rld-black-3);
     padding: 0px $spacing-10;
     padding-bottom: $spacing-4;
     white-space: nowrap;
@@ -69,11 +69,11 @@
       margin-right: 12px;
     }
     &:hover {
-      color: $reloadly-violet;
+      color: var(--rld-violet);
     }
   }
   .active-item {
-    color: $reloadly-violet;
+    color: var(--rld-violet);
     font-weight: 450;
   }
 }

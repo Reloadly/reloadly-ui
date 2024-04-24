@@ -11,7 +11,7 @@
     p {
         font-size: $font-size-s;
         line-height: 20px;
-        color: $reloadly-black-2;
+        color: var(--rld-black-2);
     }
     .buttons {
         flex-wrap: nowrap !important;
@@ -26,6 +26,6 @@
     }
 }
 .active {
-    background-color: $reloadly-violet !important;
+    background-color: var(--rld-violet) !important;
     color: $reloadly-white !important;
 }

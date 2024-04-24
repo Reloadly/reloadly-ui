@@ -41,7 +41,7 @@ $thickness: 22px;
     &-slide {
         width: 100%;
         height: 10px;
-        background: $reloadly-light-blue;
+        background: var(--rld-light-blue);
         border: none;
         border-radius: $input-radius * 2;
     }
@@ -53,7 +53,7 @@ $thickness: 22px;
         width: $thickness;
         height: $thickness;
         border-radius: 50%;
-        background-color: darken($color: $reloadly-light-blue, $amount: 15);
+        background-color: var(--rld-light-blue-contrast-15);
     }
 
     &-range-input {
@@ -80,16 +80,16 @@ $thickness: 22px;
 
     &-disabled {
         .rld-slide {
-            background-color: $reloadly-disabled-color;
+            background-color: var(--rld-disabled-color);
         }
 
         .rld-knob {
-            background-color: darken($color: $reloadly-disabled-color, $amount: 5);
+            background-color: var(--rld-disabled-color-contrast-5);
             cursor: not-allowed;
         }
 
         .rld-input {
-            background-color: $reloadly-disabled-color;
+            background-color: var(--rld-disabled-color);
             border: 0;
             box-shadow: none;
             cursor: not-allowed;
