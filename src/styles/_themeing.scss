@@ -1,24 +1,16 @@
-@import "variables";
-
-.dark-theme {
-    --rld-bg-color: black;
-
-    --rld-shadow-contrast-3: rgba(255, 255, 255, 0.3);
-    --rld-shadow-contrast-1_5: rgba(255, 255, 255, 0.15);
-}
-
-.light-theme {
+.rld-light-theme {
+    @import "light-palette";
     --rld-blue: #{$reloadly-blue};
-    --rld-blue-contrast-50: darken($color: #{$reloadly-blue}, $amount: 50);
-    --rld-blue-contrast-60: darken($color: #{$reloadly-blue}, $amount: 60);
+    --rld-blue-contrast-50: #{darken($reloadly-blue, 50)};
+    --rld-blue-contrast-60: #{darken($reloadly-blue, 60)};
 
     --rld-light-blue: #{$reloadly-light-blue};
-    --rld-light-blue-contrast-5: darken($color: #{$reloadly-light-blue}, $amount: 5);
-    --rld-light-blue-contrast-15: darken($color: #{$reloadly-light-blue}, $amount: 15);
+    --rld-light-blue-contrast-5: #{darken($reloadly-light-blue,5)};
+    --rld-light-blue-contrast-15: #{darken($reloadly-light-blue, 15)};
 
     --rld-mint: #{$reloadly-mint};
-    --rld-mint-contrast-40: darken($color: #{$reloadly-mint}, $amount: 40);
-    --rld-mint-contrast-50: darken($color: #{$reloadly-mint}, $amount: 50);
+    --rld-mint-contrast-40: #{darken($reloadly-mint, 40)};
+    --rld-mint-contrast-50: #{darken($reloadly-mint, 50)};
 
     --rld-indigo: #{$reloadly-indigo};
     --rld-violet: #{$reloadly-violet};
@@ -31,7 +23,7 @@
     --rld-ash: #{$reloadly-ash};
 
     --rld-grey: #{$reloadly-grey};
-    --rld-grey-contrast-15: lighten($color: #{$reloadly-grey}, $amount: 15);
+    --rld-grey-contrast-15: #{lighten($reloadly-grey, 15)};
     --rld-grey-2: #{$reloadly-grey-2};
 
     --rld-shade: #{$reloadly-white};
@@ -51,7 +43,7 @@
     --rld-table-body-color: #{$reloadly-table-body-color};
     --rld-table-border-color: #{$reloadly-table-border-color};
     --rld-disabled-color: #{$reloadly-disabled-color};
-    --rld-disabled-color-contrast-5: darken($color: #{$reloadly-disabled-color}, $amount: 5);
+    --rld-disabled-color-contrast-5: #{darken($reloadly-disabled-color, 5)};
     --rld-border-color: #{$reloadly-border-color};
     --rld-tonal: #{$reloadly-tonal};
     --rld-filled-hover: #{$reloadly-filled-hover};
@@ -62,18 +54,17 @@
 
     --rld-bg-color: var(--rld-shade);
     --rld-text-color: #{$text-color};
-    --rld-text-color-contrast-5: darken($color: #{$text-color}, $amount: 5);
-    --rld-text-color-contrast-10: lighten($color: #{$text-color}, $amount: 10);
+    --rld-text-color-contrast-5: #{darken($text-color, $amount: 5)};
+    --rld-text-color-contrast-10: #{lighten($text-color, 10)};
     --rld-text-color-2: #{$text-color-2};
     --rld-text-color-grey: #{$text-color-grey};
     --rld-text-color-header: #{$text-color-header};
     --rld-border-color: #{$border-color};
     --rld-input-border-color: #{$input-border-color};
-    --rld-input-border-color-contrast-10: darken($color: #{$input-border-color}, $amount: 10);
+    --rld-input-border-color-contrast-10: #{darken($input-border-color, 10)};
     --rld-input-bg-color: #{$input-bg-color};
     --rld-container-bg-color: #{$container-bg-color};
     --rld-box-bg-color: #{$box-bg-color};
-    --rld-brand-color: #{$brand-color};
     --rld-box-shadow-contrast-1_2: rgba(60, 66, 87, 0.12);
     --rld-box-shadow-contrast-0_8: rgba(0, 0, 0, 0.08);
     --rld-card-btn-box-shadow--contrast-1_2: rgba(0, 0, 0, 0.12);
@@ -82,4 +73,12 @@
     --rld-card-btn-border-color: #e0e6eb;
     --rld-shadow-contrast-3: rgba(0, 0, 0, 0.3);
     --rld-shadow-contrast-1_5: rgba(0, 0, 0, 0.15);
+}
+
+.rld-dark-theme {
+    @import "dark-palette";
+    --rld-bg-color: black;
+
+    --rld-shadow-contrast-3: rgba(255, 255, 255, 0.3);
+    --rld-shadow-contrast-1_5: rgba(255, 255, 255, 0.15);
 }

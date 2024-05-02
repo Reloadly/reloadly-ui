@@ -10,11 +10,11 @@
     ///********PRIMARY BUTTON**********
     &.primary {
         background: var(--rld-violet);
-        color: $reloadly-white;
+        color: var(--rld-white);
 
         &.filled {
             background: var(--rld-violet);
-            color: $reloadly-white;
+            color: var(--rld-white);
 
             &:hover {
                 background: var(--rld-filled-hover);
@@ -105,7 +105,7 @@
 
             &:active {
                 background-color: var(--rld-violet);
-                color: $reloadly-white;
+                color: var(--rld-white);
             }
 
             &:disabled {
@@ -200,7 +200,7 @@
     &.secondary {
         &.filled {
             background: var(--rld-secondary-btn);
-            color: $reloadly-white;
+            color: var(--rld-white);
 
             &:hover {
                 background: #38808d;
@@ -268,7 +268,7 @@
 
             &:active {
                 color: var(--rld-secondary-btn);
-                color: $reloadly-white;
+                color: var(--rld-white);
             }
 
             &:disabled {
@@ -383,7 +383,7 @@
 
             &:active {
                 color: var(--rld-black-1);
-                color: $reloadly-white;
+                color: var(--rld-white);
             }
 
             &:disabled {
@@ -449,7 +449,7 @@
     &.danger {
         &.filled {
             background: $reloadly-danger;
-            color: $reloadly-white;
+            color: var(--rld-white);
             box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
                 0px 2px 5px rgba(60, 66, 87, 0.08);
 
@@ -496,7 +496,7 @@
             }
 
             &:active {
-                color: $reloadly-white;
+                color: var(--rld-white);
             }
 
             &:disabled {

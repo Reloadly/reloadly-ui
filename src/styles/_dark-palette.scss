@@ -20,8 +20,6 @@ $reloadly-black-4: #868d95;
 $reloadly-black-5: #0000008f;
 $reloadly-black-6: #38456c;
 $reloadly-black-7: #3c4247;
-$reloadly-danger: #df1b41;
-$reloadly-orange: #ed6704;
 
 $reloadly-table-head-color: #1a1f36;
 $reloadly-table-body-color: #6a7383;
@@ -45,41 +43,3 @@ $input-border-color: $reloadly-light-blue;
 $input-bg-color: #d5d9e0;
 $container-bg-color: #f3ebff;
 $box-bg-color: #f2f4f8;
-
-$input-radius: 4px;
-$border-width: 1px;
-$border-radius-l: 16px;
-$border-radius-md: 10px;
-$box-shadow: 0px 2px 5px var(--box-shadow-contrast-1_2), 0px 1px 1px var(--box-shadow-contrast-0_8);
-$card-btn-box-shadow: 0px 1px 1px var(--card-btn-box-shadow--contrast-1_2), 0px 2px 5px var(--card-btn-box-shadow--contrast-0_8);
-$card-border: 1px solid var(--card-border-color);
-$card-btn-border: 1px solid var(var(--card-btn-border-color));
-$header-height: 38px;
-$box-halo-width: 3px;
-$header-height: 38px;
-
-$spacing-4: 4px;
-$spacing-6: 6px;
-$spacing-8: 8px;
-$spacing-10: 10px;
-$spacing-12: 12px;
-$spacing-16: 16px;
-$spacing-24: 24px;
-$spacing-32: 32px;
-$spacing-64: 64px;
-$spacing-100: 100px;
-
-$font-size-xs: 12px;
-$font-size-s: 14px;
-$font-size-rg: 16px;
-$font-size-l: 18px;
-$font-size-xl: 20px;
-$font-size-xxl: 24px;
-
-$form-box-padding-small: 2px 8px;
-$form-box-padding-medium: 4px 8px;
-$form-box-padding-large: 8px;
-
-@mixin drop-shadow {
-    box-shadow: 0px 1px 2px var(--shadow-contrast-3), 0px 2px 6px 2px var(--shadow-contrast-1_5);
-}
