@@ -48,12 +48,12 @@
 
     &.urgent {
         background-color: #df1b41;
-        color: $reloadly-white;
+        color: var(--rld-shadest);
     }
 
     &.notification {
         background-color: red; //@TODO: add the exact color
-        color: $reloadly-white;
+        color: var(--rld-shadest);
         font-size: 10px;
         border: 3px solid #F6F8FA;
     }

@@ -49,7 +49,7 @@
         }
         &.selected {
             background-color: var(--rld-shadest);
-            color: $reloadly-white;
+            color: var(--rld-shadest);
             transition: all ease-in-out 300ms;
         }
     }

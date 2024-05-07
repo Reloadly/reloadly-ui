@@ -1,45 +1,46 @@
-$reloadly-blue: #6ae8ff;
-$reloadly-light-blue: #d4e5ff;
-$reloadly-mint: #53ff98;
-$reloadly-indigo: #635bff;
-$reloadly-violet: #7700ff;
-$reloadly-violet-2: #852af9;
-$reloadly-violet-3: #c49ffd;
-$reloadly-violet-4: #00163a;
-$reloadly-violet-5: #f6edff;
-$reloadly-ash: #f6f8fc;
-$reloadly-grey: #b9bfc7;
-$reloadly-grey-2: #f5f6f7;
-$reloadly-white: #ffffff;
-$reloadly-black: #000000;
-$reloadly-black-1: #334054;
-$reloadly-black-2: #606d80;
-$reloadly-black-3: #50565b;
-$reloadly-black-3-hover: #3e4246;
-$reloadly-black-4: #868d95;
-$reloadly-black-5: #0000008f;
-$reloadly-black-6: #38456c;
-$reloadly-black-7: #3c4247;
+$palette: (
+    reloadly-blue: #6ae8ff,
+    reloadly-light-blue: #d4e5ff,
+    reloadly-mint: #53ff98,
+    reloadly-indigo: #635bff,
+    reloadly-violet: #7700ff,
+    reloadly-violet-2: #852af9,
+    reloadly-violet-3: #c49ffd,
+    reloadly-violet-4: #00163a,
+    reloadly-violet-5: #f6edff,
+    reloadly-ash: #f6f8fc,
+    reloadly-grey: #b9bfc7,
+    reloadly-grey-2: #f5f6f7,
+    reloadly-white: #ffffff,
+    reloadly-black: #000000,
+    reloadly-black-1: #334054,
+    reloadly-black-2: #606d80,
+    reloadly-black-3: #50565b,
+    reloadly-black-3-hover: #3e4246,
+    reloadly-black-4: #868d95,
+    reloadly-black-5: #0000008f,
+    reloadly-black-6: #38456c,
+    reloadly-black-7: #3c4247,
 
-$reloadly-table-head-color: #1a1f36;
-$reloadly-table-body-color: #6a7383;
-$reloadly-table-border-color: #ebeef1;
-$reloadly-disabled-color: #ebdffe;
-$reloadly-border-color: #e9f2ff;
-$reloadly-tonal: #e8def8;
-$reloadly-filled-hover: #5b05c3;
-$reloadly-filled-pressed: #9c79ff;
-$reloadly-filled-disabled: #f1efff;
-$reloadly-secondary-btn: #479cab;
-$reloadly-form-disabled: #f6f8fa;
+    reloadly-table-head-color: #1a1f36,
+    reloadly-table-body-color: #6a7383,
+    reloadly-table-border-color: #ebeef1,
+    reloadly-disabled-color: #ebdffe,
+    reloadly-border-color: #e9f2ff,
+    reloadly-tonal: #e8def8,
+    reloadly-filled-hover: #5b05c3,
+    reloadly-filled-pressed: #9c79ff,
+    reloadly-filled-disabled: #f1efff,
+    reloadly-secondary-btn: #479cab,
+    reloadly-form-disabled: #f6f8fa,
 
-$bg-color: $reloadly-white;
-$text-color: #50565b;
-$text-color-2: #232d3d;
-$text-color-grey: #697077;
-$text-color-header: #414552;
-$border-color: #d5dbe1;
-$input-border-color: $reloadly-light-blue;
-$input-bg-color: #d5d9e0;
-$container-bg-color: #f3ebff;
-$box-bg-color: #f2f4f8;
+    text-color: #50565b,
+    text-color-2: #232d3d,
+    text-color-grey: #697077,
+    text-color-header: #414552,
+    border-color: #d5dbe1,
+    input-border-color: #d4e5ff,
+    input-bg-color: #d5d9e0,
+    container-bg-color: #f3ebff,
+    box-bg-color: #f2f4f8
+);

@@ -38,3 +38,7 @@ $form-box-padding-large: 8px;
 @mixin drop-shadow {
     box-shadow: 0px 1px 2px var(--rld-shadow-contrast-3), 0px 2px 6px 2px var(--rld-shadow-contrast-1_5);
 }
+
+@mixin theme-transition {
+    transition: background-color 250ms linear;
+}
