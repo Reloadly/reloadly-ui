@@ -80,7 +80,7 @@
 
 .rld-light-theme {
     @import "light-palette";
-    @include themeing($palette);
+    @include themeing($light-palette);
 
     * {
         @include theme-transition();
@@ -89,7 +89,7 @@
 
 .rld-dark-theme {
     @import "dark-palette";
-    @include themeing($palette);
+    @include themeing($dark-palette);
     --rld-shade: #{$reloadly-black};
     --rld-shadest: #{$reloadly-white};
 
