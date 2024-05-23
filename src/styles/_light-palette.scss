@@ -26,7 +26,6 @@ $light-palette: (
     reloadly-table-body-color: #6a7383,
     reloadly-table-border-color: #ebeef1,
     reloadly-disabled-color: #ebdffe,
-    reloadly-border-color: #e9f2ff,
     reloadly-tonal: #e8def8,
     reloadly-filled-hover: #5b05c3,
     reloadly-filled-pressed: #9c79ff,
@@ -34,6 +33,8 @@ $light-palette: (
     reloadly-secondary-btn: #479cab,
     reloadly-form-disabled: #f6f8fa,
 
+    shade: #ffffff,
+    bg-color: #ffffff,
     text-color: #50565b,
     text-color-2: #232d3d,
     text-color-grey: #697077,
@@ -42,5 +43,6 @@ $light-palette: (
     input-border-color: #d4e5ff,
     input-bg-color: #d5d9e0,
     container-bg-color: #f3ebff,
+    card-btn-border-color: #e0e6eb,
     box-bg-color: #f2f4f8
 );

@@ -14,7 +14,7 @@ $dark-palette: (
     reloadly-white: #ffffff,
     reloadly-black: #000000,
     reloadly-black-1: #334054,
-    reloadly-black-2: #606d80,
+    reloadly-black-2: #b9c6d2, // currently same as text color
     reloadly-black-3: #50565b,
     reloadly-black-3-hover: #3e4246,
     reloadly-black-4: #868d95,
@@ -26,7 +26,6 @@ $dark-palette: (
     reloadly-table-body-color: #6a7383,
     reloadly-table-border-color: #ebeef1,
     reloadly-disabled-color: #ebdffe,
-    reloadly-border-color: #e9f2ff,
     reloadly-tonal: #e8def8,
     reloadly-filled-hover: #5b05c3,
     reloadly-filled-pressed: #9c79ff,
@@ -34,13 +33,16 @@ $dark-palette: (
     reloadly-secondary-btn: #479cab,
     reloadly-form-disabled: #f6f8fa,
 
-    text-color: #50565b,
+    shade: #3b3840,
+    bg-color: #252526,
+    text-color: #b9c6d2,
     text-color-2: #232d3d,
     text-color-grey: #697077,
-    text-color-header: #414552,
+    text-color-header: #b8bfd8,
     border-color: #d5dbe1,
     input-border-color: #d4e5ff,
     input-bg-color: #d5d9e0,
     container-bg-color: #f3ebff,
+    card-btn-border-color: #e0e6eb,
     box-bg-color: #f2f4f8
 );

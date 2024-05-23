@@ -28,7 +28,7 @@
     --rld-grey-contrast-15: #{lighten(map.get($colors, reloadly-grey), 15)};
     --rld-grey-2: #{map.get($colors, reloadly-grey-2)};
 
-    --rld-shade: #{map.get($colors, reloadly-white)};
+    --rld-shade: #{map.get($colors, shade)};
     --rld-shadest: #{map.get($colors, reloadly-black)};
     --rld-white: #{map.get($colors, reloadly-white)};
     --rld-black: #{map.get($colors, reloadly-black)};
@@ -46,7 +46,6 @@
     --rld-table-border-color: #{map.get($colors, reloadly-table-border-color)};
     --rld-disabled-color: #{map.get($colors, reloadly-disabled-color)};
     --rld-disabled-color-contrast-5: #{darken(map.get($colors, reloadly-disabled-color), 5)};
-    --rld-border-color: #{map.get($colors, reloadly-border-color)};
     --rld-tonal: #{map.get($colors, reloadly-tonal)};
     --rld-filled-hover: #{map.get($colors, reloadly-filled-hover)};
     --rld-filled-pressed: #{map.get($colors, reloadly-filled-pressed)};
@@ -54,7 +53,7 @@
     --rld-secondary-btn: #{map.get($colors, reloadly-secondary-btn)};
     --rld-form-disabled: #{map.get($colors, reloadly-form-disabled)};
 
-    --rld-bg-color: var(--rld-shade);
+    --rld-bg-color: #{map.get($colors, bg-color)};
     --rld-text-color: #{map.get($colors, text-color)};
     --rld-text-color-contrast-5: #{darken(map.get($colors, text-color), 5)};
     --rld-text-color-contrast-10: #{lighten(map.get($colors, text-color), 10)};
@@ -72,7 +71,7 @@
     --rld-card-btn-box-shadow--contrast-1_2: rgba(0, 0, 0, 0.12);
     --rld-card-btn-box-shadow--contrast-0_8: rgba(60, 66, 87, 0.08);
     --rld-card-border-color: #{map.get($colors, input-bg-color)};
-    --rld-card-btn-border-color: #e0e6eb;
+    --rld-card-btn-border-color: #{map.get($colors, card-btn-border-color)};
     --rld-shadow-contrast-3: rgba(0, 0, 0, 0.3);
     --rld-shadow-contrast-1_5: rgba(0, 0, 0, 0.15);
     --rld-shadow-contrast-1_5: rgba(0, 0, 0, 0.15);
@@ -90,8 +89,6 @@
 .rld-dark-theme {
     @import "dark-palette";
     @include themeing($dark-palette);
-    --rld-shade: #{$reloadly-black};
-    --rld-shadest: #{$reloadly-white};
 
     --rld-shadow-contrast-3: rgba(255, 255, 255, 0.3);
     --rld-shadow-contrast-1_5: rgba(255, 255, 255, 0.15);

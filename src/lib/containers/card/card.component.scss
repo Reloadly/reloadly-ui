@@ -1,15 +1,11 @@
 @import "../../../styles/variables";
 
 .rld-card {
-    @include drop-shadow;
-    border-radius: 8px;
-    padding: $spacing-4 $spacing-8;
+    border-radius: $spacing-8;
     height: 100%;
-    @media (min-width: 48em) {
-        padding: $spacing-8 $spacing-32;
-    }
+    position: relative;
 
-    .title {
+    &__title {
         font-size: $font-size-rg;
         font-weight: 450;
         margin-bottom: 4px;
@@ -17,5 +13,47 @@
 
     .is-flex {
         display: flex;
+    }
+
+
+    &__outer-wrapper {
+        padding: $spacing-4;
+    }
+
+    &__inner-wrapper {
+        padding: $spacing-4 $spacing-8;
+
+        @media (min-width: 48em) {
+            padding: $spacing-8 $spacing-32;
+        }
+    }
+}
+
+
+.rld-light-theme {
+    .rld-card {
+        box-shadow: 0px 1px 2px var(--rld-shadow-contrast-3), 0px 2px 6px 2px var(--rld-shadow-contrast-1_5);
+    }
+
+    .rld-card__outer-wrapper {
+        background-color: rgba($color: #ffffff, $alpha: 0.0);
+        border-radius: $spacing-8;
+    }
+
+    .rld-card__inner-wrapper {
+        border-radius: $spacing-8;
+    }
+}
+
+.rld-dark-theme {
+    .rld-card__outer-wrapper {
+        background: var(--rld-shade);
+        border-radius: $spacing-4;
+        background: linear-gradient(30deg, var(--rld-shade) 0%, var(--rld-black-7) 100%);
+    }
+
+    .rld-card__inner-wrapper {
+        background: linear-gradient(30deg, var(--rld-black-3-hover) 0%, var(--rld-black-3) 100%);
+        border-radius: $spacing-4;
     }
 }
