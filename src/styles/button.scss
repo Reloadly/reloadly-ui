@@ -605,8 +605,8 @@
     }
 }
 
-.menu-item {
-    color: #393c40;
+.rld-menu-item {
+    color: var(--rld-text-color-header);
     font-size: $font-size-s;
     font-weight: 450;
     line-height: 20px;
@@ -621,5 +621,11 @@
 
     &:hover {
         background: rgba(103, 80, 164, 0.08);
+    }
+}
+
+.rld-dark-theme {
+    .rld-menu-item:hover {
+        background: var(--rld-black-3-hover);
     }
 }

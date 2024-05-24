@@ -1,12 +1,12 @@
-<span class="reloadly-badge" [class]="class">
+<span class="rld-badge" [class]="class">
     <ng-content></ng-content>
-    <svg class="badge-icon" *ngIf="showIcon && variant==='positive'">
+    <svg class="rld-badge__icon" *ngIf="showIcon && variant==='positive'">
         <use xlink:href="#check-badge"></use>
     </svg>
-    <svg class="badge-icon" *ngIf="showIcon && variant==='warning'">
+    <svg class="rld-badge__icon" *ngIf="showIcon && variant==='warning'">
         <use xlink:href="#warning"></use>
     </svg>
-    <svg class="badge-icon" *ngIf="showIcon && variant==='negative'">
+    <svg class="rld-badge__icon" *ngIf="showIcon && variant==='negative'">
         <use xlink:href="#cancel"></use>
     </svg>
 </span>

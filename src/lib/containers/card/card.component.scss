@@ -1,3 +1,4 @@
+@use "sass:map";
 @import "../../../styles/variables";
 
 .rld-card {
@@ -36,6 +37,7 @@
     }
 
     .rld-card__outer-wrapper {
+        // don't use 'transparent' because of transition
         background-color: rgba($color: #ffffff, $alpha: 0.0);
         border-radius: $spacing-8;
     }
@@ -47,13 +49,15 @@
 
 .rld-dark-theme {
     .rld-card__outer-wrapper {
+        @import "../../../styles/dark-palette";
         background: var(--rld-shade);
         border-radius: $spacing-4;
-        background: linear-gradient(30deg, var(--rld-shade) 0%, var(--rld-black-7) 100%);
+        background: linear-gradient(30deg, #{darken(map.get($dark-palette, shade), 5%)} 0%,
+            #{darken(map.get($dark-palette, reloadly-black-7), 5%)} 100%);
     }
 
     .rld-card__inner-wrapper {
-        background: linear-gradient(30deg, var(--rld-black-3-hover) 0%, var(--rld-black-3) 100%);
+        background: linear-gradient(30deg, var(--rld-black-3) 0%, var(--rld-black-3-hover) 100%);
         border-radius: $spacing-4;
     }
 }
