@@ -46,6 +46,10 @@ $thickness: 22px;
         border-radius: $input-radius * 2;
     }
 
+    ::ng-deep .rld-dark-theme &-slide {
+        background-color: var(--rld-black-4);
+    }
+
     &-knob {
         display: block;
         position: absolute;

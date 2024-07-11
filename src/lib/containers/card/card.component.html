@@ -1,11 +1,9 @@
 <div class="rld-card">
-    <div class="rld-card__outer-wrapper">
-        <div class="rld-card__inner-wrapper">
-            <header class="is-flex">
-                <h6 class="rld-card__title">{{title}}</h6>
-                <ng-content select="[titleTrailing]"></ng-content>
-            </header>
-            <ng-content select="[cardContent]"></ng-content>
-        </div>
+    <div class="rld-card__wrapper">
+        <header class="is-flex">
+            <h6 class="rld-card__title">{{title}}</h6>
+            <ng-content select="[titleTrailing]"></ng-content>
+        </header>
+        <ng-content select="[cardContent]"></ng-content>
     </div>
 </div>

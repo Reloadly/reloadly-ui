@@ -16,13 +16,9 @@
         display: flex;
     }
 
-
-    &__outer-wrapper {
-        padding: $spacing-4;
-    }
-
-    &__inner-wrapper {
+    &__wrapper {
         padding: $spacing-4 $spacing-8;
+        height: 100%;
 
         @media (min-width: 48em) {
             padding: $spacing-8 $spacing-32;
@@ -36,28 +32,17 @@
         box-shadow: 0px 1px 2px var(--rld-shadow-contrast-3), 0px 2px 6px 2px var(--rld-shadow-contrast-1_5);
     }
 
-    .rld-card__outer-wrapper {
+    .rld-card__wrapper {
         // don't use 'transparent' because of transition
         background-color: rgba($color: #ffffff, $alpha: 0.0);
-        border-radius: $spacing-8;
-    }
-
-    .rld-card__inner-wrapper {
         border-radius: $spacing-8;
     }
 }
 
 .rld-dark-theme {
-    .rld-card__outer-wrapper {
+    .rld-card__wrapper {
         @import "../../../styles/dark-palette";
-        background: var(--rld-shade);
-        border-radius: $spacing-4;
-        background: linear-gradient(30deg, #{darken(map.get($dark-palette, shade), 5%)} 0%,
-            #{darken(map.get($dark-palette, reloadly-black-7), 5%)} 100%);
-    }
-
-    .rld-card__inner-wrapper {
-        background: linear-gradient(30deg, var(--rld-black-3) 0%, var(--rld-black-3-hover) 100%);
-        border-radius: $spacing-4;
+        background: var(--rld-box-bg-color);
+        border-radius: $spacing-8;
     }
 }

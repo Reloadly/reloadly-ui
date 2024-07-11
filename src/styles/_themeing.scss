@@ -25,6 +25,7 @@
     --rld-ash: #{map.get($colors, reloadly-ash)};
 
     --rld-grey: #{map.get($colors, reloadly-grey)};
+    --rld-grey-contrast-5: #{darken(map.get($colors, reloadly-grey), 5)};
     --rld-grey-contrast-15: #{lighten(map.get($colors, reloadly-grey), 15)};
     --rld-grey-2: #{map.get($colors, reloadly-grey-2)};
 

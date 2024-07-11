@@ -81,6 +81,11 @@ After installing dependencies (npm install), run:
 ```shell
 npm link reloadly-ui
 ```
+or
+```shell
+npm link reloadly-ui --force
+```
+This will make Angular automatically rebuild your project when you modify this ui library. You might need to modify and save a component's style sheet file for global style files to be rebuilt.
 
 ## Supported browsers
 

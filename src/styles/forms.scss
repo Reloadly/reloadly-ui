@@ -33,7 +33,7 @@ form {
 }
 
 .input-container {
-    background: white;
+    background: var(--rld-shade);
     padding: 4px 8px;
     border: 1px solid var(--rld-border-color);
     border-radius: 4px;
@@ -44,18 +44,20 @@ form {
     transition: all ease 0.4s;
     box-shadow: 0px 0px 0px $box-halo-width transparent;
     align-items: center;
-
-    &::placeholder {
-        color: var(--rld-grey);
-    }
+    color: var(--rld-text-color);
 
     &:focus {
         border: 1px solid var(--rld-border-color);
         box-shadow: 0px 0px 0px $box-halo-width rgba(58, 151, 212, 0.36);
     }
 
-    &:disabled, &[disabled] {
+    &:disabled,
+    &[disabled] {
         @include disabled-input();
+    }
+
+    &::placeholder {
+        color: var(--rld-grey);
     }
 }
 
@@ -86,4 +88,12 @@ form {
     border: 1px solid $reloadly-danger;
     border-radius: 4px;
     box-shadow: none;
+}
+
+.rld-dark-theme .input-container {
+    scrollbar-color: var(--rld-text-color) var(--rld-shade);
+
+    &::placeholder {
+        color: var(--rld-black-4);
+    }
 }

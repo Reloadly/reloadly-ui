@@ -1,110 +1,118 @@
 @import "../../../styles/variables";
 
 @mixin disc {
-	width: 100%;
-	height: 100%;
-	border-radius: 50%;
-	position: absolute;
-	top: 0;
-	left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .checkbox {
-	display: flex;
-	align-items: center;
-	margin-left: -8px;
-	cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-left: -8px;
+    cursor: pointer;
 
-	@media (min-width: 48em) {
-		margin-left: -10px;
-	}
+    @media (min-width: 48em) {
+        margin-left: -10px;
+    }
 
-	&-square {
-		flex-grow: 0;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		width: 40px;
-		height: 40px;
-		padding: 15px;
-		position: relative;
-	}
+    &-square {
+        flex-grow: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        padding: 15px;
+        position: relative;
+    }
 
-	&-disc {
-		@include disc();
-		background-color: var(--rld-grey);
-		opacity: 0;
-		z-index: 0;
-	}
+    &-disc {
+        @include disc();
+        background-color: var(--rld-grey);
+        opacity: 0;
+        z-index: 0;
+    }
 
-	&-colored-bg {
-		@include disc();
-		background-color: var(--rld-grey-contrast-15);
-		overflow: hidden;
-		z-index: -1;
-		opacity: 0;
+    &-colored-bg {
+        @include disc();
+        background-color: var(--rld-grey-contrast-15);
+        overflow: hidden;
+        z-index: -1;
+        opacity: 0;
 
-		svg {
-			width: 100%;
-			height: 100%;
-			display: block;
-			opacity: 0.5;
-			fill: currentColor
-		}
-	}
+        svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+            opacity: 0.5;
+            fill: currentColor
+        }
+    }
 
-	&-label {
-		line-height: 1;
-		margin-left: 5px;
-		padding-top: 3px;
-	}
+    ::ng-deep .rld-dark-theme &-colored-bg {
+        background-color: var(--rld-grey-contrast-5);
+    }
 
-	&-view {
-		z-index: 1;
+    &-label {
+        line-height: 1;
+        margin-left: 5px;
+        padding-top: 3px;
+    }
 
-		&-object {
-			margin: auto;
-			display: block;
-			border: 2px solid var(--rld-text-color-contrast-10);
-			border-radius: 2px;
-			height: 20px;
-			width: 20px;
-			overflow: hidden;
+    &-view {
+        z-index: 1;
 
-			.checkmark {
-				width: 100%;
-				height: 100%;
-				margin: 0;
-				display: block;
-				stroke-width: 3;
-				stroke: var(--rld-shade);
-				stroke-miterlimit: 10;
+        &-object {
+            margin: auto;
+            display: block;
+            border: 2px solid var(--rld-text-color-contrast-10);
+            border-radius: 2px;
+            height: 20px;
+            width: 20px;
+            overflow: hidden;
+
+            .checkmark {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                display: block;
+                stroke-width: 3;
+                stroke: var(--rld-shade);
+                stroke-miterlimit: 10;
                 color: transparent;
 
-				&__checked {
+                &__checked {
                     fill: none;
-					transform-origin: 50% 50%;
-					stroke-dasharray: 48;
-					stroke-dashoffset: 48;
-					animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) forwards;
-				}
-			}
+                    transform-origin: 50% 50%;
+                    stroke-dasharray: 48;
+                    stroke-dashoffset: 48;
+                    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+                }
+            }
 
-			@keyframes stroke {
-				100% {
-					stroke-dashoffset: 0;
-				}
-			}
-		}
-	}
+            @keyframes stroke {
+                100% {
+                    stroke-dashoffset: 0;
+                }
+            }
+        }
 
-	&-self {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		opacity: 0;
-	}
+        ::ng-deep .rld-dark-theme &-object {
+            border: 2px solid var(--rld-text-color-contrast-5);
+        }
+    }
+
+    &-self {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
 }
