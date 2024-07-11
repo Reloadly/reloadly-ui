@@ -42,7 +42,7 @@
 .rld-dark-theme {
     .rld-card__wrapper {
         @import "../../../styles/dark-palette";
-        background: var(--rld-box-bg-color);
+        background: var(--rld-card-bg-color);
         border-radius: $spacing-8;
     }
 }

@@ -67,7 +67,7 @@
     --rld-input-border-color-contrast-10: #{darken(map.get($colors, input-border-color), 10)};
     --rld-input-bg-color: #{map.get($colors, input-bg-color)};
     --rld-container-bg-color: #{map.get($colors, container-bg-color)};
-    --rld-box-bg-color: #{map.get($colors, box-bg-color)};
+    --rld-card-bg-color: #{map.get($colors, card-bg-color)};
     --rld-box-shadow-contrast-1_2: rgba(60, 66, 87, 0.12);
     --rld-box-shadow-contrast-0_8: rgba(0, 0, 0, 0.08);
     --rld-card-btn-box-shadow--contrast-1_2: rgba(0, 0, 0, 0.12);
