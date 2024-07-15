@@ -65,12 +65,12 @@
             border: 1px solid var(--rld-violet);
 
             &:hover {
-                border: 1px solid #3e008e;
+                border: 1px solid var(--rld-button-outline);
                 background: rgba(103, 80, 164, 0.08);
             }
 
             &:focus {
-                color: #3e008e;
+                color: var(--rld-button-outline);
                 background: rgba(103, 80, 164, 0.08);
             }
 
