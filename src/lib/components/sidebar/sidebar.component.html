@@ -1,5 +1,7 @@
-<nav [class]="isHorizontal ? 'sidebar-menu-list-horizontal':'sidebar-menu-list-vertical'" [style.--activeTop]="top+'px'"
-    [style.--activeLeft]="left+'px'" [style.--indicatorWidth]="indicatorWidth+'px'">
-    <a #menuList class="sidebar-menu-item" *ngFor="let link of links" [attr.customLabel]="'sideNav-'+link.label"
-        (click)="selectItem(link)" [class.active-item]="activeItem == link">{{link.label}}</a>
+<nav [class]="isHorizontal ? 'rld-sidebar-menu-list-horizontal' : 'rld-sidebar-menu-list-vertical'"
+     [style.--activeTop]="top+'px'" [style.--activeLeft]="left+'px'"
+     [style.--indicatorWidth]="indicatorWidth+'px'">
+    <a #menuList class="rld-sidebar-menu-item" *ngFor="let link of links"
+       [attr.customLabel]="'sideNav-'+link.label" (click)="selectItem(link)"
+       [class.rld-active-item]="activeItem == link">{{link.label}}</a>
 </nav>

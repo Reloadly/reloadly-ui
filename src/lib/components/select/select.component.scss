@@ -125,7 +125,7 @@
         border: 1px solid var(--rld-border-color);
         box-shadow: $box-shadow;
         border-radius: 4px;
-        background: white;
+        background: var(--rld-bg-color);
         padding: 12px 10px;
         z-index: 9;
 
@@ -160,7 +160,7 @@
                 cursor: pointer;
 
                 &:hover {
-                    background: rgb(250, 250, 250);
+                    background: var(--rld-shade);
                 }
             }
 
