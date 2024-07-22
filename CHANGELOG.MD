@@ -37,3 +37,11 @@ Initial release with the following directives:
 ### Features
 
 Small fix for success badge icon.
+
+
+<a name="1.0.2"></a>
+# [1.0.2](https://github.com/Reloadly/reloadly-ui/compare/main...release/1.0.2) (2024-07-22)
+
+### Features
+
+Dark mode support
