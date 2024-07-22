@@ -4,7 +4,7 @@ import { Directive, HostBinding } from '@angular/core';
     selector: '[reloadly-menu-item]'
 })
 export class MenuItemDirective {
-    class: string = "menu-item";
+    class: string = "rld-menu-item";
 
     constructor() { }
 

@@ -4,14 +4,14 @@
     font-style: normal;
     font-weight: 450;
     font-size: inherit;
-    color: $reloadly-black-2;
+    color: var(--rld-black-2);
     cursor: pointer;
     &:hover {
         text-decoration: underline;
     }
 }
 .active-item-class {
-    color: $reloadly-violet;
+    color: var(--rld-violet);
     font-weight: 450;
     cursor: auto;
     &:hover {

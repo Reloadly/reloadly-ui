@@ -1,0 +1,103 @@
+@use "sass:map";
+@import "variables";
+
+@mixin themeing($colors) {
+    --rld-blue: #{map.get($colors, reloadly-blue)};
+    --rld-blue-contrast-50: #{darken(map.get($colors, reloadly-blue), 50)};
+    --rld-blue-contrast-60: #{darken(map.get($colors, reloadly-blue), 60)};
+
+    --rld-light-blue: #{map.get($colors, reloadly-light-blue)};
+    --rld-light-blue-contrast-5: #{darken(map.get($colors, reloadly-light-blue),5)};
+    --rld-light-blue-contrast-15: #{darken(map.get($colors, reloadly-light-blue), 15)};
+
+    --rld-mint: #{map.get($colors, reloadly-mint)};
+    --rld-mint-contrast-40: #{darken(map.get($colors, reloadly-mint), 40)};
+    --rld-mint-contrast-50: #{darken(map.get($colors, reloadly-mint), 50)};
+
+    --rld-indigo: #{map.get($colors, reloadly-indigo)};
+    --rld-violet: #{map.get($colors, reloadly-violet)};
+    --rld-violet-contrast-20: rgba(#{map.get($colors, reloadly-violet)}, 0.2);
+    --rld-violet-2: #{map.get($colors, reloadly-violet-2)};
+    --rld-violet-3: #{map.get($colors, reloadly-violet-3)};
+    --rld-violet-4: #{map.get($colors, reloadly-violet-4)};
+    --rld-violet-5: #{map.get($colors, reloadly-violet-5)};
+
+    --rld-ash: #{map.get($colors, reloadly-ash)};
+
+    --rld-grey: #{map.get($colors, reloadly-grey)};
+    --rld-grey-contrast-5: #{darken(map.get($colors, reloadly-grey), 5)};
+    --rld-grey-contrast-15: #{lighten(map.get($colors, reloadly-grey), 15)};
+    --rld-grey-2: #{map.get($colors, reloadly-grey-2)};
+
+    --rld-shade: #{map.get($colors, shade)};
+    --rld-shadest: #{map.get($colors, reloadly-black)};
+    --rld-white: #{map.get($colors, reloadly-white)};
+    --rld-black: #{map.get($colors, reloadly-black)};
+    --rld-black-1: #{map.get($colors, reloadly-black-1)};
+    --rld-black-2: #{map.get($colors, reloadly-black-2)};
+    --rld-black-3: #{map.get($colors, reloadly-black-3)};
+    --rld-black-3-hover: #{map.get($colors, reloadly-black-3-hover)};
+    --rld-black-4: #{map.get($colors, reloadly-black-4)};
+    --rld-black-5: #{map.get($colors, reloadly-black-5)};
+    --rld-black-6: #{map.get($colors, reloadly-black-6)};
+    --rld-black-7: #{map.get($colors, reloadly-black-7)};
+
+    --rld-table-head-color: #{map.get($colors, reloadly-table-head-color)};
+    --rld-table-body-color: #{map.get($colors, reloadly-table-body-color)};
+    --rld-table-border-color: #{map.get($colors, reloadly-table-border-color)};
+    --rld-disabled-color: #{map.get($colors, reloadly-disabled-color)};
+    --rld-disabled-color-contrast-5: #{darken(map.get($colors, reloadly-disabled-color), 5)};
+    --rld-tonal: #{map.get($colors, reloadly-tonal)};
+    --rld-filled-hover: #{map.get($colors, reloadly-filled-hover)};
+    --rld-filled-pressed: #{map.get($colors, reloadly-filled-pressed)};
+    --rld-filled-disabled: #{map.get($colors, reloadly-filled-disabled)};
+    --rld-button-outline: #{map.get($colors, reloadly-button-outline)};
+    --rld-secondary-btn: #{map.get($colors, reloadly-secondary-btn)};
+    --rld-form-disabled: #{map.get($colors, reloadly-form-disabled)};
+    --rld-menu-border-color: #{map.get($colors, reloadly-menu-border-color)};
+
+    --rld-bg-color: #{map.get($colors, bg-color)};
+    --rld-contrast-color: #{map.get($colors, contrast-color)};
+    --rld-text-color: #{map.get($colors, text-color)};
+    --rld-text-color-contrast-5: #{darken(map.get($colors, text-color), 5)};
+    --rld-text-color-contrast-10: #{lighten(map.get($colors, text-color), 10)};
+    --rld-text-color-2: #{map.get($colors, text-color-2)};
+    --rld-text-color-grey: #{map.get($colors, text-color-grey)};
+    --rld-text-color-header: #{map.get($colors, text-color-header)};
+    --rld-border-color: #{map.get($colors, border-color)};
+    --rld-input-border-color: #{map.get($colors, input-border-color)};
+    --rld-input-border-color-contrast-10: #{darken(map.get($colors, input-border-color), 10)};
+    --rld-input-bg-color: #{map.get($colors, input-bg-color)};
+    --rld-container-bg-color: #{map.get($colors, container-bg-color)};
+    --rld-card-bg-color: #{map.get($colors, card-bg-color)};
+    --rld-box-shadow-contrast-1_2: rgba(60, 66, 87, 0.12);
+    --rld-box-shadow-contrast-0_8: rgba(0, 0, 0, 0.08);
+    --rld-card-btn-box-shadow--contrast-1_2: rgba(0, 0, 0, 0.12);
+    --rld-card-btn-box-shadow--contrast-0_8: rgba(60, 66, 87, 0.08);
+    --rld-card-border-color: #{map.get($colors, input-bg-color)};
+    --rld-card-btn-border-color: #{map.get($colors, card-btn-border-color)};
+    --rld-shadow-contrast-3: rgba(0, 0, 0, 0.3);
+    --rld-shadow-contrast-1_5: rgba(0, 0, 0, 0.15);
+    --rld-shadow-contrast-1_5: rgba(0, 0, 0, 0.15);
+}
+
+.rld-light-theme {
+    @import "light-palette";
+    @include themeing($light-palette);
+
+    * {
+        @include theme-transition();
+    }
+}
+
+.rld-dark-theme {
+    @import "dark-palette";
+    @include themeing($dark-palette);
+
+    --rld-shadow-contrast-3: rgba(255, 255, 255, 0.3);
+    --rld-shadow-contrast-1_5: rgba(255, 255, 255, 0.15);
+
+    * {
+        @include theme-transition();
+    }
+}

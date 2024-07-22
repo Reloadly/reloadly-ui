@@ -1,7 +1,7 @@
 @import "../../../styles/variables.scss";
 
 .reloadly-tooltip {
-    background: $reloadly-white;
+    background: var(--rld-shade);
     box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.08),
         0px 15px 35px 0px rgba(60, 66, 87, 0.12);
     border: 1px solid #e3e8ee;
@@ -11,19 +11,20 @@
     font-size: $font-size-s;
     line-height: 20px;
     letter-spacing: -0.154px;
-    color: $reloadly-black-1;
+    color: var(--rld-black-1);
     position: absolute;
     z-index: 10;
 
     &.top-left {
         transform: translate(0, -100%);
         margin-right: 10px;
+
         .caret {
             width: 13px;
             height: 13px;
             border-right: 1px solid #e3e8ee;
             border-bottom: 1px solid #e3e8ee;
-            background: $reloadly-white;
+            background: var(--rld-shade);
             transform: rotate(45deg);
             position: absolute;
             bottom: -7px;
@@ -34,12 +35,13 @@
 
     &.top-center {
         transform: translate(-50%, -100%);
+
         .caret {
             width: 13px;
             height: 13px;
             border-right: 1px solid #e3e8ee;
             border-bottom: 1px solid #e3e8ee;
-            background: $reloadly-white;
+            background: var(--rld-shade);
             transform: translate(-50%, 0) rotate(45deg);
             position: absolute;
             bottom: -7px;
@@ -51,12 +53,13 @@
     &.top-right {
         transform: translate(0%, -100%);
         margin-left: 10px;
+
         .caret {
             width: 13px;
             height: 13px;
             border-right: 1px solid #e3e8ee;
             border-bottom: 1px solid #e3e8ee;
-            background: $reloadly-white;
+            background: var(--rld-shade);
             transform: rotate(45deg);
             position: absolute;
             bottom: -7px;
@@ -73,7 +76,7 @@
             height: 13px;
             border-left: 1px solid #e3e8ee;
             border-top: 1px solid #e3e8ee;
-            background: $reloadly-white;
+            background: var(--rld-shade);
             transform: rotate(45deg);
             position: absolute;
             top: -7px;
@@ -84,12 +87,13 @@
 
     &.bottom-center {
         transform: translate(-50%, -0%);
+
         .caret {
             width: 13px;
             height: 13px;
             border-left: 1px solid #e3e8ee;
             border-top: 1px solid #e3e8ee;
-            background: $reloadly-white;
+            background: var(--rld-shade);
             transform: translate(-50%, 0) rotate(45deg);
             position: absolute;
             top: -7px;
@@ -101,12 +105,13 @@
     &.bottom-right {
         transform: translate(0%, 0%);
         margin-left: 10px;
+
         .caret {
             width: 13px;
             height: 13px;
             border-left: 1px solid #e3e8ee;
             border-top: 1px solid #e3e8ee;
-            background: $reloadly-white;
+            background: var(--rld-shade);
             transform: rotate(45deg);
             position: absolute;
             top: -7px;

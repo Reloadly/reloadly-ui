@@ -3,13 +3,13 @@
 .search-bar {
     width: 100%;
     min-width: 230px;
-    border: 1px solid $border-color;
+    border: 1px solid var(--rld-border-color);
     box-shadow: $box-shadow;
     border-radius: 4px;
     display: flex;
     align-items: center;
     &:focus-within {
-        border: 1px solid $reloadly-violet;
+        border: 1px solid var(--rld-violet);
         box-shadow: none;
     }
     input {
@@ -18,10 +18,10 @@
         flex-grow: 1;
         font-weight: 450;
         font-size: $font-size-s;
-        color: $reloadly-black-1;
+        color: var(--rld-black-1);
         outline: none;
         &::placeholder {
-            color: $reloadly-black-1;
+            color: var(--rld-black-1);
         }
     }
     &_icon {

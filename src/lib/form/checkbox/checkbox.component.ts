@@ -9,7 +9,7 @@ export interface CheckBoxValue {
     isChecked: boolean
 }
 
-type BorderColoring = 'color' | 'fade' | 'darken';
+type BorderColoring = 'color' | 'fade' | 'shaden';
 type FillColoring = 'color' | 'fade' | 'transparent';
 
 @Component({
@@ -28,34 +28,34 @@ type FillColoring = 'color' | 'fade' | 'transparent';
             transition('invisible => visible', [animate('150ms ease-in')])
         ]),
         trigger('squareBorderColor', [
-            state('darken', style({
-                color: '#000000',
-                borderColor: '#000000'
+            state('shaden', style({
+                color: 'var(--rld-shadest)',
+                borderColor: 'var(--rld-shadest)'
             })),
-            transition('* => darken', [animate('150ms ease-out')]),
+            transition('* => shaden', [animate('150ms ease-out')]),
             state('fade', style({
-                color: '#b9bfc7', // $reloadly-grey in variables.scss
-                borderColor: '#b9bfc7'
+                color: 'var(--rld-grey)',
+                borderColor: 'var(--rld-grey)'
             })),
             transition('* <=> fade', [animate('150ms ease-out')]),
             state('color', style({
-                color: '#7700ff',
-                borderColor: '#7700ff'
+                color: 'var(--rld-violet)',
+                borderColor: 'var(--rld-violet)'
             }))
         ]),
         trigger('squareFillColor', [
             state('color', style({
-                borderColor: '#7700ff',
-                backgroundColor: '#7700ff'
+                borderColor: 'var(--rld-violet)',
+                backgroundColor: 'var(--rld-violet)'
             })),
             state('fade', style({
-                color: '#b9bfc7', // $reloadly-grey in variables.scss
-                borderColor: '#b9bfc7',
-                backgroundColor: '#b9bfc7'
+                color: 'var(--rld-grey)',
+                borderColor: 'var(--rld-grey)',
+                backgroundColor: 'var(--rld-grey)'
             })),
             state('transparent', style({
-                color: '#b9bfc7', // $reloadly-grey in variables.scss
-                borderColor: '#b9bfc7'
+                color: 'var(--rld-grey)',
+                borderColor: 'var(--rld-grey)'
             }))
         ]),
         trigger('ripple', [
@@ -72,7 +72,7 @@ type FillColoring = 'color' | 'fade' | 'transparent';
         trigger('coloredBackground', [
             state('color', style({
                 zIndex: 1,
-                color: '#c49ffd',
+                color: 'var(--rld-violet-3)',
                 opacity: 1
             }))
         ])
@@ -160,7 +160,7 @@ export class CheckboxComponent implements OnInit, AfterViewInit, OnDestroy {
 
     public get borderColoring(): BorderColoring | null {
         if (this.disabled && !this.state.isPressed) return 'fade';
-        if (this.state.isFocused && !this.isChecked) return 'darken';
+        if (this.state.isFocused && !this.isChecked) return 'shaden';
         if (this.state.isPressed || this.isChecked) return 'color';
         else return null;
     }

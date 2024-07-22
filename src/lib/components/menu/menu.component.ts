@@ -1,9 +1,10 @@
-import { Component, Input, } from '@angular/core';
+import { Component, Input, ViewEncapsulation, } from '@angular/core';
 
 @Component({
     selector: 'reloadly-menu',
     templateUrl: './menu.component.html',
-    styleUrls: ['./menu.component.scss']
+    styleUrls: ['./menu.component.scss'],
+    encapsulation: ViewEncapsulation.None
 })
 export class MenuComponent {
     @Input() trigger: HTMLElement | undefined;

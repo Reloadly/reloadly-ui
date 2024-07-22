@@ -1,6 +1,6 @@
 @import "./../../../../src/styles/variables";
 
-.reloadly-badge {
+.rld-badge {
     padding: 2px 8px;
     display: inline-flex;
     align-items: center;
@@ -22,8 +22,8 @@
     }
 
     &.neutral {
-        background-color: $reloadly-ash;
-        color: $reloadly-black-2;
+        background-color: var(--rld-ash);
+        color: var(--rld-black-2);
     }
 
     &.info {
@@ -48,12 +48,12 @@
 
     &.urgent {
         background-color: #df1b41;
-        color: $reloadly-white;
+        color: var(--rld-shade);
     }
 
     &.notification {
-        background-color: red; //@TODO: add the exact color
-        color: $reloadly-white;
+        background-color: #b3093c;
+        color: var(--rld-shadest);
         font-size: 10px;
         border: 3px solid #F6F8FA;
     }
@@ -69,11 +69,52 @@
     &.circular {
         border-radius: 50%;
     }
+
+    &__icon {
+        width: 12px;
+        height: 12px;
+        color: currentColor;
+        margin-left: 5px;
+    }
 }
 
-.badge-icon {
-    width: 12px;
-    height: 12px;
-    color: currentColor;
-    margin-left: 5px;
+.rld-dark-theme {
+    .rld-badge {
+        &.neutral {
+            background-color: var(--rld-shade);
+            color: var(--rld-text-color);
+        }
+
+        &.info {
+            background-color: #3164a2;
+            color: #cff5f6;
+        }
+
+        &.positive {
+            background-color: #18501c;
+            color: #d7f7c2;
+        }
+
+        &.warning {
+            background-color: #8f452b;
+            color: #fcedb9;
+        }
+
+        &.negative {
+            background-color: #9a3654;
+            color: #ffe7f2;
+        }
+
+        &.urgent {
+            background-color: var(--rld-shade);
+            color: #df1b41;
+        }
+
+        &.notification {
+            background-color: var(--rld-shadest);
+            color: #b3093c;
+            font-size: 10px;
+            border: 3px solid var(--rld-border-color);
+        }
+    }
 }
