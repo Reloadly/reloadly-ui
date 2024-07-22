@@ -1,9 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
     selector: 'reloadly-badge',
     templateUrl: './badge.component.html',
-    styleUrls: ['./badge.component.scss']
+    styleUrls: ['./badge.component.scss'],
+    encapsulation: ViewEncapsulation.None
 })
 export class BadgeComponent {
     protected class: string = '';

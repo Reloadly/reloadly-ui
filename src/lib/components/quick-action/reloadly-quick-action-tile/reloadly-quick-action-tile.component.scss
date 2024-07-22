@@ -16,7 +16,7 @@
     margin: $spacing-4 0px;
     padding: 16px;
     position: relative;
-    background-color: $reloadly-white;
+    background-color: var(--rld-shade);
     display: flex;
     align-items: center;
     pointer-events: all;
@@ -46,7 +46,7 @@
     }
 
     &.success {
-        background-color: $reloadly-mint !important;
+        background-color: var(--rld-mint) !important;
     }
 
     .quick-action-content {
@@ -59,7 +59,7 @@
     }
 
     .message {
-        color: $reloadly-black-2;
+        color: var(--rld-black-2);
         font-size: 14px;
         line-height: 20px;
         max-width: 320px;
@@ -86,7 +86,7 @@
     h6 {
         font-size: 14px;
         font-weight: 450;
-        color: $text-color-2;
+        color: var(--rld-text-color-2);
         margin-bottom: 0;
     }
 

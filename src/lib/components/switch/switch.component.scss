@@ -20,7 +20,7 @@
             content: "";
             display: block;
             border-radius: 50%;
-            background: $reloadly-white;
+            background: var(--rld-shade);
             border: 1px solid rgba(42, 47, 69, 0.12);
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.254246), 0px 0.5px 1px rgba(0, 0, 0, 0.255831);
             position: absolute;
@@ -116,7 +116,7 @@
             font-size: $font-size-s;
             line-height: 20px;
             letter-spacing: -0.154px;
-            color: $reloadly-black-1;
+            color: var(--rld-black-1);
             margin-top: 2px;
         }
 
@@ -124,7 +124,7 @@
             font-weight: 400;
             font-size: $font-size-s;
             line-height: 20px;
-            color: $reloadly-black-2;
+            color: var(--rld-black-2);
 
         }
     }
@@ -142,11 +142,11 @@
 
     .toggle-texts {
         label {
-            color: $reloadly-grey;
+            color: var(--rld-grey);
         }
 
         p {
-            color: $reloadly-grey;
+            color: var(--rld-grey);
         }
     }
 }

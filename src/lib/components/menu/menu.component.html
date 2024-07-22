@@ -1,6 +1,10 @@
-<div class="overlay" (click)="handleOverlayClick()">
-    <div class="reloadly-menu bottom-center" [style.left]="left ? left + 'px' : 'unset'"
-        [style.top]="top ? top + 'px' : 'unset'">
-        <ng-content></ng-content>
+<div class="rld-overlay" (click)="handleOverlayClick()">
+    <div class="rld-menu bottom-center" [style.left]="left ? left + 'px' : 'unset'"
+         [style.top]="top ? top + 'px' : 'unset'">
+        <div class="rld-menu__outer-wrapper">
+            <div class="rld-menu__inner-wrapper">
+                <ng-content></ng-content>
+            </div>
+        </div>
     </div>
 </div>

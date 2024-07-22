@@ -1,9 +1,10 @@
-import { ChangeDetectorRef, Component, ElementRef, EventEmitter, Input, Output, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, EventEmitter, Input, Output, QueryList, ViewChildren, ViewEncapsulation } from '@angular/core';
 
 @Component({
     selector: 'reloadly-sidebar',
     templateUrl: './sidebar.component.html',
-    styleUrls: ['./sidebar.component.scss']
+    styleUrls: ['./sidebar.component.scss'],
+    encapsulation: ViewEncapsulation.None
 })
 export class SidebarComponent {
     top: number = 0;
@@ -53,7 +54,7 @@ export class SidebarComponent {
             }, 0);
             return;
         }
-        
+
         let checkItem = this.menuList.get(0)?.nativeElement;
         this.isHorizontal ? this.indicatorWidth = checkItem.offsetWidth : null;
         this.cdRef.detectChanges()

@@ -8,7 +8,7 @@ $bottom-margin: 5px;
     font-weight: 450;
     line-height: 20px;
     letter-spacing: -0.154px;
-    color: $reloadly-black-1;
+    color: var(--rld-black-1);
     margin-bottom: $bottom-margin;
 }
 
@@ -17,6 +17,6 @@ $bottom-margin: 5px;
     font-weight: 400;
     font-size: $font-size-xs;
     line-height: 16px;
-    color: $reloadly-black-1;
+    color: var(--rld-black-1);
     margin-bottom: $bottom-margin;
 }

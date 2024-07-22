@@ -21,6 +21,7 @@
         padding: 0;
         border-radius: $border-radius-l;
         overflow-x: hidden;
+        color: var(--rld-text-color);
 
         // @TODO test animation on low-end phones
         &-in {

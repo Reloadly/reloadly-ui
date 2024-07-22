@@ -9,32 +9,32 @@
 
     ///********PRIMARY BUTTON**********
     &.primary {
-        background: $reloadly-violet;
-        color: $reloadly-white;
+        background: var(--rld-violet);
+        color: var(--rld-white);
 
         &.filled {
-            background: $reloadly-violet;
-            color: $reloadly-white;
+            background: var(--rld-violet);
+            color: var(--rld-white);
 
             &:hover {
-                background: $reloadly-filled-hover;
+                background: var(--rld-filled-hover);
                 box-shadow: 0px 1px 3px 1px #00000026, 0px 1px 2px 0px #0000004d;
             }
 
             &:focus {
-                background: $reloadly-filled-hover;
-                outline: 2px solid $reloadly-violet;
+                background: var(--rld-filled-hover);
+                outline: 2px solid var(--rld-violet);
                 box-shadow: none;
                 outline-offset: 2px;
             }
 
             &:active {
-                background: $reloadly-filled-pressed;
+                background: var(--rld-filled-pressed);
                 box-shadow: none;
             }
 
             &:disabled {
-                background: $reloadly-filled-disabled;
+                background: var(--rld-filled-disabled);
                 box-shadow: none;
                 color: #a7acb2;
             }
@@ -47,37 +47,37 @@
             //*******VARIANT STYLE***********
             &.filled {
                 &:focus {
-                    background: $reloadly-filled-hover;
+                    background: var(--rld-filled-hover);
                     box-shadow: none;
                     outline: none;
                 }
 
                 &:active {
-                    background: $reloadly-filled-pressed;
+                    background: var(--rld-filled-pressed);
                     box-shadow: none;
                 }
             }
         }
 
         &.outlined {
-            color: $reloadly-violet;
+            color: var(--rld-violet);
             background: transparent;
-            border: 1px solid $reloadly-violet;
+            border: 1px solid var(--rld-violet);
 
             &:hover {
-                border: 1px solid #3e008e;
+                border: 1px solid var(--rld-button-outline);
                 background: rgba(103, 80, 164, 0.08);
             }
 
             &:focus {
-                color: #3e008e;
+                color: var(--rld-button-outline);
                 background: rgba(103, 80, 164, 0.08);
             }
 
             &:active {
                 background: rgba(103, 80, 164, 0.08);
                 border: 1px solid #8492a6;
-                color: $reloadly-violet;
+                color: var(--rld-violet);
             }
 
             &:disabled {
@@ -89,23 +89,23 @@
         }
 
         &.text {
-            color: $reloadly-violet;
-            background: $reloadly-white;
+            color: var(--rld-violet);
+            background: var(--rld-shade);
 
             &:hover {
-                color: $reloadly-violet;
+                color: var(--rld-violet);
                 border: none;
                 background: #e5deff;
             }
 
             &:focus {
-                color: $reloadly-violet;
+                color: var(--rld-violet);
                 background: #f1efff;
             }
 
             &:active {
-                background-color: $reloadly-violet;
-                color: $reloadly-white;
+                background-color: var(--rld-violet);
+                color: var(--rld-white);
             }
 
             &:disabled {
@@ -116,7 +116,7 @@
         }
 
         &.elevated {
-            color: $reloadly-violet;
+            color: var(--rld-violet);
             box-shadow: 0px 1px 3px 1px RGB(0 0 0 / 15%),
                 0px 1px 2px 0px RGB(0 0 0 / 30%);
             background: linear-gradient(
@@ -127,7 +127,7 @@
                 #fffbfe;
 
             &:hover {
-                color: $reloadly-violet;
+                color: var(--rld-violet);
                 background: linear-gradient(
                         0deg,
                         rgba(103, 80, 164, 0.05),
@@ -137,7 +137,7 @@
             }
 
             &:focus {
-                color: $reloadly-violet;
+                color: var(--rld-violet);
                 background: linear-gradient(
                         0deg,
                         rgba(103, 80, 164, 0.05),
@@ -147,7 +147,7 @@
             }
 
             &:active {
-                color: $reloadly-violet;
+                color: var(--rld-violet);
                 background: linear-gradient(
                         0deg,
                         rgba(103, 80, 164, 0.05),
@@ -165,11 +165,11 @@
         }
 
         &.tonal {
-            color: $reloadly-black-1;
-            background: $reloadly-tonal;
+            color: var(--rld-black-1);
+            background: var(--rld-tonal);
 
             &:hover {
-                color: $reloadly-black-1;
+                color: var(--rld-black-1);
                 background: rgba(29, 25, 43, 0.08);
                 background: #e8def8;
                 box-shadow: 0px 1px 3px 1px RGB(0 0 0 / 15%),
@@ -177,13 +177,13 @@
             }
 
             &:focus {
-                color: $reloadly-black-1;
+                color: var(--rld-black-1);
                 background: #e8def8;
                 box-shadow: none;
             }
 
             &:active {
-                color: $reloadly-black-1;
+                color: var(--rld-black-1);
                 background: #e8def8;
                 box-shadow: none;
             }
@@ -199,8 +199,8 @@
     ///********SECONDARY BUTTON**********
     &.secondary {
         &.filled {
-            background: $reloadly-secondary-btn;
-            color: $reloadly-white;
+            background: var(--rld-secondary-btn);
+            color: var(--rld-white);
 
             &:hover {
                 background: #38808d;
@@ -242,9 +242,9 @@
         }
 
         &.outlined {
-            color: $reloadly-secondary-btn;
+            color: var(--rld-secondary-btn);
             background: transparent;
-            border: 1px solid $reloadly-secondary-btn;
+            border: 1px solid var(--rld-secondary-btn);
 
             &:disabled {
                 color: #101113;
@@ -255,20 +255,20 @@
         }
 
         &.text {
-            color: $reloadly-secondary-btn;
-            background: $reloadly-white;
+            color: var(--rld-secondary-btn);
+            background: var(--rld-shade);
 
             &:hover {
-                color: $reloadly-secondary-btn;
+                color: var(--rld-secondary-btn);
             }
 
             &:focus {
-                color: $reloadly-secondary-btn;
+                color: var(--rld-secondary-btn);
             }
 
             &:active {
-                color: $reloadly-secondary-btn;
-                color: $reloadly-white;
+                color: var(--rld-secondary-btn);
+                color: var(--rld-white);
             }
 
             &:disabled {
@@ -279,20 +279,20 @@
         }
 
         &.elevated {
-            color: $reloadly-secondary-btn;
+            color: var(--rld-secondary-btn);
             box-shadow: 0px 1px 3px 1px RBG(0 0 0 / 15%),
                 0px 1px 2px 0px RGB(0 0 0 / 30%);
 
             &:hover {
-                color: $reloadly-secondary-btn;
+                color: var(--rld-secondary-btn);
             }
 
             &:focus {
-                color: $reloadly-secondary-btn;
+                color: var(--rld-secondary-btn);
             }
 
             &:active {
-                color: $reloadly-secondary-btn;
+                color: var(--rld-secondary-btn);
 
                 box-shadow: none;
             }
@@ -305,21 +305,21 @@
         }
 
         &.tonal {
-            color: $reloadly-black-1;
+            color: var(--rld-black-1);
 
             &:hover {
-                color: $reloadly-black-1;
+                color: var(--rld-black-1);
                 box-shadow: 0px 1px 3px 1px RGB(0 0 0 / 15%),
                     0px 1px 2px 0px RGB(0 0 0 / 30%);
             }
 
             &:focus {
-                color: $reloadly-black-1;
+                color: var(--rld-black-1);
                 box-shadow: none;
             }
 
             &:active {
-                color: $reloadly-black-1;
+                color: var(--rld-black-1);
                 box-shadow: none;
             }
 
@@ -337,8 +337,8 @@
         border: 1px solid #e0e6eb;
 
         &.filled {
-            background: $reloadly-white;
-            color: $reloadly-black-1;
+            background: var(--rld-shade);
+            color: var(--rld-black-1);
             box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
                 0px 2px 5px rgba(60, 66, 87, 0.08);
 
@@ -356,9 +356,9 @@
         }
 
         &.outlined {
-            color: $reloadly-black-1;
+            color: var(--rld-black-1);
             background: transparent;
-            border: 1px solid $reloadly-black-1;
+            border: 1px solid var(--rld-black-1);
 
             &:disabled {
                 color: #101113;
@@ -370,20 +370,20 @@
 
         &.text {
             border: none;
-            color: $reloadly-black-1;
-            background: $reloadly-white;
+            color: var(--rld-black-1);
+            background: var(--rld-shade);
 
             &:hover {
-                color: $reloadly-black-1;
+                color: var(--rld-black-1);
             }
 
             &:focus {
-                color: $reloadly-black-1;
+                color: var(--rld-black-1);
             }
 
             &:active {
-                color: $reloadly-black-1;
-                color: $reloadly-white;
+                color: var(--rld-black-1);
+                color: var(--rld-white);
             }
 
             &:disabled {
@@ -394,20 +394,20 @@
         }
 
         &.elevated {
-            color: $reloadly-black-1;
+            color: var(--rld-black-1);
             box-shadow: 0px 1px 3px 1px RGB(0 0 0 / 15%),
                 0px 1px 2px 0px RGB(0 0 0 / 30%);
 
             &:hover {
-                color: $reloadly-black-1;
+                color: var(--rld-black-1);
             }
 
             &:focus {
-                color: $reloadly-black-1;
+                color: var(--rld-black-1);
             }
 
             &:active {
-                color: $reloadly-black-1;
+                color: var(--rld-black-1);
                 box-shadow: none;
             }
 
@@ -419,21 +419,21 @@
         }
 
         &.tonal {
-            color: $reloadly-black-1;
+            color: var(--rld-black-1);
 
             &:hover {
-                color: $reloadly-black-1;
+                color: var(--rld-black-1);
                 box-shadow: 0px 1px 3px 1px RGB(0 0 0 / 15%),
                     0px 1px 2px 0px RGB(0 0 0 / 30%);
             }
 
             &:focus {
-                color: $reloadly-black-1;
+                color: var(--rld-black-1);
                 box-shadow: none;
             }
 
             &:active {
-                color: $reloadly-black-1;
+                color: var(--rld-black-1);
                 box-shadow: none;
             }
 
@@ -449,7 +449,7 @@
     &.danger {
         &.filled {
             background: $reloadly-danger;
-            color: $reloadly-white;
+            color: var(--rld-white);
             box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
                 0px 2px 5px rgba(60, 66, 87, 0.08);
 
@@ -485,7 +485,7 @@
 
         &.text {
             color: $reloadly-danger;
-            background: $reloadly-white;
+            background: var(--rld-shade);
 
             &:hover {
                 color: $reloadly-danger;
@@ -496,7 +496,7 @@
             }
 
             &:active {
-                color: $reloadly-white;
+                color: var(--rld-white);
             }
 
             &:disabled {
@@ -605,8 +605,8 @@
     }
 }
 
-.menu-item {
-    color: #393c40;
+.rld-menu-item {
+    color: var(--rld-text-color-header);
     font-size: $font-size-s;
     font-weight: 450;
     line-height: 20px;
@@ -621,5 +621,11 @@
 
     &:hover {
         background: rgba(103, 80, 164, 0.08);
+    }
+}
+
+.rld-dark-theme {
+    .rld-menu-item:hover {
+        background: var(--rld-black-3-hover);
     }
 }

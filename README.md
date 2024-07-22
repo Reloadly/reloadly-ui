@@ -29,7 +29,7 @@ The supported versions are:
 
 | reloadly-ui  | Angular |
 | ------------ | ------- |
-| 1.0.1        | 16.1.8  |
+| 1.0.2        | 18.0.5  |
 
 ## Installation
 
@@ -45,6 +45,47 @@ If you have multiple projects and you want to target a specific application, you
 ```shell
 npm install reloadly-ui --project myProject
 ```
+
+## Development
+To run a local version of the library, and link it to your app, first run in the library:
+
+```shell
+npm run build:dev
+```
+Then
+```shell
+npm run build:scss:dev
+```
+Then in dist/reloadly-ui run:
+```shell
+npm link
+```
+In your Angular project's package.json, use
+```shell
+"dependencies": {
+    ...
+    "reloadly-ui": "file:../reloadly-ui/dist/reloadly-ui",
+    ...
+}
+```
+
+In angular.json use "preserveSymlinks": true, and:
+```shell
+"styles": [
+    "src/styles.scss",
+    "node_modules/reloadly-ui/styles/styles.css"
+],
+```
+
+After installing dependencies (npm install), run:
+```shell
+npm link reloadly-ui
+```
+or
+```shell
+npm link reloadly-ui --force
+```
+This will make Angular automatically rebuild your project when you modify this ui library. You might need to modify and save a component's style sheet file for global style files to be rebuilt.
 
 ## Supported browsers
 
