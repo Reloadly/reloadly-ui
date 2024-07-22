@@ -14,6 +14,10 @@
         "npm:publish:beta": "cd dist/reloadly-ui && npm publish --tag beta",
         "npm:publish:latest": "cd dist/reloadly-ui && npm publish --tag latest"
     },
+    "engines": {
+        "node": "v20.9.0",
+        "npm": "10.8.1"
+    },
     "peerDependencies": {},
     "devDependencies": {
         "@angular-devkit/build-angular": "^18.0.6",
