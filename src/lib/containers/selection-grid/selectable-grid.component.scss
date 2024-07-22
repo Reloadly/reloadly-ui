@@ -5,21 +5,27 @@
     align-items: center;
     flex-flow: row;
     gap: 16px;
+
     @media screen and (max-width: 768px) {
         gap: 16px;
     }
+
     @media screen and (max-width: 575px) {
         gap: 16px;
     }
+
     &.list {
         flex-flow: column !important;
     }
+
     &.row {
         flex-flow: row !important;
     }
+
     &.grid {
         flex-wrap: wrap;
     }
+
     .selectable-item {
         min-width: 107px;
         min-height: 56px;
@@ -35,22 +41,44 @@
         transition: all ease-in-out 300ms;
         cursor: pointer;
         box-sizing: border-box;
+
         @media screen and (max-width: 768px) {
             min-width: 85px;
             min-height: 44px;
             padding: $spacing-8 $spacing-16;
         }
+
         @media screen and (max-width: 575px) {
             padding: $spacing-4 $spacing-8;
         }
+
         &:hover {
             background-color: var(--rld-violet-5);
             transition: all ease-in-out 300ms;
         }
+
         &.selected {
-            background-color: var(--rld-shadest);
-            color: var(--rld-shadest);
+            background-color: var(--rld-contrast-color);
+            color: var(--rld-shade);
             transition: all ease-in-out 300ms;
+        }
+    }
+}
+
+::ng-deep {
+    .rld-dark-theme {
+        .selectable-container {
+            &.grid {
+                .selectable-item {
+                    background-color: var(--black-3) !important;
+                    color: var(--text-color) !important;
+
+                    &.selected {
+                        background-color: #5b05c3 !important;
+                        color: var(--text-color) !important;
+                    }
+                }
+            }
         }
     }
 }

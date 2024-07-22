@@ -1,9 +1,11 @@
 .reloadly-table {
     min-width: 640px;
     width: 100%;
+
     @media (min-width: 48em) {
         min-width: 1024px;
     }
+
     thead {
         tr {
             th {
@@ -23,6 +25,7 @@
             }
         }
     }
+
     tbody {
         tr {
             td {
@@ -37,8 +40,9 @@
                 vertical-align: middle !important;
                 text-wrap: nowrap;
             }
+
             &:hover {
-                background: var(--rld-shade);
+                background: var(--rld-black-3-hover);
             }
         }
     }

@@ -57,6 +57,7 @@
     --rld-menu-border-color: #{map.get($colors, reloadly-menu-border-color)};
 
     --rld-bg-color: #{map.get($colors, bg-color)};
+    --rld-contrast-color: #{map.get($colors, contrast-color)};
     --rld-text-color: #{map.get($colors, text-color)};
     --rld-text-color-contrast-5: #{darken(map.get($colors, text-color), 5)};
     --rld-text-color-contrast-10: #{lighten(map.get($colors, text-color), 10)};
