@@ -1,0 +1,115 @@
+@import "/src/styles/variables";
+
+.dialog {
+    background-color: var(--ash);
+    border-radius: $input-radius;
+    max-width: 600px;
+    color: var(--text-color);
+
+    .title {
+        font-size: $font-size-xxl;
+        font-weight: 450;
+        text-align: center;
+        padding-top: $spacing-10;
+    }
+
+    &-header {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--ash);
+        padding: $spacing-16 $spacing-32;
+        border-top-right-radius: $input-radius;
+        border-top-left-radius: $input-radius;
+
+        h3 {
+            font-size: 28px;
+        }
+    }
+
+    &-message {
+        font-size: $font-size-l;
+        text-align: center;
+        padding: $spacing-16 $spacing-32;
+
+        span {
+            vertical-align: text-top;
+        }
+    }
+
+    &-footer,
+    &-buttons {
+        display: flex;
+        justify-content: space-between;
+        padding: $spacing-16 $spacing-32;
+    }
+
+    &-form-modal {
+        width: 95%;
+        background-color: var(--violet-5);
+        border-radius: $border-radius-l;
+        margin: 0;
+        position: relative;
+
+        @media (min-width: 48em) {
+            width: auto;
+        }
+
+        &-header {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: $spacing-32 $spacing-24 0;
+
+            h3 {
+                font-weight: 450;
+                font-size: 24px;
+            }
+
+            .svg-icon {
+                width: 20px;
+                height: 20px;
+                margin-left: auto;
+                cursor: pointer;
+            }
+        }
+
+        &-body,
+        &-footer {
+            padding: 0 $spacing-24 $spacing-24;
+            gap: 2%;
+
+            .confirm-buttons {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                margin-top: $spacing-16;
+            }
+        }
+    }
+
+    .svg-icon {
+        color: var(--violet);
+    }
+
+    .text-advice {
+        font-size: $font-size-s;
+
+        .sm-button-icon {
+            width: 12px;
+            height: 12px;
+            margin-right: $spacing-10;
+            align-self: center;
+            transition: all 0.5s;
+        }
+    }
+
+    .close-btn {
+        position: absolute;
+        cursor: pointer;
+        top: 20px;
+        right: 20px;
+    }
+}
