@@ -25,24 +25,3 @@
         }
     }
 }
-
-
-.rld-light-theme {
-    .rld-card {
-        box-shadow: 0px 1px 2px var(--rld-shadow-contrast-3), 0px 2px 6px 2px var(--rld-shadow-contrast-1_5);
-    }
-
-    .rld-card__wrapper {
-        // don't use 'transparent' because of transition
-        background-color: rgba($color: #ffffff, $alpha: 0.0);
-        border-radius: $spacing-8;
-    }
-}
-
-.rld-dark-theme {
-    .rld-card__wrapper {
-        @import "../../../styles/dark-palette";
-        background: var(--rld-card-bg-color);
-        border-radius: $spacing-8;
-    }
-}
