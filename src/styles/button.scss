@@ -119,40 +119,32 @@
             color: var(--rld-violet);
             box-shadow: 0px 1px 3px 1px RGB(0 0 0 / 15%),
                 0px 1px 2px 0px RGB(0 0 0 / 30%);
-            background: linear-gradient(
-                    0deg,
+            background: linear-gradient(0deg,
                     rgba(103, 80, 164, 0.05),
-                    rgba(103, 80, 164, 0.05)
-                ),
+                    rgba(103, 80, 164, 0.05)),
                 #fffbfe;
 
             &:hover {
                 color: var(--rld-violet);
-                background: linear-gradient(
-                        0deg,
+                background: linear-gradient(0deg,
                         rgba(103, 80, 164, 0.05),
-                        rgba(103, 80, 164, 0.05)
-                    ),
+                        rgba(103, 80, 164, 0.05)),
                     #fffbfe;
             }
 
             &:focus {
                 color: var(--rld-violet);
-                background: linear-gradient(
-                        0deg,
+                background: linear-gradient(0deg,
                         rgba(103, 80, 164, 0.05),
-                        rgba(103, 80, 164, 0.05)
-                    ),
+                        rgba(103, 80, 164, 0.05)),
                     #fffbfe;
             }
 
             &:active {
                 color: var(--rld-violet);
-                background: linear-gradient(
-                        0deg,
+                background: linear-gradient(0deg,
                         rgba(103, 80, 164, 0.05),
-                        rgba(103, 80, 164, 0.05)
-                    ),
+                        rgba(103, 80, 164, 0.05)),
                     #fffbfe;
                 box-shadow: none;
             }
@@ -583,7 +575,7 @@
     }
 
     &.xs {
-        padding: 4px 8px;
+        padding: 2px 6px;
         border-radius: 4px;
         font-size: $font-size-s;
 
