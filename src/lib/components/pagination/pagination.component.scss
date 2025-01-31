@@ -4,7 +4,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    @media screen and (max-width:540px) {
+    @media screen and (max-width: 540px) {
         flex-flow: column;
         align-items: center;
     }
@@ -15,7 +15,7 @@
     }
     .buttons {
         flex-wrap: nowrap !important;
-        @media screen and (max-width:540px) {
+        @media screen and (max-width: 540px) {
             margin-top: 20px;
         }
     }
@@ -27,5 +27,5 @@
 }
 .active {
     background-color: var(--rld-violet) !important;
-    color:var(--rld-shadest) !important;
+    color: var(--rld-white) !important;
 }
