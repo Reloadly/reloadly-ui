@@ -9,7 +9,7 @@
     thead {
         tr {
             th {
-                font-size: 11px;
+                font-size: $font-size-xs;
                 font-weight: 450;
                 line-height: 20px;
                 text-transform: uppercase;
@@ -29,7 +29,7 @@
     tbody {
         tr {
             td {
-                font-size: 14px;
+                font-size: $font-size-s;
                 line-height: 20px;
                 font-style: normal;
                 padding: $spacing-8;
