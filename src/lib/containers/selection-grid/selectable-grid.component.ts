@@ -12,6 +12,7 @@ export class SelectionGridComponent {
     @Input() list: SelectableItem[] = [];
     @Input() viewType: SelectableViewType = SelectableViewType.grid;
     @Input() viewStyle: SelectableViewStyle = SelectableViewStyle.start;
+    @Input() tooltip: { [price: string]: string } = {};
     @Output() onChange: EventEmitter<SelectableItem | null> = new EventEmitter();
     selectedItem?: SelectableItem | undefined;
 

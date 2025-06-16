@@ -1,4 +1,4 @@
-<div class="overlay">
+<div class="overlay" *ngIf="text && text.length">
     <div class="reloadly-tooltip" [style.right]="right ? right + 'px' : 'unset'"
         [style.left]="left ? left + 'px' : 'unset'" [style.top]="top ? top + 'px' : 'unset'"
         [style.bottom]="bottom ? bottom + 'px' : 'unset'" [class]="class">
