@@ -1,6 +1,6 @@
 <div class="selectable-container" [ngClass]="viewType" [style.justifyContent]="viewStyle">
     <div class="selectable-item" [class.selected]="selectedItem == item" *ngFor="let item of list"
-        (click)="select(item)">
+        (click)="select(item)" [reloadly-tooltip]="tooltip[item.value]">
         <span>
             {{ item.title }}
         </span>
