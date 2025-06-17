@@ -26,4 +26,12 @@ export class SelectionGridComponent {
             this.onChange.emit(item);
         }
     }
+
+    getTooltip(value: string): string {
+        const num = parseFloat(value);
+        const keyExact = value;
+        const keyWithDecimals = num.toFixed(2);
+
+        return this.tooltip[keyExact] || this.tooltip[keyWithDecimals] || '';
+    }
 }
