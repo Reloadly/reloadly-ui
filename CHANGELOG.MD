@@ -45,3 +45,11 @@ Small fix for success badge icon.
 ### Features
 
 Dark mode support
+
+
+<a name="1.0.5"></a>
+# [1.0.5](https://github.com/Reloadly/reloadly-ui/compare/main...release/1.0.5) (2025-06-16)
+
+### Features
+
+Tootlips for the selectable grid options
